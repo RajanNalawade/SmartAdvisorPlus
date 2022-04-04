@@ -11,8 +11,8 @@ android {
         applicationId "sbilife.com.pointofsale_bancaagency"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 324
-        versionName "324.0"
+        versionCode 325
+        versionName "325.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
