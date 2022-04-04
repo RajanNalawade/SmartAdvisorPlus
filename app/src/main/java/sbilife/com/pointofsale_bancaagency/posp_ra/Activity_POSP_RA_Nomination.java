@@ -1,8 +1,11 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -78,7 +81,7 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
             is_appointee_required = false, is_dashboard = false, is_back_pressed = false,
             is_bsm_questions = false, is_rejection = false;
     private Date currentDate;
-    private String str_applicant_address = "", str_applicant_address2 = "", str_applicant_address3 = "",
+    private String str_applicant_full_name ="", str_applicant_dob = "",str_applicant_address = "", str_applicant_address2 = "", str_applicant_address3 = "",
             str_pincode = "", str_pin_flag = "";
 
     private StringBuilder str_nominational_info;
@@ -381,6 +384,14 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
             String str_info = lstRes.get(0).getStr_personal_info();
 
             ParseXML mXml = new ParseXML();
+            str_applicant_full_name = mXml.parseXmlTag(str_info, "personal_info_full_name");
+            str_applicant_dob = mXml.parseXmlTag(str_info, "personal_info_dob");
+            if (!str_applicant_dob.equals("")) {
+                String[] arrDate = str_applicant_dob.split("-");
+                str_applicant_dob = arrDate[1] + "-" + arrDate[0] + "-" + arrDate[2];
+            } else {
+                str_applicant_dob = "";
+            }
             str_applicant_address = mXml.parseXmlTag(str_info, "personal_info_permanant_address1");
 
             //added 19-01-2021
@@ -601,7 +612,15 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
 
             case R.id.btn_aob_nomination_next:
 
-                if (!is_dashboard && !is_bsm_questions) {
+                 if (is_dashboard) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_Nomination.this, Activity_POSP_RA_BankDetails.class);
+                    mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_Nomination.this, Activity_POSP_RA_BankDetails.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
@@ -633,14 +652,6 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
                     } else {
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
-                } else if (is_dashboard) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_Nomination.this, Activity_POSP_RA_BankDetails.class);
-                    mIntent.putExtra("is_dashboard", is_dashboard);
-                    startActivity(mIntent);
-                } else if (is_bsm_questions) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_Nomination.this, Activity_POSP_RA_BankDetails.class);
-                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
-                    startActivity(mIntent);
                 }
                 break;
 
@@ -720,7 +731,32 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
                     is_appointee_required = true;
                 }
 
+                if (strSelectedDate.equals(str_applicant_dob)){
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this,
+                            AlertDialog.THEME_HOLO_LIGHT);
+                    builder.setTitle("Confirmation!");
+                    builder.setMessage("Is Nominee DOB same as Applicant DOB?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            txt_aob_nominee_dob.setText(strSelectedDate);
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            mCommonMethods.showMessageDialog(mContext, "Please Select another Nominee DOB");
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }else{
                 txt_aob_nominee_dob.setText(strSelectedDate);
+                }
                 break;
 
             case DATE_DIALOG_APPOINTEE_DOB:
@@ -912,8 +948,10 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
 
         if (spnr_aob_nominee_title.getSelectedItem().toString().equals("Select Title")) {
             return "Please select Title";
-        } else if (edt_aob_nominee_full_name.getText().toString().equals("")) {
+        } else if (edt_aob_nominee_full_name.getText().toString().trim().equals("")) {
             return "Please enter nominee full name";
+        } else if (edt_aob_nominee_full_name.getText().toString().trim().equals(str_applicant_full_name)){
+            return "Applicant and Nominee name cannot be same.";
         } else if (txt_aob_nominee_dob.getText().toString().equals("")) {
             return "Please select nominee DOB";
         } else if (spnr_aob_nominee_relation.getSelectedItem().toString().equals("Select Relation")) {
@@ -961,6 +999,10 @@ public class Activity_POSP_RA_Nomination extends AppCompatActivity implements Vi
                 edt_aob_nom_appointee_full_name.getText().toString().equals("")) {
             edt_aob_nom_appointee_full_name.requestFocus();
             return "Please enter appointee full name";
+        } else if (is_appointee_required &
+                edt_aob_nom_appointee_full_name.getText().toString().trim().equals(str_applicant_full_name)){
+            edt_aob_nom_appointee_full_name.requestFocus();
+            return "Applicant and appointee name cannot be same.";
         } else if (is_appointee_required &
                 txt_aob_appointee_dob.getText().toString().equals("")) {
             txt_aob_appointee_dob.requestFocus();

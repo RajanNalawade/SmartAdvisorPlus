@@ -320,7 +320,15 @@ public class Activity_POSP_RA_BankDetails extends AppCompatActivity implements V
 
             case R.id.btn_aob_bank_next:
 
-                if (!is_dashboard && !is_bsm_questions) {
+                 if (is_dashboard) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_BankDetails.this, Activity_POSP_RA_ExamTraining.class);
+                    mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_BankDetails.this, Activity_POSP_RA_ExamTraining.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
@@ -336,14 +344,6 @@ public class Activity_POSP_RA_BankDetails extends AppCompatActivity implements V
                     } else {
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
-                } else if (is_dashboard) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_BankDetails.this, Activity_POSP_RA_ExamTraining.class);
-                    mIntent.putExtra("is_dashboard", is_dashboard);
-                    startActivity(mIntent);
-                } else if (is_bsm_questions) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_BankDetails.this, Activity_POSP_RA_ExamTraining.class);
-                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
-                    startActivity(mIntent);
                 }
                 break;
 

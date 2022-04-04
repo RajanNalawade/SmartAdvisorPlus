@@ -1,6 +1,7 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import sbilife.com.pointofsale_bancaagency.R;
 import sbilife.com.pointofsale_bancaagency.agent_on_boarding.dashboard.ActivityAOBAgentDetails;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
+import sbilife.com.pointofsale_bancaagency.home.CarouselHomeActivity;
 import sbilife.com.pointofsale_bancaagency.home.home_menu_adapter.HomeMenu;
 import sbilife.com.pointofsale_bancaagency.home.home_menu_adapter.HomeMenuAdapter;
 import sbilife.com.pointofsale_bancaagency.posp_ra.Activity_POSP_RA_Authentication;
@@ -73,5 +75,13 @@ public class ActivityAOB_Menu extends AppCompatActivity {
             listMenuItem.add(new HomeMenu(R.drawable.icon_posp_dashboard, "POSP-RA Dashboard",
                     Activity_POSP_RA_AgentDetails.class, false, false, "", null));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent mIntent = new Intent(ActivityAOB_Menu.this, CarouselHomeActivity.class);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mIntent);
     }
 }

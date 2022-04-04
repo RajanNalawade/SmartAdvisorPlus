@@ -34,6 +34,7 @@
                     android:gravity="center"
                     android:text="Personal"
                     android:padding="10dp"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:focusable="true"
                     android:background="@color/GreenYellow"
@@ -48,6 +49,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Occupation"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -62,6 +64,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Nomination"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -76,6 +79,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Bank"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -90,6 +94,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Exam And Training"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -106,6 +111,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Terms And Conditions"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -122,6 +128,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Document Upload"
                     android:background="@color/Common_blue"
                     android:textStyle="bold"
@@ -422,7 +429,7 @@
                         android:visibility="gone"
                         android:orientation="horizontal">
 
-                        <TextView android:id="@+id/txt_aob_applicant_sign"
+                        <TextView android:id="@+id/txt_aob_self_declaration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
@@ -432,7 +439,7 @@
                             android:textColor="@color/Black"/>
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_camera"
+                            android:id="@+id/imgbtn_aob_self_declaration_camera"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -443,7 +450,7 @@
                             android:src="@drawable/ibtn_camera" />
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_browse"
+                            android:id="@+id/imgbtn_aob_self_declaration_browse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -455,7 +462,7 @@
                             android:src="@drawable/ibtn_browsedoc" />
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_upload"
+                            android:id="@+id/imgbtn_aob_self_declaration_upload"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"

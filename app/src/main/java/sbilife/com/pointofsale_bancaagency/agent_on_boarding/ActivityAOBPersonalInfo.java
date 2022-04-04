@@ -1,15 +1,17 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.Editable;
+import android.text.Html;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,9 +22,15 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.MarshalBase64;
 import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +40,7 @@ import java.util.Date;
 import sbilife.com.pointofsale_bancaagency.DatabaseHelper;
 import sbilife.com.pointofsale_bancaagency.ParseXML;
 import sbilife.com.pointofsale_bancaagency.R;
+import sbilife.com.pointofsale_bancaagency.ServiceURL;
 import sbilife.com.pointofsale_bancaagency.common.AsyncUploadFile_Common;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
 import sbilife.com.pointofsale_bancaagency.ekyc.offline_ekyc.OfflinePaperlessKycResponse;
@@ -47,6 +56,11 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
     private final String NAMESPACE = "http://tempuri.org/";
     private final String METHOD_NAME_VERIFY_PINCODE = "validatePincode";
+    private final String METHOD_NAME_CHECK_EMAIL_MOBILE = "checkMobileEmail_other";
+    private final String METHOD_NAME_GENERATE_OTP = "GenerateOTP_EasyAccess";
+    private final String METHOD_NAME_VALIDATE_OTP = "validateOTP_easyacess";
+
+    private ProgressDialog mProgressDialog;
 
     private CommonMethods mCommonMethods;
     private Context mContext;
@@ -58,7 +72,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
     private Date currentDate;
 
     private Button btn_aob_personal_info_next, btn_aob_personal_permanent_pin, btn_aob_personal_comm_pin,
-            btn_aob_personal_info_back;
+            btn_aob_personal_info_back, btn_aob_verify_otp;
     private Spinner spnr_aob_personal_title, spnr_aob_personal_gender, spnr_aob_personal_relation_applicant,
             spnr_aob_personal_marital_status, spnr_aob_personal_caste_category, spnr_aob_personal_bas_qualification,
             spnr_aob_personal_pro_qualification;
@@ -68,16 +82,20 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
             edt_aob_personal_communication_pin, edt_aob_personal_permnt_address1, edt_aob_personal_permnt_address2,
             edt_aob_personal_permnt_address3, edt_aob_personal_permnt_pin, edt_aob_personal_father_husbund_name,
             edt_aob_personal_maiden_name, edt_aob_personal_mobile, edt_aob_personal_residence_no, edt_aob_personal_email_id,
-            edt_aob_personal_pass_roll_no, edt_aob_personal_pass_university, edt_aob_personal_pro_qualification_cmnt;
+            edt_aob_personal_pass_roll_no, edt_aob_personal_pass_university, edt_aob_personal_pro_qualification_cmnt,
+            edt_aob_personal_ckyc_no, edt_aob_otp;
 
     private TextView txt_aob_personal_dob, txt_aob_personal_pass_year_month;
 
-    private String str_aadhaar_no = "", str_pan_no = "", str_pin_flag = "", str_pincode = "";
+    private String str_aadhaar_no = "", str_pan_no = "", str_pin_flag = "", str_pincode = "",
+            str_applicant_stored_mobile_no = "", str_applicant_stored_email_id = "", strUM = "";
     private StringBuilder str_personal_info;
     private boolean /*validate_pan_card = false, validate_aadhar = false,*/ validate_email = false, is_per_pin_valid = false,
-            is_comm_pin_valid = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+            is_comm_pin_valid = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false,
+            is_otp_generated = false, is_bsm_questions = false;
 
-    private LinearLayout ll_aob_personal_maiden_name, ll_personal_info_communication_address, ll_aob_personal_pass_university;
+    private LinearLayout ll_aob_personal_maiden_name, ll_personal_info_communication_address, ll_aob_personal_pass_university,
+            ll_aob_personal_ckyc_no, ll_aob_verify_otp;
 
     private RadioGroup rg_aob_personal_info_same_permanent;
     private RadioButton rb_aob_personal_info_same_add_as_yes, rb_aob_personal_info_same_add_as_no;
@@ -94,17 +112,23 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
 
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
+
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
 
         initialisation();
 
-        if (is_dashboard || is_ia_upgrade) {
+        if (is_dashboard || is_ia_upgrade || is_bsm_questions) {
             //non editable with no saving
             enableDisableAllFields(false);
+
+            btn_aob_personal_info_next.setText("Next");
         } else {
             //editable
             enableDisableAllFields(true);
+            btn_aob_personal_info_next.setText("Send OTP");
         }
 
 
@@ -133,7 +157,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
         mParseXML = new ParseXML();
 
-        View view_aob_personal_formIA = findViewById(R.id.view_aob_personal_formIA);
+        /*View view_aob_personal_formIA = findViewById(R.id.view_aob_personal_formIA);
         TextView txt_aob_personal_formIA = findViewById(R.id.txt_aob_personal_formIA);
         if (is_ia_upgrade){
             txt_aob_personal_formIA.setVisibility(View.GONE);
@@ -141,7 +165,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         } else{
             txt_aob_personal_formIA.setVisibility(View.VISIBLE);
             view_aob_personal_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         spnr_aob_personal_title = (Spinner) findViewById(R.id.spnr_aob_personal_title);
         ArrayAdapter<String> title_adapter = new ArrayAdapter<String>(
@@ -245,7 +269,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         edt_aob_personal_email_id = (EditText) findViewById(R.id.edt_aob_personal_email_id);
         edt_aob_personal_pass_roll_no = (EditText) findViewById(R.id.edt_aob_personal_pass_roll_no);
         edt_aob_personal_pass_university = (EditText) findViewById(R.id.edt_aob_personal_pass_university);
-        edt_aob_personal_pass_university.setFilters(new InputFilter[]{mCommonMethods.aob_mobile_filter});
+        //edt_aob_personal_pass_university.setFilters(new InputFilter[]{mCommonMethods.aob_mobile_filter});
 
         edt_aob_personal_pro_qualification_cmnt = (EditText) findViewById(R.id.edt_aob_personal_pro_qualification_cmnt);
 
@@ -253,9 +277,17 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         ll_personal_info_communication_address = (LinearLayout) findViewById(R.id.ll_personal_info_communication_address);
         ll_aob_personal_pass_university = (LinearLayout) findViewById(R.id.ll_aob_personal_pass_university);
 
+        ll_aob_verify_otp = findViewById(R.id.ll_aob_verify_otp);
+        edt_aob_otp = findViewById(R.id.edt_aob_otp);
+        btn_aob_verify_otp = findViewById(R.id.btn_aob_verify_otp);
+        btn_aob_verify_otp.setOnClickListener(this);
+
         rg_aob_personal_info_same_permanent = (RadioGroup) findViewById(R.id.rg_aob_personal_info_same_permanent);
         rb_aob_personal_info_same_add_as_yes = (RadioButton) findViewById(R.id.rb_aob_personal_info_same_add_as_yes);
         rb_aob_personal_info_same_add_as_no = (RadioButton) findViewById(R.id.rb_aob_personal_info_same_add_as_no);
+
+        ll_aob_personal_ckyc_no = findViewById(R.id.ll_aob_personal_ckyc_no);
+        edt_aob_personal_ckyc_no = findViewById(R.id.edt_aob_personal_ckyc_no);
 
         rg_aob_personal_info_same_permanent.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -418,6 +450,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
             edt_aob_personal_aadhaar_no.setText(lstRes.get(0).getStr_aadhaar_no());
             //str_pan_no = lstRes.get(0).getStr_pan_no() == null ? "" : lstRes.get(0).getStr_pan_no();
             edt_aob_personal_pan_no.setText(lstRes.get(0).getStr_pan_no());
+            strUM = lstRes.get(0).getStr_created_by();
 
             String str_personal_info = lstRes.get(0).getStr_personal_info();
             str_personal_info = str_personal_info == null ? "" : str_personal_info;
@@ -425,6 +458,9 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
             if (!str_personal_info.equals("")) {
 
                 //get available data
+                String str_applicant_ckyc_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_ckyc_no");
+                str_applicant_ckyc_no = str_applicant_ckyc_no == null ? "" : str_applicant_ckyc_no;
+
                 String str_applicant_title = mParseXML.parseXmlTag(str_personal_info, "personal_info_title");
                 String str_applicant_full_name = mParseXML.parseXmlTag(str_personal_info, "personal_info_full_name");
                 String str_applicant_dob = mParseXML.parseXmlTag(str_personal_info, "personal_info_dob");
@@ -451,15 +487,20 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
                 String str_applicant_maiden_name = mParseXML.parseXmlTag(str_personal_info, "personal_info_maiden_name");
                 String str_applicant_marital_status = mParseXML.parseXmlTag(str_personal_info, "personal_info_marital_status");
                 String str_applicant_caste_category = mParseXML.parseXmlTag(str_personal_info, "personal_info_caste_category");
-                String str_applicant_mobile_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_mobile_no");
+                str_applicant_stored_mobile_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_mobile_no");
                 String str_applicant_residence_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_residence_no");
-                String str_applicant_email_id = mParseXML.parseXmlTag(str_personal_info, "personal_info_email_id");
+                str_applicant_stored_email_id = mParseXML.parseXmlTag(str_personal_info, "personal_info_email_id");
                 String str_applicant_basic_qualification = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_basic_qualification");
                 String str_applicant_passing_roll_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_passing_roll_no");
                 String str_applicant_passing_university = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_passing_university");
                 String str_applicant_passing_year_month = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_passing_month_year");
                 String str_applicant_pro_qualification = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_professional_qualification");
                 String str_applicant_pro_qualification_others = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_professional_qualification_others");
+
+                if (!str_applicant_ckyc_no.equals("")) {
+                    ll_aob_personal_ckyc_no.setVisibility(View.VISIBLE);
+                    edt_aob_personal_ckyc_no.setText(str_applicant_ckyc_no);
+                }
 
                 spnr_aob_personal_title.setSelection(Arrays.asList(getResources().getStringArray(R.array.arr_aob_title)).indexOf(str_applicant_title));
 
@@ -522,9 +563,9 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
                 spnr_aob_personal_caste_category.setSelection(Arrays.asList(getResources().
                         getStringArray(R.array.arr_aob_caste_category)).indexOf(str_applicant_caste_category));
 
-                edt_aob_personal_mobile.setText(str_applicant_mobile_no);
+                edt_aob_personal_mobile.setText(str_applicant_stored_mobile_no);
                 edt_aob_personal_residence_no.setText(str_applicant_residence_no);
-                edt_aob_personal_email_id.setText(str_applicant_email_id);
+                edt_aob_personal_email_id.setText(str_applicant_stored_email_id);
 
                 spnr_aob_personal_bas_qualification.setSelection(Arrays.asList(getResources().
                         getStringArray(R.array.arr_aob_basic_qualification)).indexOf(str_applicant_basic_qualification));
@@ -537,10 +578,10 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
                         getStringArray(R.array.arr_aob_pro_qualification)).indexOf(str_applicant_pro_qualification));
 
                 if (str_applicant_pro_qualification.equalsIgnoreCase("Others")) {
-                    ll_aob_personal_pass_university.setVisibility(View.VISIBLE);
-                    edt_aob_personal_pass_university.setText(str_applicant_pro_qualification_others);
+                    edt_aob_personal_pro_qualification_cmnt.setVisibility(View.VISIBLE);
+                    edt_aob_personal_pro_qualification_cmnt.setText(str_applicant_pro_qualification_others);
                 } else {
-                    ll_aob_personal_pass_university.setVisibility(View.GONE);
+                    edt_aob_personal_pro_qualification_cmnt.setVisibility(View.GONE);
                 }
             } else {
                 try {
@@ -725,9 +766,9 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
                         if (!str_ekyc_code_Gender.equals("")) {
                             if (str_ekyc_code_Gender.equals("M")) {
                                 spnr_aob_personal_gender.setSelection(0);
-                            } else if (str_ekyc_code_Gender.equals("F")){
+                            } else if (str_ekyc_code_Gender.equals("F")) {
                                 spnr_aob_personal_gender.setSelection(1);
-                            } else{
+                            } else {
                                 spnr_aob_personal_gender.setSelection(2);
                             }
 
@@ -846,7 +887,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
                     //maiden name gone
                     ll_aob_personal_maiden_name.setVisibility(View.GONE);
-                }  else if (position == 4) {
+                } else if (position == 4) {
                     //set gender
                     spnr_aob_personal_gender.setSelection(2);
 
@@ -882,6 +923,12 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
         if (is_dashboard) {
             startActivity(new Intent(ActivityAOBPersonalInfo.this, ActivityAOBDashboard.class));
+        } else if (is_bsm_questions) {
+            Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBPANPendingAgentList.class);
+            mIntent.putExtra("UMCode", strUM);
+            mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(mIntent);
         } else {
             if (is_back_pressed) {
                 startActivity(new Intent(ActivityAOBPersonalInfo.this, Activity_AOB_Authentication.class));
@@ -944,7 +991,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
                     str_pin_flag = "permanent";
 
-                    createSoapRequestToUploadDoc();
+                    createSoapRequestToUploadDoc(METHOD_NAME_VERIFY_PINCODE);
 
                 } else {
                     mCommonMethods.showMessageDialog(mContext, "Please enter Pincode");
@@ -961,7 +1008,7 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
 
                     str_pin_flag = "communication";
 
-                    createSoapRequestToUploadDoc();
+                    createSoapRequestToUploadDoc(METHOD_NAME_VERIFY_PINCODE);
 
                 } else {
                     mCommonMethods.showMessageDialog(mContext, "Please enter Pincode");
@@ -974,41 +1021,49 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
                     Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBOccupation.class);
                     mIntent.putExtra("is_dashboard", is_dashboard);
                     startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBOccupation.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
                 } else if (is_ia_upgrade) {
                     Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBOccupation.class);
                     mIntent.putExtra("is_ia_upgrade", is_ia_upgrade);
                     startActivity(mIntent);
-                } else {
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
 
-                        //2. create xml string for data saving
-                        get_personal_info_xml();
-
-                        //3. update data against global row id
-                        ContentValues cv = new ContentValues();
-                        cv.put(db.AGENT_ON_BOARDING_PERSONAL_INFO, str_personal_info.toString());
-                        cv.put(db.AGENT_ON_BOARDING_UPDATED_BY, mCommonMethods.GetUserCode(mContext));
-
-                        Calendar c = Calendar.getInstance();
-                        //save date in long
-                        cv.put(db.AGENT_ON_BOARDING_UPDATED_DATE, new Date(c.getTimeInMillis()).getTime() + "");
-                        cv.put(db.AGENT_ON_BOARDING_SYNCH_STATUS, "2");
-
-                        int i = db.update_agent_on_boarding_details(cv, db.AGENT_ON_BOARDING_ID + " =? ",
-                                new String[]{Activity_AOB_Authentication.row_details + ""});
-
-                        Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBOccupation.class);
-                        startActivity(mIntent);
-
-                        mCommonMethods.showToast(mContext, "Details saved Successfully : " + i);
+                        if (edt_aob_personal_mobile.getText().toString().equals(str_applicant_stored_mobile_no)
+                                && edt_aob_personal_email_id.getText().toString().equals(str_applicant_stored_email_id)) {
+                            //save data and move to occupation details
+                            save_AOB_PersonalInfo();
+                        } else {
+                            //check mobile and email
+                            new AsyncCheckMobileEmail_Other().execute(
+                                    edt_aob_personal_mobile.getText().toString(),
+                                    edt_aob_personal_email_id.getText().toString());
+                        }
 
                     } else {
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
                 }
+                break;
 
+            case R.id.btn_aob_verify_otp:
+
+                if (is_otp_generated) {
+                    String strOTP = edt_aob_otp.getText().toString();
+                    strOTP = strOTP == null ? "" : strOTP;
+                    if (strOTP.equals("")) {
+                        mCommonMethods.showToast(mContext, "Please enter OTP");
+                    } else {
+                        createSoapRequestToUploadDoc(METHOD_NAME_VALIDATE_OTP);
+                    }
+                } else {
+                    mCommonMethods.showMessageDialog(mContext, "Please generate otp first");
+                }
                 break;
 
             default:
@@ -1016,11 +1071,37 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         }
     }
 
+    private void save_AOB_PersonalInfo() {
+        //2. create xml string for data saving
+        get_personal_info_xml();
+
+        //3. update data against global row id
+        ContentValues cv = new ContentValues();
+        cv.put(db.AGENT_ON_BOARDING_PERSONAL_INFO, str_personal_info.toString());
+        cv.put(db.AGENT_ON_BOARDING_UPDATED_BY, mCommonMethods.GetUserCode(mContext));
+
+        Calendar c = Calendar.getInstance();
+        //save date in long
+        cv.put(db.AGENT_ON_BOARDING_UPDATED_DATE, new Date(c.getTimeInMillis()).getTime() + "");
+        cv.put(db.AGENT_ON_BOARDING_SYNCH_STATUS, "2");
+
+        int i = db.update_agent_on_boarding_details(cv, db.AGENT_ON_BOARDING_ID + " =? ",
+                new String[]{Activity_AOB_Authentication.row_details + ""});
+
+        Intent mIntent = new Intent(ActivityAOBPersonalInfo.this, ActivityAOBOccupation.class);
+        startActivity(mIntent);
+
+        //mCommonMethods.showToast(mContext, "Details saved Successfully : " + i);
+    }
+
+
     //2. create xml string for data saving
 
     private void get_personal_info_xml() {
 
         str_pan_no = edt_aob_personal_pan_no.getText().toString();
+        str_aadhaar_no = edt_aob_personal_aadhaar_no.getText().toString();
+        str_aadhaar_no = str_aadhaar_no == null ? "" : str_aadhaar_no;
 
         String str_applicant_title = spnr_aob_personal_title.getSelectedItem().toString();
         String str_applicant_full_name = mCommonMethods.removeExtraWhiteSpaces(edt_aob_personal_full_name);
@@ -1148,6 +1229,11 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         str_personal_info.append("<personal_info_educational_details_passing_month_year>").append(str_applicant_passing_year_month).append("</personal_info_educational_details_passing_month_year>");
         str_personal_info.append("<personal_info_educational_details_professional_qualification>").append(str_applicant_pro_qualification).append("</personal_info_educational_details_professional_qualification>");
         str_personal_info.append("<personal_info_educational_details_professional_qualification_others>").append(str_applicant_pro_qualification_others).append("</personal_info_educational_details_professional_qualification_others>");
+
+        String strCKYCNo = edt_aob_personal_ckyc_no.getText().toString();
+        strCKYCNo = strCKYCNo == null ? "" : strCKYCNo;
+        str_personal_info.append("<personal_info_ckyc_no>" + strCKYCNo + "</personal_info_ckyc_no>");
+
         /*str_personal_info.append("</personal_info>");*/
     }
 
@@ -1302,29 +1388,125 @@ public class ActivityAOBPersonalInfo extends AppCompatActivity implements View.O
         rb_aob_personal_info_same_add_as_no.setEnabled(is_enable);
     }
 
-    private void createSoapRequestToUploadDoc() {
-        SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME_VERIFY_PINCODE);
+    private void createSoapRequestToUploadDoc(String strMethod) {
 
-        request.addProperty("strPincode", str_pincode);
+        SoapObject request = new SoapObject(NAMESPACE, strMethod);
+        if (strMethod.equals(METHOD_NAME_VERIFY_PINCODE)) {
+            request.addProperty("strPincode", str_pincode);
+        } else if (strMethod.equals(METHOD_NAME_GENERATE_OTP)) {
+            is_otp_generated = false;
+            str_pin_flag = METHOD_NAME_GENERATE_OTP;
+            request.addProperty("MOBILE_NO", edt_aob_personal_mobile.getText().toString()
+                    + "|" + edt_aob_personal_email_id.getText().toString());
+        } else if (strMethod.equals(METHOD_NAME_VALIDATE_OTP)) {
+            str_pin_flag = METHOD_NAME_VALIDATE_OTP;
+            request.addProperty("strOTP", edt_aob_otp.getText().toString());
+            request.addProperty("MOBILE_NO", edt_aob_personal_mobile.getText().toString());
+        }
 
-        new AsyncUploadFile_Common(mContext, this, request, METHOD_NAME_VERIFY_PINCODE).execute();
+        new AsyncUploadFile_Common(mContext, this, request, strMethod).execute();
     }
 
     @Override
     public void onUploadComplete(Boolean result) {
 
         if (result) {
+            if (str_pin_flag.equals(METHOD_NAME_GENERATE_OTP)) {
+                is_otp_generated = true;
+                ll_aob_verify_otp.setVisibility(View.VISIBLE);
+            } else if (str_pin_flag.equals(METHOD_NAME_VALIDATE_OTP)) {
+                save_AOB_PersonalInfo();
+            } else {
+                if (str_pin_flag.equals("permanent")) {
+                    is_per_pin_valid = true;
+                } else if (str_pin_flag.equals("communication")) {
+                    is_comm_pin_valid = true;
+                }
 
-            if (str_pin_flag.equals("permanent")) {
-                is_per_pin_valid = true;
-            } else if (str_pin_flag.equals("communication")) {
-                is_comm_pin_valid = true;
+                mCommonMethods.showMessageDialog(mContext, "Pincode is verified");
             }
-
-            mCommonMethods.showMessageDialog(mContext, "Pincode is verified");
         } else {
-            mCommonMethods.showMessageDialog(mContext, "Pincode is invalid");
+            if (str_pin_flag.equals(METHOD_NAME_GENERATE_OTP)) {
+                ll_aob_verify_otp.setVisibility(View.GONE);
+            } else if (str_pin_flag.equals(METHOD_NAME_VALIDATE_OTP)) {
+                is_otp_generated = false;
+            } else {
+                mCommonMethods.showMessageDialog(mContext, "Pincode is invalid");
+            }
         }
 
+    }
+
+    class AsyncCheckMobileEmail_Other extends AsyncTask<String, String, String> {
+
+        private volatile boolean running = false;
+
+        @Override
+        protected void onPreExecute() {
+            mProgressDialog = new ProgressDialog(ActivityAOBPersonalInfo.this, ProgressDialog.THEME_HOLO_LIGHT);
+            mProgressDialog.setMessage(Html.fromHtml("<font color='#00a1e3'><b>Loading Please wait...<b></font>"));
+            mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            if (mCommonMethods.isNetworkConnected(mContext)) {
+                try {
+                    running = true;
+
+                    SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME_CHECK_EMAIL_MOBILE);
+
+                    request.addProperty("strMobile", strings[0]);
+                    request.addProperty("strEmail", strings[1]);
+
+                    mCommonMethods.TLSv12Enable();
+
+                    SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                            SoapEnvelope.VER11);
+                    envelope.dotNet = true;
+
+                    new MarshalBase64().register(envelope); // serialization
+
+                    envelope.setOutputSoapObject(request);
+
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+
+                    HttpTransportSE androidHttpTranport = new HttpTransportSE(ServiceURL.SERVICE_URL, 50000);
+
+                    androidHttpTranport.call(NAMESPACE + METHOD_NAME_CHECK_EMAIL_MOBILE, envelope);
+                    Object response = envelope.getResponse();
+                    return response.toString();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    running = false;
+                    return mCommonMethods.WEEK_INTERNET_MESSAGE;
+                }
+            } else {
+                return mCommonMethods.NO_INTERNET_MESSAGE;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String mResult) {
+            if (mProgressDialog.isShowing())
+                mProgressDialog.dismiss();
+
+            if (running) {
+
+                if (mResult.equals("1")) {
+                    //generate otp
+                    createSoapRequestToUploadDoc(METHOD_NAME_GENERATE_OTP);
+                } else {
+                    mCommonMethods.showMessageDialog(mContext, mResult);
+                }
+            } else {
+                mCommonMethods.showMessageDialog(mContext, mResult);
+            }
+        }
     }
 }

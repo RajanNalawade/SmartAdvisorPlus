@@ -31,6 +31,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Personal"
                     android:padding="10dp"
                     android:textStyle="bold"
@@ -48,6 +49,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Occupation"
+                    android:textColor="@color/white"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
                     android:padding="10dp"/>
@@ -62,6 +64,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Nomination"
+                    android:textColor="@color/white"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
                     android:padding="10dp"/>
@@ -76,6 +79,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Bank"
+                    android:textColor="@color/white"
                     android:background="@color/Common_blue"
                     android:textStyle="bold"
                     android:focusable="true"
@@ -93,6 +97,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Exam And Training"
                     android:textStyle="bold"
                     android:padding="10dp">
@@ -107,6 +112,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="BSM Interview"
                     android:textStyle="bold"
                     android:padding="10dp">
@@ -121,6 +127,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Terms And Conditions"
                     android:textStyle="bold"
                     android:padding="10dp"/>

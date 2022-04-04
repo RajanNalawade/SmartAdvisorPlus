@@ -27,6 +27,7 @@
                 android:gravity="center"
                 android:text="Personal"
                 android:padding="10dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:focusable="true"
                 android:background="@color/GreenYellow"
@@ -41,6 +42,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Occupation"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -55,6 +57,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Nomination"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -69,6 +72,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Bank"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -81,6 +85,7 @@
 
             <TextView
                 android:layout_width="120dp"
+                android:textColor="@color/white"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Form 1-A"
@@ -101,6 +106,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Exam And Training"
                 android:textStyle="bold"
                 android:padding="10dp">
@@ -129,6 +135,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Terms And Conditions"
                 android:textStyle="bold"
                 android:padding="10dp"/>

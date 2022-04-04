@@ -1,15 +1,15 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,6 +21,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -67,10 +69,11 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
     private Calendar mCalender;
     private int mDOBDay = 0, mDOBYear = 0, mDOBMonth = 0;
     private boolean is_appointee = false, is_nominee_pin_verify = false, is_appointee_pin_verify = false,
-            is_appointee_required = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+            is_appointee_required = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false,
+            is_bsm_questions = false;
     private Date currentDate;
-    private String str_applicant_address = "", str_applicant_address2 = "", str_applicant_address3 = "",
-            str_pincode = "", str_pin_flag = "";
+    private String str_applicant_full_name = "", str_applicant_dob = "", str_applicant_address = "", str_applicant_address2 = "",
+            str_applicant_address3 = "", str_pincode = "", str_pin_flag = "";
 
     private StringBuilder str_nominational_info;
     private ParseXML mParseXML;
@@ -85,12 +88,15 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
 
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
+
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
 
         initialisation();
 
-        if (is_dashboard || is_ia_upgrade) {
+        if (is_dashboard || is_ia_upgrade || is_bsm_questions) {
             //non editable with no saving
             enableDisableAllFields(false);
         } else {
@@ -110,7 +116,7 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
 
         mParseXML = new ParseXML();
 
-        View view_aob_nominee_formIA = findViewById(R.id.view_aob_nominee_formIA);
+        /*View view_aob_nominee_formIA = findViewById(R.id.view_aob_nominee_formIA);
         TextView txt_aob_nominee_formIA = findViewById(R.id.txt_aob_nominee_formIA);
         if (is_ia_upgrade) {
             view_aob_nominee_formIA.setVisibility(View.GONE);
@@ -118,7 +124,7 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
         } else {
             view_aob_nominee_formIA.setVisibility(View.VISIBLE);
             txt_aob_nominee_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         spnr_aob_nominee_title = (Spinner) findViewById(R.id.spnr_aob_nominee_title);
         ArrayAdapter<String> nominee_adapter = new ArrayAdapter<String>(
@@ -371,6 +377,14 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
             String str_info = lstRes.get(0).getStr_personal_info();
 
             ParseXML mXml = new ParseXML();
+            str_applicant_full_name = mXml.parseXmlTag(str_info, "personal_info_full_name");
+            str_applicant_dob = mXml.parseXmlTag(str_info, "personal_info_dob");
+            if (!str_applicant_dob.equals("")) {
+                String[] arrDate = str_applicant_dob.split("-");
+                str_applicant_dob = arrDate[1] + "-" + arrDate[0] + "-" + arrDate[2];
+            } else {
+                str_applicant_dob = "";
+            }
             str_applicant_address = mXml.parseXmlTag(str_info, "personal_info_permanant_address1");
 
             //added 19-01-2021
@@ -536,7 +550,9 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
     public void onBackPressed() {
 
         Intent intent = new Intent(ActivityAOBNomination.this, ActivityAOBOccupation.class);
-        if (is_dashboard) {
+        if (is_bsm_questions)
+            intent.putExtra("is_bsm_questions", is_bsm_questions);
+        else if (is_dashboard) {
             intent.putExtra("is_dashboard", is_dashboard);
         } else if (is_ia_upgrade) {
             intent.putExtra("is_ia_upgrade", is_ia_upgrade);
@@ -593,11 +609,15 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
                     Intent mIntent = new Intent(ActivityAOBNomination.this, ActivityAOBBankDetails.class);
                     mIntent.putExtra("is_dashboard", is_dashboard);
                     startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(ActivityAOBNomination.this, ActivityAOBBankDetails.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
                 } else if (is_ia_upgrade) {
                     Intent mIntent = new Intent(ActivityAOBNomination.this, ActivityAOBBankDetails.class);
                     mIntent.putExtra("is_ia_upgrade", is_ia_upgrade);
                     startActivity(mIntent);
-                } else {
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
@@ -853,6 +873,8 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
             return "Please select Title";
         } else if (edt_aob_nominee_full_name.getText().toString().equals("")) {
             return "Please enter nominee full name";
+        } else if (edt_aob_nominee_full_name.getText().toString().trim().equals(str_applicant_full_name)) {
+            return "Applicant and Nominee name cannot be same.";
         } else if (txt_aob_nominee_dob.getText().toString().equals("")) {
             return "Please select nominee DOB";
         } else if (spnr_aob_nominee_relation.getSelectedItem().toString().equals("Select Relation")) {
@@ -900,6 +922,10 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
                 edt_aob_nom_appointee_full_name.getText().toString().equals("")) {
             edt_aob_nom_appointee_full_name.requestFocus();
             return "Please enter appointee full name";
+        } else if (is_appointee_required &
+                edt_aob_nom_appointee_full_name.getText().toString().trim().equals(str_applicant_full_name)) {
+            edt_aob_nom_appointee_full_name.requestFocus();
+            return "Applicant and appointee name cannot be same.";
         } else if (is_appointee_required &
                 txt_aob_appointee_dob.getText().toString().equals("")) {
             txt_aob_appointee_dob.requestFocus();
@@ -997,7 +1023,32 @@ public class ActivityAOBNomination extends AppCompatActivity implements View.OnC
                     is_appointee_required = true;
                 }
 
-                txt_aob_nominee_dob.setText(strSelectedDate);
+                if (strSelectedDate.equals(str_applicant_dob)) {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this,
+                            AlertDialog.THEME_HOLO_LIGHT);
+                    builder.setTitle("Confirmation!");
+                    builder.setMessage("Is Nominee DOB same as Applicant DOB?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            txt_aob_nominee_dob.setText(strSelectedDate);
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            mCommonMethods.showMessageDialog(mContext, "Please Select another Nominee DOB");
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                } else {
+                    txt_aob_nominee_dob.setText(strSelectedDate);
+                }
                 break;
 
             case DATE_APPOINTEE_DOB:

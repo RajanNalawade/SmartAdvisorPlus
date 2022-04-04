@@ -35,6 +35,7 @@
                     android:text="Personal"
                     android:padding="10dp"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:focusable="true"
                     android:background="@color/GreenYellow"
                     android:focusableInTouchMode="true"/>
@@ -51,6 +52,7 @@
                     android:text="Occupation"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:padding="10dp"/>
 
                 <View
@@ -62,6 +64,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Nomination"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -76,6 +79,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Bank"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
@@ -93,6 +97,7 @@
                     android:text="Exam And Training"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:padding="10dp"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
@@ -106,6 +111,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Terms And Conditions"
                     android:background="@color/Common_blue"
                     android:textStyle="bold"
@@ -124,6 +130,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Document Upload"
                     android:background="@color/GreenYellow"
                     android:textStyle="bold"

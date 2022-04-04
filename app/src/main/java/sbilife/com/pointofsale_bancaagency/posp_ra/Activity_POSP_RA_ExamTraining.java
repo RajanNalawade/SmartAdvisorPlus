@@ -1,19 +1,19 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -29,29 +29,24 @@ import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
 public class Activity_POSP_RA_ExamTraining extends AppCompatActivity implements View.OnClickListener,
         DatePickerDialog.OnDateSetListener {
 
-    private CommonMethods mCommonMethods;
-    private Context mContext;
-
     private final String DATE_EXAM_DATE = "ExamDatePicker";
     private final String DATE_TRAINING_START_DATE = "TrainingStartDatePicker";
     private final String DATE_TRAINING_END_DATE = "TrainingEndDatePicker";
-
-    private ProgressDialog mProgressDialog;
-    private DatabaseHelper db;
+    private final String NAMESPACE = "http://tempuri.org/";
+    private final String METHOD_NAME_GET_POSP_RA_EXAM_PLACE = "getAgentExamDetail_other";
+    private CommonMethods mCommonMethods;
+    private Context mContext;
 
     //private AsynchGetAOBExamPlace mAsynchGetAOBExamPlace;
-
+    private ProgressDialog mProgressDialog;
+    private DatabaseHelper db;
     private Spinner spnr_pos_training_lang, spnr_aob_exam_language, spnr_posp_training_mode, spnr_posp_required_hrs,
             spnr_posp_institute_name, spnr_posp_exam_mode, spnr_posp_exam_body, spnr_posp_exam_status;
     private Button btn_aob_exam_training_next, btn_aob_exam_training_back;
-    private TextView txt_aob_training_start_date, txt_aob_training_end_date, txt_posp_exam_date;
-    private EditText edt_posp_mark_obtained;
 
     //private ArrayList<String> lstExamPlaces = new ArrayList<>();
-
-    private final String NAMESPACE = "http://tempuri.org/";
-    private final String METHOD_NAME_GET_POSP_RA_EXAM_PLACE = "getAgentExamDetail_other";
-
+    private TextView txt_aob_training_start_date, txt_aob_training_end_date, txt_posp_exam_date;
+    private EditText edt_posp_mark_obtained;
     private int mYear = 0, mMonth = 0, mDay = 0;
 
     private StringBuilder str_exam_training_details;
@@ -389,7 +384,15 @@ public class Activity_POSP_RA_ExamTraining extends AppCompatActivity implements 
 
     public void onNextClick() {
 
-        if (!is_dashboard && !is_bsm_questions) {
+        if (is_dashboard) {
+            Intent mIntent = new Intent(Activity_POSP_RA_ExamTraining.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
+            mIntent.putExtra("is_dashboard", is_dashboard);
+            startActivity(mIntent);
+        } else if (is_bsm_questions) {
+            Intent mIntent = new Intent(Activity_POSP_RA_ExamTraining.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
+            mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+            startActivity(mIntent);
+        } else if (!is_dashboard && !is_bsm_questions) {
             //1. validate all details
             String str_error = validateDetails();
             if (str_error.equals("")) {
@@ -423,14 +426,6 @@ public class Activity_POSP_RA_ExamTraining extends AppCompatActivity implements 
             } else {
                 mCommonMethods.showMessageDialog(mContext, str_error);
             }
-        } else if (is_dashboard) {
-            Intent mIntent = new Intent(Activity_POSP_RA_ExamTraining.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
-            mIntent.putExtra("is_dashboard", is_dashboard);
-            startActivity(mIntent);
-        } else if (is_bsm_questions) {
-            Intent mIntent = new Intent(Activity_POSP_RA_ExamTraining.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
-            mIntent.putExtra("is_bsm_questions", is_bsm_questions);
-            startActivity(mIntent);
         }
     }
 

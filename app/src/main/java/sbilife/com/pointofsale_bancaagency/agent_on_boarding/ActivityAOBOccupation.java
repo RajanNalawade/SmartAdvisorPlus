@@ -41,7 +41,7 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
     private Calendar mCalender;
 
     private Date currentDate;
-    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false, is_bsm_questions = false;
 
     private Spinner spnr_aob_occu_applicable, spnr_aob_occu_self_employed, spnr_aob_occu_area_ops, spnr_aob_occu_annual_income,
             spnr_aob_occu_agency, spnr_aob_occu_evr_surrendered, spnr_aob_occu_other_insurer,
@@ -73,12 +73,15 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
 
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
+
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
 
         initialisation();
 
-        if (is_dashboard || is_ia_upgrade) {
+        if (is_dashboard || is_ia_upgrade || is_bsm_questions) {
             //non editable with no saving
             enableDisableAllFields(false);
         } else {
@@ -97,7 +100,7 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
 
         mParseXML = new ParseXML();
 
-        View view_aob_occupation_formIA = findViewById(R.id.view_aob_occupation_formIA);
+        /*View view_aob_occupation_formIA = findViewById(R.id.view_aob_occupation_formIA);
         TextView txt_aob_occupation_formIA = findViewById(R.id.txt_aob_occupation_formIA);
         if (is_ia_upgrade){
             view_aob_occupation_formIA.setVisibility(View.GONE);
@@ -105,7 +108,7 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
         } else{
             view_aob_occupation_formIA.setVisibility(View.VISIBLE);
             txt_aob_occupation_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         spnr_aob_occu_applicable = (Spinner) findViewById(R.id.spnr_aob_occu_applicable);
         ArrayAdapter<String> applicable_adapter = new ArrayAdapter<String>(
@@ -535,7 +538,9 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
     public void onBackPressed() {
 
         Intent intent = new Intent(ActivityAOBOccupation.this, ActivityAOBPersonalInfo.class);
-        if (is_dashboard) {
+        if (is_bsm_questions)
+            intent.putExtra("is_bsm_questions", is_bsm_questions);
+        else if (is_dashboard) {
             intent.putExtra("is_dashboard", is_dashboard);
         } else if (is_ia_upgrade) {
             intent.putExtra("is_ia_upgrade", is_ia_upgrade);
@@ -558,11 +563,15 @@ public class ActivityAOBOccupation extends AppCompatActivity implements View.OnC
                     Intent mIntent = new Intent(ActivityAOBOccupation.this, ActivityAOBNomination.class);
                     mIntent.putExtra("is_dashboard", is_dashboard);
                     startActivity(mIntent);
+                }  else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(ActivityAOBOccupation.this, ActivityAOBNomination.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
                 } else if (is_ia_upgrade) {
                     Intent mIntent = new Intent(ActivityAOBOccupation.this, ActivityAOBNomination.class);
                     mIntent.putExtra("is_ia_upgrade", is_ia_upgrade);
                     startActivity(mIntent);
-                } else {
+                } else if (!is_dashboard && !is_bsm_questions){
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {

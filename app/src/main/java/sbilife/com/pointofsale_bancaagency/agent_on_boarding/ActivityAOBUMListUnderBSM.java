@@ -200,25 +200,6 @@ public class ActivityAOBUMListUnderBSM extends AppCompatActivity implements View
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-            if (taskDownloadFileAsyncChannelUserReports != null) {
-                taskDownloadFileAsyncChannelUserReports.cancel(true);
-            }
-            if (mProgressDialog != null) {
-                if (mProgressDialog.isShowing()) {
-                    mProgressDialog.dismiss();
-                }
-            }
-            finish();
-
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     public void onClick(View v) {
 
         int id = v.getId();
@@ -370,7 +351,18 @@ public class ActivityAOBUMListUnderBSM extends AppCompatActivity implements View
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ActivityAOBUMListUnderBSM.this, CarouselHomeActivity.class));
+        if (taskDownloadFileAsyncChannelUserReports != null) {
+            taskDownloadFileAsyncChannelUserReports.cancel(true);
+        }
+        if (mProgressDialog != null) {
+            if (mProgressDialog.isShowing()) {
+                mProgressDialog.dismiss();
+            }
+        }
+        Intent i =new Intent(ActivityAOBUMListUnderBSM.this, CarouselHomeActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
     }
 
     class DownloadFileAsyncChannelUserReports extends AsyncTask<String, String, String> {

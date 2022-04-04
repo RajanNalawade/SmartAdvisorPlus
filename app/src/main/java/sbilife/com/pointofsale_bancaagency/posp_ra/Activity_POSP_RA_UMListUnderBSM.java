@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,7 +14,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,6 +21,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -373,8 +373,6 @@ public class Activity_POSP_RA_UMListUnderBSM extends AppCompatActivity implement
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-        finish();
-        //super.onBackPressed();
     }
 
     class DownloadFileAsyncChannelUserReports extends AsyncTask<String, String, String> {

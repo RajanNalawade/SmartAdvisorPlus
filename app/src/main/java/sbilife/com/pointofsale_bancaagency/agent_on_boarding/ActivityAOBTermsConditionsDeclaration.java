@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
@@ -8,9 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Base64;
 import android.view.View;
@@ -21,6 +22,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -34,23 +37,20 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
-import com.xbizventures.ocrlib.OcrActivity;
 
-import org.json.JSONObject;
 import org.ksoap2.serialization.SoapObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import cropper.CropImage;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import sbilife.com.pointofsale_bancaagency.DatabaseHelper;
@@ -68,38 +68,34 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
     public final String FILE_NAME_IA_UPGRADE = "IA_UPGRADE_AGENT_FORM";
     public final String APPLICANT_PHOTO_FILE_NAME = "applicant_photo";
     public final String APPLICANT_SIGNATURE_FILE_NAME = "applicant_signature";
-    public final String APPLICANT_SELF_DECLARATION_FILE_NAME = "applicant_self_declaration";
 
     private final String NAMESPACE = "http://tempuri.org/";
 
     private final String METHOD_NAME_UPLOAD_ALL_AOB_DOC = "UploadFile_AgentEnroll";
 
-    private final int REQUEST_OCR = 100;
+    private final int REQUEST_CODE_CAPTURE_DOCUMENT = 200;
 
     private StorageUtils mStorageUtils;
     private CommonMethods mCommonMethods;
     private Context mContext;
     private DatabaseHelper db;
-    private TextView txt_aob_terms_and_conditions, txt_aob_applicant_declaration_date, txt_aob_nominee_conditions,
-            txt_aob_applicant_self_declaration_upload;
+    private TextView txt_aob_terms_and_conditions, txt_aob_applicant_declaration_date, txt_aob_nominee_conditions;
     private CheckBox chkbox_aob_terms_conditions_agreed, chkbox_aob_applicant_declaration_1, chkbox_aob_applicant_declaration_2,
             chkbox_aob_applicant_declaration_3, chkbox_aob_applicant_declaration_4, chkbox_aob_applicant_declaration_5,
             chkbox_aob_applicant_declaration_6, chkbox_aob_applicant_declaration_7, chkbox_aob_nominee_conditions_agreed;
     private EditText edt_aob_applicant_declaration_place;
     private Button btn_aob_terms_conditions_submit, btn_aob_terms_conditions_back;
-    private ImageButton imgbtn_aob_applicant_declaration_sign, imgbtn_aob_applicant_declaration_photo,
-            imgbtn_aob_applicant_self_declaration_upload;
+    private ImageButton imgbtn_aob_applicant_declaration_sign, imgbtn_aob_applicant_declaration_photo;
     private String str_signature_applicant = "", str_pan_no = "", str_photo_applicant = "",
-            str_self_declaration_applicant = "", str_doc_type = "", str_data_save_err = "",
+            str_doc_type = "", str_data_save_err = "",
             str_app_created_date = "", str_training_end_date = "", strCIFBDMUserId = "",
             strCIFBDMEmailId = "", strCIFBDMMObileNo = "", str_applicant_mobile = "", str_capture_doc_type = "";
     private StringBuilder str_terms_conditions;
-    private File agentFormFile, mApplicantPhoto, mApplicantSign, mApplicantSelfDeclaration, mApplicantSelfDeclarationPdf;
-    private byte[] mAllBytes/*, signByteArray*/;
+    private File agentFormFile, mApplicantPhoto, mApplicantSign;
     private AsyncUploadFile_Common mAsyncUploadFileCommon;
 
     private ProgressDialog mProgressDialog;
-    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false, is_bsm_questions = false;
     private ParseXML mParseXML;
     private Calendar mCalender;
 
@@ -113,19 +109,17 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
 
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
+
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
 
         initialisation();
 
-        if (is_dashboard) {
-
-            //non editable with no saving
-            enableDisableAllFields(false);
-        } else {
-            //editable
-            enableDisableAllFields(true);
-        }
+        //non editable with no saving
+        //editable
+        enableDisableAllFields(!is_dashboard && !is_bsm_questions);
     }
 
     private void getUserDetails() {
@@ -154,8 +148,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
         txt_aob_applicant_declaration_date = (TextView) findViewById(R.id.txt_aob_applicant_declaration_date);
         txt_aob_nominee_conditions = (TextView) findViewById(R.id.txt_aob_nominee_conditions);
 
-        txt_aob_applicant_self_declaration_upload = findViewById(R.id.txt_aob_applicant_self_declaration_upload);
-
         chkbox_aob_terms_conditions_agreed = (CheckBox) findViewById(R.id.chkbox_aob_terms_conditions_agreed);
         chkbox_aob_applicant_declaration_1 = (CheckBox) findViewById(R.id.chkbox_aob_applicant_declaration_1);
         chkbox_aob_applicant_declaration_2 = (CheckBox) findViewById(R.id.chkbox_aob_applicant_declaration_2);
@@ -180,17 +172,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
         imgbtn_aob_applicant_declaration_photo = (ImageButton) findViewById(R.id.imgbtn_aob_applicant_declaration_photo);
         imgbtn_aob_applicant_declaration_photo.setOnClickListener(this);
-
-        imgbtn_aob_applicant_self_declaration_upload = (ImageButton) findViewById(R.id.imgbtn_aob_applicant_self_declaration_upload);
-        imgbtn_aob_applicant_self_declaration_upload.setOnClickListener(this);
-
-        if (is_ia_upgrade) {
-            txt_aob_applicant_self_declaration_upload.setVisibility(View.GONE);
-            imgbtn_aob_applicant_self_declaration_upload.setVisibility(View.GONE);
-        } else {
-            txt_aob_applicant_self_declaration_upload.setVisibility(View.VISIBLE);
-            imgbtn_aob_applicant_self_declaration_upload.setVisibility(View.VISIBLE);
-        }
 
         String str_nominee_conditions = "<pre>&nbsp &nbsp &nbsp(a) A Nomination will not be effective unless it is communicated to SBI Life Insurance Co Ltd and registered by SBI Life Insurance Co Ltd</pre><br/>"
                 + "<pre>&nbsp &nbsp &nbsp(b) Any change in Nomination shall be duly informed to SBI Life Insurance Co Ltd and registered by it in its records. SBI Life Insurance Co Ltd shall not be liable in any manner whatsoever for payment made to the registered nominees as per its records.</pre><br/>"
@@ -389,7 +370,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                 str_date = str_date == null ? "" : str_date;
 
                 edt_aob_applicant_declaration_place.setText(str_place);
-                if (is_dashboard && !str_date.equals("")){
+                if (is_dashboard && !str_date.equals("")) {
                     txt_aob_applicant_declaration_date.setText(str_date);
                 } else {
                     //mCommonMethods.printLog("parse Error : ", "created date is blank");
@@ -403,7 +384,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                 //set Images
 
                 // External sdcard location
-                File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
+                /*File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),
                         "/SBI-Smart Advisor/");
 
                 // Create the storage directory if it does not exist
@@ -411,12 +392,12 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                     if (!mediaStorageDir.mkdirs()) {
                         mCommonMethods.showToast(mContext, "oops Failed create");
                     }
-                }
+                }*/
 
                 //applicant photo
                 String imageFileName = str_pan_no + "_" + APPLICANT_PHOTO_FILE_NAME + ".jpg";
 
-                mApplicantPhoto = new File(mediaStorageDir.getPath() + File.separator + imageFileName);
+                mApplicantPhoto = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
                 Bitmap bmp = BitmapFactory.decodeFile(mApplicantPhoto.getPath());
                 bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
@@ -439,7 +420,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                 //aplicant sign
                 String imageSignFileName = str_pan_no + "_" + APPLICANT_SIGNATURE_FILE_NAME + ".jpg";
 
-                mApplicantSign = new File(mediaStorageDir.getPath() + File.separator + imageSignFileName);
+                mApplicantSign = mStorageUtils.createFileToAppSpecificDir(mContext, imageSignFileName);
 
                 Bitmap bmpSign = BitmapFactory.decodeFile(mApplicantSign.getPath());
                 bmpSign = bmpSign != null ? bmpSign.copy(Bitmap.Config.RGB_565, true) : null;
@@ -460,7 +441,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                 }
 
                 //self declaration image
-                String imageSelfDeclareFileName = str_pan_no + "_" + APPLICANT_SELF_DECLARATION_FILE_NAME + ".jpg";
+                /*String imageSelfDeclareFileName = str_pan_no + "_" + APPLICANT_SELF_DECLARATION_FILE_NAME + ".jpg";
 
                 mApplicantSelfDeclaration = new File(mediaStorageDir.getPath() + File.separator + imageSelfDeclareFileName);
 
@@ -480,36 +461,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
                 } else {
                     mCommonMethods.showToast(mContext, "Null object..");
-                }
-
-                /*try {
-
-                    File folder = new File(Environment.getExternalStorageDirectory().toString() + "/SBI-Smart Advisor/");
-
-                    if (!folder.exists()) {
-                        folder.mkdirs();
-                    }
-
-                    String signFileName = "100000001501" + "_" + "S" + "02.png";
-
-                    FileInputStream in = new FileInputStream(folder.getPath() + File.separator + signFileName);
-                    BufferedInputStream buf = new BufferedInputStream(in);
-                    byte[] bMapArray = new byte[buf.available()];
-                    buf.read(bMapArray);
-                    Bitmap bmp_sign = BitmapFactory.decodeByteArray(bMapArray, 0, bMapArray.length);
-
-                    if (bmp_sign != null) {
-
-                        bmp_sign = Bitmap.createScaledBitmap(bmp_sign, 300, 80, true);
-
-                        imgbtn_aob_applicant_declaration_sign.setImageBitmap(bmp_sign);
-
-                    } else {
-                        mCommonMethods.showToast(mContext, "Null object..");
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }*/
             }
 
@@ -566,9 +517,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
         } else if (str_signature_applicant.equals("")) {
             imgbtn_aob_applicant_declaration_sign.requestFocus();
             return "Please capture applicant signature";
-        } else if (!is_ia_upgrade && str_self_declaration_applicant.equals("")) {
-            imgbtn_aob_applicant_self_declaration_upload.requestFocus();
-            return "Please capture self declaration applicant";
         } else if (!chkbox_aob_nominee_conditions_agreed.isChecked()) {
             chkbox_aob_nominee_conditions_agreed.requestFocus();
             return "please check nominee conditions";
@@ -580,7 +528,9 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
     public void onBackPressed() {
 
         Intent intent = new Intent(ActivityAOBTermsConditionsDeclaration.this, ActivityAOBExamTraining.class);
-        if (is_dashboard) {
+        if (is_bsm_questions)
+            intent.putExtra("is_bsm_questions", is_bsm_questions);
+        else if (is_dashboard) {
             intent.putExtra("is_dashboard", is_dashboard);
         } else if (is_ia_upgrade) {
             intent.putExtra("is_ia_upgrade", is_ia_upgrade);
@@ -602,7 +552,15 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
             case R.id.btn_aob_terms_conditions_submit:
 
-                if (!is_dashboard) {
+                if (is_dashboard) {
+                    Intent mIntent = new Intent(ActivityAOBTermsConditionsDeclaration.this, ActivityAOBDocumentUpload.class);
+                    mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(ActivityAOBTermsConditionsDeclaration.this, ActivityAOBDocumentUpload.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
+                } else if (!is_dashboard && !is_bsm_questions) {
 
                     //1. validate details
                     String str_error = validateDetails();
@@ -630,10 +588,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
 
-                } else if (is_dashboard) {
-                    Intent mIntent = new Intent(ActivityAOBTermsConditionsDeclaration.this, ActivityAOBDocumentUpload.class);
-                    mIntent.putExtra("is_dashboard", is_dashboard);
-                    startActivity(mIntent);
                 }
                 break;
 
@@ -643,10 +597,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
             case R.id.imgbtn_aob_applicant_declaration_photo:
                 capture_docs(APPLICANT_PHOTO_FILE_NAME);
-                break;
-
-            case R.id.imgbtn_aob_applicant_self_declaration_upload:
-                capture_docs(APPLICANT_SELF_DECLARATION_FILE_NAME);
                 break;
 
             default:
@@ -660,8 +610,47 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
         str_capture_doc_type = str_doc_type;
 
-        Intent intent = new Intent(ActivityAOBTermsConditionsDeclaration.this, OcrActivity.class);
-        startActivityForResult(intent, REQUEST_OCR);
+        try {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            String imageFileName = str_pan_no + str_capture_doc_type + ".jpg";
+            if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                mApplicantPhoto = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                // Continue only if the File was successfully created
+                if (mApplicantPhoto != null) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCommonMethods.getContentUri(mContext,
+                                mApplicantPhoto));
+                    } else {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mApplicantPhoto));
+                    }
+                    startActivityForResult(takePictureIntent, REQUEST_CODE_CAPTURE_DOCUMENT);
+                }
+            } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                mApplicantSign = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                // Continue only if the File was successfully created
+                if (mApplicantSign != null) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCommonMethods.getContentUri(mContext,
+                                mApplicantSign));
+                    } else {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mApplicantSign));
+                    }
+                    startActivityForResult(takePictureIntent, REQUEST_CODE_CAPTURE_DOCUMENT);
+                }
+            }
+
+        } catch (Exception exp) {
+            exp.printStackTrace();
+            mCommonMethods.printLog("Capture : ", exp.getMessage());
+            if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                mApplicantPhoto = null;
+            } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                mApplicantSign = null;
+            }
+        }
     }
 
     private void create_all_pdf_pages() {
@@ -677,7 +666,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                 Font small_normal = new Font(Font.FontFamily.TIMES_ROMAN, 8, Font.NORMAL);
 
                 if (is_ia_upgrade) {
-                    agentFormFile = mStorageUtils.createFileToAppSpecificDir(mContext,str_pan_no + "_" + FILE_NAME_IA_UPGRADE + ".pdf");
+                    agentFormFile = mStorageUtils.createFileToAppSpecificDir(mContext, str_pan_no + "_" + FILE_NAME_IA_UPGRADE + ".pdf");
                 } else {
                     agentFormFile = mStorageUtils.createFileToAppSpecificDir(mContext, str_pan_no + "_" + FILE_NAME + ".pdf");
                 }
@@ -924,6 +913,15 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                     Paragraph para_pro_qaulification_others = new Paragraph("Comment: " + str_personal_info_others, small_bold);
                     para_pro_qaulification_others.setIndentationLeft(25);
                     document.add(para_pro_qaulification_others);
+                }
+
+                //personal info CKYC number
+                String str_applicant_ckyc_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_ckyc_no");
+                str_applicant_ckyc_no = str_applicant_ckyc_no == null ? "" : str_applicant_ckyc_no;
+                if (!str_applicant_ckyc_no.equals("")) {
+                    Paragraph para_applicant_ckyc_no = new Paragraph("CKYC No.: " + str_applicant_ckyc_no, small_bold);
+                    para_applicant_ckyc_no.setIndentationLeft(25);
+                    document.add(para_applicant_ckyc_no);
                 }
 
                 //get occupational details data
@@ -2195,227 +2193,68 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
         }
     }
 
-    private void create_self_declaration_pdf() {
-
-        try {
-
-            Font small_bold = new Font(Font.FontFamily.TIMES_ROMAN, 8, Font.BOLD);
-
-            mApplicantSelfDeclarationPdf = mStorageUtils.createFileToAppSpecificDir(mContext, str_pan_no + "_Agent_mobile_declaration.pdf");
-
-            Rectangle rect = new Rectangle(594f, 792f);
-
-            //Document document = new Document(rect, 50, 50, 50, 50);
-            Document document = new Document(PageSize.A4, 50, 50, 50, 50);
-            PdfWriter pdf_writer = PdfWriter.getInstance(document, new FileOutputStream(mApplicantSelfDeclarationPdf.getPath()));
-
-            document.open();
-
-            // For SBI- Life Logo starts
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            Bitmap bitmap = BitmapFactory.decodeResource(getBaseContext().getResources(), R.drawable.sbi_life_logo);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 50, stream);
-            Image img_sbi_logo = Image.getInstance(stream.toByteArray());
-            img_sbi_logo.setAlignment(Image.LEFT);
-            img_sbi_logo.getSpacingAfter();
-            img_sbi_logo.scaleToFit(80, 50);
-
-            Paragraph para_img_logo = new Paragraph("");
-            para_img_logo.add(img_sbi_logo);
-
-            Paragraph para_img_logo_after_space_1 = new Paragraph(" ");
-
-            document.add(para_img_logo);
-            // For SBI- Life Logo ends
-
-            // To draw line after the sbi logo image
-            document.add(new LineSeparator());
-            document.add(para_img_logo_after_space_1);
-
-            //applicant Self declaration
-            Paragraph para_applicant_self_declaration = new Paragraph("Applicant Self Declaration", small_bold);
-            para_applicant_self_declaration.setAlignment(Element.ALIGN_RIGHT);
-            document.add(para_applicant_self_declaration);
-
-            byte[] fbyt_applican_self_declaration = Base64.decode(str_self_declaration_applicant, 0);
-            Bitmap applicantSelfDeclarationBitmap = BitmapFactory.decodeByteArray(fbyt_applican_self_declaration,
-                    0, fbyt_applican_self_declaration.length);
-
-            ByteArrayOutputStream applicant_self_declaration_stream = new ByteArrayOutputStream();
-
-            (applicantSelfDeclarationBitmap).compress(Bitmap.CompressFormat.PNG, 100, applicant_self_declaration_stream);
-
-            Image applicant_self_declaration = Image.getInstance(applicant_self_declaration_stream.toByteArray());
-
-            PdfPTable DD_table = new PdfPTable(1);
-            DD_table.setWidthPercentage(100);
-
-            /*img_doc.scaleToFit(PageSize.A4.getWidth(), PageSize.A4.getHeight());
-            img_doc.setAbsolutePosition(
-                    0, (PageSize.A4.getHeight() - DD_table.getTotalHeight()) / 2);*/
-
-            PdfPCell DocumentUpload_row2_cell = new PdfPCell();
-            DocumentUpload_row2_cell
-                    .setHorizontalAlignment(Element.ALIGN_CENTER);
-            DocumentUpload_row2_cell.setPadding(5);
-            DocumentUpload_row2_cell.setImage(applicant_self_declaration);
-
-            DD_table.addCell(DocumentUpload_row2_cell);
-
-            document.add(DD_table);
-
-            document.close();
-
-        } catch (Exception e) {
-            mCommonMethods.showToast(mContext, e.toString() + "Error in creating pdf");
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_OCR) {
-            if (resultCode == RESULT_OK) {
-                final File imagePath;
-                String DocumentType = "";
-                Bundle bundle = data.getExtras();
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT) {
+                if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                    CropImage.activity(Uri.fromFile(mApplicantPhoto)).start(this);
+                } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                    CropImage.activity(Uri.fromFile(mApplicantSign)).start(this);
+                }
+            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Uri resultUri = result.getUri();
 
-                if (bundle != null) {
-                    String jsonData = (String) bundle.get("jsonData");
+                if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                    mApplicantPhoto = new File(resultUri.getPath());
+                    CompressImage.compressImage(mApplicantPhoto.getPath());
+                    Bitmap bmp = BitmapFactory.decodeFile(mApplicantPhoto.getPath());
+                    bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
 
-                    try {
-                        JSONObject object = new JSONObject(jsonData);
+                    if (bmp != null) {
 
-                        DocumentType = object.get("DocumentType").toString();
+                        Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
 
-                        imagePath = new File(bundle.get("BitmapImageUri").toString());
-                        //Bitmap edgeBitmap = BitmapFactory.decodeFile(imagePath.getPath());
+                        imgbtn_aob_applicant_declaration_photo.setImageBitmap(scaled);
 
-                        if (imagePath != null) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        byte[] signByteArray = out.toByteArray();
+                        str_photo_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
 
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
+                    } else {
+                        mCommonMethods.showToast(mContext, "File Not Available..");
+                    }
+                } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                    mApplicantSign = new File(resultUri.getPath());
+                    CompressImage.compressImage(mApplicantSign.getPath());
+                    Bitmap bmp = BitmapFactory.decodeFile(mApplicantSign.getPath());
+                    bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
 
-                                    //image compression by bhalla
-                                    CompressImage.compressImage(imagePath.getPath());
+                    if (bmp != null) {
 
-                                    String imageFileName = str_pan_no + "_" + str_capture_doc_type + ".jpg";
+                        Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
 
-                                    if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                        imgbtn_aob_applicant_declaration_sign.setImageBitmap(scaled);
 
-                                        try {
-                                            //mApplicantPhoto = mCommonMethods.createCaptureImg(imageFileName);
-                                            mApplicantPhoto = mStorageUtils.saveFileToAppSpecificDir(mContext,
-                                                    StorageUtils.DIRECT_DIRECTORY, imageFileName, imagePath);
-                                            //mCommonMethods.copyFile(new FileInputStream(imagePath), new FileOutputStream(mApplicantPhoto));
-                                            long size = mApplicantPhoto.length();
-                                            double kilobyte = size / 1024;
-                                            //if (kilobyte <= 40) {
-                                            Bitmap bmp = BitmapFactory.decodeFile(mApplicantPhoto.getPath());
-                                            bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        byte[] signByteArray = out.toByteArray();
+                        str_signature_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
 
-                                            if (bmp != null) {
-
-                                                Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
-
-                                                imgbtn_aob_applicant_declaration_photo.setImageBitmap(scaled);
-
-                                                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                                                scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
-                                                byte[] signByteArray = out.toByteArray();
-                                                str_photo_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
-
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File Not Available..");
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-
-                                    } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
-
-                                        try {
-                                            //mApplicantSign = mCommonMethods.createCaptureImg(imageFileName);
-                                            mApplicantSign = mStorageUtils.saveFileToAppSpecificDir(mContext,
-                                                    StorageUtils.DIRECT_DIRECTORY,imageFileName, imagePath);
-                                            //mCommonMethods.copyFile(new FileInputStream(imagePath), new FileOutputStream(mApplicantSign));
-                                            long size = mApplicantSign.length();
-                                            double kilobyte = size / 1024;
-                                            //if (kilobyte <= 40) {
-                                            Bitmap bmp = BitmapFactory.decodeFile(mApplicantSign.getPath());
-                                            bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
-
-                                            if (bmp != null) {
-
-                                                Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
-
-                                                imgbtn_aob_applicant_declaration_sign.setImageBitmap(scaled);
-
-                                                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                                                scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
-                                                byte[] signByteArray = out.toByteArray();
-                                                str_signature_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
-
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File not found..");
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    } else if (str_capture_doc_type.equals(APPLICANT_SELF_DECLARATION_FILE_NAME)) {
-
-                                        try {
-                                            //mApplicantSelfDeclaration = mCommonMethods.createCaptureImg(imageFileName);
-                                            mApplicantSelfDeclaration = mStorageUtils.saveFileToAppSpecificDir(mContext,
-                                                    StorageUtils.DIRECT_DIRECTORY,imageFileName, imagePath);
-                                            //mCommonMethods.copyFile(new FileInputStream(imagePath), new FileOutputStream(mApplicantSelfDeclaration));
-                                            long size = mApplicantSelfDeclaration.length();
-                                            double kilobyte = size / 1024;
-                                            //if (kilobyte <= 40) {
-                                            Bitmap bmp = BitmapFactory.decodeFile(mApplicantSelfDeclaration.getPath());
-                                            bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
-
-                                            if (bmp != null) {
-
-                                                Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
-
-                                                imgbtn_aob_applicant_self_declaration_upload.setImageBitmap(scaled);
-
-                                                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                                                scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
-                                                byte[] signByteArray = out.toByteArray();
-                                                str_self_declaration_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
-
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File not found..");
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-
-                                    //remove common source file from directory
-                                    if (imagePath.exists()) {
-                                        imagePath.delete();
-                                    }
-
-                                }
-                            });
-
-                        } else {
-                            mCommonMethods.showToast(mContext, "File not found..");
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        mCommonMethods.showToast(mContext, e.getMessage());
+                    } else {
+                        mCommonMethods.showToast(mContext, "File not found..");
                     }
                 }
-            } else {
-                Toast.makeText(mContext, "Data not receive", Toast.LENGTH_SHORT).show();
             }
+
+        } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Exception error = result.getError();
+            mCommonMethods.showMessageDialog(mContext, error.getMessage());
         }
     }
 
@@ -2529,22 +2368,16 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                     updateProcessStatus("10");
                     createSoapRequestToUploadDoc(mApplicantPhoto);
                 } else {
-                    str_doc_type = "DECLARATION";
+                    str_doc_type = APPLICANT_PHOTO_FILE_NAME;
                     //update status
                     updateProcessStatus("9");
-                    createSoapRequestToUploadDoc(mApplicantSelfDeclarationPdf);
+                    createSoapRequestToUploadDoc(mApplicantPhoto);
                 }
-            } else if (str_doc_type.equals("DECLARATION")) {
-
-                str_doc_type = APPLICANT_PHOTO_FILE_NAME;
-                //update status
-                updateProcessStatus("10");
-                createSoapRequestToUploadDoc(mApplicantPhoto);
             } else if (str_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
 
                 str_doc_type = APPLICANT_SIGNATURE_FILE_NAME;
                 //update status
-                updateProcessStatus("11");
+                updateProcessStatus("10");
                 createSoapRequestToUploadDoc(mApplicantSign);
 
             } else if (str_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
@@ -2569,7 +2402,7 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
                         }*/
 
                 //update status
-                updateProcessStatus("12");
+                updateProcessStatus("11");
 
                 mCommonMethods.showToast(mContext, "Document Upload Successfully...");
 
@@ -2610,10 +2443,6 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
 
                 //create all forms pdf
                 create_all_pdf_pages();
-
-                //generate self declaration pdf
-                create_self_declaration_pdf();
-
             } catch (Exception e) {
                 e.printStackTrace();
                 running = false;
@@ -2630,9 +2459,8 @@ public class ActivityAOBTermsConditionsDeclaration extends AppCompatActivity imp
             if (running) {
 
                 //1.agent form (status - 9)
-                //2. customer declaration (status - 10)
-                //3. customer photo (status - 11)
-                //4. suctomer signature (status - 12)
+                //2. customer photo (status - 10)
+                //3. suctomer signature (status - 11)
                 str_doc_type = FILE_NAME;
 
                 createSoapRequestToUploadDoc(agentFormFile);

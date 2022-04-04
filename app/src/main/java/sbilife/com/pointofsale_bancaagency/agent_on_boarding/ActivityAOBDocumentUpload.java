@@ -31,7 +31,6 @@ import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
-import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import cropper.CropImage;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -73,15 +73,10 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
     private final String BANK_PASSBOOK_DOC = "bank_passbook";
     private final String AGE_PROOF_DOC = "age_proof";
     private final String BASIC_QUALIFICATION_DOC = "basic_qualification";
-    private final String HIGH_QUALIFICATION_DOC = "higher_qualification";
     private final String COMM_ADDRESS_DOC = "communication_address_proof";
-    private final String PERMANENT_ADDRESS_DOC = "permanent_address_proof";
     private final String FORM_15G_15H_DOC = "form_15g_15h_proof";
     private final String OTHERS_DOC = "others";
-    private final String FORM_1B_DOC = "form_1b";
-    private final String FORM_1C_DOC = "form_1c";
-    private final String APPLICANT_SIGN = "applicant_signature";
-    private final String DECLARATION = "declaration";
+    private final String AGENT_MOBILE_DECLARATION_DOC = "Agent_mobile_declaration";
 
     //required for IA upgrade
     private final String IA_UPGRADE_TCC_DOC = "ia_upgrade_tcc_doc";
@@ -100,15 +95,10 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
     private ImageButton imgbtn_aob_auth_bank_pass_book_view, imgbtn_aob_auth_bank_pass_book_camera, imgbtn_aob_auth_bank_pass_book_browse, imgbtn_aob_auth_bank_pass_book_upload,
             imgbtn_aob_auth_age_proof_view, imgbtn_aob_auth_age_proof_camera, imgbtn_aob_auth_age_proof_browse, imgbtn_aob_auth_age_proof_upload,
             imgbtn_aob_auth_basic_qualification_view, imgbtn_aob_auth_basic_qualification_camera, imgbtn_aob_auth_basic_qualification_browse, imgbtn_aob_auth_basic_qualification_upload,
-            imgbtn_aob_auth_high_qualification_view, imgbtn_aob_auth_high_qualification_camera, imgbtn_aob_auth_high_qualification_browse, imgbtn_aob_auth_high_qualification_upload,
             imgbtn_aob_auth_comm_add_view, imgbtn_aob_auth_comm_add_camera, imgbtn_aob_auth_comm_add_browse, imgbtn_aob_auth_comm_add_upload,
-            imgbtn_aob_auth_permanent_add_view, imgbtn_aob_auth_permanent_add_camera, imgbtn_aob_auth_permanent_add_browse, imgbtn_aob_auth_permanent_add_upload,
             imgbtn_aob_auth_form15g_15h_view, imgbtn_aob_auth_form15g_15h_camera, imgbtn_aob_auth_form15g_15h_browse, imgbtn_aob_auth_form15g_15h_upload,
             imgbtn_aob_auth_others_view, imgbtn_aob_auth_others_camera, imgbtn_aob_auth_others_browse, imgbtn_aob_auth_others_upload,
-            imgbtn_aob_auth_form1b_view, imgbtn_aob_auth_form1b_camera, imgbtn_aob_auth_form1b_browse, imgbtn_aob_auth_form1b_upload,
-            imgbtn_aob_auth_form1c_view, imgbtn_aob_auth_form1c_camera, imgbtn_aob_auth_form1c_browse, imgbtn_aob_auth_form1c_upload,
-            imgbtn_aob_applicant_sign_camera, imgbtn_aob_applicant_sign_browse, imgbtn_aob_applicant_sign_upload,
-            imgbtn_aob_declaration_camera, imgbtn_aob_declaration_browse, imgbtn_aob_declaration_upload,
+            imgbtn_aob_mob_declaration_view, imgbtn_aob_mob_declaration_camera, imgbtn_aob_mob_declaration_browse, imgbtn_aob_mob_declaration_upload,
             imgbtn_ia_upgrade_tcc_view, imgbtn_ia_upgrade_tcc_camera, imgbtn_ia_upgrade_tcc_browse, imgbtn_ia_upgrade_tcc_upload,
             imgbtn_ia_upgrade_score_card_view, imgbtn_ia_upgrade_score_card_camera, imgbtn_ia_upgrade_score_card_browse, imgbtn_ia_upgrade_score_card_upload,
             imgbtn_ia_upgrade_ulip_view, imgbtn_ia_upgrade_ulip_camera, imgbtn_ia_upgrade_ulip_browse, imgbtn_ia_upgrade_ulip_upload,
@@ -116,28 +106,28 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
             imgbtn_ia_upgrade_mob_declaration_view, imgbtn_ia_upgrade_mob_declaration_camera, imgbtn_ia_upgrade_mob_declaration_browse, imgbtn_ia_upgrade_mob_declaration_upload;
 
     private String str_pan_no = "", str_doc = "", str_extension = "", str_bank_passbook_type = "", str_age_proof_type = "",
-            str_basic_qualification_type = "", str_high_qualification_type = "", str_comm_address_type = "",
-            str_permanent_address_type = "", str_form15g_15h_type = "", str_others_doc_type = "", str_form1B_type = "",
-            str_form1C_type = "", str_applicant_sign_type = "", str_declaration_type = "", strCIFBDMUserId = "",
+            str_basic_qualification_type = "", str_comm_address_type = "",
+            str_form15g_15h_type = "", str_others_doc_type = "",
+            str_agent_mob_declaration_type = "", strCIFBDMUserId = "",
             strCIFBDMEmailId = "", strCIFBDMMObileNo = "", str_ia_upgrade_tcc_type = "", str_ia_upgrade_score_card_type = "",
             str_ia_upgrade_ulip_type = "", str_ia_upgrade_form_ia_type = "", str_ia_upgrade_mob_declaration_type = "",
-            OCR_TYPE = "", str_ia_upgrade_pan_no = "";
+            OCR_TYPE = "", str_ia_upgrade_pan_no = "", str_um_code = "", str_enrollment_type = "";
 
     private boolean is_bank_passbook_uploaded = false, is_age_proof_uploaded = false,
-            is_basic_qualification_uploaded = false, is_high_qualification_uploaded = false,
-            is_comm_address_uploaded = false, is_permanent_address_uploaded = false, is_form15g_15h_uploaded = false,
-            is_others_doc_uploaded = false, is_form1B_uploaded = false, is_form1C_uploaded = false,
-            is_back_preesed = false, is_dashboard = false, is_applicant_sign_uploaded = false,
+            is_basic_qualification_uploaded = false,
+            is_comm_address_uploaded = false, is_form15g_15h_uploaded = false,
+            is_others_doc_uploaded = false,
+            is_back_preesed = false, is_dashboard = false, is_bsm_questions = false,
             is_declaration_uploaded = false, is_ia_upgrade = false, is_ia_upgrade_tcc_uploaded = false,
             is_ia_upgrade_score_card_uploaded = false, is_ia_upgrade_ulip_uploaded = false,
             is_ia_upgrade_form_ia_uploaded = false, is_ia_upgrade_mob_declaration_uploaded = false,
-            is_rejection = false;
+            is_rejection = false, is_browse = false;
 
     private ProgressDialog mProgressDialog;
     private byte[] mAllBytes;
 
-    private File mBankPassbookFile, mAgeProofFile, mBasicQualificationFile, mHighQualificationFile, mCommAddressFile,
-            mPermanentAddFile, mForm15G_15HFile, mOthersFile, mForm1BFile, mForm1CFile, mApplicantSignFile, mDeclarationFile,
+    private File mBankPassbookFile, mAgeProofFile, mBasicQualificationFile, mCommAddressFile,
+            mForm15G_15HFile, mOthersFile, mAgentMobileDeclarationFile,
             mIAUpgradeTCC, mIAUpgradeScoreCard, mIAUpgradeUlip, mIAUpgradeFormIA, mIAUpgradeMobDeclaration, mCapturedImgFile;
 
     private AsyncUploadFile_Common mAsyncUploadFileCommon;
@@ -172,174 +162,136 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                         str_extension = mObject[0].toString();
                         double kilobyte = (double) mObject[2];
 
-                        if (!strMimeType.equals("application/octet-stream")
-                                && !strMimeType.equals("application/vnd.android.package-archive")) {
-
+                        if (strMimeType.equals("application/pdf")) {
                             //2 MB valiadation
                             if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
-                                if (strMimeType.equals("application/pdf")) {
-                                    String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
+                                String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
 
-                                    new FileLoader(mContext, StorageUtils.DIRECT_DIRECTORY,
-                                            imageFileName,
-                                            new FileLoader.FileLoaderResponce() {
-                                                @Override
-                                                public void fileLoadFinished(File fileOutput) {
-                                                    if (fileOutput != null) {
-                                                        if (str_doc.equals(BANK_PASSBOOK_DOC)) {
-                                                            mBankPassbookFile = fileOutput;
+                                new FileLoader(mContext, StorageUtils.DIRECT_DIRECTORY,
+                                        imageFileName,
+                                        new FileLoader.FileLoaderResponce() {
+                                            @Override
+                                            public void fileLoadFinished(File fileOutput) {
+                                                if (fileOutput != null) {
+                                                    if (str_doc.equals(BANK_PASSBOOK_DOC)) {
+                                                        mBankPassbookFile = fileOutput;
 
-                                                            imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_bank_passbook_type = "BROWSE";
-                                                            enableUploadButton(BANK_PASSBOOK_DOC);
-                                                        } else if (str_doc.equals(AGE_PROOF_DOC)) {
+                                                        str_bank_passbook_type = "BROWSE";
+                                                        enableUploadButton(BANK_PASSBOOK_DOC);
+                                                    } else if (str_doc.equals(AGE_PROOF_DOC)) {
 
-                                                            mAgeProofFile = fileOutput;
-                                                            imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        mAgeProofFile = fileOutput;
+                                                        imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_age_proof_type = "BROWSE";
-                                                            enableUploadButton(AGE_PROOF_DOC);
-                                                        } else if (str_doc.equals(BASIC_QUALIFICATION_DOC)) {
+                                                        str_age_proof_type = "BROWSE";
+                                                        enableUploadButton(AGE_PROOF_DOC);
+                                                    } else if (str_doc.equals(BASIC_QUALIFICATION_DOC)) {
 
-                                                            mBasicQualificationFile = fileOutput;
-                                                            imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        mBasicQualificationFile = fileOutput;
+                                                        imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_basic_qualification_type = "BROWSE";
-                                                            enableUploadButton(BASIC_QUALIFICATION_DOC);
-                                                        } else if (str_doc.equals(HIGH_QUALIFICATION_DOC)) {
-                                                            mHighQualificationFile = fileOutput;
-                                                            imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        str_basic_qualification_type = "BROWSE";
+                                                        enableUploadButton(BASIC_QUALIFICATION_DOC);
+                                                    } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
 
-                                                            str_high_qualification_type = "BROWSE";
-                                                            enableUploadButton(HIGH_QUALIFICATION_DOC);
-                                                        } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
+                                                        mCommAddressFile = fileOutput;
 
-                                                            mCommAddressFile = fileOutput;
+                                                        imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        str_comm_address_type = "BROWSE";
+                                                        //remove common source file from directory
+                                                        enableUploadButton(COMM_ADDRESS_DOC);
+                                                    } else if (str_doc.equals(FORM_15G_15H_DOC)) {
 
-                                                            imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                                            str_comm_address_type = "BROWSE";
-                                                            //remove common source file from directory
-                                                            enableUploadButton(COMM_ADDRESS_DOC);
-                                                        } else if (str_doc.equals(PERMANENT_ADDRESS_DOC)) {
-                                                            mPermanentAddFile = fileOutput;
+                                                        mForm15G_15HFile = fileOutput;
 
-                                                            imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_permanent_address_type = "BROWSE";
+                                                        str_form15g_15h_type = "BROWSE";
+                                                        enableUploadButton(FORM_15G_15H_DOC);
+                                                    } else if (str_doc.equals(OTHERS_DOC)) {
+                                                        mOthersFile = fileOutput;
 
-                                                            //remove common source file from directory
-                                                            enableUploadButton(PERMANENT_ADDRESS_DOC);
-                                                        } else if (str_doc.equals(FORM_15G_15H_DOC)) {
+                                                        imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            mForm15G_15HFile = fileOutput;
+                                                        str_others_doc_type = "BROWSE";
+                                                        enableUploadButton(OTHERS_DOC);
+                                                    } else if (str_doc.equals(AGENT_MOBILE_DECLARATION_DOC)) {
+                                                        mAgentMobileDeclarationFile = fileOutput;
 
-                                                            imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_aob_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_aob_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_form15g_15h_type = "BROWSE";
-                                                            enableUploadButton(FORM_15G_15H_DOC);
-                                                        } else if (str_doc.equals(OTHERS_DOC)) {
-                                                            mOthersFile = fileOutput;
+                                                        str_agent_mob_declaration_type = "BROWSE";
+                                                        enableUploadButton(AGENT_MOBILE_DECLARATION_DOC);
 
-                                                            imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                    } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
 
-                                                            str_others_doc_type = "BROWSE";
-                                                            enableUploadButton(OTHERS_DOC);
-                                                        } else if (str_doc.equals(FORM_1B_DOC)) {
+                                                        mIAUpgradeTCC = fileOutput;
 
-                                                            mForm1BFile = fileOutput;
+                                                        imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        str_ia_upgrade_tcc_type = "BROWSE";
+                                                        enableUploadButton(IA_UPGRADE_TCC_DOC);
 
-                                                            str_form1B_type = "BROWSE";
-                                                            enableUploadButton(FORM_1B_DOC);
+                                                    } else if (str_doc.equals(IA_UPGRADE_SCORE_CARD_DOC)) {
+                                                        mIAUpgradeScoreCard = fileOutput;
 
+                                                        imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                        } else if (str_doc.equals(FORM_1C_DOC)) {
-                                                            mForm1CFile = fileOutput;
+                                                        str_ia_upgrade_score_card_type = "BROWSE";
+                                                        enableUploadButton(IA_UPGRADE_SCORE_CARD_DOC);
+                                                    } else if (str_doc.equals(IA_UPGRADE_ULIP_CARD_DOC)) {
+                                                        mIAUpgradeUlip = fileOutput;
 
-                                                            imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_form1C_type = "BROWSE";
-                                                            enableUploadButton(FORM_1C_DOC);
-
-                                                        } else if (str_doc.equals(DECLARATION)) {
-                                                            mDeclarationFile = fileOutput;
-
-                                                            imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-
-                                                            str_declaration_type = "BROWSE";
-                                                            enableUploadButton(DECLARATION);
-
-                                                        } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
-
-                                                            mIAUpgradeTCC = fileOutput;
-
-                                                            imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-
-                                                            str_ia_upgrade_tcc_type = "BROWSE";
-                                                            enableUploadButton(IA_UPGRADE_TCC_DOC);
-
-                                                        } else if (str_doc.equals(IA_UPGRADE_SCORE_CARD_DOC)) {
-                                                            mIAUpgradeScoreCard = fileOutput;
-
-                                                            imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-
-                                                            str_ia_upgrade_score_card_type = "BROWSE";
-                                                            enableUploadButton(IA_UPGRADE_SCORE_CARD_DOC);
-                                                        } else if (str_doc.equals(IA_UPGRADE_ULIP_CARD_DOC)) {
-                                                            mIAUpgradeUlip = fileOutput;
-
-                                                            imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-
-                                                            str_ia_upgrade_ulip_type = "BROWSE";
-                                                            enableUploadButton(IA_UPGRADE_ULIP_CARD_DOC);
+                                                        str_ia_upgrade_ulip_type = "BROWSE";
+                                                        enableUploadButton(IA_UPGRADE_ULIP_CARD_DOC);
 
 
-                                                        } else if (str_doc.equals(IA_UPGRADE_FORM_IA)) {
-                                                            mIAUpgradeFormIA = fileOutput;
+                                                    } else if (str_doc.equals(IA_UPGRADE_FORM_IA)) {
+                                                        mIAUpgradeFormIA = fileOutput;
 
-                                                            imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_ia_upgrade_form_ia_type = "BROWSE";
-                                                            enableUploadButton(IA_UPGRADE_FORM_IA);
+                                                        str_ia_upgrade_form_ia_type = "BROWSE";
+                                                        enableUploadButton(IA_UPGRADE_FORM_IA);
 
-                                                        } else if (str_doc.equals(IA_UPGRADE_MOBILE_DECLARATION)) {
-                                                            mIAUpgradeMobDeclaration = fileOutput;
+                                                    } else if (str_doc.equals(IA_UPGRADE_MOBILE_DECLARATION)) {
+                                                        mIAUpgradeMobDeclaration = fileOutput;
 
-                                                            imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                            imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                        imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                        imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                                                            str_ia_upgrade_mob_declaration_type = "BROWSE";
-                                                            enableUploadButton(IA_UPGRADE_MOBILE_DECLARATION);
-                                                        }
+                                                        str_ia_upgrade_mob_declaration_type = "BROWSE";
+                                                        enableUploadButton(IA_UPGRADE_MOBILE_DECLARATION);
                                                     }
                                                 }
-                                            }).execute(mSelectedUri);
-                                } else {
-                                    mCommonMethods.showMessageDialog(mContext, "Please Select PDF format Document only!");
-                                }
+                                            }
+                                        }).execute(mSelectedUri);
                             } else {
                                 mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
                             }
-
+                        } else if (strMimeType.equals("image/jpeg") || strMimeType.equals("image/jpg")
+                                || strMimeType.equals("image/png")) {
+                            // start cropping activity for pre-acquired image saved on the device
+                            is_browse = true;
+                            CropImage.activity(mSelectedUri)
+                                    .start(ActivityAOBDocumentUpload.this);
                         } else {
-                            mCommonMethods.showToast(mContext, ".exe/.apk file format not acceptable");
+                            mCommonMethods.showMessageDialog(mContext, "Please Select Proper Document format!");
                         }
                     } else {
                         mCommonMethods.showToast(mContext, "File Not Found!");
@@ -363,6 +315,9 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
+
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
 
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
@@ -390,7 +345,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
         mCalendar = Calendar.getInstance();
 
-        View view_aob_doc_upload_formIA = findViewById(R.id.view_aob_doc_upload_formIA);
+        /*View view_aob_doc_upload_formIA = findViewById(R.id.view_aob_doc_upload_formIA);
         TextView txt_aob_doc_upload_formIA = findViewById(R.id.txt_aob_doc_upload_formIA);
         if (is_ia_upgrade) {
             view_aob_doc_upload_formIA.setVisibility(View.GONE);
@@ -398,7 +353,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         } else {
             view_aob_doc_upload_formIA.setVisibility(View.VISIBLE);
             txt_aob_doc_upload_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         ll_aob_doc_upload_ia = findViewById(R.id.ll_aob_doc_upload_ia);
         ll_aob_doc_upload_ia_upgrade = findViewById(R.id.ll_aob_doc_upload_ia_upgrade);
@@ -434,7 +389,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         setDocumentDBData();
         //non editable with no saving
         //editable
-        enableDisableAllFields(!is_dashboard);
+        enableDisableAllFields(!is_dashboard && !is_bsm_questions);
 
         if (is_rejection)
             setRejectionRecords();
@@ -592,6 +547,8 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
             String str_doc_upload = lst.get(0).getStr_doc_upload();
             str_doc_upload = str_doc_upload == null ? "" : str_doc_upload;
             str_pan_no = lst.get(0).getStr_pan_no();
+            str_um_code = lst.get(0).getStr_created_by();
+            str_enrollment_type = lst.get(0).getStrEnrollType();
 
             if (!str_doc_upload.equals("")) {
 
@@ -730,41 +687,16 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                     String str_basic_qualification_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_basic_qualification_is_upload");
                     str_basic_qualification_is_uploaded = str_basic_qualification_is_uploaded == null ? "" : str_basic_qualification_is_uploaded;
 
-                    String str_high_qualification_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_high_qualification_type");
-                    str_high_qualification_type = str_high_qualification_type == null ? "" : str_high_qualification_type;
-                    String str_high_qualification_is_uplaoded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_high_qualification_is_upload");
-                    str_high_qualification_is_uplaoded = str_high_qualification_is_uplaoded == null ? "" : str_high_qualification_is_uplaoded;
-
                     str_comm_address_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_comm_address_type");
                     str_comm_address_type = str_comm_address_type == null ? "" : str_comm_address_type;
 
                     String str_comm_address_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_comm_address_is_upload");
                     str_comm_address_is_uploaded = str_comm_address_is_uploaded == null ? "" : str_comm_address_is_uploaded;
 
-                    String str_permanent_address_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_permanent_address_type");
-                    str_permanent_address_type = str_permanent_address_type == null ? "" : str_permanent_address_type;
-                    String str_permanent_address_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_permanent_address_is_upload");
-                    str_permanent_address_is_uploaded = str_permanent_address_is_uploaded == null ? "" : str_permanent_address_is_uploaded;
-
                     String str_form15g_15h_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_15G_15H_type");
                     str_form15g_15h_type = str_form15g_15h_type == null ? "" : str_form15g_15h_type;
                     String str_form15g_15h_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_15G_15H_is_upload");
                     str_form15g_15h_is_uploaded = str_form15g_15h_is_uploaded == null ? "" : str_form15g_15h_is_uploaded;
-
-                    String str_form1B_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_1B_type");
-                    str_form1B_type = str_form1B_type == null ? "" : str_form1B_type;
-                    String str_form1B_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_1B_is_upload");
-                    str_form1B_is_uploaded = str_form1B_is_uploaded == null ? "" : str_form1B_is_uploaded;
-
-                    String str_form1C_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_1C_type");
-                    str_form1C_type = str_form1C_type == null ? "" : str_form1C_type;
-                    String str_form1C_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_form_1C_is_upload");
-                    str_form1C_is_uploaded = str_form1C_is_uploaded == null ? "" : str_form1C_is_uploaded;
-
-                    String str_applicant_sign_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_applicant_sign_type");
-                    str_applicant_sign_type = str_applicant_sign_type == null ? "" : str_applicant_sign_type;
-                    String str_applicant_sign_is_uploaded = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_applicant_sign_is_upload");
-                    str_applicant_sign_is_uploaded = str_applicant_sign_is_uploaded == null ? "" : str_applicant_sign_is_uploaded;
 
                     String str_declaration_type = mParseXML.parseXmlTag(str_doc_upload, "doc_upload_declaration_type");
                     str_declaration_type = str_declaration_type == null ? "" : str_declaration_type;
@@ -773,34 +705,18 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
                     if (str_declaration_type.equals("CAMERA")) {
 
-                        imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                        imgbtn_aob_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                        imgbtn_aob_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
                     } else if (str_declaration_type.equals("BROWSE")) {
-                        imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                        imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                        imgbtn_aob_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                        imgbtn_aob_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
                     }
 
                     if (str_declaration_is_uploaded.equals("true")) {
-                        imgbtn_aob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
+                        imgbtn_aob_mob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
                     } else {
-                        imgbtn_aob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
-                    }
-
-                    if (str_applicant_sign_type.equals("CAMERA")) {
-
-                        imgbtn_aob_applicant_sign_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_applicant_sign_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                    } else if (str_applicant_sign_type.equals("BROWSE")) {
-                        imgbtn_aob_applicant_sign_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                        imgbtn_aob_applicant_sign_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    }
-
-                    if (str_applicant_sign_is_uploaded.equals("true")) {
-                        imgbtn_aob_applicant_sign_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-                    } else {
-                        imgbtn_aob_applicant_sign_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
+                        imgbtn_aob_mob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
                     }
 
                     if (str_bank_pass_type.equals("CAMERA")) {
@@ -827,7 +743,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                     } else if (str_age_proof_type.equals("BROWSE")) {
                         imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
                         imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    } else if (str_age_proof_type.equals("OFF-LINE EKYC")) {
+                    } else if (str_age_proof_type.equals("OFF-LINE EKYC") || str_age_proof_type.equals("CKYC")) {
                         imgbtn_aob_auth_age_proof_camera.setClickable(false);
                         imgbtn_aob_auth_age_proof_browse.setClickable(false);
                         imgbtn_aob_auth_age_proof_upload.setClickable(false);
@@ -857,22 +773,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                         imgbtn_aob_auth_basic_qualification_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
                     }
 
-                    if (str_high_qualification_type.equals("CAMERA")) {
-
-                        imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                    } else if (str_high_qualification_type.equals("BROWSE")) {
-                        imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                        imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    }
-
-                    if (str_high_qualification_is_uplaoded.equals("true")) {
-                        imgbtn_aob_auth_high_qualification_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-                    } else {
-                        imgbtn_aob_auth_high_qualification_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
-                    }
-
                     if (str_comm_address_type.equals("CAMERA")) {
 
                         imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
@@ -881,7 +781,8 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                     } else if (str_comm_address_type.equals("BROWSE")) {
                         imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
                         imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    } else if (str_age_proof_type.equals("OFF-LINE EKYC")) {
+                    } else if (str_comm_address_type.equals("OFF-LINE EKYC")
+                            || str_comm_address_type.equals("CKYC")) {
                         imgbtn_aob_auth_comm_add_camera.setClickable(false);
                         imgbtn_aob_auth_comm_add_browse.setClickable(false);
 
@@ -898,22 +799,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                         imgbtn_aob_auth_comm_add_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
                     }
 
-                    if (str_permanent_address_type.equals("CAMERA")) {
-
-                        imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                    } else if (str_permanent_address_type.equals("BROWSE")) {
-                        imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                        imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    }
-
-                    if (str_permanent_address_is_uploaded.equals("true")) {
-                        imgbtn_aob_auth_permanent_add_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-                    } else {
-                        imgbtn_aob_auth_permanent_add_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
-                    }
-
                     if (str_form15g_15h_type.equals("CAMERA")) {
 
                         imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
@@ -928,38 +813,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                         imgbtn_aob_auth_form15g_15h_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
                     } else {
                         imgbtn_aob_auth_form15g_15h_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
-                    }
-
-                    if (str_form1B_type.equals("CAMERA")) {
-
-                        imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                    } else if (str_form1B_type.equals("BROWSE")) {
-                        imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                        imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    }
-
-                    if (str_form1B_is_uploaded.equals("true")) {
-                        imgbtn_aob_auth_form1b_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-                    } else {
-                        imgbtn_aob_auth_form1b_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
-                    }
-
-                    if (str_form1C_type.equals("CAMERA")) {
-
-                        imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                    } else if (str_form1C_type.equals("BROWSE")) {
-                        imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                        imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                    }
-
-                    if (str_form1C_is_uploaded.equals("true")) {
-                        imgbtn_aob_auth_form1c_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-                    } else {
-                        imgbtn_aob_auth_form1c_upload.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_uploaddoc));
                     }
                 }
             }
@@ -984,7 +837,9 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
             startActivity(i);
         } else {
             Intent intent = new Intent(ActivityAOBDocumentUpload.this, ActivityAOBTermsConditionsDeclaration.class);
-            if (is_dashboard) {
+            if (is_bsm_questions)
+                intent.putExtra("is_bsm_questions", is_bsm_questions);
+            else if (is_dashboard) {
                 intent.putExtra("is_dashboard", is_dashboard);
             } else if (is_ia_upgrade) {
                 intent.putExtra("is_ia_upgrade", is_ia_upgrade);
@@ -1083,15 +938,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         imgbtn_aob_auth_basic_qualification_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_basic_qualification_upload);
         imgbtn_aob_auth_basic_qualification_upload.setOnClickListener(this);
 
-        imgbtn_aob_auth_high_qualification_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_high_qualification_view);
-        imgbtn_aob_auth_high_qualification_view.setOnClickListener(this);
-        imgbtn_aob_auth_high_qualification_camera = (ImageButton) findViewById(R.id.imgbtn_aob_auth_high_qualification_camera);
-        imgbtn_aob_auth_high_qualification_camera.setOnClickListener(this);
-        imgbtn_aob_auth_high_qualification_browse = (ImageButton) findViewById(R.id.imgbtn_aob_auth_high_qualification_browse);
-        imgbtn_aob_auth_high_qualification_browse.setOnClickListener(this);
-        imgbtn_aob_auth_high_qualification_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_high_qualification_upload);
-        imgbtn_aob_auth_high_qualification_upload.setOnClickListener(this);
-
         imgbtn_aob_auth_comm_add_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_comm_add_view);
         imgbtn_aob_auth_comm_add_view.setOnClickListener(this);
         imgbtn_aob_auth_comm_add_camera = (ImageButton) findViewById(R.id.imgbtn_aob_auth_comm_add_camera);
@@ -1100,15 +946,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         imgbtn_aob_auth_comm_add_browse.setOnClickListener(this);
         imgbtn_aob_auth_comm_add_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_comm_add_upload);
         imgbtn_aob_auth_comm_add_upload.setOnClickListener(this);
-
-        imgbtn_aob_auth_permanent_add_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_permanent_add_view);
-        imgbtn_aob_auth_permanent_add_view.setOnClickListener(this);
-        imgbtn_aob_auth_permanent_add_camera = (ImageButton) findViewById(R.id.imgbtn_aob_auth_permanent_add_camera);
-        imgbtn_aob_auth_permanent_add_camera.setOnClickListener(this);
-        imgbtn_aob_auth_permanent_add_browse = (ImageButton) findViewById(R.id.imgbtn_aob_auth_permanent_add_browse);
-        imgbtn_aob_auth_permanent_add_browse.setOnClickListener(this);
-        imgbtn_aob_auth_permanent_add_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_permanent_add_upload);
-        imgbtn_aob_auth_permanent_add_upload.setOnClickListener(this);
 
         imgbtn_aob_auth_form15g_15h_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form15g_15h_view);
         imgbtn_aob_auth_form15g_15h_view.setOnClickListener(this);
@@ -1119,37 +956,14 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         imgbtn_aob_auth_form15g_15h_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form15g_15h_upload);
         imgbtn_aob_auth_form15g_15h_upload.setOnClickListener(this);
 
-        imgbtn_aob_auth_form1b_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1b_view);
-        imgbtn_aob_auth_form1b_view.setOnClickListener(this);
-        imgbtn_aob_auth_form1b_camera = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1b_camera);
-        imgbtn_aob_auth_form1b_camera.setOnClickListener(this);
-        imgbtn_aob_auth_form1b_browse = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1b_browse);
-        imgbtn_aob_auth_form1b_browse.setOnClickListener(this);
-        imgbtn_aob_auth_form1b_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1b_upload);
-        imgbtn_aob_auth_form1b_upload.setOnClickListener(this);
-
-        imgbtn_aob_auth_form1c_view = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1c_view);
-        imgbtn_aob_auth_form1c_view.setOnClickListener(this);
-        imgbtn_aob_auth_form1c_camera = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1c_camera);
-        imgbtn_aob_auth_form1c_camera.setOnClickListener(this);
-        imgbtn_aob_auth_form1c_browse = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1c_browse);
-        imgbtn_aob_auth_form1c_browse.setOnClickListener(this);
-        imgbtn_aob_auth_form1c_upload = (ImageButton) findViewById(R.id.imgbtn_aob_auth_form1c_upload);
-        imgbtn_aob_auth_form1c_upload.setOnClickListener(this);
-
-        imgbtn_aob_applicant_sign_camera = (ImageButton) findViewById(R.id.imgbtn_aob_applicant_sign_camera);
-        imgbtn_aob_applicant_sign_camera.setOnClickListener(this);
-        imgbtn_aob_applicant_sign_browse = (ImageButton) findViewById(R.id.imgbtn_aob_applicant_sign_browse);
-        imgbtn_aob_applicant_sign_browse.setOnClickListener(this);
-        imgbtn_aob_applicant_sign_upload = (ImageButton) findViewById(R.id.imgbtn_aob_applicant_sign_upload);
-        imgbtn_aob_applicant_sign_upload.setOnClickListener(this);
-
-        imgbtn_aob_declaration_camera = (ImageButton) findViewById(R.id.imgbtn_aob_declaration_camera);
-        imgbtn_aob_declaration_camera.setOnClickListener(this);
-        imgbtn_aob_declaration_browse = (ImageButton) findViewById(R.id.imgbtn_aob_declaration_browse);
-        imgbtn_aob_declaration_browse.setOnClickListener(this);
-        imgbtn_aob_declaration_upload = (ImageButton) findViewById(R.id.imgbtn_aob_declaration_upload);
-        imgbtn_aob_declaration_upload.setOnClickListener(this);
+        imgbtn_aob_mob_declaration_view = (ImageButton) findViewById(R.id.imgbtn_aob_mob_declaration_view);
+        imgbtn_aob_mob_declaration_view.setOnClickListener(this);
+        imgbtn_aob_mob_declaration_camera = (ImageButton) findViewById(R.id.imgbtn_aob_mob_declaration_camera);
+        imgbtn_aob_mob_declaration_camera.setOnClickListener(this);
+        imgbtn_aob_mob_declaration_browse = (ImageButton) findViewById(R.id.imgbtn_aob_mob_declaration_browse);
+        imgbtn_aob_mob_declaration_browse.setOnClickListener(this);
+        imgbtn_aob_mob_declaration_upload = (ImageButton) findViewById(R.id.imgbtn_aob_mob_declaration_upload);
+        imgbtn_aob_mob_declaration_upload.setOnClickListener(this);
     }
 
     public void browse_docs() {
@@ -1163,8 +977,8 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         mIntent.addCategory(Intent.CATEGORY_OPENABLE);
         mIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION
                 | Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
-        mIntent.setType("application/pdf");
-        //mIntent.setType("*/*");
+        //mIntent.setType("application/pdf");
+        mIntent.setType("*/*");
             /*String[] mimeType = new String[]{"application/x-binary,application/octet-stream"};
             if(mimeType.length > 0) {
                 mIntent.putExtra(Intent.EXTRA_MIME_TYPES, mimeType);
@@ -1203,706 +1017,353 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT && resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT) {
+                CropImage.activity(Uri.fromFile(mCapturedImgFile)).start(this);
+            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Uri resultUri = result.getUri();
+                mCapturedImgFile = new File(resultUri.getPath());
+                if (mCapturedImgFile != null) {
+                    CompressImage.compressImage(mCapturedImgFile.getPath());
 
-            if (mCapturedImgFile != null) {
-                CompressImage.compressImage(mCapturedImgFile.getPath());
+                    long size = mCapturedImgFile.length();
+                    double kilobyte = size / 1024;
 
-                long size = mCapturedImgFile.length();
-                double kilobyte = size / 1024;
+                    //2 MB valiadation
+                    if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
 
-                //2 MB valiadation
-                if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
+                        String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
 
-                    String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
+                        SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
 
-                    SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
-
-                    if (str_doc.equals(BANK_PASSBOOK_DOC)) {
+                        if (str_doc.equals(BANK_PASSBOOK_DOC)) {
                         /*mBankPassbookFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mBankPassbookFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mBankPassbookFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mBankPassbookFile, mCapturedImgFile, "Bank Passbook Document")) {
+                            if (obj.createAOBDOcumentPdf(mBankPassbookFile, mCapturedImgFile, "Bank Passbook Document")) {
 
-                            imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_bank_passbook_type = "CAMERA";
+                                    str_bank_passbook_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(BANK_PASSBOOK_DOC);
+                                    str_bank_passbook_type = "CAMERA";
+                                }
 
-                        } else {
-                            mCommonMethods.showMessageDialog(mContext, "File Not Found..");
-                        }
-                    } else if (str_doc.equals(AGE_PROOF_DOC)) {
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(BANK_PASSBOOK_DOC);
+
+                            } else {
+                                mCommonMethods.showMessageDialog(mContext, "File Not Found..");
+                            }
+                        } else if (str_doc.equals(AGE_PROOF_DOC)) {
                         /*mAgePrrofFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mAgeProofFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mAgeProofFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mAgeProofFile, mCapturedImgFile, "Age Proof Document")) {
+                            if (obj.createAOBDOcumentPdf(mAgeProofFile, mCapturedImgFile, "Age Proof Document")) {
 
-                            imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_age_proof_type = "CAMERA";
+                                    str_age_proof_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(AGE_PROOF_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(BASIC_QUALIFICATION_DOC)) {
+                                    str_age_proof_type = "CAMERA";
+                                }
+
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(AGE_PROOF_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(BASIC_QUALIFICATION_DOC)) {
                         /*mBasicQualificationFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
 
-                        mBasicQualificationFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mBasicQualificationFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mBasicQualificationFile, mCapturedImgFile, "Basic Qualification Document")) {
+                            if (obj.createAOBDOcumentPdf(mBasicQualificationFile, mCapturedImgFile, "Basic Qualification Document")) {
 
-                            imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_basic_qualification_type = "CAMERA";
+                                    str_basic_qualification_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(BASIC_QUALIFICATION_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(HIGH_QUALIFICATION_DOC)) {
-                        /*mHighQualificationFile = mCommonMethods.createScopedStorageAllFiles(mContext,
-                                imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mHighQualificationFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                                    str_basic_qualification_type = "CAMERA";
+                                }
 
-                        if (obj.createAOBDOcumentPdf(mHighQualificationFile, mCapturedImgFile, "Higher Qualification Document")) {
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(BASIC_QUALIFICATION_DOC);
+                            } else {
 
-                            imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
+                            //mCommAddressFile = new File(folder.getPath() + File.separator + imageFileName);
+                            mCommAddressFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            if (obj.createAOBDOcumentPdf(mCommAddressFile, mCapturedImgFile, "Communication Address Document")) {
 
-                            str_high_qualification_type = "CAMERA";
+                                if (is_browse) {
+                                    imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(HIGH_QUALIFICATION_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
-                        //mCommAddressFile = new File(folder.getPath() + File.separator + imageFileName);
-                        mCommAddressFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
-                        if (obj.createAOBDOcumentPdf(mCommAddressFile, mCapturedImgFile, "Communication Address Document")) {
+                                    str_comm_address_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                    str_comm_address_type = "CAMERA";
+                                }
 
-                            str_comm_address_type = "CAMERA";
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(COMM_ADDRESS_DOC);
+                            } else {
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(COMM_ADDRESS_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(PERMANENT_ADDRESS_DOC)) {
-                        //mPermanentAddFile = new File(folder.getPath() + File.separator + imageFileName);
-                        mPermanentAddFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
-                        if (obj.createAOBDOcumentPdf(mPermanentAddFile, mCapturedImgFile, "Permenent Address Document")) {
-
-                            imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                            str_permanent_address_type = "CAMERA";
-
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(PERMANENT_ADDRESS_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(FORM_15G_15H_DOC)) {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(FORM_15G_15H_DOC)) {
                         /*mForm15G_15HFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mForm15G_15HFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mForm15G_15HFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mForm15G_15HFile, mCapturedImgFile, "Form 15G 15H Document")) {
+                            if (obj.createAOBDOcumentPdf(mForm15G_15HFile, mCapturedImgFile, "Form 15G 15H Document")) {
 
-                            imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_form15g_15h_type = "CAMERA";
+                                    str_form15g_15h_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(FORM_15G_15H_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(OTHERS_DOC)) {
+                                    str_form15g_15h_type = "CAMERA";
+                                }
+
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(FORM_15G_15H_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(OTHERS_DOC)) {
                         /*mOthersFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mOthersFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mOthersFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mOthersFile, mCapturedImgFile, "Others Document")) {
+                            if (obj.createAOBDOcumentPdf(mOthersFile, mCapturedImgFile, "Others Document")) {
 
-                            imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_others_doc_type = "CAMERA";
+                                    str_others_doc_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(OTHERS_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(FORM_1B_DOC)) {
-                        /*mForm1BFile = mCommonMethods.createScopedStorageAllFiles(mContext,
-                                imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mForm1BFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                                    str_others_doc_type = "CAMERA";
+                                }
 
-                        if (obj.createAOBDOcumentPdf(mForm1BFile, mCapturedImgFile, "Form 1B Document")) {
-
-                            imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                            str_form1B_type = "CAMERA";
-
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(FORM_1B_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-
-                    } else if (str_doc.equals(FORM_1C_DOC)) {
-                        /*mForm1CFile = mCommonMethods.createScopedStorageAllFiles(mContext,
-                                imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mForm1CFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
-
-                        if (obj.createAOBDOcumentPdf(mForm1CFile, mCapturedImgFile, "Form 1C Document")) {
-
-                            imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                            str_form1C_type = "CAMERA";
-
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(FORM_1C_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(DECLARATION)) {
-
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(OTHERS_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(AGENT_MOBILE_DECLARATION_DOC)) {
                         /*mDeclarationFile = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mDeclarationFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mAgentMobileDeclarationFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mDeclarationFile, mCapturedImgFile, "Declaration Document")) {
+                            if (obj.createAOBDOcumentPdf(mAgentMobileDeclarationFile, mCapturedImgFile, "Declaration Document")) {
 
-                            imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_aob_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_aob_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_declaration_type = "CAMERA";
+                                    str_agent_mob_declaration_type = "BROWSE";
+                                } else {
+                                    imgbtn_aob_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_aob_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(DECLARATION);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
+                                    str_agent_mob_declaration_type = "CAMERA";
+                                }
+
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+
+                                enableUploadButton(AGENT_MOBILE_DECLARATION_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
 
                         /*mIAUpgradeTCC = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mIAUpgradeTCC = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mIAUpgradeTCC = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mIAUpgradeTCC, mCapturedImgFile, "TCC Document")) {
+                            if (obj.createAOBDOcumentPdf(mIAUpgradeTCC, mCapturedImgFile, "TCC Document")) {
 
-                            imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_ia_upgrade_tcc_type = "CAMERA";
+                                    str_ia_upgrade_tcc_type = "BROWSE";
+                                } else {
+                                    imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(IA_UPGRADE_TCC_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    } else if (str_doc.equals(IA_UPGRADE_SCORE_CARD_DOC)) {
+                                    str_ia_upgrade_tcc_type = "CAMERA";
+                                }
+
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(IA_UPGRADE_TCC_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+                        } else if (str_doc.equals(IA_UPGRADE_SCORE_CARD_DOC)) {
 
                         /*mIAUpgradeScoreCard = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mIAUpgradeScoreCard = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mIAUpgradeScoreCard = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mIAUpgradeScoreCard, mCapturedImgFile, "Score Card Document")) {
+                            if (obj.createAOBDOcumentPdf(mIAUpgradeScoreCard, mCapturedImgFile, "Score Card Document")) {
 
-                            imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_ia_upgrade_score_card_type = "CAMERA";
+                                    str_ia_upgrade_score_card_type = "BROWSE";
+                                } else {
+                                    imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(IA_UPGRADE_SCORE_CARD_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
+                                    str_ia_upgrade_score_card_type = "CAMERA";
+                                }
 
-                    } else if (str_doc.equals(IA_UPGRADE_ULIP_CARD_DOC)) {
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(IA_UPGRADE_SCORE_CARD_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+
+                        } else if (str_doc.equals(IA_UPGRADE_ULIP_CARD_DOC)) {
 
                         /*mIAUpgradeUlip = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
 
-                        mIAUpgradeUlip = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mIAUpgradeUlip = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mIAUpgradeUlip, mCapturedImgFile, "ULIP Document")) {
+                            if (obj.createAOBDOcumentPdf(mIAUpgradeUlip, mCapturedImgFile, "ULIP Document")) {
 
-                            imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_ia_upgrade_ulip_type = "CAMERA";
+                                    str_ia_upgrade_ulip_type = "BROWSE";
+                                } else {
+                                    imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(IA_UPGRADE_ULIP_CARD_DOC);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
+                                    str_ia_upgrade_ulip_type = "CAMERA";
+                                }
 
-                    } else if (str_doc.equals(IA_UPGRADE_FORM_IA)) {
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(IA_UPGRADE_ULIP_CARD_DOC);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+
+                        } else if (str_doc.equals(IA_UPGRADE_FORM_IA)) {
 
                         /*mIAUpgradeFormIA = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mIAUpgradeFormIA = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mIAUpgradeFormIA = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mIAUpgradeFormIA, mCapturedImgFile, "Form IA Document")) {
+                            if (obj.createAOBDOcumentPdf(mIAUpgradeFormIA, mCapturedImgFile, "Form IA Document")) {
 
-                            imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_ia_upgrade_form_ia_type = "CAMERA";
+                                    str_ia_upgrade_form_ia_type = "BROWSE";
+                                } else {
+                                    imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(IA_UPGRADE_FORM_IA);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
+                                    str_ia_upgrade_form_ia_type = "CAMERA";
+                                }
 
-                    } else if (str_doc.equals(IA_UPGRADE_MOBILE_DECLARATION)) {
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(IA_UPGRADE_FORM_IA);
+                            } else {
+                                mCommonMethods.showToast(mContext, "File Not Found");
+                            }
+
+                        } else if (str_doc.equals(IA_UPGRADE_MOBILE_DECLARATION)) {
 
                         /*mIAUpgradeMobDeclaration = mCommonMethods.createScopedStorageAllFiles(mContext,
                                 imageFileName, Environment.DIRECTORY_DOCUMENTS);*/
-                        mIAUpgradeMobDeclaration = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                            mIAUpgradeMobDeclaration = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                        if (obj.createAOBDOcumentPdf(mIAUpgradeMobDeclaration, mCapturedImgFile, "Mobile Declaration Document")) {
+                            if (obj.createAOBDOcumentPdf(mIAUpgradeMobDeclaration, mCapturedImgFile, "Mobile Declaration Document")) {
 
-                            imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                            imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                if (is_browse) {
+                                    imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                    imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
 
-                            str_ia_upgrade_mob_declaration_type = "CAMERA";
+                                    str_ia_upgrade_mob_declaration_type = "BROWSE";
+                                } else {
+                                    imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                    imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
 
-                            //remove common source file from directory
-                            mCapturedImgFile.delete();
-                            enableUploadButton(IA_UPGRADE_MOBILE_DECLARATION);
-                        } else {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        }
-                    }
-
-                } else {
-                    mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
-                }
-            } else {
-                mCommonMethods.showMessageDialog(mContext, "File Null Error..");
-            }
-        }
-        /*else if (requestCode == REQUEST_OCR) {
-            if (resultCode == RESULT_OK) {
-                final File imagePath;
-                final String DocumentType;
-                Bundle bundle = data.getExtras();
-
-                if (bundle != null) {
-                    String jsonData = (String) bundle.get("jsonData");
-
-                    try {
-                        JSONObject object = new JSONObject(jsonData);
-
-                        DocumentType = object.get("DocumentType").toString();
-
-                        imagePath = new File(bundle.get("BitmapImageUri").toString());
-                        //Bitmap edgeBitmap = BitmapFactory.decodeFile(imagePath.getPath());
-
-                        if (imagePath != null) {
-
-                            //mCommonMethods.showToast(mContext, "Document - " + DocumentType);
-
-                            CompressImage.compressImage(imagePath.getPath());
-
-                            long size = imagePath.length();
-                            double kilobyte = size / 1024;
-
-                            //2 MB valiadation
-                            if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
-
-                                File folder = new File(CommonMethods.EXTERNAL_STORAGE_DIRECTORY + CommonMethods.DIRECT_DIRECTORY);
-
-                                if (!folder.exists()) {
-                                    folder.mkdirs();
+                                    str_ia_upgrade_mob_declaration_type = "CAMERA";
                                 }
 
-                                String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
-
-                                SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
-
-                                if (str_doc.equals(BANK_PASSBOOK_DOC)) {
-                                    mBankPassbookFile = new File(folder.getPath() + File.separator + imageFileName);
-
-                                    if (obj.createAOBDOcumentPdf(mBankPassbookFile, imagePath, "Bank Passbook Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_bank_pass_book_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_bank_pass_book_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_bank_passbook_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(BANK_PASSBOOK_DOC);
-
-                                    } else {
-                                        mCommonMethods.showMessageDialog(mContext, "File Not Found..");
-                                    }
-                                } else if (str_doc.equals(AGE_PROOF_DOC)) {
-                                    mAgePrrofFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mAgePrrofFile, imagePath, "Age Proof Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_age_proof_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_age_proof_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_age_proof_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(AGE_PROOF_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(BASIC_QUALIFICATION_DOC)) {
-                                    mBasicQualificationFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mBasicQualificationFile, imagePath, "Basic Qualification Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_basic_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_basic_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_basic_qualification_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(BASIC_QUALIFICATION_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(HIGH_QUALIFICATION_DOC)) {
-                                    mHighQualificationFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mHighQualificationFile, imagePath, "Higher Qualification Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_high_qualification_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_high_qualification_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_high_qualification_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(HIGH_QUALIFICATION_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
-                                    mCommAddressFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mCommAddressFile, imagePath, "Communication Address Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_comm_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_comm_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_comm_address_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(COMM_ADDRESS_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(PERMANENT_ADDRESS_DOC)) {
-                                    mPermanentAddFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mPermanentAddFile, imagePath, "Permenent Address Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_permanent_add_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_permanent_add_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_permanent_address_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(PERMANENT_ADDRESS_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(FORM_15G_15H_DOC)) {
-                                    mForm15G_15HFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mForm15G_15HFile, imagePath, "Form 15G 15H Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_form15g_15h_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_form15g_15h_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_form15g_15h_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(FORM_15G_15H_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(OTHERS_DOC)) {
-                                    mOthersFile = new File(folder.getPath() + File.separator + imageFileName);
-
-                                    if (obj.createAOBDOcumentPdf(mOthersFile, imagePath, "Others Document")) {
-
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_others_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_others_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_others_doc_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(OTHERS_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(FORM_1B_DOC)) {
-                                    mForm1BFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mForm1BFile, imagePath, "Form 1B Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_form1b_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_form1b_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_form1B_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(FORM_1B_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-
-                                } else if (str_doc.equals(FORM_1C_DOC)) {
-                                    mForm1CFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mForm1CFile, imagePath, "Form 1C Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_auth_form1c_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_auth_form1c_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_form1C_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(FORM_1C_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(DECLARATION)) {
-
-                                    mDeclarationFile = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mDeclarationFile, imagePath, "Declaration Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_aob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_aob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_declaration_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(DECLARATION);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
-
-                                    mIAUpgradeTCC = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mIAUpgradeTCC, imagePath, "TCC Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_ia_upgrade_tcc_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_ia_upgrade_tcc_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_ia_upgrade_tcc_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(IA_UPGRADE_TCC_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                } else if (str_doc.equals(IA_UPGRADE_SCORE_CARD_DOC)) {
-
-                                    mIAUpgradeScoreCard = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mIAUpgradeScoreCard, imagePath, "Score Card Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_ia_upgrade_score_card_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_ia_upgrade_score_card_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_ia_upgrade_score_card_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(IA_UPGRADE_SCORE_CARD_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-
-                                } else if (str_doc.equals(IA_UPGRADE_ULIP_CARD_DOC)) {
-
-                                    mIAUpgradeUlip = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mIAUpgradeUlip, imagePath, "ULIP Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_ia_upgrade_ulip_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_ia_upgrade_ulip_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_ia_upgrade_ulip_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(IA_UPGRADE_ULIP_CARD_DOC);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-
-                                } else if (str_doc.equals(IA_UPGRADE_FORM_IA)) {
-
-                                    mIAUpgradeFormIA = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mIAUpgradeFormIA, imagePath, "Form IA Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_ia_upgrade_form_ia_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_ia_upgrade_form_ia_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_ia_upgrade_form_ia_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(IA_UPGRADE_FORM_IA);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-
-                                } else if (str_doc.equals(IA_UPGRADE_MOBILE_DECLARATION)) {
-
-                                    mIAUpgradeMobDeclaration = new File(folder.getPath() + File.separator + imageFileName);
-                                    if (obj.createAOBDOcumentPdf(mIAUpgradeMobDeclaration, imagePath, "Mobile Declaration Document")) {
-                                        if (OCR_TYPE.equals("CAMERA")) {
-                                            imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                            imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                        } else if (OCR_TYPE.equals("BROWSE")) {
-                                            imgbtn_ia_upgrade_mob_declaration_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                            imgbtn_ia_upgrade_mob_declaration_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                        }
-
-                                        str_ia_upgrade_mob_declaration_type = OCR_TYPE;
-
-                                        //remove common source file from directory
-                                        //mSourceFile.delete();
-                                        enableUploadButton(IA_UPGRADE_MOBILE_DECLARATION);
-                                    } else {
-                                        mCommonMethods.showToast(mContext, "File Not Found");
-                                    }
-                                }
+                                //remove common source file from directory
+                                mCapturedImgFile.delete();
+                                enableUploadButton(IA_UPGRADE_MOBILE_DECLARATION);
                             } else {
-                                mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
+                                mCommonMethods.showToast(mContext, "File Not Found");
                             }
-
-                            if (imagePath.exists()) {
-                                imagePath.delete();
-                            }
-                        } else {
-                            mCommonMethods.showMessageDialog(mContext, "File Size is too small");
                         }
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        mCommonMethods.showToast(mContext, e.getMessage());
+                    } else {
+                        mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
                     }
+                } else {
+                    mCommonMethods.showMessageDialog(mContext, "File Null Error..");
                 }
-
-            } else {
-                Toast.makeText(mContext, "Data not receive", Toast.LENGTH_SHORT).show();
+                is_browse = false;
             }
-        }*/
+        } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Exception error = result.getError();
+            mCommonMethods.showMessageDialog(mContext, error.getMessage());
+        }
     }
 
     @Override
@@ -2021,41 +1482,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 createSoapRequestToUploadDoc(mBasicQualificationFile);
                 break;
 
-            case R.id.imgbtn_aob_auth_high_qualification_view:
-
-                if (mHighQualificationFile != null) {
-                    try {
-                        mCommonMethods.openAllDocs(mContext, mHighQualificationFile);
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else {
-                    mCommonMethods.showToast(mContext, "Please Browse or Capture Higher Qualification Document First!");
-                }
-
-                break;
-
-            case R.id.imgbtn_aob_auth_high_qualification_camera:
-
-                str_doc = HIGH_QUALIFICATION_DOC;
-                capture_document();
-                //capture_docs(HIGH_QUALIFICATION_DOC, "CAMERA");
-
-                break;
-            case R.id.imgbtn_aob_auth_high_qualification_browse:
-
-                str_doc = HIGH_QUALIFICATION_DOC;
-                browse_docs();
-                //capture_docs(HIGH_QUALIFICATION_DOC, "BROWSE");
-
-                break;
-
-            case R.id.imgbtn_aob_auth_high_qualification_upload:
-
-                createSoapRequestToUploadDoc(mHighQualificationFile);
-
-                break;
-
             case R.id.imgbtn_aob_auth_comm_add_view:
 
                 if (mCommAddressFile != null) {
@@ -2088,41 +1514,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
             case R.id.imgbtn_aob_auth_comm_add_upload:
 
                 createSoapRequestToUploadDoc(mCommAddressFile);
-
-                break;
-
-            case R.id.imgbtn_aob_auth_permanent_add_view:
-
-                if (mPermanentAddFile != null) {
-                    try {
-                        mCommonMethods.openAllDocs(mContext, mPermanentAddFile);
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else {
-                    mCommonMethods.showToast(mContext, "Please Browse or Capture Permanent Address Document First!");
-                }
-
-                break;
-
-            case R.id.imgbtn_aob_auth_permanent_add_camera:
-
-                str_doc = PERMANENT_ADDRESS_DOC;
-                capture_document();
-                //capture_docs(PERMANENT_ADDRESS_DOC, "CAMERA");
-
-                break;
-            case R.id.imgbtn_aob_auth_permanent_add_browse:
-
-                str_doc = PERMANENT_ADDRESS_DOC;
-                browse_docs();
-                //capture_docs(PERMANENT_ADDRESS_DOC, "BROWSE");
-
-                break;
-
-            case R.id.imgbtn_aob_auth_permanent_add_upload:
-
-                createSoapRequestToUploadDoc(mPermanentAddFile);
 
                 break;
 
@@ -2201,103 +1592,32 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 createSoapRequestToUploadDoc(mOthersFile);
                 break;
 
-            case R.id.imgbtn_aob_auth_form1b_view:
-                if (mForm1BFile != null) {
-                    try {
-                        mCommonMethods.openAllDocs(mContext, mForm1BFile);
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else {
-                    mCommonMethods.showToast(mContext, "Please Browse or Capture Form 1B Document First!");
-                }
+            case R.id.imgbtn_aob_mob_declaration_upload:
+                createSoapRequestToUploadDoc(mAgentMobileDeclarationFile);
                 break;
 
-            case R.id.imgbtn_aob_auth_form1b_camera:
-
-                str_doc = FORM_1B_DOC;
-                capture_document();
-                //capture_docs(FORM_1B_DOC, "CAMERA");
-
-                break;
-            case R.id.imgbtn_aob_auth_form1b_browse:
-
-                str_doc = FORM_1B_DOC;
-                browse_docs();
-                //capture_docs(FORM_1B_DOC, "BROWSE");
-
-                break;
-
-            case R.id.imgbtn_aob_auth_form1b_upload:
-
-                createSoapRequestToUploadDoc(mForm1BFile);
-                break;
-
-            case R.id.imgbtn_aob_auth_form1c_view:
-                if (mForm1CFile != null) {
-                    try {
-                        mCommonMethods.openAllDocs(mContext, mForm1CFile);
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else {
-                    mCommonMethods.showToast(mContext, "Please Browse or Capture Form 1C Document First!");
-                }
-                break;
-
-            case R.id.imgbtn_aob_auth_form1c_camera:
-
-                str_doc = FORM_1C_DOC;
-                capture_document();
-                //capture_docs(FORM_1C_DOC, "CAMERA");
-
-                break;
-            case R.id.imgbtn_aob_auth_form1c_browse:
-
-                str_doc = FORM_1C_DOC;
-                browse_docs();
-                //capture_docs(FORM_1C_DOC, "BROWSE");
-
-                break;
-
-            case R.id.imgbtn_aob_auth_form1c_upload:
-
-                createSoapRequestToUploadDoc(mForm1CFile);
-
-                break;
-
-            case R.id.imgbtn_aob_applicant_sign_camera:
-
-                str_doc = APPLICANT_SIGN;
-                capture_document();
-
-                //capture_docs(APPLICANT_SIGN, "CAMERA");
-                break;
-
-            case R.id.imgbtn_aob_applicant_sign_browse:
-                str_doc = APPLICANT_SIGN;
-                browse_docs();
-                //capture_docs(APPLICANT_SIGN, "BROWSE");
-                break;
-
-            case R.id.imgbtn_aob_applicant_sign_upload:
-                createSoapRequestToUploadDoc(mApplicantSignFile);
-                break;
-
-            case R.id.imgbtn_aob_declaration_upload:
-                createSoapRequestToUploadDoc(mDeclarationFile);
-                break;
-
-            case R.id.imgbtn_aob_declaration_browse:
-                str_doc = DECLARATION;
+            case R.id.imgbtn_aob_mob_declaration_browse:
+                str_doc = AGENT_MOBILE_DECLARATION_DOC;
                 browse_docs();
                 //capture_docs(DECLARATION, "BROWSE");
                 break;
 
-            case R.id.imgbtn_aob_declaration_camera:
-                str_doc = DECLARATION;
+            case R.id.imgbtn_aob_mob_declaration_camera:
+                str_doc = AGENT_MOBILE_DECLARATION_DOC;
                 capture_document();
                 //capture_docs(DECLARATION, "CAMERA");
+                break;
+
+            case R.id.imgbtn_aob_mob_declaration_view:
+                if (mAgentMobileDeclarationFile != null) {
+                    try {
+                        mCommonMethods.openAllDocs(mContext, mAgentMobileDeclarationFile);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                } else {
+                    mCommonMethods.showToast(mContext, "Please Browse or Capture Agent Mobile Declaration Document First!");
+                }
                 break;
 
             case R.id.imgbtn_ia_upgrade_tcc_view:
@@ -2453,7 +1773,13 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                     }
                 } else if (is_dashboard) {
                     startActivity(new Intent(ActivityAOBDocumentUpload.this, ActivityAOBDashboard.class));
-                } else if (!is_dashboard) {
+                } else if (is_bsm_questions) {
+                    Intent intent = new Intent(mContext, ActivityAOBInterviewBSM.class);
+                    intent.putExtra("UMCode", str_um_code);
+                    intent.putExtra("PANNumber", str_pan_no);
+                    intent.putExtra("enrollment_type", str_enrollment_type);
+                    startActivity(intent);
+                } else if (!is_dashboard && !is_bsm_questions) {
                     String str_error = validateDetails();
                     if (str_error.equals("")) {
 
@@ -2483,7 +1809,13 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                                 //create final Agent on boarding string to synch
                                 str_final_aob_info.append("<?xml version='1.0' encoding='utf-8' ?><agent_on_boarding>");
                                 //str_final_aob_info.append(lstRes.get(0).getStr_basic_details().toString());//basic details
-                                str_final_aob_info.append(lstRes.get(0).getStr_personal_info());//personal info
+
+                                String str_personal_info = lstRes.get(0).getStr_personal_info();
+
+                                String str_personal_info_ckyc_no = mCommonMethods.getSubStringByString(str_personal_info, "personal_info_ckyc_no");
+                                str_personal_info = str_personal_info.replace(str_personal_info_ckyc_no, "");
+
+                                str_final_aob_info.append(str_personal_info);//personal info
                                 str_final_aob_info.append(lstRes.get(0).getStr_occupation_info());//occupational info
 
                                 //added 19-01-2021
@@ -2587,6 +1919,9 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                                 str_final_aob_info.append("<Reqdocsubmitdate>" + strRejectDate + "</Reqdocsubmitdate>");
                                 //for stamping 30-09-2021
 
+                                //for ckyc number
+                                str_final_aob_info.append(str_personal_info_ckyc_no);
+
                                 str_final_aob_info.append("</agent_on_boarding>");
 
                                 mAsyncAllAOB = new AsyncAllAOB();
@@ -2638,9 +1973,9 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 return "Please upload Communication Address Documents";
             }/*else if (!is_applicant_sign_uploaded){
             return "Please upload Applicant Signature";
-        }else *//*if (!is_declaration_uploaded){
-            return "Please upload Declaration";
-        }*/ else
+            }*/ else if (!is_declaration_uploaded) {
+                return "Please upload Agent Mobile Declaration";
+            } else
                 return "";
         }
     }
@@ -2661,14 +1996,8 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         str_doc_upload.append("<doc_upload_basic_qualification_type>").append(str_basic_qualification_type).append("</doc_upload_basic_qualification_type>");
         str_doc_upload.append("<doc_upload_basic_qualification_is_upload>").append(is_basic_qualification_uploaded).append("</doc_upload_basic_qualification_is_upload>");
 
-        str_doc_upload.append("<doc_upload_high_qualification_type>").append(str_high_qualification_type).append("</doc_upload_high_qualification_type>");
-        str_doc_upload.append("<doc_upload_high_qualification_is_upload>").append(is_high_qualification_uploaded).append("</doc_upload_high_qualification_is_upload>");
-
         str_doc_upload.append("<doc_upload_comm_address_type>").append(str_comm_address_type).append("</doc_upload_comm_address_type>");
         str_doc_upload.append("<doc_upload_comm_address_is_upload>").append(is_comm_address_uploaded).append("</doc_upload_comm_address_is_upload>");
-
-        str_doc_upload.append("<doc_upload_permanent_address_type>").append(str_permanent_address_type).append("</doc_upload_permanent_address_type>");
-        str_doc_upload.append("<doc_upload_permanent_address_is_upload>").append(is_permanent_address_uploaded).append("</doc_upload_permanent_address_is_upload>");
 
         str_doc_upload.append("<doc_upload_form_15G_15H_type>").append(str_form15g_15h_type).append("</doc_upload_form_15G_15H_type>");
         str_doc_upload.append("<doc_upload_form_15G_15H_is_upload>").append(is_form15g_15h_uploaded).append("</doc_upload_form_15G_15H_is_upload>");
@@ -2677,16 +2006,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
         str_doc_upload.append("<doc_upload_others_document>").append(edt_aob_auth_others.getText().toString()).append("</doc_upload_others_document>");
         str_doc_upload.append("<doc_upload_others_is_upload>").append(is_others_doc_uploaded).append("</doc_upload_others_is_upload>");
 
-        str_doc_upload.append("<doc_upload_form_1B_type>").append(str_form1B_type).append("</doc_upload_form_1B_type>");
-        str_doc_upload.append("<doc_upload_form_1B_is_upload>").append(is_form1B_uploaded).append("</doc_upload_form_1B_is_upload>");
-
-        str_doc_upload.append("<doc_upload_form_1C_type>").append(str_form1C_type).append("</doc_upload_form_1C_type>");
-        str_doc_upload.append("<doc_upload_form_1C_is_upload>").append(is_form1C_uploaded).append("</doc_upload_form_1C_is_upload>");
-
-        str_doc_upload.append("<doc_upload_applicant_sign_type>").append(str_applicant_sign_type).append("</doc_upload_applicant_sign_type>");
-        str_doc_upload.append("<doc_upload_applicant_sign_is_upload>").append(is_applicant_sign_uploaded).append("</doc_upload_applicant_sign_is_upload>");
-
-        str_doc_upload.append("<doc_upload_declaration_type>").append(str_declaration_type).append("</doc_upload_declaration_type>");
+        str_doc_upload.append("<doc_upload_declaration_type>").append(str_agent_mob_declaration_type).append("</doc_upload_declaration_type>");
         str_doc_upload.append("<doc_upload_declaration_is_upload>").append(is_declaration_uploaded).append("</doc_upload_declaration_is_upload>");
 
         //IA Upgrade
@@ -2787,29 +2107,13 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
             imgbtn_aob_auth_basic_qualification_browse.setEnabled(is_enable);
             imgbtn_aob_auth_basic_qualification_upload.setEnabled(is_enable);
 
-            imgbtn_aob_auth_high_qualification_camera.setEnabled(is_enable);
-            imgbtn_aob_auth_high_qualification_browse.setEnabled(is_enable);
-            imgbtn_aob_auth_high_qualification_upload.setEnabled(is_enable);
-
             imgbtn_aob_auth_comm_add_camera.setEnabled(is_enable);
             imgbtn_aob_auth_comm_add_browse.setEnabled(is_enable);
             imgbtn_aob_auth_comm_add_upload.setEnabled(is_enable);
 
-            imgbtn_aob_auth_permanent_add_camera.setEnabled(is_enable);
-            imgbtn_aob_auth_permanent_add_browse.setEnabled(is_enable);
-            imgbtn_aob_auth_permanent_add_upload.setEnabled(is_enable);
-
             imgbtn_aob_auth_form15g_15h_camera.setEnabled(is_enable);
             imgbtn_aob_auth_form15g_15h_browse.setEnabled(is_enable);
             imgbtn_aob_auth_form15g_15h_upload.setEnabled(is_enable);
-
-            imgbtn_aob_auth_form1b_camera.setEnabled(is_enable);
-            imgbtn_aob_auth_form1b_browse.setEnabled(is_enable);
-            imgbtn_aob_auth_form1b_upload.setEnabled(is_enable);
-
-            imgbtn_aob_auth_form1c_camera.setEnabled(is_enable);
-            imgbtn_aob_auth_form1c_browse.setEnabled(is_enable);
-            imgbtn_aob_auth_form1c_upload.setEnabled(is_enable);
         }
     }
 
@@ -2847,21 +2151,11 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
             imgbtn_aob_auth_basic_qualification_upload.setEnabled(false);
 
-            imgbtn_aob_auth_high_qualification_upload.setEnabled(false);
-
             imgbtn_aob_auth_comm_add_upload.setEnabled(false);
-
-            imgbtn_aob_auth_permanent_add_upload.setEnabled(false);
 
             imgbtn_aob_auth_form15g_15h_upload.setEnabled(false);
 
-            imgbtn_aob_auth_form1b_upload.setEnabled(false);
-
-            imgbtn_aob_auth_form1c_upload.setEnabled(false);
-
-            imgbtn_aob_applicant_sign_upload.setEnabled(false);
-
-            imgbtn_aob_declaration_upload.setEnabled(false);
+            imgbtn_aob_mob_declaration_upload.setEnabled(false);
 
 
             if (str_doc_type.equals(BANK_PASSBOOK_DOC)) {
@@ -2870,22 +2164,12 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 imgbtn_aob_auth_age_proof_upload.setEnabled(true);
             } else if (str_doc_type.equals(BASIC_QUALIFICATION_DOC)) {
                 imgbtn_aob_auth_basic_qualification_upload.setEnabled(true);
-            } else if (str_doc_type.equals(HIGH_QUALIFICATION_DOC)) {
-                imgbtn_aob_auth_high_qualification_upload.setEnabled(true);
             } else if (str_doc_type.equals(COMM_ADDRESS_DOC)) {
                 imgbtn_aob_auth_comm_add_upload.setEnabled(true);
-            } else if (str_doc_type.equals(PERMANENT_ADDRESS_DOC)) {
-                imgbtn_aob_auth_permanent_add_upload.setEnabled(true);
             } else if (str_doc_type.equals(FORM_15G_15H_DOC)) {
                 imgbtn_aob_auth_form15g_15h_upload.setEnabled(true);
-            } else if (str_doc_type.equals(FORM_1B_DOC)) {
-                imgbtn_aob_auth_form1b_upload.setEnabled(true);
-            } else if (str_doc_type.equals(FORM_1C_DOC)) {
-                imgbtn_aob_auth_form1c_upload.setEnabled(true);
-            } else if (str_doc_type.equals(APPLICANT_SIGN)) {
-                imgbtn_aob_applicant_sign_upload.setEnabled(true);
-            } else if (str_doc_type.equals(DECLARATION)) {
-                imgbtn_aob_declaration_upload.setEnabled(true);
+            } else if (str_doc_type.equals(AGENT_MOBILE_DECLARATION_DOC)) {
+                imgbtn_aob_mob_declaration_upload.setEnabled(true);
             }
         }
     }
@@ -2943,25 +2227,15 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
         if (result) {
 
-            if (str_doc.equals(DECLARATION)) {
+            if (str_doc.equals(AGENT_MOBILE_DECLARATION_DOC)) {
 
-                imgbtn_aob_declaration_camera.setEnabled(false);
-                imgbtn_aob_declaration_browse.setEnabled(false);
-                imgbtn_aob_declaration_upload.setEnabled(false);
-                imgbtn_aob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
+                imgbtn_aob_mob_declaration_camera.setEnabled(false);
+                imgbtn_aob_mob_declaration_browse.setEnabled(false);
+                imgbtn_aob_mob_declaration_upload.setEnabled(false);
+                imgbtn_aob_mob_declaration_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
 
                 is_declaration_uploaded = true;
-                mDeclarationFile = null;
-
-            } else if (str_doc.equals(APPLICANT_SIGN)) {
-
-                imgbtn_aob_applicant_sign_camera.setEnabled(false);
-                imgbtn_aob_applicant_sign_browse.setEnabled(false);
-                imgbtn_aob_applicant_sign_upload.setEnabled(false);
-                imgbtn_aob_applicant_sign_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-
-                is_applicant_sign_uploaded = true;
-                mApplicantSignFile = null;
+                mAgentMobileDeclarationFile = null;
 
             } else if (str_doc.equals(BANK_PASSBOOK_DOC)) {
 
@@ -2991,15 +2265,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
                 is_basic_qualification_uploaded = true;
                 mBasicQualificationFile = null;
-            } else if (str_doc.equals(HIGH_QUALIFICATION_DOC)) {
-
-                imgbtn_aob_auth_high_qualification_camera.setEnabled(false);
-                imgbtn_aob_auth_high_qualification_browse.setEnabled(false);
-                imgbtn_aob_auth_high_qualification_upload.setEnabled(false);
-                imgbtn_aob_auth_high_qualification_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-
-                is_high_qualification_uploaded = true;
-                mHighQualificationFile = null;
             } else if (str_doc.equals(COMM_ADDRESS_DOC)) {
 
                 imgbtn_aob_auth_comm_add_camera.setEnabled(false);
@@ -3008,16 +2273,7 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 imgbtn_aob_auth_comm_add_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
 
                 is_comm_address_uploaded = true;
-                mHighQualificationFile = null;
-            } else if (str_doc.equals(PERMANENT_ADDRESS_DOC)) {
-
-                imgbtn_aob_auth_permanent_add_camera.setEnabled(false);
-                imgbtn_aob_auth_permanent_add_browse.setEnabled(false);
-                imgbtn_aob_auth_permanent_add_upload.setEnabled(false);
-                imgbtn_aob_auth_permanent_add_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-
-                is_permanent_address_uploaded = true;
-                mPermanentAddFile = null;
+                mCommAddressFile = null;
             } else if (str_doc.equals(FORM_15G_15H_DOC)) {
 
                 imgbtn_aob_auth_form15g_15h_camera.setEnabled(false);
@@ -3036,24 +2292,6 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
 
                 is_others_doc_uploaded = true;
                 mOthersFile = null;
-            } else if (str_doc.equals(FORM_1B_DOC)) {
-
-                imgbtn_aob_auth_form1b_camera.setEnabled(false);
-                imgbtn_aob_auth_form1b_browse.setEnabled(false);
-                imgbtn_aob_auth_form1b_upload.setEnabled(false);
-                imgbtn_aob_auth_form1b_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-
-                is_form1B_uploaded = true;
-                mForm1BFile = null;
-            } else if (str_doc.equals(FORM_1C_DOC)) {
-
-                imgbtn_aob_auth_form1c_camera.setEnabled(false);
-                imgbtn_aob_auth_form1c_browse.setEnabled(false);
-                imgbtn_aob_auth_form1c_upload.setEnabled(false);
-                imgbtn_aob_auth_form1c_upload.setImageDrawable(getResources().getDrawable(R.drawable.checkedupload));
-
-                is_form1C_uploaded = true;
-                mForm1CFile = null;
             } else if (str_doc.equals(IA_UPGRADE_TCC_DOC)) {
 
                 imgbtn_ia_upgrade_tcc_camera.setEnabled(false);
@@ -3140,40 +2378,14 @@ public class ActivityAOBDocumentUpload extends AppCompatActivity implements View
                 envelope.setOutputSoapObject(request);
 
                 HttpTransportSE androidHttpTranport = new HttpTransportSE(ServiceURL.SERVICE_URL);
-                try {
-                    androidHttpTranport.call(NAMESPACE + METHOD_NAME_SAVE_AOB_DETAILS, envelope);
-                    //Object response = envelope.getResponse();
+                androidHttpTranport.call(NAMESPACE + METHOD_NAME_SAVE_AOB_DETAILS, envelope);
+                //Object response = envelope.getResponse();
 
-                    SoapPrimitive sa = null;
-                    try {
-                        sa = (SoapPrimitive) envelope.getResponse();
+                SoapPrimitive sa = null;
+                sa = (SoapPrimitive) envelope.getResponse();
 
-                        return sa.toString();
+                return sa.toString();
 
-                    } catch (Exception e) {
-                        try {
-                            throw (e);
-                        } catch (Exception e1) {
-                            e1.printStackTrace();
-                        }
-                        running = false;
-                    }
-
-                } catch (IOException e) {
-                    try {
-                        throw (e);
-                    } catch (Exception e1) {
-                        e1.printStackTrace();
-                    }
-                    running = false;
-                } catch (XmlPullParserException e) {
-                    try {
-                        throw (e);
-                    } catch (Exception e1) {
-                        e1.printStackTrace();
-                    }
-                    running = false;
-                }
             } catch (Exception e) {
                 try {
                     throw (e);

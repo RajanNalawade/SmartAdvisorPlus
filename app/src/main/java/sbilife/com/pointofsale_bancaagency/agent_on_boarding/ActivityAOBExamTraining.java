@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,13 +8,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
-import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -25,7 +25,6 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -58,7 +57,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
             spnr_ia_upgrade_exam_language, spnr_ia_upgrade_exam_mode, spnr_ia_upgrade_exam_body,
             spnr_ia_upgrade_exam_status, spnr_ia_upgrade_ulip;
     private Button btn_aob_exam_training_next, btn_aob_exam_training_back;
-    private TextView txt_aob_training_start_date, txt_aob_training_end_date, txt_ia_upgrade_exam_date;
+    private TextView /*txt_aob_training_start_date, txt_aob_training_end_date,*/ txt_ia_upgrade_exam_date;
     private EditText edt_ia_upgrade_roll_no, edt_ia_upgrade_marks, edt_ia_upgrade_urn;
     private ArrayList<String> lstExamPlaces = new ArrayList<>();
     private DatePickerDialog datePickerDialog;
@@ -66,7 +65,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
     private int mYear = 0, mMonth = 0, mDay = 0;
 
     private StringBuilder str_exam_training_details;
-    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+    private boolean is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false, is_bsm_questions = false;
     private ParseXML mParseXML;
     private Date currentDate;
 
@@ -76,11 +75,14 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.activity_exam_training);
+        setContentView(R.layout.activity_aob_exam_training);
         //getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.cifenrollment_pf_activity_title);
 
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
+
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
 
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
@@ -88,13 +90,13 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
         mContext = this;
         mCommonMethods = new CommonMethods();
 
-        mCommonMethods.setApplicationToolbarMenu1(this,"Agent on Boarding");
+        mCommonMethods.setApplicationToolbarMenu1(this, "Agent on Boarding");
 
         db = new DatabaseHelper(mContext);
 
         mParseXML = new ParseXML();
 
-        View view_aob_exam_formIA = findViewById(R.id.view_aob_exam_formIA);
+        /*View view_aob_exam_formIA = findViewById(R.id.view_aob_exam_formIA);
         TextView txt_aob_exam_formIA = findViewById(R.id.txt_aob_exam_formIA);
         if (is_ia_upgrade) {
             view_aob_exam_formIA.setVisibility(View.GONE);
@@ -102,7 +104,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
         } else {
             view_aob_exam_formIA.setVisibility(View.VISIBLE);
             txt_aob_exam_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         ll_exam_details_ia = findViewById(R.id.ll_exam_details_ia);
         ll_exam_details_ia_upgrade = findViewById(R.id.ll_exam_details_ia_upgrade);
@@ -142,7 +144,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
 
         //non editable with no saving
         //editable
-        enableDisableAllFields(!is_dashboard);
+        enableDisableAllFields(!is_dashboard && !is_bsm_questions);
     }
 
     public void initialise_ia_upgrade() {
@@ -197,25 +199,25 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
         spnr_aob_exam_language.setAdapter(exam_language_adapter);
         exam_language_adapter.notifyDataSetChanged();
 
-        txt_aob_training_start_date = findViewById(R.id.txt_aob_training_start_date);
+        /*txt_aob_training_start_date = findViewById(R.id.txt_aob_training_start_date);
         txt_aob_training_start_date.setOnClickListener(this);
 
         txt_aob_training_end_date = findViewById(R.id.txt_aob_training_end_date);
-        txt_aob_training_end_date.setOnClickListener(this);
+        txt_aob_training_end_date.setOnClickListener(this);*/
     }
 
     @Override
     public void onBackPressed() {
 
-        if (is_dashboard) {
-            Intent intent = new Intent(ActivityAOBExamTraining.this, ActivityAOBForm1A.class);
+        Intent intent = new Intent(ActivityAOBExamTraining.this, ActivityAOBBankDetails.class);
+        if (is_bsm_questions)
+            intent.putExtra("is_bsm_questions", is_bsm_questions);
+        else if (is_dashboard) {
             intent.putExtra("is_dashboard", is_dashboard);
-            startActivity(intent);
         } else if (is_ia_upgrade) {
-            Intent intent = new Intent(ActivityAOBExamTraining.this, ActivityAOBBankDetails.class);
             intent.putExtra("is_ia_upgrade", is_ia_upgrade);
-            startActivity(intent);
         }
+        startActivity(intent);
     }
 
     @Override
@@ -227,7 +229,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                 onBackPressed();
                 break;
 
-            case R.id.txt_aob_training_start_date:
+            /*case R.id.txt_aob_training_start_date:
 
                 datePickerDialog = DatePickerDialog.newInstance(ActivityAOBExamTraining.this, mYear, mMonth, mDay);
                 datePickerDialog.setThemeDark(false);
@@ -254,7 +256,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                 datePickerDialog.setTitle("Training End Date");
                 datePickerDialog.show(getFragmentManager(), DATE_TRAINING_END_DATE);
 
-                break;
+                break;*/
 
             case R.id.txt_ia_upgrade_exam_date:
                 txt_ia_upgrade_exam_date.setText("");
@@ -281,7 +283,15 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
 
     public void onNextClick() {
 
-        if (!is_dashboard) {
+        if (is_bsm_questions) {
+            Intent mIntent = new Intent(ActivityAOBExamTraining.this, ActivityAOBTermsConditionsDeclaration.class);
+            mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+            startActivity(mIntent);
+        } else if (is_dashboard) {
+            Intent mIntent = new Intent(ActivityAOBExamTraining.this, ActivityAOBTermsConditionsDeclaration.class);
+            mIntent.putExtra("is_dashboard", is_dashboard);
+            startActivity(mIntent);
+        } else if (!is_dashboard && !is_bsm_questions) {
             //1. validate all details
             String str_error = validateDetails();
             if (str_error.equals("")) {
@@ -346,10 +356,6 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
             } else {
                 mCommonMethods.showMessageDialog(mContext, str_error);
             }
-        } else if (is_dashboard) {
-            Intent mIntent = new Intent(ActivityAOBExamTraining.this, ActivityAOBTermsConditionsDeclaration.class);
-            mIntent.putExtra("is_dashboard", is_dashboard);
-            startActivity(mIntent);
         }
     }
 
@@ -396,8 +402,8 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
         } else {
             String str_exam_place = spnr_aob_exam_place.getSelectedItem().toString();
             String str_exam_language = spnr_aob_exam_language.getSelectedItem().toString();
-            String str_training_start_date = txt_aob_training_start_date.getText().toString();
-            String str_training_end_date = txt_aob_training_end_date.getText().toString();
+            /*String str_training_start_date = txt_aob_training_start_date.getText().toString();
+            String str_training_end_date = txt_aob_training_end_date.getText().toString();*/
 
             str_exam_training_details = new StringBuilder();
 
@@ -405,17 +411,17 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
             str_exam_training_details.append("<exam_details_place>").append(str_exam_place).append("</exam_details_place>");
             str_exam_training_details.append("<exam_details_language>").append(str_exam_language).append("</exam_details_language>");
 
-            if (!str_training_start_date.equals("")) {
+            /*if (!str_training_start_date.equals("")) {
                 String[] strArr = str_training_start_date.split("-");
                 str_exam_training_details.append("<training_details_start_date>").append(strArr[1] + "-" + strArr[0] + "-" + strArr[2]).append("</training_details_start_date>");
-            } else
-                str_exam_training_details.append("<training_details_start_date></training_details_start_date>");
+            } else*/
+            str_exam_training_details.append("<training_details_start_date></training_details_start_date>");
 
-            if (!str_training_end_date.equals("")) {
+            /*if (!str_training_end_date.equals("")) {
                 String[] strArr = str_training_end_date.split("-");
                 str_exam_training_details.append("<training_details_end_date>").append(strArr[1] + "-" + strArr[0] + "-" + strArr[2]).append("</training_details_end_date>");
-            } else
-                str_exam_training_details.append("<training_details_end_date></training_details_end_date>");
+            } else*/
+            str_exam_training_details.append("<training_details_end_date></training_details_end_date>");
 
             //str_exam_training_details.append("</exam_training_details>");
 
@@ -468,13 +474,13 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                 } else if (spnr_aob_exam_language.getSelectedItem().toString().equals("Select Language")) {
                     spnr_aob_exam_language.requestFocus();
                     return "Please Select Exam Language";
-                } else if (txt_aob_training_start_date.getText().toString().equals("")) {
+                }/* else if (txt_aob_training_start_date.getText().toString().equals("")) {
                     txt_aob_training_start_date.requestFocus();
                     return "Please Select Training Start Date";
                 } else if (txt_aob_training_end_date.getText().toString().equals("")) {
                     txt_aob_training_end_date.requestFocus();
                     return "Please Select Training End Date";
-                } else
+                }*/ else
                     return "";
             }
         } catch (Exception ex) {
@@ -500,9 +506,9 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
 
             spnr_aob_exam_language.setEnabled(is_enable);
 
-            txt_aob_training_start_date.setEnabled(is_enable);
+            /*txt_aob_training_start_date.setEnabled(is_enable);
 
-            txt_aob_training_end_date.setEnabled(is_enable);
+            txt_aob_training_end_date.setEnabled(is_enable);*/
         }
     }
 
@@ -519,11 +525,11 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                 txt_ia_upgrade_exam_date.setText(strSelectedDate);
                 break;
 
-            case DATE_TRAINING_START_DATE:
+            /*case DATE_TRAINING_START_DATE:
                 txt_aob_training_start_date.setText(strSelectedDate);
-                break;
+                break;*/
 
-            case DATE_TRAINING_END_DATE:
+            /*case DATE_TRAINING_END_DATE:
                 try {
 
                     SimpleDateFormat sdp = new SimpleDateFormat("dd-MM-yyyy");
@@ -557,7 +563,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                break;
+                break;*/
         }
     }
 
@@ -663,8 +669,8 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
 
                             String str_exam_place = mParseXML.parseXmlTag(str_exam_training_info, "exam_details_place");
                             String str_exam_language = mParseXML.parseXmlTag(str_exam_training_info, "exam_details_language");
-                            String str_training_start_date = mParseXML.parseXmlTag(str_exam_training_info, "training_details_start_date");
-                            String str_training_end_date = mParseXML.parseXmlTag(str_exam_training_info, "training_details_end_date");
+                            /*String str_training_start_date = mParseXML.parseXmlTag(str_exam_training_info, "training_details_start_date");
+                            String str_training_end_date = mParseXML.parseXmlTag(str_exam_training_info, "training_details_end_date");*/
 
                             //IA upgrade
                             String str_ia_upgrade_exam_roll_no = mParseXML.parseXmlTag(str_exam_training_info, "ia_upgrade_exam_roll_no");
@@ -698,7 +704,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                                 spnr_aob_exam_language.setSelection(Arrays.asList(getResources().
                                         getStringArray(R.array.arr_aob_exam_language)).indexOf(str_exam_language));
 
-                                if (!str_training_start_date.equals("")) {
+                                /*if (!str_training_start_date.equals("")) {
                                     String[] strArr = str_training_start_date.split("-");
                                     txt_aob_training_start_date.setText(strArr[1] + "-" + strArr[0] + "-" + strArr[2]);
                                 } else
@@ -708,7 +714,7 @@ public class ActivityAOBExamTraining extends AppCompatActivity implements View.O
                                     String[] strArr = str_training_end_date.split("-");
                                     txt_aob_training_end_date.setText(strArr[1] + "-" + strArr[0] + "-" + strArr[2]);
                                 } else
-                                    txt_aob_training_end_date.setText("");
+                                    txt_aob_training_end_date.setText("");*/
                             }
                         }
                     }

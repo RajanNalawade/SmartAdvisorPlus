@@ -53,6 +53,7 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.MarshalBase64;
@@ -79,6 +80,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import cropper.CropImage;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -88,6 +90,9 @@ import sbilife.com.pointofsale_bancaagency.DatabaseHelper;
 import sbilife.com.pointofsale_bancaagency.ParseXML;
 import sbilife.com.pointofsale_bancaagency.R;
 import sbilife.com.pointofsale_bancaagency.ServiceURL;
+import sbilife.com.pointofsale_bancaagency.agent_on_boarding.ActivityAOB_Menu;
+import sbilife.com.pointofsale_bancaagency.ckyc.AsyncGetcKYCSearchDetail;
+import sbilife.com.pointofsale_bancaagency.ckyc.InterfaceCKYCProcessCompletion;
 import sbilife.com.pointofsale_bancaagency.common.AsyncUploadFile_Common;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
 import sbilife.com.pointofsale_bancaagency.common.CompressImage;
@@ -107,22 +112,25 @@ import sbilife.com.pointofsale_bancaagency.ekyc.request.Demo;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.Opts;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.Param;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.PidOptions;
+import sbilife.com.pointofsale_bancaagency.ekyc.response.PidData;
 import sbilife.com.pointofsale_bancaagency.ekyc.utilites.HttpConnector;
 import sbilife.com.pointofsale_bancaagency.ekyc.utilites.XMLUtilities;
-import sbilife.com.pointofsale_bancaagency.home.CarouselHomeActivity;
 import sbilife.com.pointofsale_bancaagency.utility.SelfAttestedDocumentActivity;
 
 public class Activity_POSP_RA_Authentication extends AppCompatActivity implements View.OnClickListener,
-        AsyncUploadFile_Common.Interface_Upload_File_Common {
+        AsyncUploadFile_Common.Interface_Upload_File_Common, DatePickerDialog.OnDateSetListener,
+        InterfaceCKYCProcessCompletion {
 
     public static int row_details = 0;
     private final String NAMESPACE = "http://tempuri.org/";
     private final String METHOD_NAME_UPLOAD_ALL_AOB_DOC = "UploadFile_AgentEnroll";
     private final String METHOD_NAME_CHECK_PAN_NUMBER = "checkPanCardNo_smrt";
+    private final String METHOD_NAME_CHECK_PAN_EXISTS = "checkpan_aob";
     private final int REQUEST_OCR = 100;
     private final int REQUEST_CODE_CAPTURE_DOCUMENT = 200;
     private final int REQUEST_CODE_BROWSE_DOCUMENT = 300;
     private final int OFFLINE_EKYC_ACTIVITY = 11;
+    private final String DATE_APPLICANT_DOB = "ApplicantDOB";
     private final String PAN_DOC = "pan";
     private final String AGE_DOC = "age_proof";
     private final String COMM_ADDRESS_DOC = "communication_proof";
@@ -142,7 +150,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
     /*private Button btn_aob_aadhaar_ekyc_capture;*/
     private EditText edt_aob_auth_aadhaar, edt_aob_aadhaar_otp, edt_aob_auth_pan;
     private TextView tv_aob_aadhaar_textViewMessage, tv_aob_aadhaar_Status;
-    private String str_pan_no = "";
+    private String str_pan_no = "", str_aob_dob = "";
     private String eSignAuth = "";
     private String OCR_TYPE = "";
     private String resGenerateOTPString = "";
@@ -158,7 +166,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
     private String str_QR_code_Photo = "";
     private String str_ekyc_code_address = "";
     private boolean validate_pan_card = false;
-    private boolean is_pan_file_uploaded = false;
+    private boolean is_pan_file_uploaded = false, is_browse = false;
     private Date date1;
     private int panLookupClickedCount = 0;
     /*private ProgressBar vertical_aob_aadhaar_progressbar;*/
@@ -171,7 +179,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
     private ImageView iv_aob_aadhaar_ekyc_fingerprintcapture, imageButtonAOBEkyc, imageButtonAOBManualKYC, imageButton_aob_dashboard;
     private LinearLayout ll_aob_aadhaar_OTP, ll_aob_aadhaar_Fingerprint, ll_aob_aadhaar_IRIS/*, ll_aob_auth_aadhhar*/,
             ll_aob_ekyc, ll_aob_manual_kyc, ll_manual_kyc_details, ll_aob_dashboard, ll_aob_aadhaar_details/*, ll_psop_rejecti_remark*/;
-    private TextView textviewAOBEkyc, textviewAOBManualKYC, textview_aob_dashboard, txtPanLookUpLink
+    private TextView textviewAOBEkyc, textviewAOBManualKYC, textview_aob_dashboard, txtPanLookUpLink, txt_aob_auth_dob
             /*, textview_rejecti_remark*/;
 
     private AsyncGenerateOTP mAsyncGenerateOTP;
@@ -179,10 +187,79 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
     private AsyncCaptureRDIRISSuccess mAsyncCaptureRDIRISSuccess;
     private AsyncFingerPrintRDServiceCaptureSuccess mAsyncFingerPrintRDServiceCaptureSuccess;
 
+    private AsyncGetcKYCSearchDetail mAsyncGetcKYCSearchDetail;
+
     private File mPanFile, mCapturedImgFile;
     private AsyncUploadFile_Common mAsyncUploadFileCommon;
     private AsyncCheckPAN mAsyncCheckPAN;
     private ContentValues cv;
+    private ActivityResultLauncher<Intent> mBrowseDocLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            try {
+                if (result.getResultCode() == RESULT_OK) {
+                    if (result != null && result.getData().getData() != null) {
+
+                        Uri mSelectedUri = result.getData().getData();
+
+                        String strMimeType = mStorageUtils.getMimeType(mContext, mSelectedUri);
+                        Object[] mObject = mCommonMethods.getContentURIDetails(mContext, mSelectedUri);
+
+                        String str_extension = mObject[0].toString();
+                        double kilobyte = (double) mObject[2];
+
+                        if (str_extension.equals(".pdf")) {
+
+                            if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
+
+                                String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
+                                new FileLoader(mContext, StorageUtils.DIRECT_DIRECTORY,
+                                        imageFileName,
+                                        new FileLoader.FileLoaderResponce() {
+                                            @Override
+                                            public void fileLoadFinished(File fileOutput) {
+                                                if (fileOutput != null) {
+                                                    mPanFile = fileOutput;
+                                                    imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                    imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
+                                                } else {
+                                                    mPanFile = null;
+                                                    imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                                    imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
+                                                }
+
+                                            }
+                                        }).execute(mSelectedUri);
+                            } else {
+                                mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
+                            }
+                        } else if (strMimeType.equals("image/jpeg") || strMimeType.equals("image/jpg")
+                                || strMimeType.equals("image/png")) {
+                            // start cropping activity for pre-acquired image saved on the device
+                            is_browse = true;
+                            CropImage.activity(mSelectedUri)
+                                    .start(Activity_POSP_RA_Authentication.this);
+                        } else {
+                            mCommonMethods.showMessageDialog(mContext, "Please Select Proper Document format!");
+                        }
+
+
+                    } else {
+                        mCommonMethods.showToast(mContext, "File Not Found!");
+                    }
+                } else {
+                    mCommonMethods.showToast(mContext, "File browsing cancelled..");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                mCommonMethods.showMessageDialog(mContext, e.getMessage());
+            }
+        }
+    });
+
+    private Calendar mCalender;
+    private DatePickerDialog datePickerDialog;
+    private int mDOBDay = 0, mDOBYear = 0, mDOBMonth = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,14 +291,20 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         /*mSupportedDevicelist = new HashMap<>();
         mSupportedDevicelist.put("SM-T116IR", true);*/
 
+        mCalender = Calendar.getInstance();
+        mDOBYear = mCalender.get(Calendar.YEAR);
+        mDOBMonth = mCalender.get(Calendar.MONTH);
+        mDOBDay = mCalender.get(Calendar.DAY_OF_MONTH);
+
         date1 = new Date();
 
         getUserDetails();
 
         txtPanLookUpLink = findViewById(R.id.txtPanLookUpLink);
         txtPanLookUpLink.setOnClickListener(this);
-        txtPanLookUpLink.setText(Html.fromHtml("<a href='https://agencyportal.irdai.gov.in/PublicAccess/LookUpPAN.aspx'>"
-                + "PAN Look Up Link</a> <font color='#0000FF'><b>*<b></font>"));
+        txtPanLookUpLink.setText(Html.fromHtml("<font color='#00a1e3'>"
+                + "<a href='https://agencyportal.irdai.gov.in/PublicAccess/LookUpPAN.aspx'>"
+                + "PAN Look Up Link *</a></font>"), TextView.BufferType.SPANNABLE);
 
         edt_aob_auth_pan = findViewById(R.id.edt_aob_auth_pan);
 
@@ -242,6 +325,9 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
         btn_aob_aadhaar_ok = findViewById(R.id.btn_aob_aadhaar_ok);
         btn_aob_aadhaar_ok.setOnClickListener(this);
+
+        txt_aob_auth_dob = findViewById(R.id.txt_aob_auth_dob);
+        txt_aob_auth_dob.setOnClickListener(this);
 
         ll_aob_dashboard = findViewById(R.id.ll_aob_dashboard);
         ll_aob_dashboard.setOnClickListener(this);
@@ -365,26 +451,29 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
             @Override
             public void afterTextChanged(Editable s) {
-                str_pan_no = edt_aob_auth_pan.getText().toString().replaceAll("\\s+", "").trim();
-                str_pan_no = str_pan_no == null ? "" : str_pan_no;
+                str_aob_dob = txt_aob_auth_dob.getText().toString();
+                str_aob_dob = str_aob_dob == null ? "" : str_aob_dob;
+                if (!str_aob_dob.equals("")) {
+                    str_pan_no = edt_aob_auth_pan.getText().toString().replaceAll("\\s+", "").trim();
+                    str_pan_no = str_pan_no == null ? "" : str_pan_no;
 
-                if (str_pan_no.length() == 10) {
-                    validate_pan_card = mCommonMethods.valPancard(str_pan_no, edt_aob_auth_pan);
+                    if (str_pan_no.length() == 10) {
+                        validate_pan_card = mCommonMethods.valPancard(str_pan_no, edt_aob_auth_pan);
 
-                    if (validate_pan_card) {
+                        if (validate_pan_card) {
 
-                        //check wheter pan is available or not
-                        ArrayList<String> lstRslt = db.get_POS_RA_ID(str_pan_no);
+                            //check wheter pan is available or not
+                            ArrayList<String> lstRslt = db.get_POS_RA_ID(str_pan_no);
 
-                        if (lstRslt.size() > 0) {
+                            if (lstRslt.size() > 0) {
 
-                            //depending upon status navigate
+                                //depending upon status navigate
 
-                            row_details = Integer.parseInt(lstRslt.get(0));
+                                row_details = Integer.parseInt(lstRslt.get(0));
 
-                            String str_status = lstRslt.get(1);
+                                String str_status = lstRslt.get(1);
 
-                            //get training end date
+                                //get training end date
                             /*String str_training_end_date = lstRslt.get(2).toString() == null ? "" : lstRslt.get(2).toString();
 
                             if (!str_training_end_date.equals("")){
@@ -394,72 +483,72 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                                 str_training_end_date = arrEndDate[1] + "-" + arrEndDate[0] + "-" + arrEndDate[2];
                             }*/
 
-                            Intent mIntent;
-                            switch (str_status) {
+                                Intent mIntent;
+                                switch (str_status) {
 
-                                case "1":
+                                    case "1":
 
-                                case "13":
-                                    //mCommonMethods.showToast(mContext, "Synch failure... try dashboard menu");
-                                    //call personal info page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_PersonalInfo.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                    case "13":
+                                        //mCommonMethods.showToast(mContext, "Synch failure... try dashboard menu");
+                                        //call personal info page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_PersonalInfo.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                case "2":
-                                    //call occupational depatails page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_Occupation.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                    case "2":
+                                        //call occupational depatails page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_Occupation.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                case "3":
-                                    //call nominee info page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_Nomination.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                    case "3":
+                                        //call nominee info page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_Nomination.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                case "4":
-                                    //call bank info page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_BankDetails.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                    case "4":
+                                        //call bank info page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_BankDetails.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                case "5":
-                                    //call exam and training info page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_ExamTraining.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                    case "5":
+                                        //call exam and training info page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_ExamTraining.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                //call declarations and conditions page with editable
-                                case "6":
+                                    //call declarations and conditions page with editable
+                                    case "6":
 
-                                    //for declarations and conditions data saved
-                                case "7":
+                                        //for declarations and conditions data saved
+                                    case "7":
 
 
-                                    //for agent form complet sync
-                                case "8":
+                                        //for agent form complet sync
+                                    case "8":
 
-                                    //for customer photo complet sync
-                                case "9":
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
-                                    break;
+                                        //for customer photo complet sync
+                                    case "9":
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_TermsConditionsDeclaration.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
+                                        break;
 
-                                case "10":
+                                    case "10":
 
-                                case "11":
+                                    case "11":
 
-                                case "12":
-                                    //compare current date with training end date
+                                    case "12":
+                                        //compare current date with training end date
 
-                                    //current date
+                                        //current date
                                     /*Calendar cal = Calendar.getInstance();
                                     String mont = ((cal.get(Calendar.MONTH) + 1) < 10 ? "0" : "") + (cal.get(Calendar.MONTH) + 1);
                                     String day = (cal.get(Calendar.DAY_OF_MONTH) < 10 ? "0" : "") + cal.get(Calendar.DAY_OF_MONTH);
@@ -474,10 +563,10 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                                         trainingEndDate = dateFormat.parse(str_training_end_date);
 
                                         if (trainingEndDate.before(currentDate) || trainingEndDate.equals(currentDate)) {*/
-                                    //call doc upload page and conditions page with editable
-                                    mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_DocumentUpload.class);
-                                    mIntent.putExtra("is_dashboard", false);
-                                    startActivity(mIntent);
+                                        //call doc upload page and conditions page with editable
+                                        mIntent = new Intent(Activity_POSP_RA_Authentication.this, Activity_POSP_RA_DocumentUpload.class);
+                                        mIntent.putExtra("is_dashboard", false);
+                                        startActivity(mIntent);
                                         /*}else{
                                             mCommonMethods.showMessageDialog(mContext,
                                                     "The application can be submitted only upon completion of the training");
@@ -486,57 +575,68 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                                     } catch (ParseException ex) {
                                         mCommonMethods.printLog("parse Error : ", ex.getMessage());
                                     }*/
-                                    break;
+                                        break;
 
 
-                                case "14":
+                                    case "14":
 
-                                    mCommonMethods.showMessageDialog(mContext, "This PAN Number Has Already Synched Details \n"
-                                            + "You Can view Details by Dashboard");
+                                        mCommonMethods.showMessageDialog(mContext, "This PAN Number Has Already Synched Details \n"
+                                                + "You Can view Details by Dashboard");
 
-                                    break;
+                                        break;
 
-                                default:
+                                    default:
+                                        imgbtn_aob_auth_pan_camera.setEnabled(true);
+
+                                        imgbtn_aob_auth_pan_browse.setEnabled(true);
+
+                                        imgbtn_aob_auth_pan_upload.setEnabled(true);
+                                        break;
+                                }
+                            } else {
+                                //insert data in to table
+                                try {
+
+                                    //save date in long
+                                    Calendar c = Calendar.getInstance();
+
+                                    //insert first to status and remark table
+                                    cv.clear();
+                                    cv.put(db.POSP_RA_PAN_NO, str_pan_no);
+                                    cv.put(db.POSP_RA_PAN_DETAILS, "");
+                                    cv.put(db.POSP_RA_CREATED_BY, strCIFBDMUserId);
+                                    cv.put(db.POSP_RA_CREATED_DATE, new Date(c.getTimeInMillis()).getTime() + "");
+
+                                    cv.put(db.POSP_RA_IN_APP_STATUS, "0");
+                                    cv.put(db.POSP_RA_IN_APP_STATUS_REMARK, "New Candidate PAN inserted");
+                                    cv.put(db.POSP_RA_AGENCY_TYPE, mCommonMethods.str_posp_ra_customer_type);
+
+                                    row_details = db.insert_POSP_RA(cv);
+
                                     imgbtn_aob_auth_pan_camera.setEnabled(true);
 
                                     imgbtn_aob_auth_pan_browse.setEnabled(true);
 
                                     imgbtn_aob_auth_pan_upload.setEnabled(true);
-                                    break;
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                    mCommonMethods.showToast(mContext, "KYC Details Saving Failed");
+                                }
                             }
                         } else {
-                            //insert data in to table
-                            try {
+                            edt_aob_auth_pan.setError("Invalid PAN Number");
 
-                                //save date in long
-                                Calendar c = Calendar.getInstance();
+                            validate_pan_card = false;
 
-                                //insert first to status and remark table
-                                cv.clear();
-                                cv.put(db.POSP_RA_PAN_NO, str_pan_no);
-                                cv.put(db.POSP_RA_PAN_DETAILS, "");
-                                cv.put(db.POSP_RA_CREATED_BY, strCIFBDMUserId);
-                                cv.put(db.POSP_RA_CREATED_DATE, new Date(c.getTimeInMillis()).getTime() + "");
+                            imgbtn_aob_auth_pan_camera.setEnabled(false);
 
-                                cv.put(db.POSP_RA_IN_APP_STATUS, "0");
-                                cv.put(db.POSP_RA_IN_APP_STATUS_REMARK, "New Candidate PAN inserted");
-                                cv.put(db.POSP_RA_AGENCY_TYPE, mCommonMethods.str_posp_ra_customer_type);
+                            imgbtn_aob_auth_pan_browse.setEnabled(false);
 
-                                row_details = db.insert_POSP_RA(cv);
-
-                                imgbtn_aob_auth_pan_camera.setEnabled(true);
-
-                                imgbtn_aob_auth_pan_browse.setEnabled(true);
-
-                                imgbtn_aob_auth_pan_upload.setEnabled(true);
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                                mCommonMethods.showToast(mContext, "KYC Details Saving Failed");
-                            }
+                            imgbtn_aob_auth_pan_upload.setEnabled(false);
                         }
+
                     } else {
-                        edt_aob_auth_pan.setError("Invalid PAN Number");
 
                         validate_pan_card = false;
 
@@ -546,16 +646,9 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
                         imgbtn_aob_auth_pan_upload.setEnabled(false);
                     }
-
                 } else {
-
-                    validate_pan_card = false;
-
-                    imgbtn_aob_auth_pan_camera.setEnabled(false);
-
-                    imgbtn_aob_auth_pan_browse.setEnabled(false);
-
-                    imgbtn_aob_auth_pan_upload.setEnabled(false);
+                    mCommonMethods.showToast(mContext,
+                            "Please select Advisor's(Applicant) Date of Birth..");
                 }
             }
         });
@@ -747,6 +840,20 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
     }
 
+    /*private void activateIrisLicense() {
+        try {
+
+            String key = "5B481893587214DD076EE91D706FE2DE704F8EEE351C8A6C6E81BAE63C6BE8BE201167A9B97A4421864D7C03685957016B474B066AC9C58FCB27B831DC084524";
+
+            String packageName = getApplicationContext().getPackageName();
+            Log.i("Activation", "packageName: " + packageName);
+            mLicenseMgr.activateLicense(key, packageName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }*/
+
     private boolean hasPermission() {
         try {
             String BIOMETRIC_LICENSE_PERMISSION = "com.sec.enterprise.biometric.permission.IRIS_RECOGNITION";
@@ -761,20 +868,6 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         }
         return false;
     }
-
-    /*private void activateIrisLicense() {
-        try {
-
-            String key = "5B481893587214DD076EE91D706FE2DE704F8EEE351C8A6C6E81BAE63C6BE8BE201167A9B97A4421864D7C03685957016B474B066AC9C58FCB27B831DC084524";
-
-            String packageName = getApplicationContext().getPackageName();
-            Log.i("Activation", "packageName: " + packageName);
-            mLicenseMgr.activateLicense(key, packageName);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }*/
 
     @Override
     protected void onPause() {
@@ -791,6 +884,21 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
         if (mAsyncFingerPrintRDServiceCaptureSuccess != null)
             mAsyncFingerPrintRDServiceCaptureSuccess.cancel(true);
+
+        if (mAsyncGetcKYCSearchDetail != null)
+            mAsyncGetcKYCSearchDetail.cancel(true);
+    }
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        switch (view.getTag()) {
+            case DATE_APPLICANT_DOB:
+                String strSelectedDate = (dayOfMonth < 10 ? "0" : "") + dayOfMonth + "-"
+                        + ((monthOfYear + 1) < 10 ? "0" : "") + (monthOfYear + 1) + "-"
+                        + year;
+                txt_aob_auth_dob.setText(strSelectedDate);
+                break;
+        }
     }
 
     @Override
@@ -862,32 +970,18 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                 if (panLookupClickedCount >= 1) {
                     is_pan_file_uploaded = false;
 
-                    Random r = new Random(System.currentTimeMillis());
+                    //Check PAN already exists
+                    str_doc = METHOD_NAME_CHECK_PAN_EXISTS;
+                    SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME_CHECK_PAN_EXISTS);
 
-                    //call PAN service to get Name of PAN card holder
-                    String strPANInput = "<PANDETAILS>"
-                            + "<MODULENAME>" + "CMS" + "</MODULENAME>"
-                            + "<USERID>" + "14830" + "</USERID>"//hard coded user ID
-                            + "<PANINPUT>" + "<PANNO>" + str_pan_no + "</PANNO>"
-                            + "<LASTNAME>" + "" + "</LASTNAME>"
-                            + "<FIRSTNAME>" + "ABC" + "</FIRSTNAME>"
-                            + "<MIDDLENAME>" + "" + "</MIDDLENAME>"
-                            + "<TRANSACTIONID>" + "CMS_" + r.nextInt(999999) + "</TRANSACTIONID>"
-                            + "<PURPOSE>POSP-RA</PURPOSE>"
-                            + "</PANINPUT>"
-                            + "</PANDETAILS>";
+                    request.addProperty("strPAN", str_pan_no);
+                    request.addProperty("strSource", "SB!L!F@");
+                    request.addProperty("strAuthKey", "SBI@@L!");
 
-                    mAsyncCheckPAN = new AsyncCheckPAN();
-                    mAsyncCheckPAN.execute(strPANInput);
-
-                    //for testing
-                    /*if (mPanFile != null) {
-
-                        createSoapRequestToUploadDoc(mPanFile);
-
-                    } else {
-                        mCommonMethods.showMessageDialog(mContext, "Error While creating PAN card doc!!");
-                    }*/
+                    mAsyncUploadFileCommon = new AsyncUploadFile_Common(mContext,
+                            Activity_POSP_RA_Authentication.this, request,
+                            METHOD_NAME_CHECK_PAN_EXISTS);
+                    mAsyncUploadFileCommon.execute();
 
                 } else {
                     mCommonMethods.showMessageDialog(mContext, "Please check your PAN with Lookup Link first!");
@@ -1033,6 +1127,26 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
                 break;
 
+            case R.id.txt_aob_auth_dob:
+                datePickerDialog = DatePickerDialog.newInstance(Activity_POSP_RA_Authentication.this,
+                        mDOBYear, mDOBMonth, mDOBDay);
+                datePickerDialog.setThemeDark(false);
+                datePickerDialog.showYearPickerFirst(false);
+                /*//future date not allowed
+                datePickerDialog.setMinDate(mCalender);*/
+
+                //Applicant should be above 18 years.
+                Calendar max_date_c = Calendar.getInstance();
+                max_date_c.set(Calendar.YEAR, mDOBYear - 18);
+                datePickerDialog.setMaxDate(max_date_c);
+
+                datePickerDialog.dismissOnPause(true); //dismiss dialog when onPause() called?
+                datePickerDialog.setAccentColor(getResources().getColor(R.color.Common_blue));
+                datePickerDialog.setTitle("Applicant DOB");
+
+                datePickerDialog.show(getFragmentManager(), DATE_APPLICANT_DOB);
+                break;
+
             default:
                 break;
         }
@@ -1041,7 +1155,12 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(Activity_POSP_RA_Authentication.this, CarouselHomeActivity.class));
+        Bundle mBundle = new Bundle();
+        mBundle.putString("STRING_DATA", mCommonMethods.str_posp_ra_customer_type);
+
+        Intent mIntent = new Intent(Activity_POSP_RA_Authentication.this, ActivityAOB_Menu.class);
+        mIntent.putExtras(mBundle);
+        startActivity(mIntent);
     }
 
     private String getErrorMessage(String error) {
@@ -1221,7 +1340,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         }
     }
 
-    public void capture_document(){
+    public void capture_document() {
 
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         String imageFileName = str_pan_no + str_doc + ".jpg";
@@ -1249,8 +1368,8 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         mIntent.addCategory(Intent.CATEGORY_OPENABLE);
         mIntent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION
                 | Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
-        mIntent.setType("application/pdf");
-        //mIntent.setType("*/*");
+        //mIntent.setType("application/pdf");
+        mIntent.setType("*/*");
             /*String[] mimeType = new String[]{"application/x-binary,application/octet-stream"};
             if(mimeType.length > 0) {
                 mIntent.putExtra(Intent.EXTRA_MIME_TYPES, mimeType);
@@ -1258,161 +1377,52 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         mBrowseDocLauncher.launch(mIntent);
     }
 
-    private ActivityResultLauncher<Intent> mBrowseDocLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-        @Override
-        public void onActivityResult(ActivityResult result) {
-            try {
-                if (result.getResultCode() == RESULT_OK){
-                    if (result != null && result.getData().getData() != null){
-
-                        Uri mSelectedUri = result.getData().getData();
-
-                        String strMimeType = mStorageUtils.getMimeType(mContext, mSelectedUri);
-                        Object[] mObject = mCommonMethods.getContentURIDetails(mContext, mSelectedUri);
-
-                        String str_extension = mObject[0].toString();
-                        double kilobyte = (double) mObject[2];
-
-                        if (!strMimeType.equals("application/octet-stream")
-                                && !strMimeType.equals("application/vnd.android.package-archive")) {
-
-                            if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
-
-                                if (str_extension.equals(".pdf")) {
-
-                                    String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
-                                    new FileLoader(mContext, StorageUtils.DIRECT_DIRECTORY,
-                                            imageFileName,
-                                            new FileLoader.FileLoaderResponce() {
-                                                @Override
-                                                public void fileLoadFinished(File fileOutput) {
-                                                    if (fileOutput != null){
-                                                        mPanFile = fileOutput;
-                                                        imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                        imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                                    }else {
-                                                        mPanFile = null;
-                                                        imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                        imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                                    }
-
-                                                }
-                                            }).execute(mSelectedUri);
-                                } else {
-                                    mCommonMethods.showMessageDialog(mContext, "Please Select PDF format Document only!");
-                                }
-
-                            } else {
-                                mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
-                            }
-
-                        } else {
-                            mCommonMethods.showToast(mContext, ".exe/.apk file format not acceptable");
-                            mPanFile = null;
-                        }
-                    }else{
-                        mCommonMethods.showToast(mContext, "File Not Found!");
-                    }
-                }else{
-                    mCommonMethods.showToast(mContext, "File browsing cancelled..");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                mCommonMethods.showMessageDialog(mContext, e.getMessage());
-            }
-        }
-    });
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        /*if (requestCode == REQUEST_OCR) {
-            if (resultCode == RESULT_OK) {
-                final File imagePath;
-                String DocumentType = "";
-                Bundle bundle = data.getExtras();
 
-                if (bundle != null) {
-                    String jsonData = (String) bundle.get("jsonData");
+        if (resultCode == RESULT_OK) {
+            if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
 
-                    try {
-                        JSONObject object = new JSONObject(jsonData);
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Uri resultUri = result.getUri();
+                mCapturedImgFile = new File(resultUri.getPath());
+                if (mCapturedImgFile != null) {
+                    CompressImage.compressImage(mCapturedImgFile.getPath());
 
-                        DocumentType = object.get("DocumentType").toString();
+                    long size = mCapturedImgFile.length();
+                    double kilobyte = size / 1024;
 
-                        imagePath = new File(bundle.get("BitmapImageUri").toString());
-                        //Bitmap edgeBitmap = BitmapFactory.decodeFile(imagePath.getPath());
+                    //2 MB valiadation
+                    if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
 
-                        if (imagePath != null) {
+                        String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
+                        SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
 
-                            if (DocumentType.toLowerCase().equalsIgnoreCase("Pancard".toLowerCase())
-                                    || DocumentType.toLowerCase().equalsIgnoreCase("PAN".toLowerCase())) {
+                        mPanFile = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
 
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        CompressImage.compressImage(imagePath.getPath());
+                        if (obj.createAOBDOcumentPdf(mPanFile, mCapturedImgFile, "PAN Document")) {
 
-                                        long size = imagePath.length();
-                                        double kilobyte = size / 1024;
-
-                                        //2 MB valiadation
-                                        if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
-
-                                            File folder = new File(CommonMethods.EXTERNAL_STORAGE_DIRECTORY
-                                                    + CommonMethods.DIRECT_DIRECTORY);
-
-                                            if (!folder.exists()) {
-                                                folder.mkdirs();
-                                            }
-
-                                            String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
-                                            SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
-
-                                            mPanFile = new File(folder, File.separator + imageFileName);
-
-                                            if (obj.createAOBDOcumentPdf(mPanFile, imagePath, "PAN Document")) {
-                                                if (OCR_TYPE.equals("CAMERA")) {
-                                                    imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                                                    imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-                                                } else if (OCR_TYPE.equals("BROWSE")) {
-                                                    imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
-                                                    imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
-                                                }
-
-                                                //remove common source file from directory
-                                                if (imagePath.exists()) {
-                                                    imagePath.delete();
-                                                }
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File Not Found");
-                                            }
-
-                                        } else {
-                                            mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
-                                        }
-                                    }
-                                });
+                            if (is_browse) {
+                                imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_camera));
+                                imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.checkedbrowse));
                             } else {
-                                mCommonMethods.showMessageDialog(mContext, "Please Capture/Browse PAN card!");
+                                imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
+                                imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
                             }
+
+                            //remove common source file from directory
+                            mCapturedImgFile.delete();
                         } else {
-                            mCommonMethods.showToast(mContext, "Blanck file Path");
+                            mCommonMethods.showMessageDialog(mContext, "File Not Found..");
                         }
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        mCommonMethods.showToast(mContext, e.getMessage());
+                    } else {
+                        mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
                     }
                 }
-            } else {
-                Toast.makeText(mContext, "Data not receive", Toast.LENGTH_SHORT).show();
-            }
-        }
-        else*/
-        if (requestCode == OFFLINE_EKYC_ACTIVITY) {
-            if (resultCode == RESULT_OK) {
-
+                is_browse = false;
+            } else if (requestCode == OFFLINE_EKYC_ACTIVITY) {
                 try {
                     /*String resString = db.getKYCDetails(QuatationNumber);
 
@@ -1563,70 +1573,12 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-            }
-        }
-        else if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT && resultCode == RESULT_OK) {
+            } else if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT) {
+                // start cropping activity for pre-acquired image saved on the device
+                CropImage.activity(Uri.fromFile(mCapturedImgFile)).start(this);
+            } else if (requestCode == DEVICE_CAPTURE_REQUEST_CODE) {
 
-            if (mCapturedImgFile != null){
-                CompressImage.compressImage(mCapturedImgFile.getPath());
-
-                long size = mCapturedImgFile.length();
-                double kilobyte = size / 1024;
-
-                //2 MB valiadation
-                if (kilobyte < mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE) {
-
-                    String imageFileName = str_pan_no + "_" + str_doc + ".pdf";
-                    SelfAttestedDocumentActivity obj = new SelfAttestedDocumentActivity();
-
-                    mPanFile = mStorageUtils.createFileToAppSpecificDir(mContext,imageFileName);
-
-                    if (obj.createAOBDOcumentPdf(mPanFile, mCapturedImgFile, "PAN Document")) {
-
-                        imgbtn_aob_auth_pan_camera.setImageDrawable(getResources().getDrawable(R.drawable.checkedcamera));
-                        imgbtn_aob_auth_pan_browse.setImageDrawable(getResources().getDrawable(R.drawable.ibtn_browsedoc));
-
-                        //remove common source file from directory
-                        mCapturedImgFile.delete();
-                    } else {
-                        mCommonMethods.showMessageDialog(mContext, "File Not Found..");
-                    }
-                } else {
-                    mCommonMethods.showMessageDialog(mContext, mCommonMethods.FILE_UPLOAD_RESTRICT_SIZE_MSG);
-                }
-            }else{
-                mCommonMethods.showMessageDialog(mContext, "File Not Found..");
-            }
-
-        }
-        else {
-            try {
-                if (requestCode == DEVICE_CAPTURE_REQUEST_CODE) {
-
-                    if (resultCode != AppCompatActivity.RESULT_OK) {
-                        String errorMessage = data.getStringExtra("ERROR_MESSAGE");
-                        if (errorMessage.contains("Device not registered")) {
-
-                            mCommonMethods.showToast(mContext, "wait Registeration Process will Start");
-
-                            registeredIfRequired();
-
-                            // showTokenDialog();
-                            return;
-                        } else if (errorMessage
-                                .contains("device from google playstore")) {
-
-                            showDialogGogoglePayStore("Error",
-                                    "Please install the Morpho RD service for your device from google play store");
-
-                            // showTokenDialog();
-                            return;
-                        } else {
-                            mCommonMethods.showMessageDialog(mContext, "Error:\n" + errorMessage);
-                            return;
-                        }
-                    }
-
+                try {
                     String pidDataXML = data.getStringExtra("PID_DATA");
 
                     if (pidDataXML == null) {
@@ -1634,7 +1586,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                         return;
                     }
 
-                    sbilife.com.pointofsale_bancaagency.ekyc.response.PidData pidData = (sbilife.com.pointofsale_bancaagency.ekyc.response.PidData) parseXML(sbilife.com.pointofsale_bancaagency.ekyc.response.PidData.class, pidDataXML);
+                    PidData pidData = (PidData) parseXML(PidData.class, pidDataXML);
 
                     if (pidData.getResp() == null) {
                         mCommonMethods.showMessageDialog(mContext, "Error:\n" + "Capture fingerprint failed. Resp is NULL");
@@ -1657,15 +1609,13 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
                     mAsyncFingerPrintRDServiceCaptureSuccess = new AsyncFingerPrintRDServiceCaptureSuccess();
                     mAsyncFingerPrintRDServiceCaptureSuccess.execute();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    mCommonMethods.showMessageDialog(mContext, "Error\n" + ex.getMessage());
+                }
+            } else if (requestCode == IRIS_CAPTURE_REQUEST_CODE) {
 
-                } else if (requestCode == IRIS_CAPTURE_REQUEST_CODE) {
-
-                    if (resultCode != AppCompatActivity.RESULT_OK) {
-                        mCommonMethods.showMessageDialog(mContext, "Error:\n" + "RD Service Error. Code : "
-                                + resultCode);
-                        return;
-                    }
-
+                try {
                     String pidDataXML = data.getStringExtra("PID_DATA");
 
                     if (pidDataXML == null) {
@@ -1674,7 +1624,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                         return;
                     }
 
-                    sbilife.com.pointofsale_bancaagency.ekyc.response.PidData pidData = (sbilife.com.pointofsale_bancaagency.ekyc.response.PidData) parseXML(sbilife.com.pointofsale_bancaagency.ekyc.response.PidData.class, pidDataXML);
+                    PidData pidData = (PidData) parseXML(PidData.class, pidDataXML);
 
                     if (pidData.getResp() == null) {
 
@@ -1697,6 +1647,44 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
                     mAsyncCaptureRDIRISSuccess = new AsyncCaptureRDIRISSuccess();
                     mAsyncCaptureRDIRISSuccess.execute();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    mCommonMethods.showMessageDialog(mContext, "Error\n" + ex.getMessage());
+                }
+            }
+
+        } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Exception error = result.getError();
+            mCommonMethods.showMessageDialog(mContext, error.getMessage());
+        } else {
+            try {
+                if (requestCode == DEVICE_CAPTURE_REQUEST_CODE) {
+                    String errorMessage = data.getStringExtra("ERROR_MESSAGE");
+                    if (errorMessage.contains("Device not registered")) {
+
+                        mCommonMethods.showToast(mContext, "wait Registeration Process will Start");
+
+                        registeredIfRequired();
+
+                        // showTokenDialog();
+                        return;
+                    } else if (errorMessage
+                            .contains("device from google playstore")) {
+
+                        showDialogGogoglePayStore("Error",
+                                "Please install the Morpho RD service for your device from google play store");
+
+                        // showTokenDialog();
+                        return;
+                    } else {
+                        mCommonMethods.showMessageDialog(mContext, "Error:\n" + errorMessage);
+                        return;
+                    }
+                } else if (requestCode == IRIS_CAPTURE_REQUEST_CODE) {
+                    mCommonMethods.showMessageDialog(mContext, "Error:\n" + "RD Service Error. Code : "
+                            + resultCode);
+                    return;
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
@@ -1996,7 +1984,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
             Font sub_headerBold = new Font(Font.FontFamily.TIMES_ROMAN, 7,
                     Font.BOLD);
 
-            aadhaarQRFileName = mStorageUtils.createFileToAppSpecificDir(mContext,strPAN + "_" + strDoc + ".pdf");
+            aadhaarQRFileName = mStorageUtils.createFileToAppSpecificDir(mContext, strPAN + "_" + strDoc + ".pdf");
             //File mypath = new File(folder, str_selected_urn_no + "_X1.pdf");
 
             Rectangle rect = new Rectangle(594f, 792f);
@@ -2149,11 +2137,76 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
     }
 
     @Override
+    public void onCKYCProcessComppletion(int processCount, boolean isProcessComplete, String Result) {
+        if (isProcessComplete) {
+            if (processCount == InterfaceCKYCProcessCompletion.CKYC_DOWNLOAD_DETAILS_PROCESS) {
+                try {
+                    Single.fromCallable(() -> mAsyncGetcKYCSearchDetail.GetCKYCDetails())
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Consumer<Boolean>() {
+                                @Override
+                                public void accept(@androidx.annotation.NonNull Boolean aBoolean) throws Exception {
+                                    if (aBoolean) {
+                                        //show deatils in dialog with Yes and No
+                                        final Dialog dialog = new Dialog(mContext);
+                                        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                        dialog.setContentView(R.layout.dailog_ckyc_result);
+                                        dialog.setCancelable(false);
+                                        TextView tv_dialog_msg = dialog.findViewById(R.id.tv_dialog_msg);
+                                        tv_dialog_msg.setText(Html.fromHtml(mAsyncGetcKYCSearchDetail.createFormatedCKYCDetails()));
+                                        Button bt_dialog_ok = dialog.findViewById(R.id.bt_dialog_ok);
+                                        bt_dialog_ok.setOnClickListener(new View.OnClickListener() {
+                                            public void onClick(View v) {
+
+                                                dialog.dismiss();
+                                                mAsyncGetcKYCSearchDetail.setStr_CKYC_increment(1);
+                                                mAsyncGetcKYCSearchDetail.UploadCKYCDocuments();
+                                            }
+                                        });
+                                        Button bt_dialog_reject = dialog.findViewById(R.id.bt_dialog_reject);
+                                        bt_dialog_reject.setOnClickListener(new View.OnClickListener() {
+                                            public void onClick(View v) {
+                                                dialog.dismiss();
+
+                                                //for offline eKYC
+                                                ll_aob_aadhaar_details.setVisibility(View.VISIBLE);
+                                            }
+                                        });
+                                        dialog.show();
+                                    } else {
+                                        mCommonMethods.showMessageDialog(mContext, "Error Parsing CKYC Deatils");
+                                    }
+                                }
+                            }, throwable -> {
+                                mCommonMethods.showMessageDialog(mContext, "Error Parsing CKYC Deatils");
+                            });
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            if (processCount == InterfaceCKYCProcessCompletion.CKYC_SEARCH_PROCESS) {
+                mCommonMethods.showToast(mContext, "CKYC Search Details Error : " + Result);
+            } else if (processCount == InterfaceCKYCProcessCompletion.CKYC_DOWNLOAD_DETAILS_PROCESS) {
+                mCommonMethods.showToast(mContext, "CKYC Download Details Error : " + Result);
+            } else if (processCount == InterfaceCKYCProcessCompletion.CKYC_UPLOAD_CKYC_DOC_PROCESS) {
+                mCommonMethods.showToast(mContext, "CKYC Upload Details Error : " + Result);
+            }
+
+            ll_aob_aadhaar_details.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
     public void onUploadComplete(Boolean result) {
 
         if (result) {
 
-            if (str_doc.equals(PAN_DOC)) {
+            if (str_doc.equals(METHOD_NAME_CHECK_PAN_EXISTS)) {
+                mCommonMethods.showMessageDialog(mContext, "PAN no. - " + str_pan_no + " already exists..");
+            } else if (str_doc.equals(PAN_DOC)) {
 
                 imgbtn_aob_auth_pan_camera.setEnabled(false);
                 imgbtn_aob_auth_pan_browse.setEnabled(false);
@@ -2190,8 +2243,11 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                             mIntent.putExtra("is_dashboard", false);
                             startActivity(mIntent);*/
 
-                    //for offline eKYC
-                    ll_aob_aadhaar_details.setVisibility(View.VISIBLE);
+                    //CKYC
+
+                    mAsyncGetcKYCSearchDetail = new AsyncGetcKYCSearchDetail(mContext, str_pan_no, str_aob_dob,
+                            mCommonMethods.str_posp_ra_customer_type, this);
+                    mAsyncGetcKYCSearchDetail.execute();
 
                 } catch (Exception e) {
 
@@ -2263,10 +2319,40 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
             }
 
         } else {
-            Toast.makeText(mContext, "PLease try agian later..", Toast.LENGTH_SHORT).show();
 
-            is_pan_file_uploaded = false;
-            /*ll_aob_auth_aadhhar.setVisibility(View.GONE);*/
+            if (str_doc.equals(METHOD_NAME_CHECK_PAN_EXISTS)) {
+                Random r = new Random(System.currentTimeMillis());
+
+                //call PAN service to get Name of PAN card holder
+                String strPANInput = "<PANDETAILS>"
+                        + "<MODULENAME>" + "CMS" + "</MODULENAME>"
+                        + "<USERID>" + "14830" + "</USERID>"//hard coded user ID
+                        + "<PANINPUT>" + "<PANNO>" + str_pan_no + "</PANNO>"
+                        + "<LASTNAME>" + "" + "</LASTNAME>"
+                        + "<FIRSTNAME>" + "ABC" + "</FIRSTNAME>"
+                        + "<MIDDLENAME>" + "" + "</MIDDLENAME>"
+                        + "<TRANSACTIONID>" + "CMS_" + r.nextInt(999999) + "</TRANSACTIONID>"
+                        + "<PURPOSE>POSP-RA</PURPOSE>"
+                        + "</PANINPUT>"
+                        + "</PANDETAILS>";
+
+                mAsyncCheckPAN = new AsyncCheckPAN();
+                mAsyncCheckPAN.execute(strPANInput);
+
+                //for testing
+                    /*if (mPanFile != null) {
+
+                        createSoapRequestToUploadDoc(mPanFile);
+
+                    } else {
+                        mCommonMethods.showMessageDialog(mContext, "Error While creating PAN card doc!!");
+                    }*/
+            } else {
+                Toast.makeText(mContext, "PLease try agian later..", Toast.LENGTH_SHORT).show();
+
+                is_pan_file_uploaded = false;
+                /*ll_aob_auth_aadhhar.setVisibility(View.GONE);*/
+            }
         }
 
     }
@@ -2698,8 +2784,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
                     mCommonMethods.showMessageDialog(mContext, "E-PAN DOES NOT EXSIST and INVALID");
 
-                }
-                else if (str_output_result.equalsIgnoreCase("Service Not Availiable Please try after some time")
+                } else if (str_output_result.equalsIgnoreCase("Service Not Availiable Please try after some time")
                         || str_output_result.equalsIgnoreCase("anyType{}")) {
 
                     db.delete_POSP_RA_row(db.POSP_RA_ID + " = " + row_details);
@@ -2717,8 +2802,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                     str_pan_no = "";
                     mPanFile = null;
                     mCommonMethods.showMessageDialog(mContext, "Service Not Availiable Please try after some time");
-                }
-                else {
+                } else {
                     String strOut = prsObj.parseXmlTag(str_output_result, "PANDETAILS");
                     strOut = strOut == null ? "" : strOut;
 

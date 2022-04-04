@@ -9,6 +9,17 @@ import android.os.Parcelable;
 
 public class Pojo_POSP_RA implements Parcelable {
 
+    public static final Creator<Pojo_POSP_RA> CREATOR = new Creator<Pojo_POSP_RA>() {
+        @Override
+        public Pojo_POSP_RA createFromParcel(Parcel in) {
+            return new Pojo_POSP_RA(in);
+        }
+
+        @Override
+        public Pojo_POSP_RA[] newArray(int size) {
+            return new Pojo_POSP_RA[size];
+        }
+    };
     private String str_id = "", str_aadhaar_no = "", str_aadhaar_details = "",
             str_pan_no = "", str_pan_details = "", str_personal_info = "",
             str_occupation_info = "", str_nomination_info = "",
@@ -76,18 +87,6 @@ public class Pojo_POSP_RA implements Parcelable {
         str_applicant_type = in.readString();
         str_enrollment_type = in.readString();
     }
-
-    public static final Creator<Pojo_POSP_RA> CREATOR = new Creator<Pojo_POSP_RA>() {
-        @Override
-        public Pojo_POSP_RA createFromParcel(Parcel in) {
-            return new Pojo_POSP_RA(in);
-        }
-
-        @Override
-        public Pojo_POSP_RA[] newArray(int size) {
-            return new Pojo_POSP_RA[size];
-        }
-    };
 
     public String getStr_enrollment_type() {
         return str_enrollment_type;

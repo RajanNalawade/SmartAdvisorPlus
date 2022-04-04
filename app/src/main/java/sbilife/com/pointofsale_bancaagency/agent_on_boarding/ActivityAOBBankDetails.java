@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -10,14 +9,14 @@ import android.text.InputFilter;
 import android.text.Spanned;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.ksoap2.serialization.SoapObject;
 
@@ -57,7 +56,8 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
     private LinearLayout ll_aob_bank_account_brach_code, ll_aob_bank_account_brach_ifsc;
     private Spinner spnr_aob_bank_account_type;
     private EditText edt_aob_bank_account_num, edt_aob_bank_account_brach_code, edt_aob_bank_account_brach_ifsc;
-    private boolean validate_acc_no = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false;
+    private boolean validate_acc_no = false, is_dashboard = false, is_back_pressed = false, is_ia_upgrade = false,
+            is_bsm_questions = false;
     private StringBuilder str_bank_info = null;
     private ParseXML mParseXML;
     private ArrayList<PojoAOB> lstRes = new ArrayList<>();
@@ -72,13 +72,16 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
         if (getIntent().hasExtra("is_dashboard"))
             is_dashboard = getIntent().getBooleanExtra("is_dashboard", false);
 
+        if (getIntent().hasExtra("is_bsm_questions"))
+            is_bsm_questions = getIntent().getBooleanExtra("is_bsm_questions", false);
+
         if (getIntent().hasExtra("is_ia_upgrade"))
             is_ia_upgrade = getIntent().getBooleanExtra("is_ia_upgrade", false);
 
         initialisation();
 
         //non editable with no saving
-        if (is_dashboard || is_ia_upgrade) {
+        if (is_dashboard || is_ia_upgrade || is_bsm_questions) {
             //non editable with no saving
             enableDisableAllFields(false);
         } else {
@@ -90,13 +93,13 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
 
         mContext = this;
         mCommonMethods = new CommonMethods();
-        mCommonMethods.setApplicationToolbarMenu1(this,"Agent on Boarding");
+        mCommonMethods.setApplicationToolbarMenu1(this, "Agent on Boarding");
 
         db = new DatabaseHelper(mContext);
 
         mParseXML = new ParseXML();
 
-        View view_aob_bank_formIA = findViewById(R.id.view_aob_bank_formIA);
+        /*View view_aob_bank_formIA = findViewById(R.id.view_aob_bank_formIA);
         TextView txt_aob_bank_formIA = findViewById(R.id.txt_aob_bank_formIA);
         if (is_ia_upgrade) {
             view_aob_bank_formIA.setVisibility(View.GONE);
@@ -104,7 +107,7 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
         } else {
             view_aob_bank_formIA.setVisibility(View.VISIBLE);
             txt_aob_bank_formIA.setVisibility(View.VISIBLE);
-        }
+        }*/
 
         spnr_aob_bank_account_type = (Spinner) findViewById(R.id.spnr_aob_bank_account_type);
         ArrayAdapter<String> acc_type_adapter = new ArrayAdapter<String>(
@@ -311,7 +314,9 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
     public void onBackPressed() {
 
         Intent intent = new Intent(ActivityAOBBankDetails.this, ActivityAOBNomination.class);
-        if (is_dashboard) {
+        if (is_bsm_questions)
+            intent.putExtra("is_bsm_questions", is_bsm_questions);
+        else if (is_dashboard) {
             intent.putExtra("is_dashboard", is_dashboard);
         } else if (is_ia_upgrade) {
             intent.putExtra("is_ia_upgrade", is_ia_upgrade);
@@ -331,14 +336,18 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
             case R.id.btn_aob_bank_next:
 
                 if (is_dashboard) {
-                    Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBForm1A.class);
+                    Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBExamTraining.class);
                     mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBExamTraining.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
                     startActivity(mIntent);
                 } else if (is_ia_upgrade) {
                     Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBExamTraining.class);
                     mIntent.putExtra("is_ia_upgrade", is_ia_upgrade);
                     startActivity(mIntent);
-                } else {
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
@@ -395,21 +404,19 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
             //3. update data against global row id
             ContentValues cv = new ContentValues();
             cv.put(db.AGENT_ON_BOARDING_BANK_DETAILS, str_bank_info.toString());
-            /*if (is_ia_upgrade) {
 
-                String strFormIA = "";
+            String strFormIA = "";
 
-                //str_form1a_info.append("<form1a_info>");
-                strFormIA += "<form1a_info_any_insurance></form1a_info_any_insurance>";
-                strFormIA += "<form1a_info_insurance_name></form1a_info_insurance_name>";
-                strFormIA += "<form1a_info_insurance_agency_code></form1a_info_insurance_agency_code>";
-                strFormIA += "<form1a_info_insurance_appointment_date></form1a_info_insurance_appointment_date>";
-                strFormIA += "<form1a_info_insurance_cessation_date></form1a_info_insurance_cessation_date>";
-                strFormIA += "<form1a_info_insurance_reason_for_cess></form1a_info_insurance_reason_for_cess>";
-                //str_occupational_info.append("</form1a_info>");
+            //str_form1a_info.append("<form1a_info>");
+            strFormIA += "<form1a_info_any_insurance></form1a_info_any_insurance>";
+            strFormIA += "<form1a_info_insurance_name></form1a_info_insurance_name>";
+            strFormIA += "<form1a_info_insurance_agency_code></form1a_info_insurance_agency_code>";
+            strFormIA += "<form1a_info_insurance_appointment_date></form1a_info_insurance_appointment_date>";
+            strFormIA += "<form1a_info_insurance_cessation_date></form1a_info_insurance_cessation_date>";
+            strFormIA += "<form1a_info_insurance_reason_for_cess></form1a_info_insurance_reason_for_cess>";
+            //str_occupational_info.append("</form1a_info>");
 
-                cv.put(db.AGENT_ON_BOARDING_FORM_1_A, strFormIA);
-            }*/
+            cv.put(db.AGENT_ON_BOARDING_FORM_1_A, strFormIA);
 
             cv.put(db.AGENT_ON_BOARDING_UPDATED_BY, mCommonMethods.GetUserCode(mContext));
 
@@ -423,7 +430,7 @@ public class ActivityAOBBankDetails extends AppCompatActivity implements View.On
 
             mCommonMethods.showToast(mContext, "Details saved Successfully : " + i);
 
-            Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBForm1A.class);
+            Intent mIntent = new Intent(ActivityAOBBankDetails.this, ActivityAOBExamTraining.class);
             startActivity(mIntent);
 
         } else {

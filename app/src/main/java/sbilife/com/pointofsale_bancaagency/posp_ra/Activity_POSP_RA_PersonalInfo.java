@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,7 +12,6 @@ import android.text.Html;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -23,6 +21,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
@@ -76,7 +76,7 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
             edt_aob_personal_permnt_address3, edt_aob_personal_permnt_pin, edt_aob_personal_father_husbund_name,
             edt_aob_personal_maiden_name, edt_aob_personal_mobile, edt_aob_personal_residence_no, edt_aob_personal_email_id,
             edt_aob_personal_pass_roll_no, edt_aob_personal_pass_university, edt_aob_personal_pro_qualification_cmnt,
-            edt_posp_personal_nationality, edt_posp_ra_otp;
+            edt_posp_personal_nationality, edt_posp_ra_otp, edt_aob_personal_ckyc_no;
 
     private TextView txt_aob_personal_dob, txt_aob_personal_pass_year_month;
 
@@ -88,7 +88,7 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
             is_otp_generated = false, is_rejection = false;
 
     private LinearLayout ll_aob_personal_maiden_name, ll_personal_info_communication_address,
-            ll_aob_personal_pass_university, ll_posp_ra_verify_otp;
+            ll_aob_personal_pass_university, ll_posp_ra_verify_otp, ll_aob_personal_ckyc_no;
 
     private RadioGroup rg_aob_personal_info_same_permanent;
     private RadioButton rb_aob_personal_info_same_add_as_yes, rb_aob_personal_info_same_add_as_no;
@@ -275,7 +275,7 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
         edt_aob_personal_email_id = (EditText) findViewById(R.id.edt_aob_personal_email_id);
         edt_aob_personal_pass_roll_no = (EditText) findViewById(R.id.edt_aob_personal_pass_roll_no);
         edt_aob_personal_pass_university = (EditText) findViewById(R.id.edt_aob_personal_pass_university);
-        edt_aob_personal_pass_university.setFilters(new InputFilter[]{mCommonMethods.aob_mobile_filter});
+        //edt_aob_personal_pass_university.setFilters(new InputFilter[]{mCommonMethods.aob_mobile_filter});
 
         edt_aob_personal_pro_qualification_cmnt = (EditText) findViewById(R.id.edt_aob_personal_pro_qualification_cmnt);
 
@@ -287,6 +287,9 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
         rg_aob_personal_info_same_permanent = (RadioGroup) findViewById(R.id.rg_aob_personal_info_same_permanent);
         rb_aob_personal_info_same_add_as_yes = (RadioButton) findViewById(R.id.rb_aob_personal_info_same_add_as_yes);
         rb_aob_personal_info_same_add_as_no = (RadioButton) findViewById(R.id.rb_aob_personal_info_same_add_as_no);
+
+        ll_aob_personal_ckyc_no = findViewById(R.id.ll_aob_personal_ckyc_no);
+        edt_aob_personal_ckyc_no = findViewById(R.id.edt_aob_personal_ckyc_no);
 
         rg_aob_personal_info_same_permanent.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -457,6 +460,8 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
             if (!str_personal_info.equals("")) {
 
                 //get available data
+                String str_applicant_ckyc_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_ckyc_no");
+                str_applicant_ckyc_no = str_applicant_ckyc_no == null ? "" : str_applicant_ckyc_no;
                 String str_applicant_title = mParseXML.parseXmlTag(str_personal_info, "personal_info_title");
                 String str_applicant_full_name = mParseXML.parseXmlTag(str_personal_info, "personal_info_full_name");
                 String str_applicant_dob = mParseXML.parseXmlTag(str_personal_info, "personal_info_dob");
@@ -494,6 +499,11 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
                 String str_applicant_passing_year_month = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_passing_month_year");
                 String str_applicant_pro_qualification = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_professional_qualification");
                 String str_applicant_pro_qualification_others = mParseXML.parseXmlTag(str_personal_info, "personal_info_educational_details_professional_qualification_others");
+
+                if (!str_applicant_ckyc_no.equals("")) {
+                    ll_aob_personal_ckyc_no.setVisibility(View.VISIBLE);
+                    edt_aob_personal_ckyc_no.setText(str_applicant_ckyc_no);
+                }
 
                 spnr_aob_personal_title.setSelection(Arrays.asList(getResources().getStringArray(R.array.arr_aob_title)).indexOf(str_applicant_title));
 
@@ -578,12 +588,6 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
                         getStringArray(R.array.arr_aob_pro_qualification)).indexOf(str_applicant_pro_qualification));
 
                 edt_aob_personal_pro_qualification_cmnt.setText(str_applicant_pro_qualification_others);
-                /*if (str_applicant_pro_qualification.equalsIgnoreCase("Others")) {
-                    ll_aob_personal_pass_university.setVisibility(View.VISIBLE);
-
-                } else {
-                    ll_aob_personal_pass_university.setVisibility(View.GONE);
-                }*/
             } else {
                 try {
 
@@ -931,6 +935,8 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
         } else if (is_bsm_questions) {
             Intent mIntent = new Intent(Activity_POSP_RA_PersonalInfo.this, Activity_POSP_RA_PANPendingAgentList.class);
             mIntent.putExtra("UMCode", strUM);
+            mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(mIntent);
         } else if (is_rejection) {
             //redirect to dashboard page
@@ -1097,6 +1103,8 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
     private void get_personal_info_xml() {
 
         str_pan_no = edt_aob_personal_pan_no.getText().toString();
+        str_aadhaar_no = edt_aob_personal_aadhaar_no.getText().toString();
+        str_aadhaar_no = str_aadhaar_no == null ? "" : str_aadhaar_no;
 
         String str_applicant_title = spnr_aob_personal_title.getSelectedItem().toString();
         String str_applicant_full_name = mCommonMethods.removeExtraWhiteSpaces(edt_aob_personal_full_name);
@@ -1233,6 +1241,11 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
         str_personal_info.append("<personal_info_educational_details_passing_month_year>").append(str_applicant_passing_year_month).append("</personal_info_educational_details_passing_month_year>");
         str_personal_info.append("<personal_info_educational_details_professional_qualification>").append(str_applicant_pro_qualification).append("</personal_info_educational_details_professional_qualification>");
         str_personal_info.append("<personal_info_educational_details_professional_qualification_others>").append(str_applicant_pro_qualification_others).append("</personal_info_educational_details_professional_qualification_others>");
+
+        String strCKYCNo = edt_aob_personal_ckyc_no.getText().toString();
+        strCKYCNo = strCKYCNo == null ? "" : strCKYCNo;
+        str_personal_info.append("<personal_info_ckyc_no>" + strCKYCNo + "</personal_info_ckyc_no>");
+
         /*str_personal_info.append("</personal_info>");*/
     }
 
@@ -1456,7 +1469,7 @@ public class Activity_POSP_RA_PersonalInfo extends AppCompatActivity implements 
 
             startActivity(mIntent);
 
-            mCommonMethods.showToast(mContext, "Details saved Successfully : " + i);
+            //mCommonMethods.showToast(mContext, "Details saved Successfully : " + i);
 
         } else {
             mCommonMethods.showMessageDialog(mContext, str_error);

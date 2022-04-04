@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -30,7 +30,7 @@
                 android:padding="10dp"
                 android:gravity="center"
                 android:text="Authentication"
-                android:textColor="@color/Blue"
+                android:textColor="#00a1e3"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -38,8 +38,8 @@
                 style="@style/tv_default"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:textSize="16sp"
+                android:textColor="#00a1e3"
                 android:text="PAN Look Up Link *"
                 android:textStyle="bold" />
 
@@ -48,6 +48,36 @@
                 android:layout_height="wrap_content"
                 android:visibility="visible"
                 android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="Advisor(Applicant) Date of birth *"
+                        android:textColor="@color/Black"/>
+
+                    <TextView
+                        android:id="@+id/txt_aob_auth_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:drawableRight="@drawable/dt"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -60,20 +90,15 @@
                     android:text="PAN Card Of Advisor(Applicant) *"
                     android:textColor="@color/Black"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
                     <EditText android:id="@+id/edt_aob_auth_pan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:hint="Enter PAN Card Number"
                         android:layout_marginTop="5dp"
+                    android:background="@drawable/my_bordernew1"
                         android:maxLength="10"
+                    android:padding="10dp"
                         android:layout_weight="1"
                         android:inputType="textCapCharacters" />
 
@@ -121,15 +146,14 @@
                             android:id="@+id/imgbtn_aob_auth_pan_upload"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:layout_gravity="center"
                             android:layout_weight="1.5"
                             android:background="@color/White"
                             android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
+                        android:src="@drawable/ibtn_uploaddoc"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                 </LinearLayout>
 

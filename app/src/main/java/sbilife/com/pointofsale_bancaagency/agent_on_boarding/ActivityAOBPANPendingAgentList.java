@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -22,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,17 +37,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import sbilife.com.pointofsale_bancaagency.DatabaseHelper;
 import sbilife.com.pointofsale_bancaagency.ParseXML;
 import sbilife.com.pointofsale_bancaagency.R;
 import sbilife.com.pointofsale_bancaagency.ServiceURL;
 import sbilife.com.pointofsale_bancaagency.Utility;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
+import sbilife.com.pointofsale_bancaagency.posp_ra.AsyncGetLM_POSP_Data;
 
 /**
  * Created by O0110 on 14/05/2018.
  */
 
-public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
+public class ActivityAOBPANPendingAgentList extends AppCompatActivity implements AsyncGetLM_POSP_Data.InterfaceAsyncGetLM_POSP_Data {
     private final String NAMESPACE = "http://tempuri.org/";
 
     private final String METHOD_NAME_AM_BDM_LIST = "getAgentPan_PendingQues_AgentOnboard";
@@ -67,7 +69,7 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.layout_aob_pan_pending_agent_list);
+        setContentView(R.layout.activity_aob_pan_pending_agent_list);
         //getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
 
         strCIFBDMUserId = getIntent().getStringExtra("UMCode");
@@ -83,7 +85,7 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         mProgressDialog.setCancelable(true);
 
-        listviewAOBPANPendingAgentList = (ListView)findViewById(R.id.listviewAOBPANPendingAgentList);
+        listviewAOBPANPendingAgentList = (ListView) findViewById(R.id.listviewAOBPANPendingAgentList);
 
         asyncTaskAOBPANPendingAgentList = new AsyncTaskAOBPANPendingAgentList();
         asyncTaskAOBPANPendingAgentList.execute();
@@ -132,6 +134,43 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+        }
+
+        if (asyncTaskAOBPANPendingAgentList != null) {
+            asyncTaskAOBPANPendingAgentList.cancel(true);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent mIntent = new Intent(ActivityAOBPANPendingAgentList.this, ActivityAOBUMListUnderBSM.class);
+        mIntent.putExtra("fromHome", "");
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mIntent);
+    }
+
+    @Override
+    public void onDataSuccess(int row_details) {
+        if (row_details == -1) {
+            mCommonMethods.showMessageDialog(context, "No data found against this PAN Number!");
+        } else {
+
+            Activity_AOB_Authentication.row_details = row_details;
+
+            Intent mIntent = new Intent(ActivityAOBPANPendingAgentList.this,
+                    ActivityAOBPersonalInfo.class);
+            mIntent.putExtra("is_bsm_questions", true);
+            startActivity(mIntent);
+        }
     }
 
     class AsyncTaskAOBPANPendingAgentList extends AsyncTask<String, String, String> {
@@ -225,7 +264,7 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
                                     }
 
                                     selectedAdapterPendingAgentList = new SelectedAdapterPendingAgentList(
-                                            context,  lstPendingAgentList);
+                                            context, lstPendingAgentList);
                                     selectedAdapterPendingAgentList.setNotifyOnChange(true);
                                     //registerForContextMenu(listviewAOBPANPendingAgentList);
 
@@ -305,7 +344,7 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
         final List<ParseXML.AOBPANPendingAgentListValuesModel> lst;
 
         public SelectedAdapterPendingAgentList(Context context,
-                                  List<ParseXML.AOBPANPendingAgentListValuesModel> objects) {
+                                               List<ParseXML.AOBPANPendingAgentListValuesModel> objects) {
             super(context, 0, objects);
             lst = objects;
         }
@@ -332,9 +371,9 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
                 textviewAOBPANPendingAgentPANNumberTitle.setText(lst.get(position).getPER_PAN_NO());
                 textviewAOBPANPendingAgentFullName.setText(lst.get(position).getPER_FULL_NAME());
 
-                if (lst.get(position).getStatus().equals("")){
+                if (lst.get(position).getStatus().equals("")) {
                     ll_reject_status.setVisibility(View.GONE);
-                }else{
+                } else {
                     ll_reject_status.setVisibility(View.VISIBLE);
 
                     textviewAOBPANPendingAgentStatus.setText(lst.get(position).getStatus());
@@ -343,19 +382,6 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
             }
 
             return (v);
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
-
-        if (asyncTaskAOBPANPendingAgentList != null) {
-            asyncTaskAOBPANPendingAgentList.cancel(true);
         }
     }
 
@@ -398,17 +424,37 @@ public class ActivityAOBPANPendingAgentList extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
-                    if (lstPendingAgentList.size() > 0){
+                    if (lstPendingAgentList.size() > 0) {
                         String PANNumber = lstPendingAgentList.get(mainPos).getPER_PAN_NO();
                         PANNumber = PANNumber == null ? "" : PANNumber;
 
-                        if (!PANNumber.equals("")) {
+                        //first get all POSP data against respective PAN from local DB
+
+                        //check PAN is available in DB
+                        DatabaseHelper mDatabaseHelper = new DatabaseHelper(mAdapterContext);
+
+                        ArrayList<String> lstRes = mDatabaseHelper.getAgentOnBoardingID(PANNumber);
+
+                        if (lstRes.size() > 0) {
+                            Activity_AOB_Authentication.row_details = Integer.parseInt(lstRes.get(0).toString());
+
+                            Intent mIntent = new Intent(ActivityAOBPANPendingAgentList.this, ActivityAOBPersonalInfo.class);
+                            mIntent.putExtra("is_bsm_questions", true);
+                            startActivity(mIntent);
+                        } else {
+                            //get all POSP data against respective PAN from server
+                            new AsyncGetLM_POSP_Data(ActivityAOBPANPendingAgentList.this,
+                                    PANNumber, mAdapterContext, "New")
+                                    .execute();
+                        }
+
+                        /*if (!PANNumber.equals("")) {
                             Intent intent = new Intent(context, ActivityAOBInterviewBSM.class);
                             intent.putExtra("UMCode", strCIFBDMUserId);
                             intent.putExtra("PANNumber",PANNumber);
                             intent.putExtra("enrollment_type", lstPendingAgentList.get(mainPos).getEnrollment_type());
                             startActivity(intent);
-                        }
+                        }*/
                     }
                 }
             });

@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
@@ -8,9 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.Html;
 import android.util.Base64;
 import android.view.View;
@@ -21,6 +23,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -34,20 +38,18 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
-import com.xbizventures.ocrlib.OcrActivity;
 
-import org.json.JSONObject;
 import org.ksoap2.serialization.SoapObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import cropper.CropImage;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -70,8 +72,9 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
     private final String NAMESPACE = "http://tempuri.org/";
     private final String METHOD_NAME_UPLOAD_ALL_POSP_RA_DOC = "UploadFile_AgentEnroll";
 
-    private final int REQUEST_OCR = 100;
-
+    private final int REQUEST_CODE_CAPTURE_DOCUMENT = 200;
+    private final String str_data_save_err = "";
+    private final String str_training_end_date = "";
     private CommonMethods mCommonMethods;
     private StorageUtils mStorageUtils;
     private Context mContext;
@@ -89,9 +92,7 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
     private String str_photo_applicant = "";
     private String str_async_doc_type = "";
     private String str_capture_doc_type = "";
-    private final String str_data_save_err = "";
     private String str_app_created_date = "";
-    private final String str_training_end_date = "";
     private String strCIFBDMUserId = "";
     private String strCIFBDMEmailId = "";
     private String strCIFBDMMObileNo = "";
@@ -142,7 +143,7 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
         mStorageUtils = new StorageUtils();
         mCalender = Calendar.getInstance();
 
-        mCommonMethods.setApplicationToolbarMenu1(this,"POSP-RA");
+        mCommonMethods.setApplicationToolbarMenu1(this, "POSP-RA");
 
         db = new DatabaseHelper(mContext);
 
@@ -568,7 +569,15 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
 
             case R.id.btn_aob_terms_conditions_submit:
 
-                if (!is_dashboard && !is_bsm_questions) {
+                if (is_dashboard) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_TermsConditionsDeclaration.this, Activity_POSP_RA_DocumentUpload.class);
+                    mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_TermsConditionsDeclaration.this, Activity_POSP_RA_DocumentUpload.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
+                } else if (!is_dashboard && !is_bsm_questions) {
 
                     //1. validate details
                     String str_error = validateDetails();
@@ -597,14 +606,6 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
 
-                } else if (is_dashboard) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_TermsConditionsDeclaration.this, Activity_POSP_RA_DocumentUpload.class);
-                    mIntent.putExtra("is_dashboard", is_dashboard);
-                    startActivity(mIntent);
-                } else if (is_bsm_questions) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_TermsConditionsDeclaration.this, Activity_POSP_RA_DocumentUpload.class);
-                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
-                    startActivity(mIntent);
                 }
                 break;
 
@@ -631,8 +632,47 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
 
         str_capture_doc_type = str_doc_type;
 
-        Intent intent = new Intent(Activity_POSP_RA_TermsConditionsDeclaration.this, OcrActivity.class);
-        startActivityForResult(intent, REQUEST_OCR);
+        try {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            String imageFileName = str_pan_no + str_capture_doc_type + ".jpg";
+            if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                mApplicantPhoto = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                // Continue only if the File was successfully created
+                if (mApplicantPhoto != null) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCommonMethods.getContentUri(mContext,
+                                mApplicantPhoto));
+                    } else {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mApplicantPhoto));
+                    }
+                    startActivityForResult(takePictureIntent, REQUEST_CODE_CAPTURE_DOCUMENT);
+                }
+            } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                mApplicantSign = mStorageUtils.createFileToAppSpecificDir(mContext, imageFileName);
+                // Continue only if the File was successfully created
+                if (mApplicantSign != null) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCommonMethods.getContentUri(mContext,
+                                mApplicantSign));
+                    } else {
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mApplicantSign));
+                    }
+                    startActivityForResult(takePictureIntent, REQUEST_CODE_CAPTURE_DOCUMENT);
+                }
+            }
+
+        } catch (Exception exp) {
+            exp.printStackTrace();
+            mCommonMethods.printLog("Capture : ", exp.getMessage());
+            if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                mApplicantPhoto = null;
+            } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                mApplicantSign = null;
+            }
+        }
     }
 
     private boolean create_all_pdf_pages() {
@@ -892,6 +932,15 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
                     Paragraph para_pro_qaulification_others = new Paragraph("Comment: " + str_personal_info_others, small_bold);
                     para_pro_qaulification_others.setIndentationLeft(25);
                     document.add(para_pro_qaulification_others);
+                }
+
+                //personal info CKYC number
+                String str_applicant_ckyc_no = mParseXML.parseXmlTag(str_personal_info, "personal_info_ckyc_no");
+                str_applicant_ckyc_no = str_applicant_ckyc_no == null ? "" : str_applicant_ckyc_no;
+                if (!str_applicant_ckyc_no.equals("")) {
+                    Paragraph para_applicant_ckyc_no = new Paragraph("CKYC No.: " + str_applicant_ckyc_no, small_bold);
+                    para_applicant_ckyc_no.setIndentationLeft(25);
+                    document.add(para_applicant_ckyc_no);
                 }
 
                 //get occupational details data
@@ -2124,117 +2173,63 @@ public class Activity_POSP_RA_TermsConditionsDeclaration extends AppCompatActivi
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_OCR) {
-            if (resultCode == RESULT_OK) {
-                final File imagePath;
-                String DocumentType = "";
-                Bundle bundle = data.getExtras();
+        if (resultCode == RESULT_OK) {
+            if (requestCode == REQUEST_CODE_CAPTURE_DOCUMENT) {
+                if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                    CropImage.activity(Uri.fromFile(mApplicantPhoto)).start(this);
+                } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                    CropImage.activity(Uri.fromFile(mApplicantSign)).start(this);
+                }
+            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                Uri resultUri = result.getUri();
+                if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                    mApplicantPhoto = new File(resultUri.getPath());
+                    CompressImage.compressImage(mApplicantPhoto.getPath());
+                    Bitmap bmp = BitmapFactory.decodeFile(mApplicantPhoto.getPath());
+                    bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
 
-                if (bundle != null) {
-                    String jsonData = (String) bundle.get("jsonData");
+                    if (bmp != null) {
 
-                    try {
-                        JSONObject object = new JSONObject(jsonData);
+                        Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
 
-                        DocumentType = object.get("DocumentType").toString();
+                        imgbtn_aob_applicant_declaration_photo.setImageBitmap(scaled);
 
-                        imagePath = new File(bundle.get("BitmapImageUri").toString());
-                        //Bitmap edgeBitmap = BitmapFactory.decodeFile(imagePath.getPath());
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        byte[] signByteArray = out.toByteArray();
+                        str_photo_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
 
-                        if (imagePath != null) {
+                    } else {
+                        mCommonMethods.showToast(mContext, "File Not Available..");
+                    }
+                } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
+                    mApplicantSign = new File(resultUri.getPath());
+                    CompressImage.compressImage(mApplicantSign.getPath());
+                    Bitmap bmp = BitmapFactory.decodeFile(mApplicantSign.getPath());
+                    bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
 
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
+                    if (bmp != null) {
 
-                                    //image compression by bhalla
-                                    CompressImage.compressImage(imagePath.getPath());
+                        Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
 
-                                    String imageFileName = str_pan_no + "_" + str_capture_doc_type + ".jpg";
+                        imgbtn_aob_applicant_declaration_sign.setImageBitmap(scaled);
 
-                                    if (str_capture_doc_type.equals(APPLICANT_PHOTO_FILE_NAME)) {
+                        ByteArrayOutputStream out = new ByteArrayOutputStream();
+                        scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
+                        byte[] signByteArray = out.toByteArray();
+                        str_signature_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
 
-                                        try {
-                                            mApplicantPhoto = mStorageUtils.saveFileToAppSpecificDir(mContext,
-                                                    StorageUtils.DIRECT_DIRECTORY, imageFileName, imagePath);
-                                            /*mApplicantPhoto = mCommonMethods.createCaptureImg(imageFileName);
-                                            mCommonMethods.copyFile(new FileInputStream(imagePath), new FileOutputStream(mApplicantPhoto));*/
-                                            long size = mApplicantPhoto.length();
-                                            double kilobyte = size / 1024;
-                                            //if (kilobyte <= 40) {
-                                            Bitmap bmp = BitmapFactory.decodeFile(mApplicantPhoto.getPath());
-                                            bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
-
-                                            if (bmp != null) {
-
-                                                Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
-
-                                                imgbtn_aob_applicant_declaration_photo.setImageBitmap(scaled);
-
-                                                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                                                scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
-                                                byte[] signByteArray = out.toByteArray();
-                                                str_photo_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
-
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File Not Available..");
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-
-                                    } else if (str_capture_doc_type.equals(APPLICANT_SIGNATURE_FILE_NAME)) {
-
-                                        try {
-                                            mApplicantSign = mStorageUtils.saveFileToAppSpecificDir(mContext,
-                                                    StorageUtils.DIRECT_DIRECTORY, imageFileName, imagePath);
-                                            /*mApplicantSign = mCommonMethods.createCaptureImg(imageFileName);
-                                            mCommonMethods.copyFile(new FileInputStream(imagePath), new FileOutputStream(mApplicantSign));*/
-                                            long size = mApplicantSign.length();
-                                            double kilobyte = size / 1024;
-                                            //if (kilobyte <= 40) {
-                                            Bitmap bmp = BitmapFactory.decodeFile(mApplicantSign.getPath());
-                                            bmp = bmp != null ? bmp.copy(Bitmap.Config.RGB_565, true) : null;
-
-                                            if (bmp != null) {
-
-                                                Bitmap scaled = Bitmap.createScaledBitmap(bmp, 230, 200, true);
-
-                                                imgbtn_aob_applicant_declaration_sign.setImageBitmap(scaled);
-
-                                                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                                                scaled.compress(Bitmap.CompressFormat.PNG, 100, out);
-                                                byte[] signByteArray = out.toByteArray();
-                                                str_signature_applicant = Base64.encodeToString(signByteArray, Base64.DEFAULT);
-
-                                            } else {
-                                                mCommonMethods.showToast(mContext, "File not found..");
-                                            }
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
-
-                                    //remove common source file from directory
-                                    if (imagePath.exists()) {
-                                        imagePath.delete();
-                                    }
-
-                                }
-                            });
-
-                        } else {
-                            mCommonMethods.showToast(mContext, "File not found..");
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        mCommonMethods.showToast(mContext, e.getMessage());
+                    } else {
+                        mCommonMethods.showToast(mContext, "File not found..");
                     }
                 }
-            } else {
-                Toast.makeText(mContext, "Data not receive", Toast.LENGTH_SHORT).show();
             }
+
+        } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Exception error = result.getError();
+            mCommonMethods.showMessageDialog(mContext, error.getMessage());
         }
     }
 

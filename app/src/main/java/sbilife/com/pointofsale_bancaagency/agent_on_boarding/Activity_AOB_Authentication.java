@@ -80,6 +80,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import cropper.CropImage;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -110,6 +111,7 @@ import sbilife.com.pointofsale_bancaagency.ekyc.request.Demo;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.Opts;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.Param;
 import sbilife.com.pointofsale_bancaagency.ekyc.request.PidOptions;
+import sbilife.com.pointofsale_bancaagency.ekyc.response.PidData;
 import sbilife.com.pointofsale_bancaagency.ekyc.utilites.HttpConnector;
 import sbilife.com.pointofsale_bancaagency.ekyc.utilites.XMLUtilities;
 import sbilife.com.pointofsale_bancaagency.posp_ra.AsyncGetLM_POSP_Data;
@@ -345,8 +347,9 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
 
         txtAOBPanLookUpLink = findViewById(R.id.txtAOBPanLookUpLink);
         txtAOBPanLookUpLink.setOnClickListener(this);
-        txtAOBPanLookUpLink.setText(Html.fromHtml("<a href='https://agencyportal.irdai.gov.in/PublicAccess/LookUpPAN.aspx'>"
-                + "PAN Look Up Link *</a>"));
+        txtAOBPanLookUpLink.setText(Html.fromHtml("<font color='#00a1e3'>"
+                + "<a href='https://agencyportal.irdai.gov.in/PublicAccess/LookUpPAN.aspx'>"
+                + "PAN Look Up Link *</a></font>"), TextView.BufferType.SPANNABLE);
 
         /*ll_ia_upgrade_rejecti_remark = findViewById(R.id.ll_ia_upgrade_rejecti_remark);
         ll_ia_upgrade_rejecti_remark.setOnClickListener(this);
@@ -2498,40 +2501,6 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
             startActivity(mIntent);
         }
     }
-
-
-
-    /*private class ChangeTransformationMethod extends PasswordTransformationMethod {
-        @Override
-        public CharSequence getTransformation(CharSequence source, View view) {
-            return new PasswordCharSequence(source);
-        }
-
-        private class PasswordCharSequence implements CharSequence {
-            private CharSequence mSource;
-            public PasswordCharSequence(CharSequence source) {
-                mSource = source;
-            }
-            public char charAt(int index) {
-                if(index <=5 && edittextFieldName.equalsIgnoreCase("P"))
-                {
-                    return 'X';
-                }
-                else if(index <=7 && edittextFieldName.equalsIgnoreCase("A"))
-                {
-                    return 'X';
-                }
-                else
-                    return mSource.charAt(index);
-            }
-            public int length() {
-                return mSource.length();
-        }
-            public CharSequence subSequence(int start, int end) {
-                return mSource.subSequence(start, end);
-    }
-        }
-    }*/
 
     public class AsyncFingerPrintRDServiceCaptureSuccess extends AsyncTask<String, Void, String> {
 

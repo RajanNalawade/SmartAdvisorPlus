@@ -50,6 +50,7 @@
                     android:gravity="center"
                     android:text="Personal"
                     android:padding="10dp"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:background="@color/Common_blue"
                     android:focusable="true"
@@ -66,6 +67,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Occupation"
                     android:textStyle="bold"
                     android:padding="10dp"/>
@@ -83,6 +85,7 @@
                     android:text="Nomination"
                     android:textStyle="bold"
                     android:padding="10dp"
+                    android:textColor="@color/white"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
                 </TextView>
@@ -97,6 +100,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Bank"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:padding="10dp"/>
 
@@ -109,6 +113,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Exam And Training"
                     android:textStyle="bold"
                     android:padding="10dp"/>
@@ -122,6 +127,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Terms And Conditions"
                     android:textStyle="bold"
                     android:padding="10dp"
@@ -138,6 +144,7 @@
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:textColor="@color/white"
                     android:text="Document Upload"
                     android:textStyle="bold"
                     android:padding="10dp"
@@ -416,7 +423,7 @@
                         android:maxLines="1"
                         android:maxLength="100"
                         android:inputType="textPostalAddress|textCapCharacters"
-                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                         android:padding="10dp"
                         android:textColor="#484848"
                         android:textSize="15sp" />
@@ -431,7 +438,7 @@
                         android:maxLength="100"
                         android:padding="10dp"
                         android:inputType="textPostalAddress|textCapCharacters"
-                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                         android:textColor="#484848"
                         android:textSize="15sp" />
 
@@ -442,7 +449,7 @@
                         android:background="@drawable/my_bordernew1"
                         android:hint="Address 3"
                         android:inputType="textPostalAddress|textCapCharacters"
-                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                         android:maxLines="1"
                         android:maxLength="100"
                         android:padding="10dp"
@@ -565,7 +572,7 @@
                                 android:hint="Address 1"
                                 android:maxLines="1"
                                 android:inputType="textPostalAddress|textCapCharacters"
-                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                                 android:maxLength="100"
                                 android:padding="10dp"
                                 android:textColor="#484848"
@@ -578,7 +585,7 @@
                                 android:background="@drawable/my_bordernew1"
                                 android:hint="Address 2"
                                 android:inputType="textPostalAddress|textCapCharacters"
-                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                                 android:maxLines="1"
                                 android:maxLength="100"
                                 android:padding="10dp"
@@ -592,7 +599,7 @@
                                 android:background="@drawable/my_bordernew1"
                                 android:hint="Address 3"
                                 android:inputType="textPostalAddress|textCapCharacters"
-                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ /\,.-"
                                 android:maxLines="1"
                                 android:maxLength="100"
                                 android:padding="10dp"
@@ -983,6 +990,33 @@
                         android:textColor="#484848"
                         android:textSize="15sp"
                         android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_aob_personal_ckyc_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="CKYC Number"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_ckyc_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:background="@drawable/my_bordernew1"
+                        android:inputType="textCapCharacters"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
 
                 </LinearLayout>
 

@@ -27,6 +27,7 @@
                 android:gravity="center"
                 android:text="Personal"
                 android:padding="10dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:focusable="true"
                 android:background="@color/GreenYellow"
@@ -41,6 +42,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Occupation"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -55,6 +57,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Nomination"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -70,11 +73,12 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Bank"
+                android:textColor="@color/white"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"/>
 
-            <View
+            <!--<View
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"/>
@@ -83,13 +87,14 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Form 1-A"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
-            </TextView>
+            </TextView>-->
 
             <View
                 android:layout_width="2dp"
@@ -100,6 +105,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Exam And Training"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -132,6 +138,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Terms And Conditions"
                 android:background="@color/Common_blue"
                 android:textStyle="bold"
@@ -151,6 +158,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Document Upload"
+                android:textColor="@color/white"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -411,22 +419,6 @@
                     android:textColor="@color/Black"/>
 
                 <ImageButton android:id="@+id/imgbtn_aob_applicant_declaration_photo"
-                    android:layout_width="180dp"
-                    android:layout_height="215dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/Black"
-                    android:src="@drawable/focus_imagebutton_photo"
-                    android:textColor="@color/Black" />
-
-                <TextView android:id="@+id/txt_aob_applicant_self_declaration_upload"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Upload Declaration"
-                    android:textColor="@color/Black"/>
-
-                <ImageButton android:id="@+id/imgbtn_aob_applicant_self_declaration_upload"
                     android:layout_width="180dp"
                     android:layout_height="215dp"
                     android:layout_gravity="center"

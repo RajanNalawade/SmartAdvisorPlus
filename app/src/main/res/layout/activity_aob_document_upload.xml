@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar"
@@ -45,6 +44,7 @@
                 android:gravity="center"
                 android:text="Personal"
                 android:padding="10dp"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:focusable="true"
                 android:background="@color/GreenYellow"
@@ -59,6 +59,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Occupation"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -71,6 +72,7 @@
 
             <TextView
                 android:layout_width="120dp"
+                android:textColor="@color/white"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Nomination"
@@ -85,6 +87,7 @@
 
             <TextView
                 android:layout_width="120dp"
+                android:textColor="@color/white"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Bank"
@@ -92,7 +95,7 @@
                 android:textStyle="bold"
                 android:padding="10dp"/>
 
-            <View android:id="@+id/view_aob_doc_upload_formIA"
+            <!--<View android:id="@+id/view_aob_doc_upload_formIA"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"/>
@@ -102,12 +105,13 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Form 1-A"
+                android:textColor="@color/white"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
-            </TextView>
+            </TextView>-->
 
             <View
                 android:layout_width="2dp"
@@ -119,6 +123,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Exam And Training"
+                android:textColor="@color/white"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"
@@ -153,6 +158,7 @@
                 android:text="Terms And Conditions"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:padding="10dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true"/>
@@ -166,6 +172,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Document Upload"
                 android:background="@color/Common_blue"
                 android:textStyle="bold"
@@ -181,7 +188,8 @@
 
     <ScrollView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_margin="10dp">
 
         <LinearLayout android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -207,7 +215,7 @@
                 <LinearLayout android:id="@+id/ll_aob_doc_upload_ia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -416,73 +424,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView android:id="@+id/txt_aob_auth_high_qualification"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:text="Highest Qualification Proof"
-                            android:textColor="@color/Black"/>
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_high_qualification_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/preview" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_high_qualification_camera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/ibtn_camera" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_high_qualification_browse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1.5"
-                            android:layout_gravity="center"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_browsedoc" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_high_qualification_upload"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
-
-                    <View android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/light_Grey1"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
                         <TextView android:id="@+id/txt_aob_auth_comm_add"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -549,134 +490,20 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:orientation="horizontal">
 
-                        <TextView android:id="@+id/txt_aob_applicant_sign"
+                        <TextView android:id="@+id/txt_aob_mob_declaration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:text="Applicant Signature *"
+                            android:text="Mobile Declaration *"
                             android:textColor="@color/Black"/>
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_camera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:background="@color/White"
-                            android:src="@drawable/ibtn_camera" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_browse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_browsedoc" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_applicant_sign_upload"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
-
-                    <View android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:visibility="gone"
-                        android:background="@color/light_Grey1"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:orientation="horizontal">
-
-                        <TextView android:id="@+id/txt_aob_declaration"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:text="Declaration *"
-                            android:textColor="@color/Black"/>
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_declaration_camera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:background="@color/White"
-                            android:src="@drawable/ibtn_camera" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_declaration_browse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="2"
-                            android:layout_gravity="center"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_browsedoc" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_declaration_upload"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="2"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
-
-                    <View android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/light_Grey1"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView android:id="@+id/txt_aob_auth_permanent_add"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:text="Permanent Address Proof"
-                            android:textColor="@color/Black"/>
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_permanent_add_view"
+                            android:id="@+id/imgbtn_aob_mob_declaration_view"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -687,7 +514,7 @@
                             android:src="@drawable/preview" />
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_permanent_add_camera"
+                            android:id="@+id/imgbtn_aob_mob_declaration_camera"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -698,7 +525,7 @@
                             android:src="@drawable/ibtn_camera" />
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_permanent_add_browse"
+                            android:id="@+id/imgbtn_aob_mob_declaration_browse"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -710,7 +537,7 @@
                             android:src="@drawable/ibtn_browsedoc" />
 
                         <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_permanent_add_upload"
+                            android:id="@+id/imgbtn_aob_mob_declaration_upload"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -790,145 +617,12 @@
 
                     </LinearLayout>
 
-                    <View android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/light_Grey1"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView android:id="@+id/edt_aob_auth_form1b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:text="Form I-B"
-                            android:textColor="@color/Black"/>
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1b_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/preview" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1b_camera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/ibtn_camera" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1b_browse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1.5"
-                            android:layout_gravity="center"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_browsedoc" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1b_upload"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
-
-                    <View android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/light_Grey1"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView android:id="@+id/txt_aob_auth_form1c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:layout_gravity="center"
-                            android:text="Form I-C"
-                            android:textColor="@color/Black"/>
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1c_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/preview" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1c_camera"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:src="@drawable/ibtn_camera" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1c_browse"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1.5"
-                            android:layout_gravity="center"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_browsedoc" />
-
-                        <ImageButton
-                            android:id="@+id/imgbtn_aob_auth_form1c_upload"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.5"
-                            android:background="@color/White"
-                            android:clickable="true"
-                            android:src="@drawable/ibtn_uploaddoc" />
-
-                    </LinearLayout>
-
                 </LinearLayout>
 
                 <LinearLayout android:id="@+id/ll_aob_doc_upload_ia_upgrade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
                     <LinearLayout

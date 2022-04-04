@@ -4,7 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_aunthentication.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_bank_details.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_basic_details.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_document_upload.xml" value="0.196875" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_menu.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_nomination.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_occupation.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_personal_info.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_terms_conditions_declaration.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_exam_training.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_aunthentication.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_bank_details.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_document_upload.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_exam_training.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_nomination.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_occupation.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_pan_pending_agent_list.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_personal_info.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_posp_ra_terms_conditions_declaration.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/banca_reports_channel_user_list.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/dailog_ckyc_result.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/layout_aob_pan_pending_agent_list.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/layout_posp_ra_pan_pending_agent_list.xml" value="0.196875" />
       </map>
     </option>
   </component>

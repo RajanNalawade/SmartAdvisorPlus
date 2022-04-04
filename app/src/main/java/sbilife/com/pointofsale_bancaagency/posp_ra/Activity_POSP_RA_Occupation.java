@@ -560,7 +560,15 @@ public class Activity_POSP_RA_Occupation extends AppCompatActivity implements Vi
 
             case R.id.btn_aob_occupation_next:
 
-                if (!is_dashboard && !is_bsm_questions) {
+                if (is_dashboard) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_Occupation.this, Activity_POSP_RA_Nomination.class);
+                    mIntent.putExtra("is_dashboard", is_dashboard);
+                    startActivity(mIntent);
+                } else if (is_bsm_questions) {
+                    Intent mIntent = new Intent(Activity_POSP_RA_Occupation.this, Activity_POSP_RA_Nomination.class);
+                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
+                    startActivity(mIntent);
+                } else if (!is_dashboard && !is_bsm_questions) {
                     //1. validate all details
                     String str_error = validate_all_details();
                     if (str_error.equals("")) {
@@ -592,14 +600,6 @@ public class Activity_POSP_RA_Occupation extends AppCompatActivity implements Vi
                     } else {
                         mCommonMethods.showMessageDialog(mContext, str_error);
                     }
-                } else if (is_dashboard) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_Occupation.this, Activity_POSP_RA_Nomination.class);
-                    mIntent.putExtra("is_dashboard", is_dashboard);
-                    startActivity(mIntent);
-                } else if (is_bsm_questions) {
-                    Intent mIntent = new Intent(Activity_POSP_RA_Occupation.this, Activity_POSP_RA_Nomination.class);
-                    mIntent.putExtra("is_bsm_questions", is_bsm_questions);
-                    startActivity(mIntent);
                 }
                 break;
 

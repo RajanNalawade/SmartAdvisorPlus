@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.posp_ra;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -22,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -66,7 +66,7 @@ public class Activity_POSP_RA_PANPendingAgentList extends AppCompatActivity impl
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.layout_posp_ra_pan_pending_agent_list);
+        setContentView(R.layout.activity_posp_ra_pan_pending_agent_list);
         //getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
 
         strUMCode = getIntent().getStringExtra("UMCode");
@@ -131,6 +131,42 @@ public class Activity_POSP_RA_PANPendingAgentList extends AppCompatActivity impl
                 return false;
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+        }
+
+        if (asyncTaskAOBPANPendingAgentList != null) {
+            asyncTaskAOBPANPendingAgentList.cancel(true);
+        }
+    }
+
+    @Override
+    public void onDataSuccess(int row_details) {
+        if (row_details == -1) {
+            mCommonMethods.showMessageDialog(context, "No data found against this PAN Number!");
+        } else {
+
+            Activity_POSP_RA_Authentication.row_details = row_details;
+
+            Intent mIntent = new Intent(Activity_POSP_RA_PANPendingAgentList.this, Activity_POSP_RA_PersonalInfo.class);
+            mIntent.putExtra("is_bsm_questions", true);
+            startActivity(mIntent);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent mIntent = new Intent(Activity_POSP_RA_PANPendingAgentList.this, Activity_POSP_RA_UMListUnderBSM.class);
+        mIntent.putExtra("fromHome", "");
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mIntent);
     }
 
     class AsyncTaskAOBPANPendingAgentList extends AsyncTask<String, String, String> {
@@ -326,19 +362,6 @@ public class Activity_POSP_RA_PANPendingAgentList extends AppCompatActivity impl
         }
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        if (mProgressDialog != null && mProgressDialog.isShowing()) {
-            mProgressDialog.dismiss();
-        }
-
-        if (asyncTaskAOBPANPendingAgentList != null) {
-            asyncTaskAOBPANPendingAgentList.cancel(true);
-        }
-    }
-
     public class DialogAdapterAOBRequirementDocs extends RecyclerView.Adapter<DialogAdapterAOBRequirementDocs.ViewHolderAdapter> {
 
         private final Context mAdapterContext;
@@ -418,28 +441,5 @@ public class Activity_POSP_RA_PANPendingAgentList extends AppCompatActivity impl
                 tvMenuItem = v.findViewById(R.id.tvMenuItem);
             }
         }
-    }
-
-    @Override
-    public void onDataSuccess(int row_details) {
-        if (row_details == -1) {
-            mCommonMethods.showMessageDialog(context, "No data found against this PAN Number!");
-        } else {
-
-            Activity_POSP_RA_Authentication.row_details = row_details;
-
-            Intent mIntent = new Intent(Activity_POSP_RA_PANPendingAgentList.this, Activity_POSP_RA_PersonalInfo.class);
-            mIntent.putExtra("is_bsm_questions", true);
-            startActivity(mIntent);
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent mIntent = new Intent(Activity_POSP_RA_PANPendingAgentList.this, Activity_POSP_RA_UMListUnderBSM.class);
-        mIntent.putExtra("fromHome", "");
-        mIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mIntent);
     }
 }

@@ -28,6 +28,7 @@
                 android:text="Personal"
                 android:padding="10dp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:focusable="true"
                 android:background="@color/GreenYellow"
                 android:focusableInTouchMode="true"/>
@@ -42,6 +43,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Occupation"
+                android:textColor="@color/white"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"/>
@@ -55,6 +57,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Nomination"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
@@ -69,12 +72,13 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Bank"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"/>
 
-            <View android:id="@+id/view_aob_exam_formIA"
+            <!--<View android:id="@+id/view_aob_exam_formIA"
                 android:layout_width="2dp"
                 android:layout_height="match_parent"
                 android:background="@color/white"/>
@@ -83,13 +87,14 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Form 1-A"
                 android:background="@color/GreenYellow"
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:focusable="true"
                 android:focusableInTouchMode="true">
-            </TextView>
+            </TextView>-->
 
             <View
                 android:layout_width="2dp"
@@ -100,6 +105,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="@color/white"
                 android:text="Exam And Training"
                 android:background="@color/Common_blue"
                 android:textStyle="bold"
@@ -134,6 +140,7 @@
                 android:gravity="center"
                 android:text="Terms And Conditions"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:padding="10dp"/>
 
         </LinearLayout>
@@ -209,7 +216,7 @@
 
                 </LinearLayout>
 
-                <TextView
+                <!--<TextView
                     style="@style/tv_default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -264,7 +271,7 @@
                         android:textColor="#484848"
                         android:drawableRight="@drawable/dt"/>
 
-                </LinearLayout>
+                </LinearLayout>-->
 
             </LinearLayout>
 

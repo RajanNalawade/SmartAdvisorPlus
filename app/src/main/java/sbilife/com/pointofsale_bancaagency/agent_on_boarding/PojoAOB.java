@@ -1,17 +1,31 @@
 package sbilife.com.pointofsale_bancaagency.agent_on_boarding;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by O0411 on 24/04/2018.
  */
 
-public class PojoAOB {
+public class PojoAOB implements Parcelable {
 
+    public static final Creator<PojoAOB> CREATOR = new Creator<PojoAOB>() {
+        @Override
+        public PojoAOB createFromParcel(Parcel in) {
+            return new PojoAOB(in);
+        }
+
+        @Override
+        public PojoAOB[] newArray(int size) {
+            return new PojoAOB[size];
+        }
+    };
     private String str_id = "", str_aadhaar_no = "", str_aadhaar_details = "", str_pan_no = "", str_pan_details = "",
             str_basic_details = "", str_personal_info = "", str_occupation_info = "", str_nomination_info = "",
-            str_bank_details= "", str_form_1_a = "", str_exam_training_details = "", str_bsm_interview_questions = "",
+            str_bank_details = "", str_form_1_a = "", str_exam_training_details = "", str_bsm_interview_questions = "",
             str_declarations_conditions = "", str_doc_upload = "", str_created_by = "",
             str_updated_by = "", str_created_date = "", str_updated_date = "",
-            str_synch_status="", strEnrollType = "";
+            str_synch_status = "", strEnrollType = "";
 
     public PojoAOB() {
     }
@@ -42,6 +56,30 @@ public class PojoAOB {
         this.str_updated_date = str_updated_date;
         this.str_synch_status = str_synch_status;
         this.strEnrollType = strEnrollType;
+    }
+
+    protected PojoAOB(Parcel in) {
+        str_id = in.readString();
+        str_aadhaar_no = in.readString();
+        str_aadhaar_details = in.readString();
+        str_pan_no = in.readString();
+        str_pan_details = in.readString();
+        str_basic_details = in.readString();
+        str_personal_info = in.readString();
+        str_occupation_info = in.readString();
+        str_nomination_info = in.readString();
+        str_bank_details = in.readString();
+        str_form_1_a = in.readString();
+        str_exam_training_details = in.readString();
+        str_bsm_interview_questions = in.readString();
+        str_declarations_conditions = in.readString();
+        str_doc_upload = in.readString();
+        str_created_by = in.readString();
+        str_updated_by = in.readString();
+        str_created_date = in.readString();
+        str_updated_date = in.readString();
+        str_synch_status = in.readString();
+        strEnrollType = in.readString();
     }
 
     public String getStrEnrollType() {
@@ -210,5 +248,35 @@ public class PojoAOB {
 
     public void setStr_synch_status(String str_synch_status) {
         this.str_synch_status = str_synch_status;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(str_id);
+        dest.writeString(str_aadhaar_no);
+        dest.writeString(str_aadhaar_details);
+        dest.writeString(str_pan_no);
+        dest.writeString(str_pan_details);
+        dest.writeString(str_basic_details);
+        dest.writeString(str_personal_info);
+        dest.writeString(str_occupation_info);
+        dest.writeString(str_nomination_info);
+        dest.writeString(str_bank_details);
+        dest.writeString(str_form_1_a);
+        dest.writeString(str_exam_training_details);
+        dest.writeString(str_bsm_interview_questions);
+        dest.writeString(str_declarations_conditions);
+        dest.writeString(str_doc_upload);
+        dest.writeString(str_created_by);
+        dest.writeString(str_updated_by);
+        dest.writeString(str_created_date);
+        dest.writeString(str_updated_date);
+        dest.writeString(str_synch_status);
+        dest.writeString(strEnrollType);
     }
 }
