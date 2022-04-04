@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="contentDescDOB">DOB</string>
+    <string name="retirementPlannerTitle">Retirement Planner</string>
+    <string name="childPlannerTitle">Child Planner</string>
+    <string name="retirementPlannerLeadsTitle">Retirement Planner Leads</string>
+    <string name="childPlannerLeadsTitle">Child Planner Leads</string>
+    <string name="google_play_services_api_key">AIzaSyCqIpNkXExQ86zMXx7h_9txgsG70naoG2Y</string>
+    
+    <string name="cifenrollment_dashboard">Dashboard</string>
+
+	<string name="cifenrollment_logout">Logout</string>
+
+    <string-array name="cif_reupload_doc_array">
+        <item>Select Document</item>
+        <item>Applicant Photo</item>
+        <item>Applicant Signature</item>
+        <item>Signature Mismatch Declaration</item>
+        <item>PAN Card</item>
+        <item>SBI ID Card</item>
+        <item>HSC</item>
+        <item>Degree</item>
+        <item>Schedule 3</item>
+        <!--<item>Annexure 1</item>-->
+        <item>Score Card</item>
+        <item>TCC Certificate</item>
+        <item>Questions(Annexure 1)</item>
+    </string-array>
+</resources>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:weightSum="19" >
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_end_year"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="End Year"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_total_base_premium"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="total base premium"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_Guaranteed_additions"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Guaranteed_additions"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_survival_benefit_guaranteed"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="guaranteed survival benefit"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_surrender_value_guaranteed"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="guaranteed surrender value"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_death_benefit_guaranteed"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="guannteed death benefit"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_maturity_benefit_guaranteed"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="guaranteed maturity benefit"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_maturity_benefit_not_guaranteed_4_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="non guaranteed maturity benefit 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_cash_bonus_not_guaranteed_4_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="cash bonus 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_bonusOption4per"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" bonus options 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_surrender_value_not_guaranteed_4_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guranteed surrender value 4%"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_maturity_benefit_not_guaranteed_8_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed maturity benefit 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_cash_bonus_not_guaranteed_8_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="cash bonus 8 %"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_bonusOption8per"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" bonus options 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_surrender_value_not_guaranteed_8_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="non guranteed surrender value 8%"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_survival_benefit_not_guaranteed_4_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="non guaranteed survival benefit 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_survival_benefit_not_guaranteed_8_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="non guaranteed survival benefit 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_death_benefit_not_guaranteed_4_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed death benefit 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_money_back_gold_death_benefit_not_guaranteed_8_percentage"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="non guaranteed death benefit 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+    </TableRow>
+
+</LinearLayout>

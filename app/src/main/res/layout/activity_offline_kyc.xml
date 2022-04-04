@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_color">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_header_part"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#3b5998">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:padding="5dp"
+                    android:src="@drawable/sbilogo" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="400dp"
+                android:gravity="center"
+                android:weightSum="2">
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2" />
+
+                <TextView
+                    android:id="@+id/tv_declaration_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:text="I,Mr. Machindranath bhaurao Yewale, holder of Aadhar Number 664926239602,  hereby give my consent to SBI Life Insurance Co. Ltd. (SBI Life) to obtain my Aadhaar number issued by UIDAI and PAN issued by the Income Tax department and provide voluntary consent to link my Aadhaar and PAN with all my SBI Life policies. I give my consent to obtain and use my Aadhaar Number, Name, Date of Birth, Fingerprint/Iris and my Aadhaar details to authenticate me with UIDAI as per the Aadhaar (Targeted Delivery of Financial and Other Subsidies, Benefits and Services) Act, 2016 and all other applicable laws. SBI Life has informed me that my Aadhaar details and identity information would only be used for authentication either through Yes/No authentication facility or e-KYC facility in accordance with applicable regulations. SBI Life has also informed me that my Aadhaar details and identity information will be used only for KYC purpose and for all service aspects related to SBI Life and my biometrics will not be stored /shared by SBI Life. I will not hold SBI Life or any of its authorised officials responsible in case of any incorrect information provided by me. I further authorize SBI Life to use my mobile number for sending SMS alerts to me regarding this purpose.Note:- Please provide your consent by ticking the checkbox above to proceed further"
+                    android:textColor="@color/Black"
+                    android:textSize="12dp" />
+            </TableRow>
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select the option to complete Offline eKYC process"
+                android:textColor="@color/DarkBlue"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/rb_scanOfflineXML"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Scan Offline XML From File"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_small"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:id="@+id/rb_scanQRCode"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:visibility="invisible"
+                        android:text="Scan QR Code from File"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_small"
+                        android:textStyle="bold" />
+
+
+                </RadioGroup>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/ll_ScanOfflineXML"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_DownLoadXML"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:background="@color/Brown"
+                        android:text="Download Offline eKYC"
+                        android:textColor="@color/White"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_UploadXML"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".5"
+                        android:background="@color/Brown"
+                        android:text="Browse Offline eKYC"
+                        android:textColor="@color/White"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <WebView
+                    android:id="@+id/webview_UIDAI_Site"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="#3b5998"
+                    android:onClick="oncancel"
+                    android:text="Cancel"
+                    android:textStyle="bold"></Button>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="#3b5998"
+                    android:text="Submit"
+                    android:textStyle="bold"></Button>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

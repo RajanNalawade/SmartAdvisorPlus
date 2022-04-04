@@ -1,0 +1,2810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Special Mortal Hazard And KYC Verification Report(UWN024)"
+                android:textColor="@color/Blue"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="2"
+                    android:padding="10dp"
+                    android:text="Proposal Number*"
+                    android:textColor="#808080" />
+
+                <EditText
+                    android:id="@+id/edt_mhr_proposal_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:inputType="textCapCharacters"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:padding="10dp"
+                    android:textColor="#000000" />
+
+                <Button android:id="@+id/btnSubmitProposal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:background="@drawable/btn_rounded_green"
+                    android:padding="10dp"
+                    android:layout_margin="5dp"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_mhr_enable_ui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="Sum Assured*"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_sum_assured"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+                            android:enabled="false"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="Name of Proposer"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:id="@+id/txt_mhr_proposer_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+                            android:enabled="false"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="SUC"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_suc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="numberDecimal"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="Region"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:id="@+id/txt_mhr_region"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textPostalAddress"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="Channel"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:id="@+id/txt_mhr_channel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="2"
+                            android:padding="10dp"
+                            android:text="PC Name"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:id="@+id/txt_mhr_pc_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:text="@string/str_mhr_introduction"
+                    android:textColor="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:text="A.Please mention whether this report contains details of"
+                        android:textColor="@color/Blue"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioGroup
+                            android:id="@+id/rg_mhr_details_check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_mhr_proposer_checked"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:checked="true"
+                                android:gravity="center"
+                                android:text="Proposer"
+                                android:textColor="#808080" />
+
+                            <RadioButton
+                                android:id="@+id/rb_mhr_life_assured_checked"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Life to be Assured"
+                                android:textColor="#808080" />
+
+                            <RadioButton
+                                android:id="@+id/rb_mhr_premium_payer_checked"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Premium Payer"
+                                android:textColor="#808080" />
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mhr_proposer_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Please give details of your meeting.(please mention names of the person in case report is about multiple persons)"
+                                android:textColor="#808080" />
+
+                            <TextView
+                                android:id="@+id/txt_mhr_proposer_name_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="Name of Person"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_proposer_name_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="1.Did you personally meet him/her"
+                                android:textColor="#808080" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_mhr_personal_meet1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_yes1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="true"
+                                    android:gravity="center"
+                                    android:text="Yes"
+                                    android:textColor="#808080" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_no1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="No"
+                                    android:textColor="#808080" />
+
+                            </RadioGroup>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:text="If any of the above answer is 'NO', then please mention as to how, you have gathered the information about him/her."
+                                android:textColor="#808080" />
+
+                            <EditText android:id="@+id/edt_mhr_details_if_no1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:inputType="text"
+                                android:visibility="gone"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_mhr_proposer_personal_meet_section1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Date of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <TextView
+                                    android:id="@+id/txt_mhr_proposer_meet_date1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:drawableRight="@drawable/dt"
+                                    android:padding="10dp"
+                                    android:textColor="#484848" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Place of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <EditText
+                                    android:id="@+id/edt_mhr_proposer_meet_place1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edittext_dob_shape"
+                                    android:inputType="textMultiLine"
+                                    android:padding="10dp"
+
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <!--<View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="2.Did you personally meet him/her"
+                                android:textColor="#808080" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_mhr_personal_meet2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_yes2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="true"
+                                    android:gravity="center"
+                                    android:text="Yes"
+                                    android:textColor="#808080" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_no2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="No"
+                                    android:textColor="#808080" />
+
+                            </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/edt_mhr_details_if_no2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="Please mention as to how, you have gathered the informationabout him/her"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_mhr_proposer_personal_meet_section2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Date of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <TextView
+                                    android:id="@+id/txt_mhr_proposer_meet_date2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:drawableRight="@drawable/dt"
+                                    android:padding="10dp"
+                                    android:textColor="#484848" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Place of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <EditText
+                                    android:id="@+id/edt_mhr_proposer_meet_place2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edittext_dob_shape"
+                                    android:inputType="textMultiLine"
+                                    android:padding="10dp"
+
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:padding="10dp"
+                                android:text="3.Did you personally meet him/her"
+                                android:textColor="#808080" />
+
+                            <RadioGroup
+                                android:id="@+id/rg_mhr_personal_meet3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_yes3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="true"
+                                    android:gravity="center"
+                                    android:text="Yes"
+                                    android:textColor="#808080" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_mhr_personal_meet_no3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="No"
+                                    android:textColor="#808080" />
+
+                            </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/edt_mhr_details_if_no3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="Please mention as to how, you have gathered the informationabout him/her"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_mhr_proposer_personal_meet_section3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Date of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <TextView
+                                    android:id="@+id/txt_mhr_proposer_meet_date3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:drawableRight="@drawable/dt"
+                                    android:padding="10dp"
+                                    android:textColor="#484848" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="1"
+                                    android:padding="10dp"
+                                    android:text="Place of Meeting *"
+                                    android:textColor="#808080" />
+
+                                <EditText
+                                    android:id="@+id/edt_mhr_proposer_meet_place3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/edittext_dob_shape"
+                                    android:inputType="textMultiLine"
+                                    android:padding="10dp"
+
+                                    android:textColor="#000000" />
+                            </LinearLayout>
+                        </LinearLayout>-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:text="B.Verification of Personal and Financial Details"
+                        android:textColor="@color/Blue"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Please ensure that all the facts are verified on the basis of origial documents"
+                        android:textColor="#808080"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="DOB And Age of Life Assured *"
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txt_mhr_personal_dob_details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:drawableRight="@drawable/dt"
+                                android:padding="10dp"
+                                android:textColor="#484848" />
+
+                            <TextView android:id="@+id/txt_mhr_personal_age"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="0"
+                                android:visibility="gone"
+                                android:textColor="#808080" />
+
+                        </LinearLayout>
+
+                        <!--<EditText android:id="@+id/edt_mhr_personal_dob_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Mention Documents Checked to verify Details(Proof)"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />-->
+
+                        <Spinner android:id="@+id/spnr_mhr_personal_dob_doc"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textboxbg"
+                            android:textColor="#484848" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Photo Identification *"
+                            android:textColor="#808080" />
+
+                        <Spinner android:id="@+id/spnr_mhr_personal_Identity_doc"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textboxbg"
+                            android:textColor="#484848" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Mention Full Address as Verified *"
+                            android:textColor="#808080" />
+
+                        <EditText android:id="@+id/edt_mhr_personal_address_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+
+                        <Spinner android:id="@+id/spnr_mhr_personal_address_doc"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textboxbg"
+                            android:textColor="#484848" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Did he/she appear over aged *"
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_mhr_over_aged"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_over_aged_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Yes"
+                                android:textColor="#808080" />
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_over_aged_n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="No"
+                                android:textColor="#808080" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="#808080" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:padding="10dp"
+                            android:text="Occupation *"
+                            android:textColor="#808080" />
+
+                        <Spinner
+                            android:id="@+id/spnr_mhr_occupation_param"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/textboxbg"
+                            android:entries="@array/arr_mhr_occupation_verification"
+                            android:textColor="#484848" />
+
+                        <Spinner
+                            android:id="@+id/spnr_mhr_occupation_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/textboxbg"
+                            android:entries="@array/arr_mhr_occupation_details"
+                            android:textColor="#484848" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="5dp"
+                            android:padding="10dp"
+                            android:text="Professional Qualification *"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_professional_qualification"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Professional Qualification"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+
+                            android:textColor="#000000" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="Does the Proposer/Life assured/Premium payer belong to PEP Category *"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="If yes, please provide the details...."
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_mhr_proposer_pep_cat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_proposer_pep_cat_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Yes"
+                                android:textColor="#808080" />
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_proposer_pep_cat_n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="No"
+                                android:textColor="#808080" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_mhr_proposer_pep_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Details of Income and Assets and Liabilities on the basis of your verification and assessment"
+                        android:textColor="#808080"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Please mention whether following details pertain to"
+                            android:textColor="#808080" />
+
+                        <RadioGroup
+                            android:id="@+id/rg_mhr_is_proposer_income"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/rb_mhr_is_proposer_income_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Proposer"
+                                android:checked="true"
+                                android:textColor="#808080" />
+
+                            <RadioButton
+                                android:id="@+id/rb_mhr_is_proposer_income_n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Premium Payer"
+                                android:textColor="#808080" />
+
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Income(Last FY)"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Amount (Rs.)"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Assets"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Value (Rs.)"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Salary"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_salary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Fixed Deposit/Bonds"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_fd"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Business and Profession"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_business"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Bank A/c Bal."
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_ac"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Agriculture"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_agri"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Equity/Shares"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_equity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Family Income"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_family"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Agricultural Land"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_agri_land"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Other Income"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_other"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Self owned Building/Flat"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_self_own"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Total Income"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_income_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="none"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Total Assets"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_assets_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="none"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Liabilities"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Value (Rs.)"
+                            android:textColor="#808080"
+
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Loan"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_liability_loan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Mortgage"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_liability_mortagage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="left|center_vertical"
+                            android:padding="10dp"
+                            android:text="Total Liability"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_liability_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:gravity="center"
+                            android:inputType="none"
+                            android:padding="10dp"
+
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="You may highlight any specific information about the income and occupation of the person and documents seen by you."
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_info_income_person"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:text="C. Specific verification of income and occupation in following cases"
+                        android:textColor="@color/Blue"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="In case of occupation being business or profession or self employment :"
+                        android:textColor="#808080"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Describe nature and duration of business/Occupation/Profession :"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_nature_duration_buss"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Name and Address of Employer or Firm/Company (owned or associated with) :"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_name_add_emp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/ll_mhr_occupation_being_self_emp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Invest, Turnover and profit from Business/Occupation/Profession in last three years :"
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:padding="10dp"
+                                android:text=""
+                                android:textColor="#808080"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Year - "
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                                <EditText android:id="@+id/edt_mhr_turnover_year1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:text="2017"
+                                    android:maxLength="4"
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Year - "
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                                <EditText android:id="@+id/edt_mhr_turnover_year2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:text="2018"
+                                    android:maxLength="4"
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="10dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:text="Year - "
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                                <EditText android:id="@+id/edt_mhr_turnover_year3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:text="2019"
+                                    android:maxLength="4"
+                                    android:textColor="#808080"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Investment"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_investment_y1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_investment_y2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_investment_y3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Turnover"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_turnovr_y1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_turnovr_y2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_turnovr_y3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Profit"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_profit_y1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_profit_y2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_profit_y3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:padding="10dp"
+
+
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_mhr_occupation_being_agri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="In case of occupation being agriculture :"
+                            android:textColor="#808080" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Describe Land Holding, crop pattern, Share of Proposer/Premium payer, whether land is held in joint ownership/tenancy and Income from agriculture.:"
+                            android:textColor="#808080" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Corp Pattern"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_agri_corp_pattern"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Income in last Three years"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_agri_income_3yr"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Land Holding (Acres)"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_agri_occu_landholding"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="No. of owners(In case of land owner)"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_agri_no_owners"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Ownership"
+                                android:textColor="#808080" />
+
+                            <Spinner
+                                android:id="@+id/spnr_mhr_agri_occupation"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:textColor="#484848" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="left|center_vertical"
+                                android:padding="10dp"
+                                android:text="Share in land(Acers)"
+                                android:textColor="#808080" />
+
+                            <EditText
+                                android:id="@+id/edt_mhr_agri_share_in_land"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:gravity="center"
+                                android:inputType="textMultiLine"
+                                android:padding="10dp"
+                                android:textColor="#000000" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#808080"
+                        android:padding="5dp" />
+
+                    <LinearLayout android:id="@+id/ll_mhr_occupation_being_agri1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:text="Please mention the documents seen to verify Agricultured income *"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_agri_doc_verify"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/ll_mhr_occupation_being_agri2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:padding="10dp"
+                            android:text="Describe income from other sources - rent, interest etc. Please mention the documents seen to verify Other income"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_agri_icome_other"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/str_mhr_point_d"
+                            android:textColor="@color/Blue" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="If yes, please provide the details.."
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_medical_status_yes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Yes"
+                                android:textColor="#808080" />
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_medical_status_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="No"
+                                android:textColor="#808080" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/rb_mhr_medical_status_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/str_mhr_point_e"
+                            android:textColor="@color/Blue" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:text="If yes, please provide the details.."
+                            android:textColor="#808080" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_is_legal_risk_y"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Yes"
+                                android:textColor="#808080" />
+
+                            <CheckBox
+                                android:id="@+id/cb_mhr_is_legal_risk_n"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="No"
+                                android:textColor="#808080" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_mhr_is_legal_risk_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/str_mhr_point_f"
+                            android:textColor="@color/Blue" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_oponion_recommend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Details"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="@string/str_mhr_point_elabrorate"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:padding="10dp"
+                        android:text="@string/str_mhr_point_verify"
+                        android:textColor="#808080" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="SUC :"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_suc_last"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:enabled="false"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="MHR Authority as per SUC :"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_auth_suc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:enabled="false"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Place :"
+                            android:textColor="#808080" />
+
+                        <EditText
+                            android:id="@+id/edt_mhr_place_last"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Details"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Date :"
+                            android:textColor="#808080" />
+
+                        <EditText android:id="@+id/edt_mhr_last_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:padding="10dp"
+                            android:enabled="false"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <RelativeLayout android:id="@+id/rl_mhr_upload_video"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:visibility="gone"
+                            android:background="@drawable/transparent"
+                            android:gravity="center">
+
+                            <VideoView android:id="@+id/vv_mhr_upload_video"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:visibility="gone"/>
+
+                            <ImageView android:id="@+id/iv_mhr_upload_video_play"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_icon_mhr_play"/>
+
+                            <ImageView android:id="@+id/iv_mhr_upload_video_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"/>
+
+                        </RelativeLayout>
+
+                        <TextView android:id="@+id/txtMHRUploadVideo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:text="Take Video"
+                            android:gravity="center"
+                            android:drawableTop="@drawable/icon_upload_video"
+                            android:textColor="#808080" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageView android:id="@+id/iv_mhr_report_pic"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:visibility="gone" />
+
+                        <TextView android:id="@+id/txt_mhr_report_pic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:drawableTop="@drawable/ibtn_camera"
+                            android:padding="10dp"
+                            android:text="Capture Photo of Proposer"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <!--<LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="vertical">
+
+                        <ImageView android:id="@+id/iv_mhr_report_sign"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:padding="10dp"
+                            android:visibility="gone" />
+
+                        <TextView android:id="@+id/txt_mhr_report_sign"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:drawableTop="@drawable/ibtn_camera"
+                            android:padding="10dp"
+                            android:text="Take Signature of reporting Authory"
+                            android:textColor="#808080" />
+                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:text="Name And Designation :"
+                            android:textColor="#808080" />
+
+                        <EditText android:id="@+id/edtMHRNameDesign"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Details"
+                            android:enabled="false"
+                            android:inputType="textMultiLine"
+                            android:padding="10dp"
+                            android:textColor="#000000" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <Button android:id="@+id/btnSubmitMHR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/btn_rounded_green"
+                        android:padding="10dp"
+                        android:text="Submit"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

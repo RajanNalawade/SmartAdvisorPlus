@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Score Card Upload"
+            android:textColor="@color/Blue"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText android:id="@+id/edt_cif_score_card_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint="Enter URN Number"
+                    android:inputType="textCapCharacters"
+                    android:maxLines="1"
+                    android:paddingLeft="5dp"
+                    android:textColor="#484848"
+                    android:layout_weight="1"
+                    android:textSize="15sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_score_card_docs_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/White"
+                    android:layout_gravity="center"
+                    android:src="@drawable/preview" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="center"
+                    android:background="@color/White"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_browse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_uploaddoc" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/btn_score_card_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/Common_blue"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:text="Next"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:visibility="gone"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

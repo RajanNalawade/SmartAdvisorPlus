@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="form_header_height">50dp</dimen>
+    <dimen name="form_row_height">50dp</dimen>
+   <dimen name="activity_vertical_margin">16dp</dimen>
+      <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="tab_host_default_height">48dp</dimen>
+    
+    <!-- Decide the margin from bottom -->
+    <dimen name="btn_height">40dp</dimen>
+
+    <!-- For height of spinner -->
+    <dimen name="spnr_height">40dp</dimen>
+
+    <!-- For height - Default height for - Edit text , Spinner , Button -->
+    <dimen name="default_height">40dp</dimen>
+
+    <!-- Decide the margin from bottom -->
+    <dimen name="bottom_margin">20dp</dimen>
+
+    <!-- Submenu List Under Tabs Height -->
+    <dimen name="submenu_height">50dp</dimen>
+
+    <!-- Submenu List Under Tabs Height -->
+    <dimen name="heading_height">45dp</dimen>
+ <dimen name="def_min_height">48dp</dimen>
+    <!-- Submenu Icon Height -->
+    <dimen name="icon_height">35dp</dimen>
+
+    <!-- Submenu Icon Width -->
+    <dimen name="icon_width">35dp</dimen>
+
+    <!-- folder structure height -->
+    <dimen name="folder_height">30dp</dimen>
+
+    <!-- dimension of Text Sizes -->
+    <dimen name="ts_heading_menu">16sp</dimen>
+    <dimen name="ts_sub_heading_menu">16sp</dimen>
+    <dimen name="ts_heading_description">14sp</dimen>
+    <dimen name="ts_default">14sp</dimen>
+    <dimen name="ts_btn">16sp</dimen>
+    <dimen name="ts_drawer_category">16sp</dimen>
+    <dimen name="ts_drawer_sub_category">12sp</dimen>
+
+    <!-- Defalult Padding -->
+    <dimen name="default_padding">5dp</dimen>
+
+    <!-- Dimension of PopupWindow -->
+    <dimen name="width_window">400dp</dimen>
+
+    <!-- Dimention of Tab Widget -->
+    <dimen name="height_tab">65dp</dimen>
+    <dimen name="width_tab">200dp</dimen>
+    <dimen name="activity_horizontal_margin">128dp</dimen>
+    <dimen name="ts_small">14dp</dimen>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        
+        <item 
+            android:id="@+id/menu_icon"
+            android:orderInCategory="100"
+            android:icon="@drawable/newicon"
+            android:title="Menu"
+            android:showAsAction="always"	/>
+        
+    </menu>

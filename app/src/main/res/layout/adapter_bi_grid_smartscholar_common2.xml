@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+                    <TableRow
+                    android:id="@+id/tr_header2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:weightSum="36">
+                    
+
+                    <TextView
+                        android:id="@+id/tv_policy_year"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="fill_parent"
+                        android:text="Policy Year" />
+                    
+                    <TextView
+                         android:id="@+id/tv_premium"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="fill_parent"
+                        android:text="Annualized Premium  (AP)" />
+                    
+
+                    <TextView
+                         android:id="@+id/tv_premium_allocation_charge"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="fill_parent"
+                        android:text="Premium Allocation Charge (PAC)" />
+
+                        <TextView
+                            android:id="@+id/tv_annulized_premium_allocation_charge"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="fill_parent"
+                            android:text="Annualized Premium - Premium Allocation Charge" />
+                        <TextView
+                            android:id="@+id/tv_mortality_charge1"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="wrap_content"
+                            android:text="Mortality Charge" />
+
+                        <TextView
+                            android:id="@+id/tv_service_tax_on_mortality_charge1"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="wrap_content"
+                            android:text="Applicable Taxes" />
+
+                    <TextView
+                         android:id="@+id/tv_policy_administration_charge"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="fill_parent"
+                        android:text="Policy Admin charge" />
+                        <TextView
+                            android:id="@+id/PPWB_charges"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="fill_parent"
+                            android:text="PPWB charges" />
+                        <TextView
+                            android:id="@+id/Add_ADB_ATPD_Charges"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="fill_parent"
+                            android:text="Add. ADB &amp; ATPD Charges" />
+
+                        <TextView
+                            android:id="@+id/tv_guranteed_addition1"
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/Black"
+                            android:textSize="14dp"
+                            android:layout_height="wrap_content"
+                            android:text="Guarantee charge" />
+                   
+
+                    <TextView
+                         android:id="@+id/tv_total_charge1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="Other charges*" />
+
+    <TextView
+        android:id="@+id/str_AddToTheFund4Pr"
+        style="@style/tv_heading"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:textColor="@color/Black"
+        android:textSize="14dp"
+        android:layout_height="wrap_content"
+        android:text="Additions to the fund*" />
+
+                    <TextView
+                         android:id="@+id/tv_fund_before_fmc1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="Fund before FMC" />
+
+                    <TextView
+                         android:id="@+id/tv_fund_management_charge1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="FMC" />
+
+                    <TextView
+                         android:id="@+id/tv_fund_value_at_end1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="Fund at End of year" />
+	
+                    <TextView
+                         android:id="@+id/tv_surrender_value1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="Surrender Value" />
+
+                    <TextView
+                         android:id="@+id/tv_death_benefit1"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:textColor="@color/Black"
+                        android:textSize="14dp"
+                        android:layout_height="wrap_content"
+                        android:text="Death Benefit" />
+
+                </TableRow>
+</LinearLayout>

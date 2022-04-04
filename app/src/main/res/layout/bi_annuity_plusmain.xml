@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:id="@+id/ll_bi_annuity_plus_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header"
+        android:orientation="vertical">
+
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/SeaGreen"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="ULIP Benefit Illustration for SBI LIFE - Annuity Plus (UIN No -- 111N083V11)"
+                android:textColor="@color/White"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </TableRow>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TableRow
+                android:id="@+id/tr_annuity_plus_staff_disc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/cb_ann_plus_staffdisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Staff Discount"
+                    android:visibility="visible" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tablerowKerlaDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_kerladisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Kerala Resident"
+                    android:visibility="visible" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proposer Details"
+                    android:textColor="@color/DarkBlue"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bi_annuity_plus_proposer_detail1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proposer Title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_proposer_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proposer First Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_proposer_first_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="First Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="90" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:text="Proposer Middle Name" />
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_proposer_middle_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="20" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proposer Last Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_proposer_last_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                    android:hint="Last Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Gender:" />
+
+                <Spinner
+                    android:id="@+id/selGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_life_assured_detail2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:visibility="gone"
+                    android:onClick="onClickProposerDob"
+                    android:text="Select Date" />
+
+                <TextView
+                    android:id="@+id/btn_bi_annuity_plus_proposer_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:onClick="onClickProposerDob"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/textview8"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Age:" />
+
+                <EditText
+                    android:id="@+id/tvProposerAge"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:editable="false" />
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/edt_mob"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".3"
+                        android:maxLength="30"
+                        android:text="+91" />
+
+                    <EditText
+                        android:id="@+id/edt_annuity_plus_contact_no"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".7"
+                        android:inputType="number"
+                        android:maxLength="10" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".5"
+                    android:text="Email Id " />
+
+                <EditText
+                    android:id="@+id/edt_annuity_plus_Email_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:text="Confirm Email Id" />
+
+                <EditText
+                    android:id="@+id/edt_annuity_plus_ConfirmEmail_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="0.5"
+                    android:text="You wish to purchase annuity for"
+                    android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_purchase_annuity_for"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow62"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="0.5"
+                    android:text="You are purchasing this immediate annuity plan for"
+                    android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_immediate_annuity_plan_for"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Annuitant Details"
+                    android:textColor="@color/DarkBlue"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:minHeight="@dimen/def_min_height"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/cb_different_from_proposer"
+                    style="@style/cb_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="Annuitant Details (If same as Proposer)" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First Annuitant Name" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_life_assured_detail1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Title" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_shubh_nivesh_life_assured_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_life_assured_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bi_rinnraksha_life_assured_detail1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="First Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_life_assured_first_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="First Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="90" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:text="Middle Name" />
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_life_assured_middle_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="20" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_life_assured_last_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                    android:hint="Last Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="First Annuitant Gender" />
+
+                <Spinner
+                    android:id="@+id/selFirstAnnutantGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="First Annuitant Dob" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:onClick="onClickLADob"
+                    android:visibility="gone"
+                    android:text="Select Date" />
+
+                <TextView
+                    android:id="@+id/btn_bi_annuity_plus_life_assured_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:onClick="onClickLADob"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Age" />
+
+                <EditText
+                    android:id="@+id/edt_bi_annuity_plus_life_assured_age"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:editable="false" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutSecondAnnuitant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Second Annuitant Details"
+                        android:textColor="@color/DarkBlue"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_annuity_plus_life_assured_title_second_annuitant"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/textboxbg"
+                        android:padding="7dp"
+                        android:popupBackground="@drawable/myspinner_border"
+                        android:spinnerMode="dropdown"
+                        android:textColor="#484848" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_bi_annuity_plus_life_assured_first_name_second_annuitant"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="First Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="90" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:text="Middle Name" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_annuity_plus_life_assured_middle_name_second_annuitant"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="Middle Name"
+                        android:inputType="textPersonName"
+                        android:maxLength="20" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_bi_annuity_plus_life_assured_last_name_second_annuitant"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                        android:hint="Last Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Second Annuitant Gender" />
+
+                    <Spinner
+                        android:id="@+id/selSecondAnnutantGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/textboxbg"
+                        android:padding="7dp"
+                        android:popupBackground="@drawable/myspinner_border"
+                        android:spinnerMode="dropdown"
+                        android:textColor="#484848" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Second Annuitant Dob" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Button
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:visibility="gone"
+                        android:onClick="onClickLADobSecond"
+                        android:text="Select Date" />
+                    <TextView
+                        android:id="@+id/btn_bi_annuity_plus_life_assured_date_second_annuitant"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:onClick="onClickLADobSecond"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="Age" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_annuity_plus_life_assured_age_second_annuitant"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:editable="false" />
+                </TableRow>
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Source of Business:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_source_of_business"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="Mode of Annuity Payouts:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_mode_of_annuity_payouts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Annuity Option:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_annuity_option"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textview13"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Opt for:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_opt_for"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_annuity_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/txt_annuity_amount"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Annuity Amount (Rs.)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/edt_annuity_plus_annuity_amount"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_vesting_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/txt_vesting_amount"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Vesting Amount (Rs.)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/edt_annuity_plus_vesting_amount"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_additional_amount_if_any"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/txt_additional_amount_if_any"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="0.5"
+                    android:text="Additional Amount, If Any (Rs.)"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/edt_annuity_plus_additional_amount_if_any"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_checkbox_advance_annuity_payout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_bi_annuity_plus_advance_annuity_payout"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Advance annuity payout"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bi_annuity_plus_advance_annuity_payout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/txtAdvAnnPayoutDate"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Advance Annuity Payout from which Date:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="gone" />
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:visibility="gone"
+                    android:onClick="onClickAdvanceAnnuityPayoutDate"
+                    android:text="Select Date" />
+                <TextView
+                    android:id="@+id/btn_bi_annuity_plus_advance_annuity_payout_from_which_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:onClick="onClickAdvanceAnnuityPayoutDate"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_bi_annuity_plus_adb_rider"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Accidental Death Benefit Rider (UIN:111B015V01)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bi_annuity_plus_adb_rider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:id="@+id/txtApplicableFor"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Applicable for:"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_applicable_for"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848"
+                    android:visibility="gone" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Proposal Date:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/proposalDate"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@android:color/black" />
+
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:onClick="onClickProposerDate"
+                    android:visibility="gone"
+                    android:text="Select Date" />
+                <TextView
+                    android:id="@+id/btn_bi_annuity_plus_proposal_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:onClick="onClickProposerDate"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Channel Details"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_annuity_plus_channel_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848"/>
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow_proceed_shubhNivesh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btn_bi_annuity_plus_btnback"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.48"
+                    android:background="@color/Common_blue"
+                    android:padding="5dp"
+                    android:text="Back"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="66dp"
+                    android:layout_weight="0.04" />
+
+                <Button
+                    android:id="@+id/btn_bi_annuity_plus_btnSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.48"
+                    android:background="@color/Common_blue"
+                    android:padding="5dp"
+                    android:text="Proceed"
+                    android:textColor="#ffffff" />
+            </TableRow>
+
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,229 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:text="Policy Number"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edit_policy_no"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/my_bordernew1"
+                android:hint="Enter Policy Number"
+                android:inputType="textCapCharacters"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:textColor="#484848"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAnnuity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:text="Annuity Number"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_annuity_no"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/my_bordernew1"
+                android:hint="Enter Annuity Number"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:textColor="#484848"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llEnterOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center_vertical"
+                android:text="OTP"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_coe_otp"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/my_bordernew1"
+                android:hint="Enter OTP"
+                android:inputType="number"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:textColor="#484848"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/btn_annuity_no"
+                style="@style/button_style"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/enable_btn_background"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="Next"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:background="@color/Black" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <ScrollView
+            android:id="@+id/annuity_details_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Annuitant Name : "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_annutant_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Annutant DOB : "
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txt_annutant_dob"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text=""
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/enable_btn_background"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="Next"
+            android:textColor="#ffffff" />
+
+    </RelativeLayout>
+
+</LinearLayout>

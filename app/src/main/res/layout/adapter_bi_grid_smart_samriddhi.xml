@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="14" >
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_end_year"
+            android:layout_width="0dp"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="End Year" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_yearly_basic_premium"
+             android:textColor="@color/Black"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:textSize="14dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="basic premium" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_cumulative_premium"
+          style="@style/tv_heading"
+          android:layout_width="0dp"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="cumulative premium" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_guaranteed_addition"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="guaranteed addition" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_guaranteed_death_benefit"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="death benefit" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_guaranteed_maturity_benefit"
+              style="@style/tv_heading"
+               android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="maturity benefit" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_samriddhi_guaranteed_surrender_value"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="surrender value" />
+
+        </TableRow>
+
+</LinearLayout>

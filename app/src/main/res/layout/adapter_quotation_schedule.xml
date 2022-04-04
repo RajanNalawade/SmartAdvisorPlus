@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="1000dp"
+        android:layout_height="fill_parent"
+        android:weightSum="10">
+
+        <TextView
+            android:id="@+id/tv_adapter_if_paid_by"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="End Year"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_latest_due"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="total base premium"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_no_of_premium"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="guannteed death benefit"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_total_amount"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed death benefit 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_rate_of_interest"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed death benefit 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_late_fee"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="guaranteed survival benefit"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_interest_waived"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed survival benefit 4 %"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_other_dues_pending"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="non guaranteed survival benefit 8 %"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_policy_deposit"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="total survival benefit 4%"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Black" />
+
+        <TextView
+            android:id="@+id/tv_adapter_net_revival_amount"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="total survival benefit 8%"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+    </TableRow>
+
+</LinearLayout>

@@ -1,0 +1,3136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lnPerformanceReports"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsBDMCIF"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/textviewUserReportType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Performance Report Type"
+                    android:textColor="#808080"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="1" >
+
+                <Spinner
+                    android:id="@+id/spinnerPerformanceReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/textboxbg"
+                    android:entries="@array/channelProposerTrackerListArray"
+                    android:paddingLeft="5dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" >
+                </Spinner>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:paddingBottom="5dp"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="2" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/btnOkPerformanceReport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/Common_blue"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:text="@android:string/ok"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <Button
+                            android:id="@+id/btnResetPerformanceReport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/Common_blue"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:text="Reset"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsBDMServicingIndividualReports"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/BDMServicingIndividualReportTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/BDMindividualPolicies"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="@string/ageingSlabs"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="@string/eftnrCountTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="@string/pendingCasesCountTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textoneSevenDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="1-7 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textoneSevenDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textoneSevenDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/texteightFifteenDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="8-15 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/texteightFifteenDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="8-15 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/texteightFifteenDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="8-15 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textfifteenTwentyDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="15-20 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textfifteenTwentyDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="15-20 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textfifteenTwentyDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="15-20 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textgreaterThanTwentyOneDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="> 21 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textgreaterThanTwentyOneDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="> 21 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textgreaterThanTwentyOneDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="> 21 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsBDMCreditLifeReport"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMCreditLifeReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/BDMCreditLifeReportTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="@string/BDMCreditLifeReportNOPTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="@string/BDMCreditLifeReportPremiumAmtTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportRRYTDBusinessTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:text="@string/BDMCreditLifeReportRRYTDBusinessTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportRRYTDBusinessNOP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportRRYTDBusinessPremiumAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportHomeLoanPenetrationTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:text="@string/BDMCreditLifeReportHomeLoanPenetrationTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportHomeLoanPenetrationNOP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportHomeLoanPenetrationPremiumAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPotentialLoansTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:text="@string/BDMCreditLifeReportPotentialLoansTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPotentialLoansNOP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPotentialLoansPremiumAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportCoveredIncShieldTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:text="@string/BDMCreditLifeReportCoveredIncShieldTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportCoveredIncShieldNOP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportCoveredIncShieldPremiumAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPercentagePenetrationTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="left|center"
+                    android:text="@string/BDMCreditLifeReportPercentagePenetrationTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPercentagePenetrationNOP"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.6"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/textBDMCreditLifeReportPercentagePenetrationPremiumAmt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsBDMBusinessReport"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/BDMBusinessReportTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="@string/BDMBusinessReportTotalbranchesTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportTotalBranches"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="@string/BDMBusinessReportCIFNameTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportCIFName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="29"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Period"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNBBudget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="NB Budget"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNBBudgetMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="2559000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNBBudgetQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNBBudgetYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="165990000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageAchievement"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% Achievement"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageAchievementMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="2559000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageAchievementQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageAchievementYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="165990000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRatedAPremium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Rated Premium(Amount in Rs.)"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRatedAPremiumtMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="2559000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRatedAPremiumQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRatedAPremiumYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="165990000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalBudget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Renewal Budget(Amount in Rs.)"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalBudgettMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="2559000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalBudgetQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalBudgetYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="165990000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalAchievement"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% Renewal Achievement"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalAchievementMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="2559000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalAchievementQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text=" "
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportRenewalAchievementYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="165990000"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportConnectLifeNops"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% ConnectLife NOPs "
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportConnectLifeNopsMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportConnectLifeNopsQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportConnectLifeNopsYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageClNBp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% CL NBP "
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageClNBpMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageClNBpQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPercentageClNBpYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyAmountPercentage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Persistency Amt%"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyAmountPercentageMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyAmountPercentageQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyAmountPercentageYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyCountPercentage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Persistency Count%"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyCountPercentageMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyCountPercentageQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportPersistencyCountPercentageYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNumberOf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text=""
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNumberOfMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNumberOfQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportNumberOfYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="No. of"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportMDRTStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="MDRT Status"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportMDRTStatusMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="NA"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportMDRTStatusQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsBDMBusinessReportMDRTStatusYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsCIFServicingReport"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFServicingReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/CIFServicingReportTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFServicingReportEmployeeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Kamal Hasan"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/BDMindividualPolicies"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="@string/ageingSlabs"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="@string/eftnrCountTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="@string/pendingCasesCountTitle"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/CIFtextoneSevenDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="1-7 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextoneSevenDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="1-7 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextoneSevenDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="1-7 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/CIFtexteightFifteenDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="8-15 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtexteightFifteenDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="8-15 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtexteightFifteenDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="8-15 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/CIFtextfifteenTwentyDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="15-20 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextfifteenTwentyDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="15-20 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextfifteenTwentyDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="15-20 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="40dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:id="@+id/CIFtextgreaterThanTwentyOneDaysTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.7"
+                    android:gravity="left|center"
+                    android:text="> 21 Days"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextgreaterThanTwentyOneDaysEFTCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="> 21 Days Eft count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/CIFtextgreaterThanTwentyOneDaysPendingCasesCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.15"
+                    android:gravity="center"
+                    android:text="> 21 Days pending cases count"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsCIFBusinessReport"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/CIFBusinessReportTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportEmployeeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Kamal Hasan"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Period"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Rated Premium(Amount in Rs.)"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportRatedPremiumMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportRatedPremiumQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportRatedPremiumYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% CL NOP"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNOPMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNOPQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNOPYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="% CL NBP"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNBPMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNBPtQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportCLNBPYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="13th Month Persistency Amt%"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenAmtMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenAmtQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenAmtYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="4" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="13th Month Persistency Count%"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenCountMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenCountQTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="QTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsCIFBusinessReportThirteenMonthPercenCountYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tblPerformanceReportsIABusinessReport"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/shape2"
+            android:orientation="vertical" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsIABusinessReportTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="IA Business Report"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txtPerformanceReportsIABusinessReportEmployeeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Kamal Hasan"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Parameters"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="New Business Premium(In 000&apos;s) Cashiered"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNBPMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNBPYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="New Business Premium(In 000&apos;s) Issued"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNBPIssuedMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNBPIssuedYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="NOP"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNOPMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNOPYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="13th Month Persistency %(On Premium Basis)"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportThirteenMonPersiPerMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportThirteenMonPersiPerYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="No Of Proposals Pending"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNoProposalsPendingMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportNoProposalsPendingYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginLeft="2dp"
+                android:background="@color/lightGrey" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:gravity="left"
+                android:minHeight="50dp"
+                android:weightSum="3" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="1.4"
+                    android:gravity="left|center"
+                    android:text="Pending Premium"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportPendingPremiumMTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="MTD"
+                    android:textStyle="normal" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/lightGrey" />
+
+                <TextView
+                    android:id="@+id/txtIABusinessReportPendingPremiumYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_weight="0.8"
+                    android:gravity="center"
+                    android:text="YTD"
+                    android:textSize="15sp"
+                    android:textStyle="normal" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

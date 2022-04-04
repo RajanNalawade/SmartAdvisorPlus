@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"   
+    android:orientation="horizontal"
+   >
+    
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        >
+        
+        <TableRow>
+
+        <TextView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="@android:color/darker_gray"
+       	 	android:textStyle="bold"
+        	android:typeface="sans"
+             />
+        
+        </TableRow>
+        
+        </TableLayout>
+        
+     <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"        
+        >
+        
+        <TableRow>
+    
+  
+   
+    <TextView
+        android:id="@+id/txtactivityname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" /> 
+        
+     </TableRow>      
+    
+        <TableRow >
+        
+     <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+        
+     </TableRow>
+
+        <TableRow >
+   <TextView
+        android:id="@+id/detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+        
+    </TableRow>
+    
+        <TableRow >
+        
+    <TextView
+        android:id="@+id/lastdetail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+        
+     </TableRow>
+     
+         <TableRow >
+        
+    <TextView
+        android:id="@+id/leadact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+        
+     </TableRow>
+     
+        <TableRow >
+     
+        <TextView
+        android:id="@+id/activitystatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+        
+     </TableRow>
+     
+        <TableRow >
+        
+    <TextView
+        android:id="@+id/txtsubactivity"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans"        
+        />
+        
+     </TableRow>
+     
+         <TableRow >
+        
+    <TextView
+        android:id="@+id/txttimeto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_marginLeft="10dp"
+        android:text="TEXT"
+        android:textColor="#000000"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        />
+        
+     </TableRow>
+     
+     </TableLayout>
+
+</LinearLayout>

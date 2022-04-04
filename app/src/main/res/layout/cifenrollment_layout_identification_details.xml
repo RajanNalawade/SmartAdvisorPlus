@@ -1,0 +1,2005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f0f0f0" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" >
+
+            <LinearLayout android:id="@+id/ll_identification_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="Identification Details"
+                    android:textColor="@color/Blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/img_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".2"
+                    android:background="@color/Black"
+                    android:src="@drawable/focus_imagebutton_photo"
+                    android:textColor="@color/Black" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="Photo Capture"
+                    android:textSize="25sp" />
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView android:id="@+id/txt_download_annexure"
+                    style="@style/tv_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Download"
+                    android:textColor="@color/Black"
+                    android:textSize="25sp" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Upload Annexure"
+                    android:textColor="@color/Black"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_annexure_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/preview" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_annexure_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_annexure_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_annexure_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_uploaddoc"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                        android:text="SBI ID Card"
+                    android:textColor="@color/Black"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_id_card_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/preview" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_id_card_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_id_card_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_id_card_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_uploaddoc"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="PAN Card"
+                    android:textColor="@color/Black"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_pan_card_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:layout_weight="1"
+                            android:padding="10dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/preview" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_pan_card_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_pan_card_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_pan_card_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_uploaddoc"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <!--<ImageButton
+                    android:id="@+id/img_signature"
+                    android:layout_width="300dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/signature" />-->
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Signature"
+                    android:textColor="@color/Black"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageButton android:id="@+id/imgbtn_sign_capture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:visibility="visible"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/img_sign"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:background="@android:color/transparent"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:textColor="@color/Black" />
+
+                    <ImageButton android:id="@+id/imgbtn_sign_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:visibility="visible"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <!--<ImageButton
+                        android:id="@+id/imgbtn_annexure_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:padding="10dp"
+                        android:src="@drawable/ibtn_uploaddoc"/>-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Light_Very_Grey" />
+
+            <TableRow
+                android:id="@+id/tr_identification_button"
+                    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:visibility="visible"
+                android:weightSum="1" >
+
+                <Button
+                    android:id="@+id/btn_next_idn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Next"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_educational_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:visibility="gone"
+                android:background="#f0f0f0">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Education Documents Upload"
+                    android:textColor="@color/Blue"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGrey" />
+
+                <LinearLayout android:id="@+id/ll_tcc_education_ssc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:text="SSC" />
+
+                    <Spinner
+                        android:id="@+id/spnr_tcc_education_doc_ssc"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1" />
+
+                    <!--<ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_ssc_preview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight=".25"
+                        android:layout_gravity="center"
+                        android:background="@color/White"
+                        android:onClick="onPreview_ageProof"
+                        android:src="@drawable/preview"
+                        android:visibility="invisible" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_ssc_dlt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight=".25"
+                        android:background="@color/White"
+                        android:onClick="onDelete_ageProof"
+                        android:src="@drawable/trash_icon"
+                        android:visibility="invisible" />-->
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_ssc_camera"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight=".5"
+                        android:background="@color/White"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_ssc_browse"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight=".5"
+                        android:background="@color/White"
+                        android:clickable="true"
+                        android:onClick="onBrowse_AgeProof"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_ssc_upload"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight=".5"
+                        android:background="@color/White"
+                        android:clickable="true"
+                        android:onClick="onUpload_AgeProof1"
+                        android:src="@drawable/ibtn_uploaddoc" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGrey" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="HSC" />
+
+                <LinearLayout android:id="@+id/ll_tcc_education_hsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spnr_tcc_education_doc_hsc"
+                        style="@style/spnr_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/ib_score_card_hsc_doc_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:layout_marginLeft="5dp"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/preview" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_hsc_camera"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_hsc_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_hsc_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:src="@drawable/ibtn_uploaddoc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGrey" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Degree" />
+
+
+                <LinearLayout android:id="@+id/ll_tcc_education_degree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/spnr_tcc_education_doc_degree"
+                        style="@style/spnr_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/ib_score_card_degree_doc_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:layout_marginLeft="5dp"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/preview" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_degree_camera"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ibtn_camera" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_degree_browse"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:src="@drawable/ibtn_browsedoc" />
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_tcc_education_doc_degree_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        android:src="@drawable/ibtn_uploaddoc" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGrey" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" >
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="visible" >
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:gravity="center"
+                            android:text="Contact Details"
+                            android:textColor="@color/Blue"
+                            android:textSize="20sp"
+                            android:layout_margin="10dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BDM Email" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_bdm_email"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:inputType="textEmailAddress"
+                            android:padding="10dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:textColor="#484848"
+                            android:textColorHint="#2b5988" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White" />
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BDM Mobile Number" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/Red" />
+
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_bdm_mobile_no"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/my_bordernew1"
+                            android:inputType="phone"
+                            android:digits="0123456789"
+                            android:maxLength="10"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:textColorHint="#2b5988" />
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White" />
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sales Support Email"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_sales_support_email_id"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:inputType="textEmailAddress"
+                            android:padding="10dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:textColor="#484848"
+                            android:textColorHint="#2b5988" >
+                        </EditText>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White" />
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sales Support Mobile" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" *"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_sales_support_mobile"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:digits="0123456789"
+                            android:padding="10dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:textColor="#484848"
+                            android:textColorHint="#2b5988" >
+                        </EditText>
+                    </TableRow>
+                </TableLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/LightGrey" />
+
+                <Button android:id="@+id/btn_tcc_education_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffff"
+                    android:text="NEXT"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_annexure1_fit_proper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical"
+                android:background="#f0f0f0">
+
+                <LinearLayout android:id="@+id/ll_tcc_queries_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Annexure – 1 (Fit and Proper Certificate)"
+                        android:textColor="@color/Blue"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NOTE: If answer to the following question is YES then, please tick the checkbox."
+                        android:textColor="@color/Red"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold" />
+
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />-->
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_tcc_queries_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@color/LightGrey"
+                    android:gravity="center"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="NO."
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:layout_weight="2"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Annexure – 1 (Fit and Proper Certificate)"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_weight="1"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Yes/No"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_weight="2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="a)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you ever registered or obtained license from any of the regulatory authorities under any law such as SEBI, RBI, IRDA, PFRDA, FMC etc.?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+
+                        <CheckBox android:id="@+id/chk_tcc_que_a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="b)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you carried on business under any name other than the name stated in this application?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="c)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you ever been refused or restricted by any regulatory authority to carry on any business, trade or profession for which a specific license registration or other authorization is required by law?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="d)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you been ever censured or disciplined or suspended or refused permission or license or registration by any regulatory authority to carry on any business activity?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="e)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you been subject to any investigations or disciplinary proceeding or have been issued warning or reprimand by any regulatory authority?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="f)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_f"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you been convicted of any offence or subject to any pending proceedings under any law?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_f"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="g)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_g"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you been banned from entry from any profession/occupation at any time?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_g"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="h)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_h"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Details of prosecution, if any, pending or commenced or resulting in conviction in the past for violation of economic laws and regulations?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_h"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="i)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_i"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Details of  criminal prosecution, if  any, pending or commenced or resulting in conviction in the past against the applicant?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_i"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="j)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_j"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Do you attract any of the disqualifications envisaged under Section 164 of the Companies’ Act 2013?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_j"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="k)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_k"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you been subject to any investigation at the instance of Government department or agency?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_k"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="l)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_l"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you at any time been found guilty of violation of rules / regulations / legislative requirements by customs/ excise / income tax / foreign exchange / other revenue authorities, if so give particulars?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_l"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="m)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Have you at any time come to the adverse notice of a regulator such as SEBI, IRDA, MCA, PFRDA.(Though it shall not be necessary for a candidate to mention in the column about orders and findings made by regulators which have been later on reversed / set aside in toto,  it  would  be  necessary  to  make  a  mention  of  the same, in case the reversal / setting aside is on technical reasons like limitation or lack of jurisdiction, etc, and not on merit. If the order of the regulator is temporarily stayed and the appellate / court proceedings are pending, the same also should be mentioned)?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_m"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="n)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_n"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Has	any	of	your	group	company/associate company/related party been carrying any license issued by the IRDA?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox android:id="@+id/chk_tcc_que_n"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="o)"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/Black"
+                            android:layout_weight="2"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <TextView android:id="@+id/txt_TCC_que_o"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Any other explanation / information in regard to items I and II  and other information considered relevant for judging fit and proper criteria of the applicant?"
+                            android:textColor="@color/Black"
+                            android:layout_gravity="center"
+                            android:gravity="top|left"
+                            android:layout_weight="1"/>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/white" />
+
+                        <CheckBox  android:id="@+id/chk_tcc_que_o"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:layout_gravity="center"/>
+
+                    </LinearLayout>
+
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Name :" />
+
+                        <EditText
+                            android:id="@+id/edt_tcc_query_name"
+                            style="@style/et_default"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:hint="Enter Place"
+                            android:textColor="@color/Black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>-->
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Place :" />
+
+                        <EditText
+                            android:id="@+id/edt_tcc_query_place"
+                            style="@style/et_default"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:hint="Enter Place"
+                            android:textColor="@color/Black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="Date :" />
+
+                        <TextView android:id="@+id/txt_tcc_query_date"
+                            style="@style/et_default"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:hint="Date"
+                            android:textColor="@color/Black"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_tcc_query_cust_sign"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/signature"></ImageButton>
+
+                        <TextView
+                            style="@style/tr_header_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="Customer&apos;s Signature"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_tcc_queries_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <Button android:id="@+id/btn_tcc_queries_submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@color/Common_blue"
+                        android:gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:text="Next"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_schedule3"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:layout_height="match_parent">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Schedule 3"
+                    android:textColor="@color/Blue"
+                    android:layout_margin="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SCHEDULE III [See regulation 26]\n"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Insurance Regulatory and Development Authority of India (Registration of Corporate Agents) Regulations, 2015 \n"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Code of Conduct"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView android:id="@+id/txt_tcc_declaration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Code of Conduct"
+                            android:textColor="@color/Black"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/LightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Place :" />
+
+                            <TextView
+                                android:id="@+id/txt_tcc_declaration_place"
+                                style="@style/et_default"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:textColor="@color/Black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/LightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Date :" />
+
+                            <TextView android:id="@+id/txt_tcc_declaration_date"
+                                style="@style/et_default"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:textColor="@color/Black"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/LightGrey" />
+
+                        <CheckBox android:id="@+id/chk_tcc_declaration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="I confirm that the above information is, to the best of my knowledge and belief, true and complete. I undertake to keep the Authority fully informed, as soon as possible, of all events, which take place subsequent to my appointment, which are relevant to the information provided above."
+                            android:textColor="@color/Black"/>
+
+                        <Button android:id="@+id/btn_tcc_declaration_submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:background="@color/Common_blue"
+                            android:gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center"
+                            android:textColor="#ffffff"
+                            android:text="Submit"/>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="sbilife.com.pointofsale_bancaagency.ekyc.EkycPSClaimsActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Proposal/Policy Number *"
+                    android:textColor="#808080"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText android:id="@+id/edt_ekyc_proposal_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Proposal/Policy Number"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:paddingLeft="5dp"
+                        android:enabled="false"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                    <Button android:id="@+id/btn_ekyc_varify_proposal_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/Common_blue"
+                        android:layout_weight="3"
+                        android:layout_marginLeft="5dp"
+                        android:text="Get Details"
+                        android:visibility="gone"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_proposal_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name Of Customer"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_customer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:enabled="false"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Client ID"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_client_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Plan Name"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_plan_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Policy Status"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_policy_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:enabled="false"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Aadhaar Number / Virtual ID *"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_aadhar_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:inputType="number"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:maxLength="16"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pan Card Number *"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_pan_card_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapCharacters"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name as Aadhar *"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <EditText android:id="@+id/edt_ekyc_name_as_aadhar"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:inputType="textCapWords"
+                        android:background="@drawable/my_bordernew1"
+                        android:maxLines="1"
+                        android:paddingLeft="5dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mode *"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="eKYC"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:textColor="#808080"
+                        android:textSize="16sp" />
+
+                    <!--<RadioGroup android:id="@+id/rg_ekyc_main_modes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton android:id="@+id/rb_ekyc_mode_authentication"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Authentication"
+                            android:gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="#808080"/>
+
+                        <RadioButton android:id="@+id/rb_ekyc_mode_ekyc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="eKYC"
+                            android:gravity="center"
+                            android:textSize="15sp"
+                            android:textColor="#808080"/>
+                    </RadioGroup>-->
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/WhiteSmoke"
+                    android:layout_margin="5dp"/>
+
+                <Button android:id="@+id/btn_ekyc_proceed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@color/Common_blue"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Proceed For eKYC"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/WhiteSmoke"
+                android:layout_margin="5dp"/>
+
+            <Button android:id="@+id/btn_ekyc_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Common_blue"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Dashboard"
+                android:layout_alignParentRight="true"
+                android:textColor="#ffffff" />-->
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

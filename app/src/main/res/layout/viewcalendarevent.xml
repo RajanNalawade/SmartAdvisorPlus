@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always">
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+         android:background="@drawable/header">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"            
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white"
+            android:clickable="true" />
+       
+    </LinearLayout>
+    <ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+<TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+         >
+         
+    <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"            
+         >
+    
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Date "
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <TextView
+            android:id="@+id/effectiveDate"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"   
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+    
+     
+     
+  
+      <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"           
+            android:layout_marginTop="5dp"           
+         >
+    
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Time "
+            android:textColor="#000000"            
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <TextView
+            android:id="@+id/timeFrom"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"            
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"   
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+     
+      <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:layout_marginTop="5dp"          
+         >
+     <TextView
+       
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_weight="0.5"
+        android:text="Event Name "
+         android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <EditText
+        android:id="@+id/Activity"
+        android:layout_width="0dp"
+        android:layout_height="45dp"        
+         android:background="@drawable/shape"        
+       		 android:singleLine="true"       		
+       		    android:textColor="#000000"
+       		 android:textSize="15sp"
+        android:layout_weight="0.5" 
+        >
+
+    </EditText>
+
+    
+    
+</TableRow>
+
+      <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:layout_marginTop="5dp"          
+         >
+     <TextView
+       
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_weight="0.5"
+        android:text="Notes "
+         android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <EditText
+        android:id="@+id/vednotes"
+        android:layout_width="0dp"
+        android:layout_height="45dp"        
+         android:background="@drawable/shape"        
+       		        		
+       		    android:textColor="#000000"
+       		 android:textSize="15sp"
+        android:layout_weight="0.5" 
+        >
+
+    </EditText>
+
+    
+    
+</TableRow>
+              	
+      <TableRow
+            android:id="@+id/tableRow18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"   
+            android:layout_marginTop="5dp"         
+         >
+
+     <Button
+         android:id="@+id/btnSubmit"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+          android:background="@drawable/btn_indicator"
+         android:textColor="@android:color/white"
+         android:text="Update" />
+
+<Button
+         android:id="@+id/btnDelete"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+          android:background="@drawable/btn_indicator"
+         android:textColor="@android:color/white"
+         android:text="Delete" />
+
+
+     <Button
+         android:id="@+id/back"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+          android:background="@drawable/btn_indicator"
+         android:textColor="@android:color/white"
+         android:text="Cancel" />
+
+ </TableRow>
+</TableLayout>
+</ScrollView>
+</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,433 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+    
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"    
+    android:orientation="vertical"     
+    android:overScrollMode="always">
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+         android:background="@drawable/header">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"            
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white"
+            android:clickable="true" />
+       
+    </LinearLayout>
+ 
+<TableLayout
+            android:id="@+id/tblHOLead"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape2" >
+            
+      <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Lead Date"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edholeaddate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    android:editable="false"/>                                
+                 
+            </TableRow>
+            
+      <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Customer ID"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhocustid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:textSize="19sp" 
+                    android:maxLength="15"                    
+                    android:editable="false"/>
+            </TableRow>
+            
+       <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Customer Name"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhocustname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    android:editable="false"/>
+            </TableRow>
+            
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Lead Priority"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edholeadpriority"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    android:editable="false"/>
+           </TableRow>                                   
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" 
+                android:id="@+id/tblhofollowupdate"
+                >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Follow up Date"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/edhofolowdate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                                      
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    />
+                
+                 <CheckBox
+                    android:id="@+id/chkholead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Set Alarm"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" 
+                    android:visibility="gone"/>
+                 
+            </TableRow>                       
+            
+              <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Age"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhoage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:textSize="19sp"                     
+                    android:maxLength="2"
+                    android:editable="false"/>
+            </TableRow>
+            
+               <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Total A/Cs held"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhototalacc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    android:editable="false"/>
+            </TableRow>
+            
+                <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Balance"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhobalance"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:singleLine="true"
+                    android:textColor="#000000"
+                    android:textSize="19sp" 
+                    android:maxLength="80"
+                    android:editable="false"/>
+            </TableRow>
+                       
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Branch Code"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhobrcode"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:textSize="19sp"
+                    android:maxLength="8"                     
+                    android:editable="false"/>
+            </TableRow>
+            
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Lead Status"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/selholeadstatus"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bgspinner"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown" 
+                    android:entries="@array/selfleadstatus"/>
+            </TableRow>   
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" 
+                android:id="@+id/tblholeadsubstatus">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Lead Sub Status"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/selholeadsubstatus"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bgspinner"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown" 
+                    android:entries="@array/selfleadsubstatus"/>
+            </TableRow> 
+            
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" 
+                 android:id="@+id/tblhoproposalno">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Proposal No"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhoproposalno"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                    
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:textSize="19sp" 
+                    android:maxLength="10"                    
+                    />
+            </TableRow>
+            
+             <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_marginTop="4dp" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Comments"
+                    android:textColor="#000000"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edhocomments"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape"                   
+                    android:textColor="#000000"
+                    android:singleLine="true"
+                    android:textSize="19sp" 
+                    android:maxLength="200"/>
+            </TableRow>
+
+           
+
+            <LinearLayout
+                android:layout_width="483dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btnaddholead"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="150dp"
+                    android:background="@drawable/btn_indicator"
+                    android:text="Save"
+                    android:textColor="#ffffff"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btncancelholead"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="13dp"
+                    android:background="@drawable/btn_indicator"
+                    android:text="Cancel"
+                    android:textColor="#ffffff"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </TableLayout>   
+         
+    </LinearLayout>
+    
+</ScrollView>

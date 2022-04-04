@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/layout_policy_filter_options"
+        android:layout_alignParentTop="true"/>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<fragment-->
+        <!--android:id="@+id/map"-->
+        <!--android:name="com.google.android.gms.maps.SupportMapFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.google.android.gms.maps.MapView>
+
+        <LinearLayout
+            android:id="@+id/card_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/btn_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="right"
+                android:layout_gravity="right">
+                <ImageView
+                    android:id="@+id/txt_menu_img"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:src="@drawable/ic_menu"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="5dp"/>
+                <TextView
+                    android:id="@+id/txt_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu"
+                    android:textColor="@color/Black"
+                    android:layout_gravity="right|center_vertical"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:padding="5dp"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_policies_cardview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/btn_policies"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:background="@drawable/selected_btn_background"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Customer Policies"
+                    android:textColor="@color/white"
+                    android:padding="5dp"/>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_branch_locator_cardview"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/btn_branch_locator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:background="@drawable/selected_btn_background"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Branch Locator"
+                    android:padding="5dp"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_summary_cardview"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/btn_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:background="@drawable/selected_btn_background"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Summary"
+                    android:padding="5dp"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_surrender_cardview"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/btn_surrender"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:background="@drawable/selected_btn_background"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Surrender"
+                    android:padding="5dp"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_probable_commission_cardview"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/btn_probable_commission"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="8"
+                    android:background="@drawable/selected_btn_background"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="Probable Commission"
+                    android:padding="5dp"
+                    android:textColor="@color/white" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

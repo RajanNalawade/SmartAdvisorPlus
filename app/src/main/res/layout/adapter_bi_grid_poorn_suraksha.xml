@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="4" >
+
+        <TextView
+            android:id="@+id/tv_policy_year"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Policy Year"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_total_premium_wo_tax"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Premium *"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_death_gurantee"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Premium Allocation Charge"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+       
+
+        <TextView
+            android:id="@+id/tv_critical_illness_benefit_gurantee"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Mortality and Morbidity Charges"
+            android:textColor="@color/Black"
+            android:textSize="14sp" />
+
+
+    </TableRow>
+
+</LinearLayout>

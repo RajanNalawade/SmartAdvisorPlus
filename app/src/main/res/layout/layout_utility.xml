@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical" >
+
+        <!-- <TableLayout
+            android:id="@+id/tblcheckpass"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" 
+				android:weightSum="4" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+                <TextView
+                    android:id="@+id/txtpasswordlbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:clickable="true"
+                    android:textColor="#808080"
+                    android:text="Date of Birth"
+                    android:textSize="14sp" />
+				</LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="3" >
+
+                    <EditText
+                        android:id="@+id/edservicepass"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Select DOB"
+                        android:inputType="textNoSuggestions|textPassword"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" >
+                    </EditText>
+
+                    <ImageButton
+                        android:id="@+id/btncifdobdate"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5dp"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:src="@drawable/dt" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <Button
+                        android:id="@+id/btn_check_pass"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:background="@color/Common_blue"
+                        android:textColor="@color/white"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Ok"
+                        android:textStyle="normal|bold" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout> -->
+
+        <TextView
+            android:id="@+id/btn_document_upload"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/Light_Very_Grey"
+            android:gravity="center"
+            android:text="DOCUMENT UPLOAD"
+            android:textColor="#008FD5"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ExpandableListView
+                android:id="@+id/exp_requirement_upload"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:groupIndicator="@drawable/play_expand_background"
+                android:listSelector="@drawable/play_expand_seletor"
+                android:textSize="24sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_requirement_upload"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btn_focus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="5dp"
+                    android:text="Button"
+                    android:visibility="invisible" />
+
+                <TableRow
+                    android:id="@+id/tr_default_proposal_number_tablerow"
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="2" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="1"
+                        android:text="Proposal Number"
+                        android:textColor="@android:color/black"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/edt_requirement_Proposer_no"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:capitalize="characters"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                        android:hint="Proposal Number"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_default_proposal_number_tablerow_submit"
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:weightSum="1" >
+
+                    <Button
+                        android:id="@+id/btn_proceed"
+                        android:layout_width="200dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:gravity="center"
+                        android:background="@color/Common_blue"
+                       
+                        android:onClick="onSubmit"
+                         android:textColor="@color/white"
+                         android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="    Submit   " >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:weightSum="1" >
+
+                    <TextView
+                        style="@style/tr_header_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".8" />
+
+                    <ImageButton
+                        android:id="@+id/proposer_photograph"
+                        android:layout_width="0dp"
+                        android:layout_height="215dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".2"
+                        android:background="@color/Black"
+                        android:src="@drawable/upload3"
+                        android:textColor="@color/Black" />
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/ll_document_upload"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <TableRow
+                        android:id="@+id/tr_nri_quations"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="4" >
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:text="NRI Questionnaires (mandatory for NRI customers)"
+                            android:textColor="@color/DarkBlue"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spnr_Questionnaires"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="2" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_non_medical_header"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:id="@+id/ll_medical_req_header"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="30dp"
+                                android:background="@color/Light_Very_Grey"
+                                android:padding="5dp"
+                                android:weightSum="3.5" >
+
+                                <TextView
+                                    style="@style/tr_header_text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="3"
+                                    android:text="Non-Medical Requirements"
+                                    android:textColor="@color/Blue"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_non_medical_requirements_not_taken_up"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" >
+
+                                <ListView
+                                    android:id="@+id/lv_nonmedical_not_taken_up_list"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="20dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginTop="20dp" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dip"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@color/DarkGray" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_age"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_age"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_age"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_age"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_preview_image_age"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_ageProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_age"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_ageProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_age"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_age"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_AgeProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_age_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_AgeProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_age_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:id="@+id/view_medical_occup_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/DarkGray"
+                        android:visibility="gone" />
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_identity"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_identity"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_identity"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_identity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_preview_image_identity"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_IdentityProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_identity"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_identityProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_identity"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_identity"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_IdentityProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_identity_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_IdentityProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_identity_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/DarkGray"
+                        android:visibility="gone" />
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_address"
+                        style="@style/tv_tableRow"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_address"
+                                style="@style/tv_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_address"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_preview_image_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_AddressProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_addressProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_address"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_AddressProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_address_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_AddressProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_address_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey"
+                        android:visibility="gone" />
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_income"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_income"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_income"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_income"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_preview_image_income"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_IncomeProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_income"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_incomeProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_income"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_income"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_IncomeProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_income_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_IncomeProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_income_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey"
+                        android:visibility="gone" />
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_bank"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_bank"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_bank"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_bank"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_preview_image_bank"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_BankProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_bank"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_BankProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_bank"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_bank"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_BankProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_bank_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_BankProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_bank_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_others"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_others"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <EditText
+                                android:id="@+id/edt_document_upload_document_others"
+                                style="@style/et_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:hint="Enter Other Doc Name"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_others"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_preview_image_others"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_OthersProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_Others"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_othersProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_others"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_Others"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_OtherProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_Others_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_OthersProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_others_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey"
+                        android:visibility="gone" />
+
+                    <TableRow
+                        android:id="@+id/tr_document_upload_proof_of_eft"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="3.5" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:orientation="vertical" >
+
+                            <TextView
+                                android:id="@+id/txt_document_upload_proof_of_eft"
+                                style="@style/tv_tableRow"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <Spinner
+                                android:id="@+id/spnr_document_upload_document_eft"
+                                style="@style/spinner_style"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_document_upload_eft"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5" >
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_preview_image_eft"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onPreview_eftProof"
+                                    android:src="@drawable/preview"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_delete_eft"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:onClick="onDelete_eftProof"
+                                    android:src="@drawable/trash_icon"
+                                    android:visibility="gone" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_image_eft"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:src="@drawable/ibtn_camera" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_click_browse_eft"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onBrowse_eftProof"
+                                    android:src="@drawable/ibtn_browsedoc" />
+
+                                <ImageButton
+                                    android:id="@+id/img_btn_document_upload_eft_upload"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/White"
+                                    android:clickable="true"
+                                    android:onClick="onUpload_eftProof1"
+                                    android:src="@drawable/ibtn_uploaddoc" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/cb_document_upload_eft_upload_tick"
+                                style="@style/cb_default"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="true"
+                                android:text="Verified with Original." />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_medical_requirement_header"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" >
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical" >
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginTop="30dp"
+                                android:background="@color/Light_Very_Grey"
+                                android:padding="5dp"
+                                android:weightSum="3.5" >
+
+                                <TextView
+                                    style="@style/tr_header_text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginBottom="5dp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="3"
+                                    android:text="Medical Requirements"
+                                    android:textColor="@color/Blue"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+
+                            <ListView
+                                android:id="@+id/lv_medical_list"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="20dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dip"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/DarkGray" />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="40dp"
+                        android:gravity="center"
+                        android:weightSum="1.5" >
+
+                        <Button
+                            style="@style/btnStyleBreakerBay"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:onClick="onView"
+                            android:text="Dashboard"
+                            android:textColor="@color/White"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:weightSum="1" >
+
+                        <ImageButton
+                            android:id="@+id/Ibtn_signature_proposer"
+                            android:layout_width="300dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight=".2"
+                            android:background="@drawable/signature" >
+                        </ImageButton>
+
+                        <TextView
+                            style="@style/tr_header_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".8" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dip"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/Black" />
+                    </TableRow>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_pay_shortage"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_color"
+                android:drawableLeft="@drawable/downarrow"
+                android:text="PAY SHORTAGE"
+                android:textColor="#008FD5"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mandaotry_upload"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:weightSum="2" >
+
+                <Spinner
+                    android:id="@+id/spnr_pay_shortage_quation_no"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:id="@+id/edt_pay_shortage_proposer_number"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    android:hint="Proposal Number" />
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:weightSum="2" >
+
+                <TextView
+                    style="@style/tv_tableRow"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Enter Shortage amount"
+                    android:textColor="@color/DarkBlue" />
+
+                <EditText
+                    android:id="@+id/edt_pay_shortage_amount"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:hint="Enter Amount"
+                    android:inputType="number" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@color/Gray"
+                android:gravity="center"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="    PAY   " >
+                </Button>
+            </TableRow>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_color"
+                android:drawableLeft="@drawable/downarrow"
+                android:text="RESYNC DOCUMENTS"
+                android:textColor="#008FD5"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:weightSum="2" >
+
+                <Spinner
+                    android:id="@+id/spnr_resync_document_quation_no"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_proposalName_resync_document"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight=".5"
+                    android:text=""
+                    android:textColor="@color/DarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/edt_resync_document_proposer_number"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:editable="false"
+                    android:hint="Proposal Number" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@color/Gray"
+                android:gravity="center"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btn_default"
+                    android:layout_width="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="    Upload   " >
+                </Button>
+            </TableRow>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_proposal_tracker_separator"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/Light_Very_Grey"
+            android:gravity="center"
+            android:text="PROPOSAL TRACKER"
+            android:textColor="#008FD5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/lnProposerTracker"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:weightSum="2" >
+
+                <TableRow android:layout_marginTop="3dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Proposal Number:"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/edProposalTrackerNo"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:capitalize="characters"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                        android:hint="Proposal Number"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="10"
+                        android:textSize="15sp"
+                       >
+                    </EditText>
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:weightSum="1" >
+
+                    <Button
+                        android:id="@+id/btn_proposal_ok"
+                        android:layout_width="200dp"
+                        android:layout_height="30dp"
+                        android:background="@color/Common_blue"
+                        android:gravity="center"
+                        android:text="Ok"
+                        android:textColor="#ffffff"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:id="@+id/tblProposarTrackerStatus"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical" >
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Proposal No. : "
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/txtProposalTrackerProposalNo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:typeface="sans" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Policy Holder Name : "
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/txtProposalTrackerPolicyHolderName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:typeface="sans" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Life Asssured Name : "
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/txtProposalTrackerLifeAssuredName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:typeface="sans" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status : "
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/txtProposalTrackerStatus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:typeface="sans" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Reason for Cancellation: "
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/txtProposalTrackerReason"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:typeface="sans" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

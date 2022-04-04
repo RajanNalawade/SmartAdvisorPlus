@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:id="@+id/sv_bi_saral_pension_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/ll_bi_saral_pension_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:overScrollMode="always">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TableRow
+                android:id="@+id/tr1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/bi_text_background"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5dp"
+                    android:text="SBI LIFE - Saral Retirement Saver\n (UIN - 111N088V03)"
+                    android:textColor="@color/Blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_saral_pension_staff_disc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/cb_staffdisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Staff Discount" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tablerowKerlaDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_kerladisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Kerala Resident"
+                    android:visibility="visible" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_bi_saral_pension_JKResident"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="J &amp; K Resident" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_saral_pension_smoker_or_not"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:text="Smoker/Non-Smoker" />
+
+                <RadioGroup
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/rb_saral_pension_proposer_smoker_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_weight=".5"
+                        android:text="Smoker"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_saral_pension_proposer_smoker_no"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_weight=".5"
+                        android:text="Non Smoker"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_saral_pension_life_assured_detail1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Life Assured Title" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_saral_pension_life_assured_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_life_assured_title"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="First Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_saral_pension_life_assured_first_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="First Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="90" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:text="Middle Name" />
+
+                <EditText
+                    android:id="@+id/edt_bi_saral_pension_life_assured_middle_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="20" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_saral_pension_life_assured_last_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                    android:hint="Last Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="50" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tr_bi_saral_pension_life_assured_detail2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_bi_saral_pension_life_assured_date"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:onClick="onClickLADob"
+                    android:text="Select Date" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="60dp"
+                android:weightSum="4">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Age" />
+
+                <EditText
+                    android:id="@+id/edt_bi_saral_pension_life_assured_age"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_age"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/Light_Very_Grey"
+                    android:clickable="false"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-6dp"
+                        android:text="Mobile Number " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/edt_proposerdetail_basicdetail_tele_code"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".3"
+                        android:editable="false"
+                        android:maxLength="30"
+                        android:text="+91" />
+
+                    <EditText
+                        android:id="@+id/edt_saral_pension_contact_no"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".7"
+                        android:inputType="number"
+                        android:maxLength="10" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Id " />
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />-->
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_saral_pension_Email_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Confirm Email Id" />
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />-->
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_saral_pension_ConfirmEmail_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Gender" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_selGender"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@color/Light_Very_Grey" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Plan" />
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_plan"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+                <!-- style="@android:style/Animation.Activity" -->
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Policy Term" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" *"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_policyterm"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/White" />
+
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout16"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Frequency Mode" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" *"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_saral_pension_premium_frequency"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout17"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sum Assured" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" *"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_saral_pension_sum_assured_amount"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="number"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Maturity/Annuity/Any Other Option" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" *"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_Matuirty_option"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Maturity/Annuity/Any Other Option Frequency" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" *"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_Matuirty_frequency"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_bi_saral_pension_pt_rider"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="SBI Life - Preferred Term Rider" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_bi_saral_pension_pt_rider"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Term For Preferred Term Rider" />
+
+                        <Spinner
+                            android:id="@+id/spnr_bi_saral_pension_pt_rider_term"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pref. Term Rider Sum Assured" />
+
+                        <EditText
+                            android:id="@+id/edt_bi_saral_pension_pt_rider_sum_assured"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:inputType="number"></EditText>
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_proceed_saral_pension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btn_bi_saral_pension_btnback"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:text="Back" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="66dp"
+                    android:layout_weight="0.04" />
+
+                <Button
+                    android:id="@+id/btn_bi_saral_pension_btnSubmit"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:text="Proceed" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>
+
+
+</LinearLayout>

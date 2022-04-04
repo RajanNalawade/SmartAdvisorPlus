@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"    
+    android:orientation="vertical"
+    android:background="#ffffff" 
+    >
+    
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        >
+        
+        <TableRow>
+            
+             <TextView
+       android:text="Total Premium Paid: "
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+       	 	android:layout_weight="0.5"
+        	android:typeface="sans"
+        	android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/txttotalprepaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+       android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+       	 	android:layout_weight="0.5"
+        	android:typeface="sans"
+         />
+    
+    </TableRow>
+    
+         <TableRow>
+            
+             <TextView
+       android:text="Last UnPaid Date: "
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+       android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+       	 	android:layout_weight="0.5"
+        	android:typeface="sans"
+        	android:textStyle="bold"
+         />
+    
+    <TextView
+        android:id="@+id/txtlastunpaiddate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+       android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+       	 	android:layout_weight="0.5"
+        	android:typeface="sans"
+         />
+    </TableRow>              
+              
+</TableLayout>
+</LinearLayout>

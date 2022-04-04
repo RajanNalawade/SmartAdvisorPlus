@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/LightGrey_header">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Personal"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:background="@color/GreenYellow"
+                android:focusableInTouchMode="true"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Occupation"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Nomination"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Bank"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Form 1-A"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+            </TextView>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Exam And Training"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+            <!--<View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="BSM Interview"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>-->
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Terms And Conditions"
+                android:background="@color/Common_blue"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+                <requestFocus/>
+            </TextView>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Document Upload"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Terms and Conditions on Appointment Of Insurance Agent"
+                android:textColor="@color/Blue"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView android:id="@+id/txt_aob_terms_and_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Code of Conduct"
+                android:textColor="@color/Black"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_terms_conditions_agreed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I have read, understood and hereby agree to abide by the terms and conditions of Appointment as an insurance agent."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Declaration from applicant"
+                android:textColor="@color/Blue"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I hereby declare that :-"
+                android:textStyle="bold"
+                android:textColor="@color/Black"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The information / details furnished herein are true to the best of my knowledge and belief. I further declare that I have not suppressed or concealed any detail sought herein."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I have not been found guilty of criminal misappropriation or criminal breach of trust or cheating or forgery or an abetment of or attempt to commit any such offence by a court of competent jurisdiction."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I have not been found guilty of or to have knowingly participated in or connived at any fraud, dishonestly or mis-representation against an insurer or an insured in the course of any judicial proceeding relation to any policy of insurance or the winding up of an insurance company or in the course of an investigation of the affairs of an insurer and"
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I undertake to inform SBI Life of any change in the above information."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I authorise the company to verify, check, investigate and share or reveal any or all the information provided by me in this application to any other person or insurer or entity or authority as the company may deem fit."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The terms and conditions mentioned in the application form are acceptable to me and shall abide by the same."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_applicant_declaration_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I hereby agree that if any information/details provided herein is found by the company to be misstated or concealed, the company may take any action deemed fit, including but not limited to           denial of appointment as an agent and if subsequently detected after granting  agency or appointment as an Agent, initiate such penal actions which the company may deem fit which may include [ but not limited to ] levy of Financial Penalty or Suspension/Cancellation of my appointment."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Place : "
+                    android:layout_weight="2"
+                    android:textColor="@color/Black"/>
+
+                <EditText android:id="@+id/edt_aob_applicant_declaration_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:inputType="textCapCharacters"
+                    android:layout_weight="1"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Date : "
+                    android:layout_weight="2"
+                    android:textColor="@color/Black"/>
+
+                <TextView android:id="@+id/txt_aob_applicant_declaration_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:textColor="#484848"
+                    android:drawableRight="@drawable/dt"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Signature Of Applicant"
+                    android:textColor="@color/Black"/>
+
+                <ImageButton android:id="@+id/imgbtn_aob_applicant_declaration_sign"
+                    android:layout_width="180dp"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/Black"
+                    android:src="@drawable/focus_imagebutton_photo"
+                    android:textColor="@color/Black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Applicant Photo"
+                    android:textColor="@color/Black"/>
+
+                <ImageButton android:id="@+id/imgbtn_aob_applicant_declaration_photo"
+                    android:layout_width="180dp"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/Black"
+                    android:src="@drawable/focus_imagebutton_photo"
+                    android:textColor="@color/Black" />
+
+                <TextView android:id="@+id/txt_aob_applicant_self_declaration_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Upload Declaration"
+                    android:textColor="@color/Black"/>
+
+                <ImageButton android:id="@+id/imgbtn_aob_applicant_self_declaration_upload"
+                    android:layout_width="180dp"
+                    android:layout_height="215dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/Black"
+                    android:src="@drawable/focus_imagebutton_photo"
+                    android:textColor="@color/Black" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1"/>
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Conditions applicable to nomination"
+                android:textColor="@color/Blue"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView android:id="@+id/txt_aob_nominee_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Code of Conduct"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/Black"/>
+
+            <CheckBox android:id="@+id/chkbox_aob_nominee_conditions_agreed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I have read, understood and hereby agree to abide by the terms and conditions applicable for nomination."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/btn_aob_terms_conditions_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btn_rounded_green"
+                    android:textStyle="bold"
+                    android:text="Back"/>
+
+                <Button android:id="@+id/btn_aob_terms_conditions_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_rounded_green"
+                    android:textStyle="bold"
+                    android:text="Submit"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

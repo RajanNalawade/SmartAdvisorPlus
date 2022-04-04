@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="disposition_array">
+        <item>Select Disposition</item>
+        <item>Call Back</item>
+        <item>Already Paid</item>
+        <item>Language barier</item>
+        <item>Do Not Call</item>
+        <item>Financial Problem</item>
+        <item>Customer query / issue</item>
+        <item>Interested</item>
+        <item>Misselling</item>
+        <item>Permanent Non Contactable</item>
+        <item>Temporary Non Contactable</item>
+        <item>Not Interested</item>
+        <item>Wrong number</item>
+        <item>Refer to SBI Life</item>
+        <item>Move To Call Centre</item>
+        <item>All Efforts Done</item>
+        <item>New</item>
+    </array>
+    <array name="language_array">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Assamese</item>
+        <item>Bengali</item>
+        <item>Gujarati</item>
+        <item>Kannada</item>
+        <item>Malayalam</item>
+        <item>Marathi</item>
+        <item>Oriya</item>
+        <item>Punjabi</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+    </array>
+    <array name="service_request_cancel_reason">
+        <item>Select Option</item>
+        <item>Not Agreeable to Policy Terms and Conditions</item>
+    </array>
+    <array name="service_countries">
+        <item>Select Country</item>
+        <item>Abidjan (West Africa)</item>
+        <item>Afghanistan</item>
+        <item>Akrotiri</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>All Central and South American countries</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+        <item>Antigua and Barbuda</item>
+        <item>Antigua, Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Aruba</item>
+        <item>Ashmore and Cartier Islands</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Bahamas, The</item>
+        <item>Bahrain</item>
+        <item>Bangladesh - Dhaka</item>
+        <item>Bangladesh - Wardha</item>
+        <item>Barbados</item>
+        <item>Bassas da India</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bermuda</item>
+        <item>Bhutan - Shemgag</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Bosnia-Herzegovina</item>
+        <item>Botswana</item>
+        <item>Bouvet Island</item>
+        <item>Brazil</item>
+        <item>British Indian Ocean Territory</item>
+        <item>British Virgin Islands</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burma</item>
+        <item>Burundi</item>
+        <item>Cambodia</item>
+        <item>Cambodia (Kampuchea)</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Canary Islands</item>
+        <item>Cape Verde</item>
+        <item>Cayman Islands</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Christmas Island</item>
+        <item>Clipperton Island</item>
+        <item>Cocos (Keeling) Islands</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Congo</item>
+        <item>Congo, Democratic Republic of the</item>
+        <item>Congo, Republic of the</item>
+        <item>Cook Islands</item>
+        <item>Coral Sea Islands</item>
+        <item>Costa Rica</item>
+        <item>Cote dIvoire</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Curacao</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        <item>Denmark</item>
+        <item>Dhekelia</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Ethiopia</item>
+        <item>Europa Island</item>
+        <item>Falkland Islands (Islas Malvinas)</item>
+        <item>Faroe Islands</item>
+        <item>Federated States of Micronesia</item>
+        <item>Fiji</item>
+        <item>Finland</item>
+        <item>France</item>
+        <item>French Guiana</item>
+        <item>French Polynesia</item>
+        <item>French Southern and Antarctic Lands</item>
+        <item>Gabon</item>
+        <item>Gambia</item>
+        <item>Gambia,The</item>
+        <item>Gaza Strip</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Ghana</item>
+        <item>Gibraltar</item>
+        <item>Glorioso Islands</item>
+        <item>Greece</item>
+        <item>Greenland</item>
+        <item>Grenada</item>
+        <item>Guadeloupe</item>
+        <item>Guam</item>
+        <item>Guatemala</item>
+        <item>Guernsey</item>
+        <item>Guinea</item>
+        <item>Guinea-Bissau</item>
+        <item>Guyana</item>
+        <item>Haiti</item>
+        <item>Heard Island and McDonald Islands</item>
+        <item>Holy See (Vatican City)</item>
+        <item>Honduras</item>
+        <item>Hong Kong</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Indonesia - Jakarta</item>
+        <item>Indonesia - Purwakarta</item>
+        <item>Indonesia - Tangerang</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Isle of Man</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Ivory Coast</item>
+        <item>Jamaica</item>
+        <item>Jan Mayen</item>
+        <item>Japan</item>
+        <item>Jersey</item>
+        <item>Jordan</item>
+        <item>Jordon</item>
+        <item>Juan de Nova Island</item>
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kingdom Of Saudi Arabia</item>
+        <item>Kiribati</item>
+        <item>Korea, North</item>
+        <item>Krygystan</item>
+        <item>KSA - Al Alsa</item>
+        <item>KSA - Jeddah</item>
+        <item>KSA - Riyadh</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Liechtenstein</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        <item>Macau</item>
+        <item>Macedonia</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Maldives</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Marshall Islands</item>
+        <item>Martinique</item>
+        <item>Mauritania</item>
+        <item>Mauritius</item>
+        <item>Mayotte</item>
+        <item>Mexico</item>
+        <item>Micronesia Federated States of</item>
+        <item>Moldova</item>
+        <item>Monaco</item>
+        <item>Mongolia</item>
+        <item>Montserrat</item>
+        <item>Morocco</item>
+        <item>Mozambique</item>
+        <item>Myanmar</item>
+        <item>Namibia</item>
+        <item>Nauru</item>
+        <item>Navassa Island</item>
+        <item>Nepal</item>
+        <item>Netherlands (Holland)</item>
+        <item>Netherlands Antilles</item>
+        <item>New Caledonia</item>
+        <item>New Zealand</item>
+        <item>Nicaragua</item>
+        <item>Niger</item>
+        <item>Nigeria</item>
+        <item>Niue</item>
+        <item>Norfolk Island</item>
+        <item>North Korea</item>
+        <item>Northern Mariana Islands</item>
+        <item>Northern Parts of Cyprus</item>
+        <item>Norway</item>
+        <item>Oman</item>
+        <item>Pakistan</item>
+        <item>Palau</item>
+        <item>Palestine</item>
+        <item>Panama</item>
+        <item>Papua New Guinea</item>
+        <item>Paracel Islands</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Philippines</item>
+        <item>Phillipines - Lucena City</item>
+        <item>Phillipines - Manila</item>
+        <item>Pitcairn Islands</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Puerto Rico</item>
+        <item>Qatar</item>
+        <item>Reunion</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Russia - St. Petersbury</item>
+        <item>Russia - Valadivostok-Nerchinskay</item>
+        <item>Rwanda</item>
+        <item>Saint Helena</item>
+        <item>Saint Kitts and Nevis</item>
+        <item>Saint Lucia</item>
+        <item>Saint Pierre and Miquelon</item>
+        <item>Saint Vincent and the Grenadines</item>
+        <item>Samoa</item>
+        <item>San Marino</item>
+        <item>Sao Tome and Principe</item>
+        <item>Sao Tome Principe</item>
+        <item>Saudi Arabia</item>
+        <item>Senegal</item>
+        <item>Serbia</item>
+        <item>Serbia and Montenegro</item>
+        <item>Seychelles</item>
+        <item>Sierra Leone</item>
+        <item>Singapore</item>
+        <item>Slovakia</item>
+        <item>Slovenia</item>
+        <item>Solomon Islands</item>
+        <item>Somalia</item>
+        <item>South Africa</item>
+        <item>South Georgia and the South Sandwich Islands</item>
+        <item>South Korea</item>
+        <item>Spain</item>
+        <item>Spratly Islands</item>
+        <item>Sri Lanka</item>
+        <item>Sudan</item>
+        <item>Suriname</item>
+        <item>Svalbard</item>
+        <item>Swaziland</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Syria</item>
+        <item>Taiwan</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>Tibet</item>
+        <item>Timor-Leste</item>
+        <item>Togo</item>
+        <item>Tokelau</item>
+        <item>Tonga</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tromelin Island</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Turks and Caicos Islands</item>
+        <item>Tuvalu</item>
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>United Arab Emirates(UAE)</item>
+        <item>United Kingdom (UK)</item>
+        <item>United States (USA)</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        <item>Vanuatu</item>
+        <item>Venezuela</item>
+        <item>Vietnam - Danag City</item>
+        <item>Virgin Islands</item>
+        <item>Wake Island</item>
+        <item>Wallis and Futuna</item>
+        <item>Walmer South Africa</item>
+        <item>West Bank</item>
+        <item>Western Sahara</item>
+        <item>Yemen</item>
+        <item>Yugoslavia</item>
+        <item>Zaire</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+    </array>
+    <string name="strPassword">Password</string>
+    <string name="dobTitle">Date Of Birth</string>
+    <string name="goTitle">Go</string>
+    <string name="groupPolicyServicingTitle">Policy Servicing</string>
+    <string name="groupNewBusinessTitle">New Business</string>
+    <string name="groupClaimsTitle">Claims</string>
+    <string name="hello">Hello World, POS_BancaAgencyActivity!</string>
+    <string name="app_name">Smart Advisor</string>
+    <string name="tab_0">DashBoard</string>
+    <string name="tab_1">Planner</string>
+    <string name="tab_2">Products</string>
+    <string name="tab_3">Premium Calculator</string>
+    <string name="tab_4">Reports</string>
+    <string name="tab_5">T-Shiksha</string>
+    <string name="tab_6">Help</string>
+    <string name="tab_7">Links</string>
+    <string name="hint_search">Search</string>
+    <string name="Reset">Reset</string>
+    <string name="tab_8">BDM Tracker</string>
+    <string name="policy_no">* Policy Number</string>
+    <string name="dob">* DOB</string>
+    <string name="album_name">CameraSample</string>
+    <string name="cannot">Cannot</string>
+    <string name="micr_code">* MICR Code</string>
+    <string name="bank_name">* Bank Name</string>
+    <string name="branch_name">* Branch Name</string>
+    <string name="mobile_no">* Mobile Number</string>
+    <string name="policy_no_without_asterisk">Policy Number</string>
+    <string name="proposal_no_without_asterisk">Proposal Number</string>
+    <string name="micr_code_without_asterisk">MICR Code</string>
+    <string name="bank_name_without_asterisk">Bank Name</string>
+    <string name="branch_name_without_asterisk">Branch Name</string>
+    <string name="cheque_amount_wihout_asterisk">Cheque Amount</string>
+    <string name="pay_mode_without_asterisk">Pay Mode</string>
+    <string name="pay_type_without_asterisk">Check Type</string>
+    <string name="payment_type_without_asterisk">Payment Type</string>
+    <string name="initial">Initial</string>
+    <string name="customer_name">* Customer Name</string>
+    <string name="ia_code">IA Code</string>
+    <string name="name">Name</string>
+    <string name="email_id">Email ID</string>
+    <string name="mobile_no1">Mobile No</string>
+    <string name="complaint_category">Complaint Category</string>
+    <string name="complaint_details">Complaint Details</string>
+    <string name="complaint_status">Complaint Status</string>
+    <string name="proposal_no">* Proposal Number</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="view">View</string>
+    <string name="amount">Amount</string>
+    <string name="due_date">Due Date</string>
+    <string name="alt_mob_no">* Alternative Mobile No.</string>
+    <string name="account_no">* Account Number</string>
+    <string name="submit">SUBMIT</string>
+    <string name="upload">UPLOAD</string>
+    <string name="sync">SYNC</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="hint_policy_no">Enter Policy Number</string>
+    <string name="hint_dob">Enter DOB (dd/mm/yyyy)</string>
+    <string name="hint_micr_code">Enter MICR code</string>
+    <string name="hint_bank_name">Enter Bank Name and Click on Search</string>
+    <string name="hint_branch_name">Enter Branch Name</string>
+    <string name="hint_mobile_no">Enter Mobile Number</string>
+    <string name="hint_altr_mobile_no">Enter Alternate Mobile Number</string>
+    <string name="hint_customer_name">Enter Customer Name</string>
+    <string name="hint_proposal_no">Enter Proposal Number</string>
+    <string name="hint_cheque_no">Enter Cheque/Draft Number</string>
+    <string name="hint_cheque_date">Enter Cheque/Draft Date (dd/mm/yyyy)</string>
+    <string name="hint_cheque_amount">Enter Cheque/Draft Amount</string>
+    <string name="hint_account_no">Enter Account Number</string>
+    <string name="cheque_no">* Cheque/Draft Number</string>
+    <string name="cheque_date">* Cheque/Draft Date</string>
+
+    <string name="cheque_amount">* Cheque/Draft Amount</string>
+    <string name="pay_mode">* Pay Mode</string>
+    <string name="pay_type">* Check/Draft Type</string>
+    <string name="payment_type">* Payment Type</string>
+    <string name="Policy_Term">Choose a Policy Term</string>
+    <string name="age">Select your age</string>
+    <string name="Policy_Sum">Choose a Sum Assured</string>
+    <string name="Plan_options">Choose a Premium Freq</string>
+    <string name="Premium_Freq">Choose a Premium Freq</string>
+    <string name="strMutualFund">Mutual Fund</string>
+    <string name="strPostOfficePlans">Post office plans</string>
+    <string name="strHealthInsurance">Health Insurance</string>
+    <string name="strGeneralInsurance">General Insurance</string>
+
+    <!-- age for smartmoney and shubhnivesh -->
+    <string name="strNO">No</string>
+
+    <string name="strProductTraining">Given the product training</string>
+
+    <string name="strNeedAnalysis">Explained how to do need analysis</string>
+
+    <string name="strHandedDetails">Handed over product fliers/forms/contest details etc</string>
+    <!-- Sarallife -->
+    <string name="strCommissionStructure">Explained commission structure</string>
+
+    <string name="strUsage">Usage of Digital assets like mConnect &amp; Smart Advisor</string>
+
+
+    <string name="strProposalStatusEnq">Proposal status enquiry</string>
+
+    <string name="strRenewalDueList">Renewal due list</string>
+
+    <string name="strProductDetails">Product details</string>
+
+    <!-- Smartmoneyback -->
+    <string name="strPremiumCalc">Premium calculator</string>
+
+    <string name="strMISMTDYTD">MIS about MTD and YTD Business</string>
+    <!-- Flexi smart -->
+    <string name="strSBINEws">News and updates on SBI Life</string>
+
+    <string name="tvOptionOne">1. How long have you been associated with SBI Life as an LM?</string>
+    <!-- saral and smart shield -->
+    <string name="tvOptionTwo">2. Kindly let us know about your educational details?</string>
+    <string name="tvOptionThree">3. Kindly let us know whether you work with SBI Life for?(</string>
+    <!-- Scholar II -->
+    <string name="tvOptionFour">4. If the answer to above question is “part time” what is your main occupation</string>
+    <!-- Smart Shield -->
+    <string name="tvOptionFive">5. Are you selling any other financial products given below apart from SBI Life insurance products? </string>
+    <string name="tvOptionSix">6. In brief kindly describe your on boarding experience (applicable for LM who have joined less than a year back)</string>
+    <!-- Sarallife and shubhnivesh -->
+    <string name="tvOptionSeven">7.	How many products of SBI Life are you aware of ? </string>
+    <!-- shubhnivesh -->
+    <string name="tvOptionEight">8.	How many products of SBI Life do you sell ?</string>
+
+    <!-- scholar II -->
+    <string name="tvOptionNine">9.	How many customers do you meet in a week?</string>
+    <string name="tvOptionTen">10.	How many days of training have you attended in the past 1 year?</string>
+    <string name="tvOptionEleven">11. What according to you are the biggest strengths of SBI Life from customer point of view? Rank in the order of importance, 1 being most important and 4 being least important.</string>
+    <string name="tvOptionElevenSub">Drag &amp; arrange as per order of preference.</string>
+    <string name="tvOptionTwelve">12. What do you find attractive as a LM, from career point of view in SBI Life ? Rank in the order of importance, 1 being most important and 5 being least important.</string>
+    <string name="tvOptionThirteen">13.	 What training interventions do you feel are required by you to increase your productivity, let’s say in the coming 6 months? Rank in the order of importance, 1 being most important and 5 being least important.</string>
+    <!-- Smartshield -->
+    <string name="tvOptionFourteen">14.	Select the features you are aware about in Smart Advisor Application. Select more than one if applicable</string>
+    <!-- flexiSmart -->
+    <string name="tvOptionFifteen">15.	What new features would you like to be added in Smart advisor application? </string>
+    <string name="tvOptionsixteen">16.	Are you given support through leads allotment by your branch ? </string>
+    <string name="textViewSatisfactionScale">17. On a scale of 1-5 how satisfied are you with branch infrastructure and support provided at branch level, with 1 being extremely poor and 5 being extremely good? </string>
+
+    <!-- smart income protect -->
+    <string name="textviewBranchRating">18.	 If rating is between 1-3 for above question then what do you feel could be done better ?</string>
+
+    <!-- User Selection in Registration -->
+
+    <string name="tvOptionNineteen">19. Select the benefits of club membership program of SBI Life that you are aware of? Select more than one if applicable</string>
+    <string name="tvOptionTwenty">20. Do you get the commission &amp; incentives in Time?</string>
+    <!-- <item>UM</item> -->
+    <!-- Security Question -->
+
+    <string name="tvOptionTwentyOne">21. Are you aware of the SQS policy for the LM of SBI Life ?</string>
+    <string name="tvOptionTwentyTwo">22. Are you aware of “PaisaGenie” Financial planning application exclusive for SBI Life customers and asking customers to download the same?</string>
+    <string name="tvOptionTwentyThree">23. What according to you should SBI Life do to increase the income &amp; productivity of its LM ? </string>
+    <string name="tvOptionTwentyFour">24.	What steps should SBI Life take to increase brand loyalty among the customers? </string>
+    <string name="strLanguageChooseOption">Please select your Language</string>
+    <string name="strOneTimeDirectCredit">Onetime direct credit</string>
+    <string name="strLifeINsurancePersonalAccCover">Life insurance and personal accident cover</string>
+    <string name="strGroupMedicalCover">Group medical cover</string>
+    <string name="strOppParConv">Opportunity to participate in a convention</string>
+    <string name="strVisitCard">Visiting cards &amp; stationary</string>
+    <string name="strMaintAllowances">Monthly maintenance allowance &amp; telephone allowance for selected club members</string>
+    <string name="unit_linked_plan_code">ULIP</string>
+    <string name="saving_plan_code">SP</string>
+    <string name="product_category_tradition">TRADITION</string>
+    <string name="product_category_ulip">ULIP</string>
+    <string name="sbi_life_smart_wealth_builder_code">1K</string>
+    <string name="sbi_life_flexi_smart_plus_code">1M</string>
+    <string name="sbi_life_shubh_nivesh_code">35</string>
+    <string name="sbi_life_smart_elite_code">53</string>
+    <string name="sbi_life_smart_champ_insurance_code">1P</string>
+    <string name="sbi_life_smart_guaranteed_saving_plan_code">1X</string>
+    <string name="sbi_life_saral_swadhan_plus_code">1J</string>
+    <string name="sbi_life_smart_shield_code">45</string>
+    <string name="sbi_life_smart_scholar_code">51</string>
+    <string name="sbi_life_smart_money_back_gold_code">1N</string>
+    <string name="sbi_life_Retire_smart_code">1H</string>
+    <string name="sbi_life_saral_shield_code">47</string>
+    <string name="sbi_life_smart_income_protect_code">1B</string>
+    <string name="sbi_life_smart_money_planner_code">1R</string>
+    <string name="sbi_life_saral_maha_anand_code">50</string>
+    <string name="sbi_life_smart_wealth_assure_code">55</string>
+    <string name="sbi_life_saral_pension_code">1E</string>
+    <string name="sbi_life_smart_power_insurance_code">1C</string>
+    <string name="sbi_life_annuity_plus_code">22</string>
+    <string name="sbi_life_smart_humsafar_code">1W</string>
+    <string name="sbi_life_rinn_raksha_code">70</string>
+    <string name="sbi_life_smart_swadhan_plus_code">1Z</string>
+    <string name="sbi_life_smart_women_advantage_code">2C</string>
+    <string name="sbi_life_smart_bachat_code">2D</string>
+    <string name="sbi_life_smart_privilege_code">2B</string>
+    <string name="sbi_life_poorn_suraksha_code">2F</string>
+
+    <string name="sbi_life_sampoorn_cancer_suraksha_code">2E</string>
+    <string name="sbi_life_smart_wealth_builder">Smart Wealth Builder</string>
+
+    <string name="sbi_life_smart_elite">Smart Elite</string>
+
+    <string name="sbi_life_shubh_nivesh">Shubh Nivesh</string>
+
+    <string name="sbi_life_flexi_smart_plus">Flexi Smart Plus</string>
+
+
+    <string name="sbi_life_saral_swadhan_plus">Saral Swadhan+</string>
+
+    <!--LM Survey-->
+
+    <string name="sbi_life_smart_shield">Smart Shield</string>
+
+    <string name="sbi_life_smart_scholar">Smart Scholar</string>
+
+    <string name="sbi_life_smart_money_back_gold">Smart Money Back Gold</string>
+
+    <string name="sbi_life_smart_champ_insurance">Smart Champ Insurance</string>
+
+    <string name="sbi_life_Retire_smart">Retire Smart</string>
+    <string name="sbi_life_saral_shield">Saral Shield</string>
+    <string name="sbi_life_smart_income_protect">Smart Income Protect</string>
+    <string name="sbi_life_smart_money_planner">Smart Money Planner</string>
+    <string name="sbi_life_saral_maha_anand">Saral Maha Anand</string>
+
+
+    <string name="sbi_life_smart_wealth_assure">Smart Wealth Assure</string>
+    <string name="sbi_life_saral_pension">Saral Retirement Saver</string>
+    <string name="sbi_life_smart_power_insurance">Smart Power Insurance</string>
+    <string name="sbi_life_annuity_plus">Annuity Plus</string>
+    <string name="sbi_life_smart_humsafar">Smart Humsafar</string>
+
+
+    <string name="sbi_life_smart_swadhan_plus">Smart Swadhan Plus</string>
+
+    <string name="sbi_life_rinn_raksha">RiNn Raksha</string>
+
+    <string name="sbi_life_smart_women_advantage">Smart Women Advantage</string>
+
+    <string name="sbi_life_smart_privilege">Smart Privilege</string>
+
+    <string name="ok_button">OK</string>
+
+
+    <string name="channelProposerTrackerLabel">Advisor Proposals Status</string>
+
+    <string name="performanceReports">Performance Reports</string>
+
+
+    <string name="BDMindividualPolicies">Individual Policies</string>
+    <string name="BDMServicingIndividualReportTitle">BDM Servicing Individual Report</string>
+    <string name="BDMCreditLifeReportTitle">BDM Credit Life Report</string>
+    <string name="BDMCreditLifeReportNOPTitle">NOP</string>
+    <string name="BDMCreditLifeReportPremiumAmtTitle">Premium Amount(Rs.)</string>
+    <string name="BDMCreditLifeReportRRYTDBusinessTitle">RiNn Raksha YTD Business</string>
+
+    <string name="BDMCreditLifeReportHomeLoanPenetrationTitle">Home Loan Penetration</string>
+    <string name="BDMCreditLifeReportPotentialLoansTitle">Potential Loans</string>
+    <string name="BDMCreditLifeReportCoveredIncShieldTitle">Covered (Incl. Shield)</string>
+    <string name="BDMCreditLifeReportPercentagePenetrationTitle">% Penentration</string>
+    <string name="BDMBusinessReportTitle">BDM Business Report</string>
+    <string name="BDMBusinessReportTotalbranchesTitle">Total no. of Branches</string>
+    <string name="BDMBusinessReportCIFNameTitle">CIF Title</string>
+    <string name="CIFServicingReportTitle">CIF Servicing Report</string>
+    <string name="CIFBusinessReportTitle">CIF Business Report</string>
+    <string name="ageingSlabs">Ageing Slabs</string>
+    <string name="pendingCasesCountTitle">Pending Cases Count(Amount in Rs.)</string>
+    <string name="eftnrCountTitle">EFT form NR-Count(Amount in Rs.)</string>
+    <string name="mandateRegistrationStatusTitle">Mandate Registration Status</string>
+    <string name="title_activity_future_planner">FuturePlannerActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="SBDueList">SB Due List</string>
+    <string name="title_activity_servicing">ServicingActivity</string>
+    <string name="ok">OK</string>
+    <string name="morphosample">Morpho Sample</string>
+    <string name="OP_SUCCESS">Operation completed successfully</string>
+    <string name="OP_FAILED">Operation failed</string>
+    <string name="MORPHO_OK">No error.</string>
+    <string name="MORPHOERR_INTERNAL">Biometrics device performed an internal error.</string>
+    <string name="MORPHOERR_PROTOCOLE">Communication protocole error.</string>
+
+    <string name="MORPHOERR_CONNECT">Can not connect biometrics device.</string>
+
+    <string name="MORPHOERR_CLOSE_COM">Error while closing communication port.</string>
+    <string name="MORPHOERR_BADPARAMETER">Invalid parameter.</string>
+    <string name="MORPHOERR_MEMORY_PC">Not enough memory (in the PC).</string>
+    <string name="MORPHOERR_MEMORY_DEVICE">Not enough memory for the creation of a database in the MSO.</string>
+    <string name="MORPHOERR_NO_HIT">Authentication or Identification failed.</string>
+    <string name="MORPHOERR_STATUS">MSO returned an unknown status error.</string>
+
+    <string name="MORPHOERR_DB_FULL">The database is full.</string>
+
+
+    <string name="MORPHOERR_DB_EMPTY">The database is empty.</string>
+
+    <!-- Resources Used For Its Code Purpose -->
+    <string name="MORPHOERR_ALREADY_ENROLLED">User has already been enrolled.</string>
+    <string name="MORPHOERR_BASE_NOT_FOUND">The specified base does not exist.</string>
+    <string name="MORPHOERR_BASE_ALREADY_EXISTS">The specified base already exist.</string>
+    <string name="MORPHOERR_NO_ASSOCIATED_DB">User object has been instanciated without MorphoDatabase.getUser.</string>
+    <string name="MORPHOERR_NO_ASSOCIATED_DEVICE">Database object has been instanciated without MorphoDevice.getDatabase.</string>
+    <string name="MORPHOERR_INVALID_TEMPLATE">The template is not valid.</string>
+    <string name="MORPHOERR_NOT_IMPLEMENTED">Command not yet implemented in this release.</string>
+    <string name="MORPHOERR_TIMEOUT">No response after defined time.</string>
+    <string name="MORPHOERR_NO_REGISTERED_TEMPLATE">No templates have been registered.</string>
+    <string name="MORPHOERR_FIELD_NOT_FOUND">Field does not exist.</string>
+    <string name="MORPHOERR_CORRUPTED_CLASS">Class has been corrupted.</string>
+    <string name="MORPHOERR_TO_MANY_TEMPLATE">There are too many templates.</string>
+    <string name="MORPHOERR_TO_MANY_FIELD">There are too many fields.</string>
+    <string name="MORPHOERR_MIXED_TEMPLATE">Templates with differents formats are mixed.</string>
+    <string name="MORPHOERR_CMDE_ABORTED">Command has been aborted.</string>
+    <string name="MORPHOERR_INVALID_PK_FORMAT">Invalid PK format.</string>
+    <string name="MORPHOERR_SAME_FINGER">User gave twice the same finger.</string>
+    <string name="MORPHOERR_OUT_OF_FIELD">The number of the additional field is more than 128.</string>
+    <string name="MORPHOERR_INVALID_USER_ID">UserID is not valid.</string>
+    <string name="MORPHOERR_INVALID_USER_DATA">The user data are not valid.</string>
+    <string name="MORPHOERR_FIELD_INVALID">Additional field name length is more than MORPHO_FIELD_NAME_LEN.</string>
+    <string name="MORPHOERR_USER_NOT_FOUND">User is not found.</string>
+    <string name="MORPHOERR_COM_NOT_OPEN">Serial COM has not been opened.</string>
+    <string name="MORPHOERR_ELT_ALREADY_PRESENT">This element is already present in the list.</string>
+    <string name="MORPHOERR_NOCALLTO_DBQUERRYFIRST">You have to call MorphoDatabase.dbQueryFirst to initialize the querry.</string>
+    <string name="MORPHOERR_USER">The communication callback functions returns error between -10000 and -10499.</string>
+    <string name="MORPHOERR_BAD_COMPRESSION">The Compression is not valid.</string>
+    <string name="MORPHOERR_SECU">Security error.</string>
+    <string name="MORPHOERR_CERTIF_UNKNOW">The MSO has not the certificate necessary to verify the signature.</string>
+    <string name="MORPHOERR_INVALID_CLASS">The class has been destroyed.</string>
+    <string name="MORPHOERR_USB_DEVICE_NAME_UNKNOWN">The specified Usb device is not plugged.</string>
+
+    <!-- Resources Used For Identifying Plan -->
+    <string name="MORPHOERR_CERTIF_INVALID">The certificate is not valid.</string>
+    <string name="MORPHOERR_SIGNER_ID">The certificate identity is not the same than the X984 certificate identity.</string>
+    <string name="MORPHOERR_SIGNER_ID_INVALID">The X984 certificate identity size is different to 20 octets (SHA_1 size).</string>
+    <string name="MORPHOERR_FFD">False Finger Detected.</string>
+    <!--<string name="sbi_life_smart_guaranteed_saving_plan">Smart Guaranteed Savings Plan</string>-->
+    <string name="MORPHOERR_MOIST_FINGER">The finger can be too moist or the scanner is wet.</string>
+    <string name="MORPHOERR_NO_SERVER">The Morpho MorphoSmart Service Provider Usb Server is stopped or not installed.</string>
+    <string name="MORPHOERR_OTP_NOT_INITIALIZED">No parameter has been initialized.</string>
+    <string name="MORPHOERR_OTP_PIN_NEEDED">Code pin is needed : it is the first enrollment.</string>
+    <string name="MORPHOERR_OTP_REENROLL_NOT_ALLOWED">User is not allowed to be reenrolled.</string>
+    <string name="MORPHOERR_OTP_ENROLL_FAILED">Enrollment failed.</string>
+    <string name="MORPHOERR_OTP_IDENT_FAILED">Identification failed.</string>
+    <string name="MORPHOERR_NO_MORE_OTP">No more OTP available (sequence number = 0).</string>
+    <string name="MORPHOERR_OTP_NO_HIT">Authentication or Identification failed.</string>
+    <string name="MORPHOERR_OTP_ENROLL_NEEDED">Enrollment needed before generating OTP.</string>
+    <string name="MORPHOERR_DEVICE_LOCKED">The device is locked.</string>
+    <string name="MORPHOERR_DEVICE_NOT_LOCK">The device is not locked.</string>
+    <string name="MORPHOERR_OTP_LOCK_GEN_OTP">ILV_OTP_GENERATE Locked.</string>
+    <string name="MORPHOERR_OTP_LOCK_SET_PARAM">ILV_OTP_SET_PARAMETERS Locked.</string>
+    <string name="MORPHOERR_OTP_LOCK_ENROLL">ILV_OTP_ENROLL_USER Locked.</string>
+    <string name="MORPHOERR_FVP_MINUTIAE_SECURITY_MISMATCH">Security level mismatch: attempt to match fingerprint template in high security level (MorphoSmart FINGER VP only).</string>
+    <string name="MORPHOERR_FVP_FINGER_MISPLACED_OR_WITHDRAWN">Misplaced or withdrawn finger has been detected during acquisition (MorphoSmart FINGER VP only).</string>
+    <string name="MORPHOERR_LICENSE_MISSING">A required license is missing.</string>
+    <string name="MORPHOERR_CANT_GRAN_PERMISSION_USB">Could not grant permissions to USB</string>
+    <string name="file_provider_authority" translatable="false">sbilife.com.pointofsale_bancaagency</string>
+    <string name="sbi_life_smart_samriddhi">Smart Samriddhi</string>
+    <string name="sbi_life_smart_samriddhi_uin">111N097V03</string>
+    <string name="sbi_life_smart_samriddhi_code">2G</string>
+
+    <!-- BDM Servicing Individual Report -->
+    <string name="sbi_life_smart_samriddhi_brochure_link">smart-samriddhi-brochure</string>
+
+    <!-- BDM Credit Life Report -->
+    <string name="sbi_life_smart_samriddhi_brochure_pdf">smart-samriddhi-brochure.pdf</string>
+    <string name="sbi_life_saral_insure_wealth_plus">Saral InsureWealth Plus</string>
+    <string name="sbi_life_saral_insure_wealth_plus_uin">111L124V02</string>
+    <string name="sbi_life_saral_insure_wealth_plus_code">2H</string>
+    <string name="sbi_life_saral_insure_wealth_brochure_link">saral-insurewealth-plus-brochure</string>
+    <string name="sbi_life_saral_insure_wealth_brochure_pdf">saral-insurewealth-plus-brochure.pdf</string>
+    <string name="sbi_life_smart_insure_wealth_plus">Smart InsureWealth Plus</string>
+    <string name="sbi_life_smart_insure_wealth_plus_uin">111L125V02</string>
+
+    <!-- BDM Business Report -->
+    <string name="sbi_life_smart_insure_wealth_plus_code">2J</string>
+    <string name="sbi_life_smart_insure_wealth_brochure_link">smart-insurewealth-plus-brochure</string>
+    <string name="sbi_life_smart_insure_wealth_brochure_pdf">smart-insurewealth-plus-brochure.pdf</string>
+
+    <!-- CIF Servicing Report -->
+    <string name="sbi_life_smart_platina_assure">Smart Platina Assure</string>
+
+    <!-- CIF Business Report -->
+    <string name="sbi_life_smart_platina_assure_uin">111N126V04</string>
+    <string name="sbi_life_smart_platina_assure_code">2K</string>
+    <string name="sbi_life_smart_platina_assure_brochure_link">smart-platina-brochure</string>
+    <string name="sbi_life_smart_platina_assure_brochure_pdf">smart-platina-brochure.pdf</string>
+    <string name="sbi_life_smart_future_choices">Smart Future Choices</string>
+    <string name="sbi_life_smart_future_choices_uin">111N127V01</string>
+    <string name="sbi_life_smart_future_choices_code">2M</string>
+    <string name="sbi_life_smart_future_choices_brochure_link">smart-future-choices-brochure</string>
+    <string name="sbi_life_smart_future_choices_brochure_pdf">smart-future-choices-brochure.pdf</string>
+    <string name="sbi_life_saral_jeevan_bima">Saral Jeevan Bima</string>
+
+    <!--ekyc authentication-->
+    <string name="sbi_life_saral_jeevan_bima_uin">111N128V01</string>
+
+    <string name="sbi_life_saral_jeevan_bima_code">2Q</string>
+
+    <string name="sbi_life_saral_jeevan_bima_brochure_link">saral-jeevan-bima-brochure</string>
+
+    <string name="sbi_life_saral_jeevan_bima_brochure_pdf">saral-jeevan-bima-brochure.pdf</string>
+
+    <string name="sbi_life_new_smart_samriddhi">New Smart Samriddhi</string>
+
+    <string name="sbi_life_new_smart_samriddhi_uin">111N129V01</string>
+
+    <string name="sbi_life_new_smart_samriddhi_code">2P</string>
+
+    <string name="sbi_life_new_smart_samriddhi_brochure_link">new-smart-samriddhi-brochure</string>
+
+    <string name="sbi_life_new_smart_samriddhi_brochure_pdf">new-smart-samriddhi-brochure.pdf</string>
+
+    <string name="sbi_life_annuity_plus_uin">111N083V11</string>
+
+    <string name="sbi_life_annuity_plus_brochure_link">annuity-plus-brochure</string>
+
+    <string name="sbi_life_annuity_plus_brochure_pdf">annuity-plus-brochure.pdf</string>
+
+    <string name="Rs">\u20B9</string>
+
+    <string name="sbiLifeDownloadLink">https://www.sbilife.co.in/</string>
+
+    <string name="scorecardTitle">Operations Quality Score Card</string>
+
+    <string name="digitalMHRMeetingQuestionYesDesc">I have scrutinized the Proposal form, KYC documents and details have been found to be matching with the proposal form. The life assured appears to be healthy and no physical deformity or mental retardation is observed. I have verified the occupation and income details and the life assured/proposer is financially sound. There is no other apparent risk involved. I therefore recommend the proposal for acceptance.</string>
+
+    <string name="digitalMHRMeetingQuestionNoDesc">I have discussed the proposal with the Sales representative. I have scrutinized the Proposal form, the KYC documents and the Sales Representative Report and on the basis of my independent enquiries, I confirm that the life assured is healthy and no physical deformity or mental retardation has been reported. The occupation and income details have been verified, and life assured/proposer is financially sound. There is no other apparent risk involved. I therefore recommend the proposal for acceptance.</string>
+
+    <string name="sbi_life_saral_pension_new">Saral Pension</string>
+
+    <string name="sbi_life_saral_pension_new_uin">111N130V01</string>
+
+    <string name="sbi_life_saral_pension_new_code">2R</string>
+
+    <string name="sbi_life_saral_pension_new_brochure_link">saral-pension-brochure</string>
+
+    <string name="sbi_life_saral_pension_new_brochure_pdf">saral-pension-brochure.pdf</string>
+
+    <string name="video_recording_note" translatable="false">Note : Please maintain silence while recording video.</string>
+
+    <string name="countdown_timer_text_1" translatable="false">Your video will end after %d Seconds</string>
+
+    <string name="disclaimer_text">I %s hereby confirm the submission of my Certificate of Existance</string>
+
+    <string name="coe_failure_message" translatable="false">Please try again later or Please visit nearest SBI Life Insurance branch to complete your certificate of existance.</string>
+
+    <string name="coe_success_message" translatable="false">Your COE has been successfully generated. It will be sent to your registered email ID, Subject to Verification.</string>
+
+    <string name="image_capture_note" translatable="false">Note : Please take close selfie of your face</string>
+
+    <string name="sbi_life_eshield_next">eShield Next</string>
+
+    <string name="sbi_life_eshield_next_uin">111N132V01</string>
+
+    <string name="sbi_life_eshield_next_code">2N</string>
+
+    <string name="sbi_life_eshield_next_brochure_link">eshield-next-brochure</string>
+
+    <string name="sbi_life_eshield_next_brochure_pdf">eshield-next-brochure.pdf</string>
+
+    <string name="title_activity_nb_yo_no_branch_portal">NB_YoNoBranchPortalActivity</string>
+
+    <string name="dummy_button">Dummy Button</string>
+
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string-array name="payModes">
+        <item>Select Pay Mode</item>
+        <item>Cheque</item>
+        <item>Draft</item>
+    </string-array>
+
+    <string-array name="payTypes">
+        <item>Select Pay Type</item>
+        <item>OUTSTATION</item>
+        <item>LOCAL</item>
+    </string-array>
+
+    <string-array name="paymentTypes">
+        <item>Select Payment Type</item>
+        <item>Regular</item>
+        <item>Top-Up</item>
+    </string-array>
+
+    <string-array name="namepolicy">
+        <item>Select Product</item>
+        <item>SBI Life - Saral life</item>
+        <item>SBI Life - Smart Moneyback Insurance</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <!--        <item>SBI Life - Saral Shield</item>-->
+        <item>SBI Life - Smart Shield</item>
+        <item>SBI Life - Flexi Smart Insurance</item>
+        <item>SBI Life - Scholar II</item>
+        <item>SBI Life - Smart Income Protect</item>
+    </string-array>
+
+    <string-array name="childpolicy">
+        <item>Select Plan</item>
+        <!-- <item>SBI Life - Scholar II</item> -->
+        <item>SBI Life - Smart Champ Insurance</item>
+        <item>SBI Life - Smart Scholar</item>
+    </string-array>
+
+    <string-array name="protectionpolicy">
+        <item>Select Plan</item>
+        <!--        <item>SBI Life - Saral Shield</item>-->
+        <item>SBI Life - Smart Shield</item>
+        <item>SBI Life - Grameen Bima</item>
+        <item>SBI Life - Sampoorn Cancer Suraksha</item>
+        <item>SBI Life - Poorna Suraksha</item>
+        <item>SBI Life - Smart Future Choices</item>
+        <item>SBI Life - Saral Jeevan Bima</item>
+    </string-array>
+
+    <string-array name="savingspolicy">
+        <item>Select Plan</item>
+        <!--<item>SBI Life - Smart Guaranteed Savings Plan</item>-->
+        <item>SBI Life - Saral Swadhan+</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <!--        <item>SBI Life - Flexi Smart Plus</item>-->
+        <item>SBI Life - Smart Money Back Gold</item>
+        <item>SBI Life - Smart Income Protect</item>
+        <item>SBI Life - Smart Money Planner</item>
+        <item>SBI Life - Smart Humsafar</item>
+        <item>SBI Life - Smart Swadhan Plus</item>
+        <!--        <item>SBI Life - Smart Women Advantage</item>-->
+        <item>SBI Life - Smart Bachat</item>
+        <!--        <item>SBI Life - Smart Samriddhi</item>-->
+        <item>SBI Life - Smart Platina Assure</item>
+        <item>SBI Life - New Smart Samriddhi</item>
+        <item>SBI Life - Smart Platina Plus</item>
+    </string-array>
+
+    <string-array name="savingspolicyBanca">
+        <item>Select Plan</item>
+        <!--<item>SBI Life - Smart Guaranteed Savings Plan</item>-->
+        <item>SBI Life - Saral Swadhan+</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <!--        <item>SBI Life - Flexi Smart Plus</item>-->
+        <item>SBI Life - Smart Money Back Gold</item>
+        <item>SBI Life - Smart Income Protect</item>
+        <item>SBI Life - Smart Money Planner</item>
+        <item>SBI Life - Smart Humsafar</item>
+        <item>SBI Life - Smart Swadhan Plus</item>
+        <!--        <item>SBI Life - Smart Women Advantage</item>-->
+        <item>SBI Life - Smart Bachat</item>
+        <!--        <item>SBI Life - Smart Samriddhi</item>-->
+        <item>SBI Life - Smart Platina Assure</item>
+        <item>SBI Life - New Smart Samriddhi</item>
+        <item>SBI Life - Smart Platina Plus</item>
+    </string-array>
+
+    <string-array name="healthpolicy">
+        <item>Select Plan</item>
+        <item>SBI Life - Hospital Cash</item>
+        <item>SBI Life - Group Criti 9</item>
+        <item>SBI Life - Smart Health Insurance</item>
+    </string-array>
+
+    <string-array name="traditionalapolicy">
+        <item>Select Plan</item>
+        <item>SBI Life - Smart Swadhan Plus</item>
+        <item>SBI Life - Smart Humsafar</item>
+        <item>SBI Life - Smart Champ Insurance</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <!--        <item>SBI Life - Saral Shield</item>-->
+        <item>SBI Life - Smart Shield</item>
+        <!--        <item>SBI Life - Flexi Smart Plus</item>-->
+        <!-- <item>SBI Life - Flexi Smart Insurance</item> -->
+        <!-- <item>SBI Life - Scholar II</item> -->
+        <item>SBI Life - Annuity Plus</item>
+        <item>SBI Life - Smart Money Back Gold</item>
+
+        <item>SBI Life - Saral Retirement Saver</item>
+        <item>SBI Life - Smart Income Protect</item>
+        <!--        <item>SBI Life - Smart Women Advantage</item>-->
+        <item>SBI Life - Saral Swadhan Plus</item>
+        <item>SBI Life - Smart Bachat</item>
+        <item>SBI Life - Smart Money Planner</item>
+        <item>SBI Life - Sampoorn Cancer Suraksha</item>
+        <item>SBI Life - Poorna Suraksha</item>
+        <!--        <item>SBI Life - Smart Samriddhi</item>-->
+        <item>SBI Life - Smart Platina Assure</item>
+        <item>SBI Life - Smart Future Choices</item>
+        <item>SBI Life - Saral Jeevan Bima</item>
+        <item>SBI Life - New Smart Samriddhi</item>
+        <item>SBI Life - Saral Pension</item>
+        <item>SBI Life - eShield Next</item>
+        <item>SBI Life - Smart Platina Plus</item>
+    </string-array>
+
+    <string-array name="unitlinkpolicy">
+        <item>Select Plan</item>
+        <item>SBI Life - Smart Power Insurance</item>
+        <!-- <item>SBI Life - Smart Performer</item> -->
+        <!--        <item>SBI Life - Saral Maha Anand</item>-->
+        <item>SBI Life - Smart Elite</item>
+        <item>SBI Life - Smart Wealth Assure</item>
+        <item>SBI Life - Smart Scholar</item>
+        <item>SBI Life - Smart Wealth Builder</item>
+        <item>SBI Life - Retire Smart</item>
+        <item>SBI Life - Smart Privilege</item>
+        <item>SBI Life - Saral InsureWealth Plus</item>
+        <item>SBI Life - Smart InsureWealth Plus</item>
+    </string-array>
+
+    <string-array name="group">
+        <item>Select Plan</item>
+        <item>SBI Life - RiNn Raksha(SBG) - LPPT</item>
+        <item>SBI Life - RiNn Raksha(SBG) - Single</item>
+    </string-array>
+
+    <string-array name="activitytimeslot">
+        <item>Select Time Slot</item>
+        <item>1st Half</item>
+        <item>2nd Half</item>
+        <item>Full Day</item>
+    </string-array>
+
+    <string-array name="Policy_arrays">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="age_arrays">
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="Sum_arrays">
+        <item>100000</item>
+        <item>200000</item>
+        <item>300000</item>
+    </string-array>
+
+    <string-array name="gender_arrays">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Transgender</item>
+    </string-array>
+
+    <string-array name="arr_posp_ra_nationality">
+        <item>Indian</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="gender_all_arrays">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Third Gender</item>
+    </string-array>
+
+    <string-array name="Plans">
+        <item>Option 1</item>
+        <item>Option 2</item>
+        <item>Option 3</item>
+        <item>Option 4</item>
+    </string-array>
+
+    <string-array name="Premium_arrays">
+        <item>Yearly</item>
+        <item>Half Yearly</item>
+        <item>Quarterly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="Premium_arrays2">
+        <item>Yearly</item>
+        <item>Half Yearly</item>
+        <item>Quarterly</item>
+        <item>Monthly</item>
+        <item>Single</item>
+    </string-array>
+
+    <string-array name="term">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <string-array name="term_five_to_eighteen">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+    </string-array>
+
+    <string-array name="term_five_to_thirty">
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="age_arrays1">
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="Policy_arrays1">
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+    </string-array>
+
+    <string-array name="Premium_arrays1">
+        <item>Yearly</item>
+        <item>Half Yearly</item>
+        <item>Quarterly</item>
+        <item>Monthly SSS</item>
+        <item>Monthly ECS</item>
+        <item>Monthly SI/CC</item>
+        <item>Single</item>
+    </string-array>
+
+    <string-array name="Premium_arrays3">
+        <item>Yearly</item>
+        <item>Half Yearly</item>
+        <item>Quarterly</item>
+        <item>Monthly SSS</item>
+        <item>Monthly SI/CC</item>
+        <item>Single</item>
+    </string-array>
+
+    <string-array name="Plans1">
+        <item>Endowment Assurance</item>
+        <item>Endowment Assurance with Whole Life Option</item>
+    </string-array>
+
+    <string-array name="roi">
+        <item>6%</item>
+        <item>8%</item>
+        <item>10%</item>
+        <item>12%</item>
+        <item>14%</item>
+        <item>16%</item>
+        <item>18%</item>
+        <item>20%</item>
+    </string-array>
+
+    <string-array name="smoker_arrays">
+        <item>Smoker</item>
+        <item>Non-Smoker</item>
+    </string-array>
+
+    <string-array name="saralPlans">
+        <item>Level Term Assurance</item>
+        <item>Decreasing Term Assurance[Loan Protection]</item>
+        <item>Decreasing Term Assurance[Family Income Protection]</item>
+    </string-array>
+
+    <string-array name="smartPlans">
+        <item>Level Term Assurance</item>
+        <item>Increasing Term Assurance</item>
+        <item>Decreasing Term Assurance[Loan Protection]</item>
+        <item>Decreasing Term Assurance[Income Protection]</item>
+    </string-array>
+
+    <string-array name="age_smartshield1">
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+    </string-array>
+
+    <string-array name="age_flexismart">
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+    </string-array>
+    <string-array name="term_ten_to_twenty">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="child_age_arrays">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="Policy_array_5_10_15">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="usertype">
+        <item>Select User</item>
+        <item>BDM</item>
+        <item>CIF</item>
+    </string-array>
+
+    <string-array name="agency_usertype">
+        <item>Select User</item>
+        <item>AGENT</item>
+    </string-array>
+    <string-array name="securityquestion">
+        <item>Select Question</item>
+        <item>What is your pet name?</item>
+        <item>What is your mother name?</item>
+        <item>What is the name of your birth place?</item>
+        <item>What is name of your best friend from child hood?</item>
+        <item>What was the name of your first teacher?</item>
+        <item>What was the name of your manager at your first job?</item>
+        <item>What was your first mobile number?</item>
+    </string-array>
+    <string-array name="ulipnamepolicy">
+        <item>Select Plan</item>
+        <!-- <item>SBI Life - Smart Performer</item> -->
+        <!--        <item>SBI Life - Saral Maha Anand</item>-->
+        <item>SBI Life - Smart Elite</item>
+        <item>SBI Life - Smart Wealth Assure</item>
+        <item>SBI Life - Smart Wealth Builder</item>
+        <item>SBI Life - Smart Power Insurance</item>
+        <item>SBI Life - Smart Privilege</item>
+        <item>SBI Life - Saral InsureWealth Plus</item>
+        <item>SBI Life - Smart InsureWealth Plus</item>
+    </string-array>
+    <string-array name="eshikshanamepolicy">
+        <item>Select Product</item>
+        <item>SBI Life - Flexi Smart Insurance</item>
+        <item>SBI Life - Smart Performer</item>
+        <item>SBI Life - Smart Income Protect</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <item>SBI Life - Smart Scholar</item>
+    </string-array>
+    <string-array name="pensionpolicy">
+        <item>Select Plan</item>
+        <item>SBI Life - Annuity Plus</item>
+        <item>SBI Life - Retire Smart</item>
+        <item>SBI Life - Saral Retirement Saver</item>
+        <item>SBI Life - Saral Pension</item>
+    </string-array>
+
+    <string-array name="chflag">
+        <item>Select Product Type</item>
+        <item>All</item>
+        <item>Ulip</item>
+        <item>Traditional</item>
+    </string-array>
+    <string-array name="surrenderstring">
+        <item>Select Status</item>
+        <item>Surrender Disinvested</item>
+        <item>Surrender Initiated</item>
+        <item>Surrendered Reinvested</item>
+        <item>Surrender</item>
+        <item>Surrendered Reinvested Auto</item>
+    </string-array>
+    <string-array name="surrenderdefinition">
+        <item>Select</item>
+        <item>Surrender Disinvested</item>
+        <item>Surrender Initiated</item>
+        <item>Surrendered Reinvested</item>
+        <item>Surrender</item>
+        <item>Surrendered Reinvested Auto</item>
+    </string-array>
+    <string-array name="bdmstatus">
+
+        <!-- <item >Select Status</item> -->
+        <item>Active</item>
+        <item>Inactive</item>
+    </string-array>
+    <string-array name="searchpolicy">
+        <item>Policy No</item>
+        <item>First Name</item>
+        <item>Status</item>
+        <item>Due Date</item>
+        <item>Product Name</item>
+    </string-array>
+
+    <string-array name="searchpolicyrenewal">
+        <item>Policy No</item>
+        <item>First Name</item>
+        <item>Status</item>
+        <item>Due Date</item>
+        <item>Product Name</item>
+        <item>Premium</item>
+    </string-array>
+    <string-array name="searchpolicystatus">
+        <item>Select Status</item>
+        <item>Inforce</item>
+        <item>Lapse</item>
+        <item>Technical Lapse</item>
+        <item>Maturity</item>
+        <item>Claim</item>
+        <item>Surrender</item>
+    </string-array>
+    <string-array name="searchpolicystatus_policylist">
+        <item>Select Status</item>
+        <item>Inforce</item>
+        <item>Lapse</item>
+        <item>Technical Lapse</item>
+        <item>Maturity</item>
+        <item>Claim</item>
+        <item>Surrender</item>
+        <item>Withdrawal</item>
+    </string-array>
+    <string-array name="searchmaturity">
+        <item>Policy No</item>
+        <item>First Name</item>
+        <item>Status</item>
+        <item>Maturity Date</item>
+    </string-array>
+    <string-array name="searchsurrender">
+        <item>Policy No</item>
+        <item>First Name</item>
+        <item>Withdrawal Date</item>
+    </string-array>
+
+    <string-array name="searchpolicyrevival">
+        <item>Policy No</item>
+        <item>First Name</item>
+        <item>Revival Date</item>
+    </string-array>
+    <string-array name="searchpolicypaystatus">
+        <item>Select Status</item>
+        <item>Paid</item>
+        <item>Unpaid</item>
+    </string-array>
+    <string-array name="searchbdm">
+        <item>Bank Branch Name</item>
+        <item>CIF Code</item>
+        <item>First Name</item>
+    </string-array>
+    <string-array name="searchum">
+        <item>Bank Name</item>
+        <item>Agent Code</item>
+        <item>First Name</item>
+    </string-array>
+    <string-array name="searchcommon">
+        <item>Policy No</item>
+        <item>First Name</item>
+    </string-array>
+
+
+    <string-array name="eshikshaulipnamepolicy">
+        <item>Select Unit Linked</item>
+        <item>SBI Life - Smart Performer</item>
+        <item>SBI Life - Smart Scholar</item>
+    </string-array>
+    <string-array name="eshikshasavingspolicy">
+        <item>Select Savings</item>
+        <item>SBI Life - Shubh Nivesh</item>
+        <item>SBI Life - Flexi Smart Insurance</item>
+        <item>SBI Life - Smart Income Protect</item>
+    </string-array>
+    <string-array name="groupemaillist">
+        <item>Select</item>
+        <item>Branch Manager</item>
+        <item>CIF</item>
+        <item>AGM</item>
+        <item>RM and AM</item>
+    </string-array>
+    <string-array name="policy_servicing">
+        <item>Select</item>
+        <item>Assignment</item>
+        <item>Change in Nomination</item>
+        <item>Change in Policy Details</item>
+        <item>Duplicate Policy Issuance</item>
+        <item>Free Look Cancellation</item>
+        <item>Lapsation &amp; Revivals</item>
+        <item>Other Policy Servicing Requests</item>
+    </string-array>
+    <string-array name="claims">
+        <item>Select</item>
+        <item>Death Claim</item>
+        <item>Living Benefits Claims</item>
+        <item>Points to Remember</item>
+    </string-array>
+
+
+    <string-array name="sms_based_services">
+        <item>Select</item>
+        <item>Pull Based SMS</item>
+    </string-array>
+    <string-array name="forms">
+        <item>Select</item>
+        <item>Policy Servicing Forms</item>
+        <item>Claim Forms</item>
+    </string-array>
+    <string-array name="holeadpriority">
+        <item>TOP</item>
+        <item>HIGH</item>
+        <item>MEDIUM</item>
+    </string-array>
+    <string-array name="selfleadstatus">
+        <item>Yet to Attend</item>
+        <!-- <item>Open</item> -->
+        <item>In Progress</item>
+        <item>On Hold</item>
+        <item>Dropped</item>
+        <item>Converted</item>
+    </string-array>
+    <string-array name="selfleadsubstatus">
+        <item>Not Contactable</item>
+        <item>Not Interested</item>
+        <item>Recontact after 3 months</item>
+        <item>Already has SBIL Policy</item>
+        <item>Has other Co. Policy</item>
+        <item>Dissatisfied with SBIL / Product</item>
+    </string-array>
+
+    <string-array name="selftotalacc">
+        <item>1</item>
+        <item>2-3</item>
+        <item>3-5</item>
+        <item>5-10</item>
+        <item>>10</item>
+    </string-array>
+    <string-array name="selfbalance">
+        <item>MEDIUM</item>
+        <item>HIGH</item>
+        <item>SUPER</item>
+    </string-array>
+    <string-array name="selfleadsearch">
+        <item>Lead Date</item>
+        <item>Lead Priority</item>
+        <item>Lead Status</item>
+        <item>Follow Up Date</item>
+        <item>Lead No</item>
+    </string-array>
+
+    <string-array name="complaintStatusArray">
+        <item>Select Status</item>
+        <item>Open</item>
+        <item>Under Investigation </item>
+        <item>Rejected</item>
+        <item>Withdrawn</item>
+        <item>Closed</item>
+    </string-array>
+    <string-array name="complaint_category_array">
+        <item>Select Category</item>
+        <item>Appointment Letter / I Card Issuance</item>
+        <item>Commission Payout</item>
+        <item>Contest Payout</item>
+        <item>Updation of Contact details</item>
+        <item>Updation of New Bank details</item>
+        <item>Transfer of agency to new SBIL Branch</item>
+        <item>Reinstatement of Agency/ Renewal of Agency</item>
+        <item>Resignation</item>
+        <item>Cessation Certificate / NOC</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="channelProposerTrackerListArray">
+        <item>EFT proposal to be submitted</item>
+        <item>Pending Requirement Status - Medical</item>
+        <item>Pending Requirement Status - Non Medical</item>
+        <item>PIWC Status</item>
+        <item>Work in Progress - WIP</item>
+        <item>Connect Life Cashiering to be Complete</item>
+        <item>Underwriting Complete Pending for Issuance</item>
+    </string-array>
+
+    <string-array name="strTypeListArray">
+        <item>RP</item>
+        <item>FYP</item>
+    </string-array>
+
+    <string-array name="performanceReportCIFArray">
+        <item>CIF Servicing Report</item>
+        <item>CIF Business Report</item>
+    </string-array>
+    <string-array name="performanceReportBDMArray">
+        <item>BDM Servicing Individual Report</item>
+        <item>BDM Credit Life Report</item>
+        <item>BDM Business Report</item>
+    </string-array>
+
+
+    <string-array name="permonths">
+        <item>13</item>
+        <item>25</item>
+        <item>37</item>
+        <item>61</item>
+    </string-array>
+    <string-array name="rewmonth">
+        <item>Previous Month</item>
+        <item>Current Month</item>
+        <item>Next Month</item>
+    </string-array>
+
+    <string-array name="login_mode">
+        <item>Select Mode</item>
+        <item>CIF Code</item>
+        <item>Email-Id</item>
+        <item>Mobile No.</item>
+        <item>Mobile No. and PIN</item>
+    </string-array>
+
+    <string-array name="auto_mandate_status_type">
+        <item>Select Type</item>
+        <item>Policy Number</item>
+        <item>Month</item>
+    </string-array>
+    <string-array name="alternate_mode_collection_status">
+        <item>Select Type</item>
+        <item>Policy Number</item>
+        <item>Due Period</item>
+    </string-array>
+    <string-array name="view_medical_status_type">
+        <item>Select Type</item>
+        <item>Individual</item>
+        <item>Rinn Raksha</item>
+    </string-array>
+    <string-array name="view_medical_status_mode">
+        <item>Select Mode</item>
+        <item>Date</item>
+        <item>Proposal Number</item>
+    </string-array>
+    <string-array name="auto_mandate_penetration_status">
+        <item>Select Mandate Status</item>
+        <item>Mandate Penetration</item>
+        <item>Mandate Registered</item>
+        <item>Mandate Rejected</item>
+        <item>Mandate Not Received</item>
+    </string-array>
+
+    <string-array name="group_annuity_awaited_data">
+        <item>Select Type</item>
+        <item>COE Pending more than 3 months</item>
+        <item>COE Pending between 0 to 3 months</item>
+        <item>COE Due in 0 to 1 months</item>
+        <item>COE Due in 1 to 2 months</item>
+        <item>COE Due in more than 2 months</item>
+        <item>Total COE Pending List</item>
+    </string-array>
+
+    <string-array name="LMsbil_association">
+        <item>1 year</item>
+        <item>1-3 years</item>
+        <item>3-5 years</item>
+        <item>> 5 years</item>
+    </string-array>
+
+    <string-array name="LM_education_details">
+        <item>Under –graduate</item>
+        <item>Graduate</item>
+        <item>Post Graduate</item>
+    </string-array>
+
+    <string-array name="LM_work_details">
+        <item>Full time</item>
+        <item>Part time</item>
+    </string-array>
+
+
+    <string-array name="LM_product_sell_details">
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+    <string-array name="LM_products_Aware">
+        <item>1-3</item>
+        <item>4-6</item>
+        <item>More than 6</item>
+    </string-array>
+    <string-array name="LM_products_sell">
+        <item>1-3</item>
+        <item>4-6</item>
+        <item>More than 6</item>
+    </string-array>
+    <string-array name="LM_cust_meet_count">
+        <item>Less than 2</item>
+        <item>3 – 6</item>
+        <item>6 – 12</item>
+        <item>More than 12</item>
+    </string-array>
+    <string-array name="LM_training_days">
+        <item>1-3 days</item>
+        <item>4-6 days</item>
+        <item>More than 6 days</item>
+    </string-array>
+    <string-array name="LM_biggest_strength">
+        <item>Brand</item>
+        <item>Strong  Products</item>
+        <item>Reasonable Returns on the policy</item>
+        <item>Quick Servicing &amp; claim settlement</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="LM_biggest_attraction">
+        <item>Support from Manager &amp; Branch Manager</item>
+        <item>Learning</item>
+        <item>Adequate basket of products</item>
+        <item>Digital Support</item>
+        <item>Reward and Recognition program</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="LM_Productivity">
+        <item>Product</item>
+        <item>Financial markets</item>
+        <item>Need analysis</item>
+        <item>Selling skills</item>
+        <item>Digital Assets Usage</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="LM_yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="piwcaudiocallingpendinglist">
+        <item>Clear Case</item>
+        <item>Dispute Case</item>
+        <item>Temporary NC</item>
+        <item>Call Back</item>
+        <item>Permanent NC</item>
+        <item>Third Party</item>
+
+    </string-array>
+    <string-array name="annuityPlusOptionArray">
+        <item>Select</item>
+        <item>Lifetime Income</item>
+        <item>Lifetime Income with Capital Refund</item>
+        <item>Lifetime Income with Capital Refund in Parts</item>
+        <item>Lifetime Income with Balance Capital Refund</item>
+        <item>Lifetime Income with Annual Increase of 3%</item>
+        <item>Lifetime Income with Annual Increase of 5%</item>
+        <item>Lifetime Income with Certain Period of 5 Years</item>
+        <item>Lifetime Income with Certain Period of 10 Years</item>
+        <item>Lifetime Income with Certain Period of 15 Years</item>
+        <item>Lifetime Income with Certain Period of 20 Years</item>
+        <item>Life and Last Survivor - 50% Income</item>
+        <item>Life and Last Survivor - 100% Income</item>
+        <item>Life and Last Survivor with Capital Refund - 50% Income</item>
+        <item>Life and Last Survivor with Capital Refund - 100% Income</item>
+        <!--        <item>Life and Last Survivor with Capital Refund - 100% Income Life and Last Survivor with Capital Refund - 100% Income Life and Last Survivor with Capital Refund - 100% Income</item>-->
+
+    </string-array>
+    <string-array name="sendLinkArray">
+        <item>Select Type</item>
+        <item>Consent for Extra Premium/Shortage/Revised BI</item>
+        <item>Payment Shortage</item>
+        <item>Questionnaire</item>
+        <item>COVID Questionnaire</item>
+    </string-array>
+    <string-array name="sendRinnRakshaLinkArray">
+        <item>Select Type</item>
+        <item>Consent for Extra Premium</item>
+        <item>Payment Shortage</item>
+        <item>Questionare</item>
+    </string-array>
+    <string-array name="transactionNatureAllowArray">
+        <item>Select Nature Of Transaction Allowed</item>
+        <item>Non Payout Request</item>
+        <!--<item>Payout Request</item>
+        <item>Documents and Statements</item>-->
+    </string-array>
+    <string-array name="nonPayoutRequestArray">
+        <item>Select Non Payout Request</item>
+        <item>Email id update</item>
+        <item>PAN number update</item>
+
+        <!--<item>Mobile number update</item>
+        <item>Declaration of Good Health (DGH)</item>
+        <item>Revival Request</item>
+        <item>Address Change</item>
+        <item>Bank Account update</item>
+        <item>Fund Switch</item>
+        <item>Fund Redirection</item>
+        <item>Frequency Change</item>
+        <item>Hit Date Change</item>
+        <item>Nomination Change</item>
+        <item>Name Correction</item>
+        <item>Premium Holiday</item>
+        <item>Certificate of Existence for annuity holders</item>-->
+    </string-array>
+    <string-array name="payoutRequestArray">
+        <item>Select Payout Request</item>
+        <item>Free Look Cancellation</item>
+        <item>Policy Loan</item>
+        <item>Partial Withdraw</item>
+        <item>LTR Refund</item>
+        <item>Survival Benefit</item>
+        <item>Maturity Benefit</item>
+        <item>Surrender Request</item>
+    </string-array>
+    <string-array name="documentsNStatementsArray">
+        <item>Select Documents and Statements</item>
+        <item>Revival Quote</item>
+        <item>Partial Withdrawal Quote</item>
+        <item>Loan Quote</item>
+        <item>Surrender Quote</item>
+        <item>Bonus Statement</item>
+        <item>Renewal Premium Receipt</item>
+        <item>Premium Paid Certificate</item>
+        <item>Unit Statement</item>
+        <item>Policy Account statement</item>
+        <item>Form 16A</item>
+        <item>TDS Certificate</item>
+    </string-array>
+
+    <string name="sbi_life_corona_rakshak_code">2L</string>
+    <string name="sbi_life_grameen_bima_code">1F</string>
+    <string name="sbi_life_Arogya_Shield_code">2T</string>
+
+
+    <string name="sbi_life_smart_platina_plus">Smart Platina Plus</string>
+    <string name="sbi_life_smart_platina_plus_uin">111N133V01</string>
+    <string name="sbi_life_smart_platina_plus_code">2X</string>
+    <string name="sbi_life_smart_platina_plus_brochure_link">smart-platina-plus-brochure</string>
+    <string name="sbi_life_smart_platina_plus_brochure_pdf">smart-platina-plus.pdf</string>
+</resources>

@@ -1,0 +1,1915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:text="From Date"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textViewFromDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/my_bordernew1"
+                android:drawableRight="@drawable/dt"
+                android:padding="10dp"
+                android:textColor="#484848" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:text="To Date"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textViewToDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/my_bordernew1"
+                android:drawableRight="@drawable/dt"
+                android:padding="10dp"
+                android:textColor="#484848" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonOk"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/Common_blue"
+                    android:text="@android:string/ok"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/buttonCompare"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.5"
+                    android:background="#A9A9A9"
+                    android:enabled="false"
+                    android:text="Compare with last FY"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="*Data will be refreshed fortnightly"
+                android:textColor="@color/Black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fillViewport="true"
+                android:scrollbars="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/header_skyblue"
+                        android:weightSum="17">
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Project Name"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Response"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Promoter"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Passive"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="Detractor"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+
+                        <TextView
+                            style="@style/tv_heading"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="NPS"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/White" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        android:id="@+id/tablerowOnboarding"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="60dp"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Onboarding"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/onBoardingResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="re"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/onBoardingPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/onBoardingPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/onBoardingDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonBoardingNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/onBoardingNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tablerowRenewal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Renewal"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/renewalResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/renewalPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/renewalPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/renewalDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonrenewalNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/renewalNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        android:id="@+id/trserviceExperience"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Service Experience"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExperienceResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExperiencePromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/serviceExperiencePassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExperienceDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewServiceExperienceNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/serviceExperienceNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trserviceExpOnlinePay"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Service Exp Online Payment"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpOnlinePayResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpOnlinePayPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/serviceExpOnlinePayPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpOnlinePayDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonserviceExpOnlinePayNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/serviceExpOnlinePayNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/trserviceExpRegd"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Service Experience Registered"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpRegdResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpRegdPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/serviceExpRegdPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpRegdDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonserviceExpRegdNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/serviceExpRegdNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/trserviceExpSBIBank"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Service Experience SBI Bank"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBIBankResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBIBankPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/serviceExpSBIBankPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBIBankDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonserviceExpSBIBankNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/serviceExpSBIBankNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/trserviceExpSBILife"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:visibility="gone"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Service Experience SBI Life"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBILifedResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBILifePromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/serviceExpSBILifePassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/serviceExpSBILifeDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonserviceExpSBILifeNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/serviceExpSBILifeNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        android:id="@+id/tablerowLivingBenefit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:minHeight="50dp"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Living Benefit"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/livingBenefitResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/livingBenefitPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/livingBenefitPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/livingBenefitDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewonlivingBenefitNPS"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/livingBenefitNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        android:id="@+id/tablerowTotal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:minHeight="50dp"
+                        android:weightSum="17">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Total"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/totalResponse"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Response"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/totalPromoters"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Promoters"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+
+                            android:id="@+id/totalPassives"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Passives"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+
+                        <TextView
+                            android:id="@+id/totalDetractors"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="3"
+                            android:gravity="center_horizontal"
+                            android:text="Detractors"
+                            android:textColor="@color/Black"
+                            android:textSize="13sp" />
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <com.hookedonplay.decoviewlib.DecoView xmlns:custom="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/arcViewTotal"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                custom:dv_lineWidth="6dp" />
+
+                            <TextView
+                                android:id="@+id/totalNPS"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal|center_vertical"
+                                android:text="33.33"
+                                android:textColor="@color/Black"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0.2dp"
+                            android:layout_height="fill_parent"
+                            android:background="@color/Black" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.2dp"
+                        android:background="@color/Black" />
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+            <TextView
+                android:id="@+id/textviewProjectType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/Common_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textviewRecordCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:scrollbars="vertical" />
+
+
+            <LinearLayout
+                android:id="@+id/llCompareProject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/header_skyblue">
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:text="Project Name"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/White" />
+
+                    <TextView
+                        android:id="@+id/tvNPSCurrentFY"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:text="NPS"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/White" />
+
+                    <TextView
+                        android:id="@+id/tvNPSPreviousFY"
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:text="Previous NPS"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/White" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/Black" />
+
+                <TableRow
+                    android:id="@+id/tablerowCompareOnboarding"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Onboarding"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalOnBoardingNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalOnBoardingNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tablerowCompareRenewal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:minHeight="60dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Renewal"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalRenewalNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalRenewalNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/Black" />
+
+                <TableRow
+                    android:id="@+id/trCompareServiceExperience"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Service Experience"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExperienceNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExperienceNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/Black" />
+                <TableRow
+                    android:id="@+id/trCompareServiceExpOnlinePayment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Service Exp Online Payment"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpOnlinePayNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpOnlinePayNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Service Experience Registered"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpRegdNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpRegdPayNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Service Experience SBI Bank"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpSBIBankNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpSBIBankNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:visibility="gone"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Service Experience SBI Life"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpSBILifeNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotServiceExpSBILifeNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tablerowCompareLivingBenefit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Living Benefit"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalLivingBenefitNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalLivingBenefitNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/Black" />
+
+                <TableRow
+                    android:id="@+id/tablerowCompareTotal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:minHeight="60dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Total"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalTotalNPSCurrentFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="re"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/tvtotalTotalNPSPreviousFY"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_weight="0.33"
+                        android:gravity="center_horizontal"
+                        android:text="Promoters"
+                        android:textColor="@color/Black"
+                        android:textSize="13sp" />
+
+                    <View
+                        android:layout_width="0.2dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/Black" />
+
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:background="@color/Black" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

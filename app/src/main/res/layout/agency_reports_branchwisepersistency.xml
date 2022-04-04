@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llBranchCodeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Branch Code"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerBranchCodes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:background="@drawable/textboxbg"
+                android:padding="7dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#484848"/>
+
+           <!-- <Spinner
+                android:id="@+id/spnRewmonths"
+                style="@style/spnr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/rewmonth"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#484848" >
+            </Spinner>-->
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Months"
+                    android:textColor="#808080"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="5dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="1">
+
+                <Spinner
+                    android:id="@+id/spnmonths"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/textboxbg"
+                    android:entries="@array/permonths"
+                    android:paddingLeft="5dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848"></Spinner>
+            </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/buttonOk"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@color/Common_blue"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@android:string/ok"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="* Applicable for Bancasurrance channel only."
+            android:textColor="@color/Black" />
+
+        <TextView
+            android:id="@+id/textviewRecordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edittextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/my_bordernew1"
+            android:hint="Search Policy No/Name / Premium Amount/ Due Date"
+            android:padding="7dp"
+            android:textColor="#484848"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

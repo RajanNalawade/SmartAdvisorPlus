@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always" 
+     >
+<LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+       android:background="@drawable/header">
+
+        <TextView
+            android:id="@+id/txt_input_activityheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SBI LIFE - UNIT PLUS SUPER"
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white" />
+        
+        
+                <TextView
+            android:id="@+id/txt_input_activityheader1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="(UIN:111L069V01)"
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white" />
+       
+        
+    </LinearLayout>
+
+<ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+     
+    
+    >
+
+<TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="6dp"
+         android:paddingBottom="6dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        
+       
+         >
+
+		<TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+                       
+         >
+         
+		     <CheckBox
+		          style="@style/app_TextColor"
+		          android:visibility="gone"
+        android:id="@+id/cb_staffdisc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Staff Discount"
+        android:layout_weight="0.5"/>
+         </TableRow>
+         
+		 <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <CheckBox
+        android:id="@+id/cb_bancassurance"
+         style="@style/app_TextColor"
+         android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Bancassurance Discount" 
+        android:layout_weight="0.5"/>
+        </TableRow>
+        
+		   <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+                <LinearLayout 
+	    android:id="@+id/linerarlayout8"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/textview8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         style="@style/app_TextColor"
+         />
+		
+		<TextView
+		    
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(As on Last Birthday)"
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+        </LinearLayout>
+
+		 <Spinner
+		     android:id="@+id/age"
+		     android:layout_width="0dp"
+		     android:layout_height="wrap_content"
+		     android:layout_weight="0.5" 
+		      android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+		     
+		     />     
+         </TableRow>
+         <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+
+		<TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Gender:"
+             style="@style/app_TextColor"
+            android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+		<Spinner
+    		android:id="@+id/selGender"
+    		android:layout_width="0dp"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="0.5" 
+    		 android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"/>
+
+   		</TableRow>
+   		  <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+
+       
+       
+    <LinearLayout 
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/txt_proposerage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age of proposer:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         style="@style/app_TextColor"
+         />
+		
+		<TextView
+		android:id="@+id/help_proposerage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(As on Last Birthday)"
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+        </LinearLayout>
+
+		 <Spinner
+		     android:id="@+id/proposerage"
+		     android:layout_width="0dp"
+		     android:layout_height="wrap_content"
+		     android:layout_weight="0.5"
+		      android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown" />     
+         </TableRow>		 
+		 
+         
+		 <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+		<TextView
+		    android:id="@+id/txt_plantype"
+		    android:layout_width="0dp"
+		    android:layout_height="56dp"
+		     style="@style/app_TextColor"
+		    android:text="Plan Type:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		   />
+
+	    <Spinner
+	        android:id="@+id/plantype"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0.5"
+	         android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+	       />
+	    </TableRow>
+	    
+		 
+		 <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+		<TextView
+		    android:id="@+id/txt_premium_frequency_mode"
+		    android:layout_width="0dp"
+		     style="@style/app_TextColor"
+		    android:layout_height="56dp"
+		    android:text="Premium Frequency Mode:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		    android:visibility="gone"
+		   />
+
+	    <Spinner
+	        android:id="@+id/premium_frequency_mode"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0.5"
+	         android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+	        android:visibility="gone"
+	       />
+	    </TableRow> 
+     <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+     <TextView
+        android:id="@+id/txt_premiumpayingterm"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+         style="@style/app_TextColor"
+        android:text="Premium Paying Term:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="0.5" 
+        android:visibility="gone"/>
+     
+        <Spinner
+            android:id="@+id/premiumpayingterm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:visibility="gone"/>
+
+    </TableRow>  	      		
+    <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+        
+        <LinearLayout 
+	    android:id="@+id/linerarlayout9"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/textview9"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Policy Term:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+		
+		<TextView
+        android:id="@+id/help_policyterm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+        </LinearLayout>
+
+	    <Spinner
+	        android:id="@+id/policyterm"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="0.5"
+	         android:background="@drawable/bgspinner"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"/>
+	    </TableRow> 
+	  <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         > 
+    <LinearLayout 
+	    android:id="@+id/linerarlayout10"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/textview10"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Premium Amount"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+		
+		<TextView
+        android:id="@+id/help_prem_amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+        </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/premium_amt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+         style="@style/editetxt_style"
+        android:layout_weight="0.5">
+
+    </EditText>
+
+   </TableRow>
+   <TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+           <LinearLayout 
+	    android:id="@+id/linerarlayout11"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/textview11"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sum Assured Multiple Factor [SAMF]"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+		
+		<TextView
+        android:id="@+id/help_samf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+        </LinearLayout>
+        <EditText
+        android:id="@+id/samf"
+        android:layout_width="0dp"
+         style="@style/editetxt_style"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal" 
+        android:layout_weight="0.5">
+
+    </EditText>          
+  </TableRow>	    
+   <TableRow
+            android:id="@+id/tableRow12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView12"
+            android:layout_width="0dp"
+             style="@style/app_TextColor"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Equity Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/equityfund"
+        android:layout_width="0dp"
+         style="@style/editetxt_style"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>
+   
+   <TableRow
+            android:id="@+id/tableRow13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView13"
+             style="@style/app_TextColor"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Equity Optimiser Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/equityoptimiserfund"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+         style="@style/editetxt_style"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>
+   <TableRow
+            android:id="@+id/tableRow14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView14"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+             style="@style/app_TextColor"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Growth Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/growthfund"
+        android:layout_width="0dp"
+         style="@style/editetxt_style"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>
+   <TableRow
+            android:id="@+id/tableRow15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView15"
+            android:layout_width="0dp"
+             style="@style/app_TextColor"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for balanced Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/balancedfund"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+         style="@style/editetxt_style"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>
+   <TableRow
+            android:id="@+id/tableRow16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView16"
+            android:layout_width="0dp"
+             style="@style/app_TextColor"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Bond Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/bondfund"
+         style="@style/editetxt_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>
+   <TableRow
+            android:id="@+id/tableRow17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView17"
+            android:layout_width="0dp"
+             style="@style/app_TextColor"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Money Market Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/moneymarketfund"
+         style="@style/editetxt_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow>     
+      <TableRow
+            android:id="@+id/tableRow18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView18"
+             style="@style/app_TextColor"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Index Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/indexfund"
+         style="@style/editetxt_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow> 
+      <TableRow
+            android:id="@+id/tableRow19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            android:id="@+id/textView19"
+             style="@style/app_TextColor"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for Top 300 Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+        android:id="@+id/top300fund"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         style="@style/editetxt_style"
+         
+         >
+
+    </EditText>
+   </TableRow> 
+      <TableRow
+            android:id="@+id/tableRow20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+       <TextView
+            style="@style/app_TextColor"
+            android:id="@+id/textView20"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_weight="0.5"
+            android:text="% to be invested for P/E Managed Fund:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+		<EditText
+		     style="@style/editetxt_style"
+        android:id="@+id/pe_managed_fund"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+        android:hint="0"
+         >
+
+    </EditText>
+   </TableRow> 	  
+  	  <TableRow
+            android:id="@+id/tableRow21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+
+   <LinearLayout 
+	    android:id="@+id/linerarlayout21"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+		
+       <TextView
+        android:id="@+id/textview21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         style="@style/app_TextColor"
+        android:text="No. of Years Elapsed Since Inception:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+		
+		<TextView
+        android:id="@+id/help_years_elapsed_since_inception"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         />
+		</LinearLayout>
+		<EditText
+		     style="@style/editetxt_style"
+        android:id="@+id/years_elapsed_since_inception"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number" 
+        android:layout_weight="0.5"
+         >
+    </EditText>	    
+     </TableRow>
+             <TableRow
+            android:id="@+id/tableRow22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+        <CheckBox
+        android:id="@+id/ADB"
+        android:layout_width="0dp"
+         style="@style/app_TextColor"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Accidental Death Benefit (UIN:111B015V01)" 
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="0.5"/>
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"            
+         >
+          <LinearLayout 
+	    android:id="@+id/linerarlayout23"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/adb_txt1"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accidental Death Benefit Rider Term:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+		
+		<TextView
+        android:id="@+id/help_adb_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+        </LinearLayout>  
+
+    <Spinner
+        android:id="@+id/adb_term"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone" 
+        android:layout_weight="0.5"
+      />
+
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+      <LinearLayout 
+	    android:id="@+id/linerarlayout24"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/adb_txt2"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accidental Death Benefit Rider Sum Assured(Rs):"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+         />
+		
+		<TextView
+        android:id="@+id/help_adbSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+         />
+        </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/sumAssuredADB"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:visibility="gone" 
+         style="@style/editetxt_style"
+        android:layout_weight="0.5"/>
+  </TableRow> 
+  
+           <TableRow
+            android:id="@+id/tableRow25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+        <CheckBox
+        android:id="@+id/cc13"
+        android:layout_width="0dp"
+         style="@style/app_TextColor"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Criti Care 13 Rider(UIN:111A018V01)" 
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="0.5"/>
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+          <LinearLayout 
+	    android:id="@+id/linerarlayout26"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/cc13_txt1"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criti Care 13 Term:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+		
+		<TextView
+        android:id="@+id/help_cc13_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+        </LinearLayout>  
+
+    <Spinner
+        android:id="@+id/cc13_term"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone" 
+        android:layout_weight="0.5"
+      />
+
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+      <LinearLayout 
+	    android:id="@+id/linerarlayout16"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/cc13_txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Criti Care 13 Rider Sum Assured(Rs):"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+          style="@style/app_TextColor"
+         />
+		
+		<TextView
+        android:id="@+id/help_cc13SA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+         />
+        </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/sumAssuredcc13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:visibility="gone" 
+         style="@style/editetxt_style"
+        android:layout_weight="0.5"/>
+  </TableRow>
+
+
+         <TableRow
+            android:id="@+id/tableRow28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"             
+         >
+        <CheckBox
+        android:id="@+id/is"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+         style="@style/app_TextColor"
+        android:text="Income Sustainer Rider (UIN:111A020V01)" 
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="0.5"/>
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+          <LinearLayout 
+	    android:id="@+id/linerarlayout29"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/is_txt1"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income Sustainer Rider Term:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+		
+		<TextView
+        android:id="@+id/help_is_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:visibility="gone"
+         />
+        </LinearLayout>  
+
+    <Spinner
+        android:id="@+id/is_term"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone" 
+        android:layout_weight="0.5"
+      />
+
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"            
+         >
+      <LinearLayout 
+	    android:id="@+id/linerarlayout30"
+	    android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+     <TextView
+        android:id="@+id/is_txt2"
+         style="@style/app_TextColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income Sustainer Rider Sum Assured(Rs):"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+         />
+		
+		<TextView
+        android:id="@+id/help_isSA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4C4C4C"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         android:visibility="gone" 
+         />
+        </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/sumAssuredIS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:visibility="gone" 
+         style="@style/editetxt_style"
+        android:layout_weight="0.5"/>
+  </TableRow>		 
+  
+<TableRow
+            android:id="@+id/tableRow31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+        <CheckBox
+        android:id="@+id/ppwb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="Premium Payor Waiver Benefit Rider (UIN:111A017V01)" 
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="0.5"
+        android:textColor="#4C4C4C"/>
+</TableRow>
+
+      	<TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+             <CheckBox
+        android:id="@+id/selViewSFIN"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="View SFIN of Funds" 
+        android:textAppearance="?android:attr/textAppearanceMedium"
+         style="@style/app_TextColor"
+        android:layout_weight="0.5"/>
+
+	    </TableRow>
+      
+      	    <TableRow
+            android:id="@+id/tbEquityFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"           
+         >
+		<TextView
+		   
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Equity Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF001100105EQUITY-FND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    
+   
+	 <TableRow
+            android:id="@+id/tbEquityOptimiserFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Equity Optimiser Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF010210108EQTYOPTFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    
+		    <TableRow
+            android:id="@+id/tbGrowthFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Growth Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF003241105GROWTH-FND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    
+		    	    <TableRow
+            android:id="@+id/tbBalancedFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"   
+            android:visibility="gone"          
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Balanced Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF004051205BALANCDFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    <TableRow
+            android:id="@+id/tbBondFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"   
+            android:visibility="gone"          
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Bond Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF002100105BONDULPFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    	    	    <TableRow
+            android:id="@+id/tbMoneyMarketFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Money Market Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF005010206MONYMKTFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    
+	    	    	    	    <TableRow
+            android:id="@+id/tbIndexFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Index Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF015070110INDEXULFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+
+	 	    	 <TableRow
+            android:id="@+id/tbTop300Fund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="Top 300 Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF016070110TOP300-FND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+	    	    	 <TableRow
+            android:id="@+id/tbPEManagedFund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:visibility="gone"           
+         >
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="P/E Managed Fund:"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+
+		<TextView
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:text="ULIF021080910P/EMNGDFND111"
+		    android:layout_weight="0.5"
+		    android:textAppearance="?android:attr/textAppearanceMedium" 
+		     style="@style/app_TextColor"
+		    />
+	    </TableRow>
+
+<TableRow
+            android:id="@+id/tableRow40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+         >
+
+     <Button
+         android:id="@+id/btnSubmit"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+         android:text="Calculate" 
+         style="@style/button_style"
+         android:layout_margin="2dp"/>
+
+
+
+
+     <Button
+         android:id="@+id/back"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+         android:text="Cancel"
+         style="@style/button_style"
+         android:layout_margin="2dp" />
+
+ </TableRow>
+ 
+		 
+</TableLayout>
+</ScrollView>
+</LinearLayout>
+		 

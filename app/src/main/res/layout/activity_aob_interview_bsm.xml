@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <!--<HorizontalScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="@color/LightGrey_header">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Personal"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:focusable="true"
+                android:background="@color/GreenYellow"
+                android:focusableInTouchMode="true"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Occupation"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Nomination"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Bank"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Form 1-A"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+            </TextView>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Exam And Training"
+                android:background="@color/GreenYellow"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="BSM Interview"
+                android:background="@color/Common_blue"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+                <requestFocus/>
+            </TextView>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Terms And Conditions"
+                android:textStyle="bold"
+                android:padding="10dp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="BSM Interview Questions"
+                android:textColor="@color/Blue"
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Q.1 Do you have any sales experience *"
+                    android:textColor="@color/Black"/>
+
+                <Spinner android:id="@+id/spnr_aob_bsm_interview_q1"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/textboxbg"
+                    android:textColor="#484848" />
+
+                <EditText android:id="@+id/edt_aob_bsm_interview_q1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:maxLength="60"
+                    android:hint="in 100 characters"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Q.2 Do you have any insurance selling experience *"
+                    android:textColor="@color/Black"/>
+
+                <Spinner android:id="@+id/spnr_aob_bsm_interview_q2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/textboxbg"
+                    android:textColor="#484848" />
+
+                <EditText android:id="@+id/edt_aob_bsm_interview_q2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:maxLength="60"
+                    android:hint="in 100 characters"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Q.3 How you have been contacted by your UM *"
+                    android:textColor="@color/Black"/>
+
+                <EditText android:id="@+id/edt_aob_bsm_interview_q3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:maxLength="60"
+                    android:hint="in 100 characters"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Q.4 What are your plans for your agency earnings *"
+                    android:textColor="@color/Black"/>
+
+                <EditText android:id="@+id/edt_aob_bsm_interview_q4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:maxLength="60"
+                    android:hint="in 100 characters"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Q.5 For how many years you have been residing in this city *"
+                    android:textColor="@color/Black"/>
+
+                <EditText android:id="@+id/edt_aob_bsm_interview_q5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_bordernew1"
+                    android:padding="10dp"
+                    android:maxLength="60"
+                    android:hint="in 50 characters"
+                    android:textColor="#484848"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <CheckBox android:id="@+id/chkbox_aob_bsm_interview_clarify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We further certify that the interviewed candidate is not engaged / shall not be engaged with any SBIL Office as Office Boy /Security Personnel / Vendor / Employee of vendor."
+                android:textColor="@color/Black"
+                android:layout_marginTop="10dp"
+                android:gravity="left|center_vertical"/>
+
+            <EditText android:id="@+id/edt_ia_upgrade_rejection_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_bordernew1"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:hint="Enter rejection remark"
+                android:textColor="#484848"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button android:id="@+id/btn_ia_upgrade_interview_reject"
+                    android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:layout_margin="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_rounded_green"
+                android:textStyle="bold"
+                    android:text="Reject"/>
+
+                <Button
+                    android:id="@+id/btn_aob_bsm_interview_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_rounded_green"
+                    android:padding="10dp"
+                    android:text="Accept"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

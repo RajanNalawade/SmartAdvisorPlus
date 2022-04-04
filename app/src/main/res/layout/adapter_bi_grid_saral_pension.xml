@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         android:weightSum="5.8" >
+
+        <TextView
+                    android:id="@+id/tv_year_of_death"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="year of death"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_guaranteed_death_benefit"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="Guaranteed Death Benefit"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_bonuses_non_guarantee_4pa"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="Bonus 4pa"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_bonuses_non_guarantee_8pa"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight=".8"
+                    android:gravity="center"
+                    android:text="Bonus 8pa"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_vesting_benefit_4pa"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.1"
+                    android:gravity="center"
+                    android:text="Vesting 4pa"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_vesting_benefit_8pa"
+                    style="@style/tv_heading"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.1"
+                    android:text="vesting 8pa"
+                    android:gravity="center"
+                    android:textColor="@color/Black"
+                    android:textSize="14sp" />
+    </TableRow>
+
+</LinearLayout>

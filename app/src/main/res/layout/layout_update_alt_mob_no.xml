@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/btn_update_remark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:padding="5dp"
+        android:text="Update Mobile"
+        android:textColor="@color/Common_blue"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etUpdateAltMobileNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_background_with_border"
+            android:gravity="left|center_vertical"
+            android:hint="Enter Mobile Number"
+            android:inputType="phone"
+            android:lines="2"
+            android:maxLength="10"
+            android:padding="6dp" />
+
+        <Button
+            android:id="@+id/buttonUpdateAltMobileCommon"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@color/Common_blue"
+            android:ems="7"
+            android:enabled="true"
+            android:text="Update"
+            android:textColor="@color/White" />
+    </LinearLayout>
+</LinearLayout>

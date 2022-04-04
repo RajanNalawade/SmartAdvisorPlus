@@ -1,0 +1,145 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#f0f0f0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Exam Details"
+                android:textColor="@color/Blue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exam Existing Center"/>
+
+            <TextView android:id="@+id/txt_tcc_exam_existing_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_bordernew1"
+                android:padding="10dp"
+                android:textColor="#484848"
+                android:textColorHint="#2b5988"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/ll_exam_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/tv_default"
+                android:text="Exam Location *"/>
+
+            <Spinner android:id="@+id/spnr_tcc_exam_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textboxbg"
+                android:padding="10dp"
+                android:textColor="#484848"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/tv_default"
+                android:text="Exam Center *"/>
+
+            <Spinner android:id="@+id/spnr_tcc_exam_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textboxbg"
+                android:textColor="#484848"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Exam Preffered Date *"/>
+
+            <TextView android:id="@+id/txt_tcc_exam_preffered_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_bordernew1"
+                android:padding="10dp"
+                android:textColor="#484848"
+                android:textColorHint="#2b5988"
+                android:drawableRight="@drawable/dt"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/btn_tcc_exam_details_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/Common_blue"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:text="Submit"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

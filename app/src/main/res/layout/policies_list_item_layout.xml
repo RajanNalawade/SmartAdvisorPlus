@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/policy_person_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/border_with_white_background"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="12sp"
+        android:textColor="@color/DarkGreySolid"
+        />
+
+    <TextView
+        android:id="@+id/policy_person_city"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/border_with_white_background"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/DarkGreySolid"
+        android:padding="5dp"/>
+    <TextView
+        android:id="@+id/policy_person_probale_commission"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Probable Commission"
+        android:background="@drawable/blue_background_with_border"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:textColor="@color/white"
+        android:padding="1dp"/>
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Download POSP RA Form"
+            android:textColor="@color/Blue"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText android:id="@+id/edt_agent_posp_form_pan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_bordernew1"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:inputType="textCapCharacters"
+                android:maxLength="10"
+                android:layout_weight="1"
+                android:hint="Enter PAN Number"
+                android:textColor="#484848"
+                android:textSize="15sp" />
+
+            <ImageButton android:id="@+id/btn_agent_posp_form_download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:padding="5dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ibtn_downloaddoc"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="POSP-RA Dashboard"
+            android:textColor="@color/Blue"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView android:id="@+id/txt_aob_dashboard_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="No Data Found"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:textColor="@color/Black"/>
+
+        <ListView android:id="@+id/lv_aob_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!--
+     <TextView
+                 android:id="@+id/txttemp"
+                android:layout_width="1000dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"                
+                android:textColor="@android:color/black"
+                android:text="Temporary Unavailable.."
+                android:textSize="19sp"
+                android:textStyle="bold" />
+    -->
+
+
+    <!--
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"       
+        android:background="@drawable/header"
+        android:orientation="vertical" >       
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Important Links"
+                android:textColor="#ffffff"
+                android:textSize="19sp"
+                android:textStyle="bold" />                      
+        
+    </RelativeLayout>
+    -->
+
+    <TableLayout
+        android:id="@+id/tblsbilws"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape2"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColorStrip" >
+
+            <ImageButton
+                android:id="@+id/imgwebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_indicator"
+                android:src="@drawable/down"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtwebsite"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="SBI Life Website"
+                android:textColor="@color/textColorHint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tblsbileb"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColorStrip" >
+
+            <ImageButton
+                android:id="@+id/imgebandhan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_indicator"
+                android:src="@drawable/down"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtebandhan"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="SBI Life E-bandhan"
+                android:textColor="@color/textColorHint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tblfaqs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColorStrip" >
+
+            <ImageButton
+                android:id="@+id/imgefaq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_indicator"
+                android:src="@drawable/down"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtfaq"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="FAQs"
+                android:textColor="@color/textColorHint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tblemailus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColorStrip" >
+
+            <ImageButton
+                android:id="@+id/imgemailus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_indicator"
+                android:src="@drawable/down"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtemailus"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Email Us"
+                android:textColor="@color/textColorHint"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
+</LinearLayout>

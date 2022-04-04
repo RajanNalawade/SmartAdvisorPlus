@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText android:id="@+id/edt_score_card_urn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:hint="Enter URN Number"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:textColor="#484848"
+            android:layout_weight="1"
+            android:textSize="15sp" />
+
+        <Button android:id="@+id/btn_validate_urn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/Common_blue"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:text="Next"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:background="@color/Black" />
+
+    <LinearLayout android:id="@+id/ll_score_card_declaration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+    <TextView
+        style="@style/tv_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Schedule 3"
+        android:textColor="@color/Blue"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SCHEDULE III [See regulation 26]\n"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insurance Regulatory and Development Authority of India (Registration of Corporate Agents) Regulations, 2015 \n"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Code of Conduct"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/txt_tcc_declaration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Code of Conduct"
+                android:textColor="@color/Black"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Place :" />
+
+                    <EditText
+                        android:id="@+id/edt_tcc_declaration_place"
+                    style="@style/et_default"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                        android:hint="Enter Place"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Date :" />
+
+                <TextView android:id="@+id/txt_tcc_declaration_date"
+                    style="@style/et_default"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_declaration_cust_sign"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/signature"></ImageButton>
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="Customer&apos;s Signature"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Score Card Upload" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!--<EditText android:id="@+id/edt_cif_score_card_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint="Enter URN Number"
+                    android:inputType="textCapCharacters"
+                    android:maxLines="1"
+                    android:paddingLeft="5dp"
+                    android:textColor="#484848"
+                    android:layout_weight="1"
+                    android:textSize="15sp" />-->
+
+                <ImageButton
+                    android:id="@+id/ib_score_card_docs_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/White"
+                    android:layout_gravity="center"
+                    android:src="@drawable/preview" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:layout_gravity="center"
+                    android:background="@color/White"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_browse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton android:id="@+id/imgbtn_score_card_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1.5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_uploaddoc" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="Education Documents Upload"
+                android:textColor="@color/Blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="HSC" />
+
+            <LinearLayout android:id="@+id/ll_tcc_education_hsc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spnr_tcc_education_doc_hsc"
+                    style="@style/spnr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/ib_score_card_hsc_doc_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginLeft="5dp"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/preview" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_hsc_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_hsc_browse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_hsc_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_uploaddoc" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Degree" />
+
+
+            <LinearLayout android:id="@+id/ll_tcc_education_degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/spnr_tcc_education_doc_degree"
+                    style="@style/spnr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/ib_score_card_degree_doc_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:layout_marginLeft="5dp"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/preview" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_degree_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_degree_browse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_tcc_education_doc_degree_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.5"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:src="@drawable/ibtn_uploaddoc" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+
+            <CheckBox android:id="@+id/chk_tcc_declaration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I confirm that the above information is, to the best of my knowledge and belief, true and complete. I undertake to keep the Authority fully informed, as soon as possible, of all events, which take place subsequent to my appointment, which are relevant to the information provided above."
+                android:textColor="@color/Black"/>
+
+            <Button android:id="@+id/btn_tcc_declaration_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/Common_blue"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                android:text="Submit"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+</LinearLayout>

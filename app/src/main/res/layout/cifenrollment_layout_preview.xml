@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White" >
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/White" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ll_dynamic_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+<!--             <View -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="1dip" -->
+<!--                 android:layout_marginBottom="5dp" -->
+<!--                 android:layout_marginLeft="2dp" -->
+<!--                 android:layout_marginTop="5dp" -->
+<!--                 android:background="@color/Black" /> -->
+
+<!--             <include -->
+<!--                 layout="@layout/layout_banca_cif_recriutment" -->
+<!--                 android:clickable="false" /> -->
+
+<!--             <TableRow -->
+<!--                 style="@style/tr_default" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:weightSum="1" > -->
+
+<!--                 <Button -->
+<!--                     style="@style/btnStyleSeagull" -->
+<!--                     android:layout_width="0dp" -->
+<!--                     android:layout_weight="1" -->
+<!--                     android:onClick="onBIUpdate" -->
+<!--                     android:text="Edit Banca-Cif recruitment module" -->
+<!--                     android:textColor="@color/DarkBlue" -->
+<!--                     android:textStyle="bold" -->
+<!--                     android:visibility="gone" /> -->
+<!--             </TableRow> -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <include
+                layout="@layout/cifenrollment_layout_personal_details"
+                android:clickable="false" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btnStyleSeagull"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onPersonalUpdate"
+                    android:text="Do You Want To Edit Your Personal Details?"
+                    android:textColor="@color/DarkBlue"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <include layout="@layout/cifenrollment_layout_contact_details" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btnStyleSeagull"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onHealthUpdate"
+                    android:text="Do You want To Edit Your Contact Details?"
+                    android:textColor="@color/DarkBlue"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <include layout="@layout/cifenrollment_layout_qualification" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btnStyleSeagull"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onHealthUpdate"
+                    android:text="Do You want To Edit Your Qualification?"
+                    android:textColor="@color/DarkBlue"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <include layout="@layout/cifenrollment_layout_exam_details" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:visibility="gone"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btnStyleSeagull"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onHealthUpdate"
+                    android:text="Do You want To Edit Your Exam Details"
+                    android:textColor="@color/DarkBlue"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <!-- <include layout="@layout/layout_preview_identification" /> -->
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:visibility="gone"
+                android:weightSum="1" >
+
+                <Button
+                    style="@style/btnStyleSeagull"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onHealthUpdate"
+                    android:text="Do You want To Edit Your Identification"
+                    android:textColor="@color/DarkBlue"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:weightSum="1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" 
+                    android:textColor="@color/Blue"
+                    android:text="Disclaimer:-All other required details are considered as updated in HRMS data "/>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:weightSum="2" >
+
+                
+
+                <Button
+                    android:id="@+id/btn_proceed"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:onClick="onClickProceed"
+                    android:text="Proceed" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+        </LinearLayout>
+    </FrameLayout>
+
+</ScrollView>

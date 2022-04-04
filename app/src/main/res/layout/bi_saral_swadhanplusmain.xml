@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:id="@+id/sv_bi_saral_swadhan_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:overScrollMode="always">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@color/bi_text_background"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="SBI LIFE - Saral Swadhan Plus\n (UIN - 111N092V03)"
+                android:textColor="@color/Blue"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/bigLogo" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="40dp" -->
+        <!-- android:layout_alignParentTop="true" -->
+        <!-- android:layout_marginTop="0px" -->
+        <!-- android:scaleType="fitXY" /> -->
+
+
+        <!-- <LinearLayout -->
+        <!-- android:id="@+id/LinearLayout1" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="#787C80" -->
+        <!-- android:orientation="vertical" > -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/txt_input_activityheader" -->
+        <!-- style="@style/tv_default" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center_horizontal" -->
+        <!-- android:text="FLEXI SMART PLUS (UIN:111N093V01)" -->
+        <!-- android:textColor="@android:color/white" /> -->
+        <!-- </LinearLayout> -->
+
+        <ScrollView
+            android:id="@+id/ScrollView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_staffdisc"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="Staff Discount" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tablerowKerlaDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_kerladisc"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="Kerala Resident"
+                        android:visibility="visible" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_saral_swadhan_plus_life_assured_detail1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="60dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Life Assured Title" />
+
+                        <TextView
+                            android:id="@+id/tv_mandatory_bi_saral_swadhan_plus_life_assured_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_life_assured_title"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_flexi_smart_life_assured_detail1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:text="First Name" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_saral_swadhan_plus_life_assured_first_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="First Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="25" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:text="Middle Name" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_saral_swadhan_plus_life_assured_middle_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="Middle Name"
+                        android:inputType="textPersonName"
+                        android:maxLength="25" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:text="Last Name" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_saral_swadhan_plus_life_assured_last_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                        android:hint="Last Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="25" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_saral_swadhan_plus_life_assured_detail2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:text="Date of Birth" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight=".2"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_bi_saral_swadhan_plus_life_assured_date"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:onClick="onClickLADob"
+                        android:text="Select Date" />
+
+                    <!--<Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_age"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/Light_Very_Grey"
+                        android:clickable="false"
+                        android:focusable="false" />-->
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_life_assured_detail2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Age" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_saral_swadhan_plus_life_assured_age"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:editable="false"
+                        android:visibility="visible" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_age"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/Light_Very_Grey"
+                        android:clickable="false"
+                        android:visibility="gone" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_propsoser_same_as_life_assured"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:text="Whether life_assured Is Same As life Assured" />
+
+                    <RadioGroup
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:weightSum="1">
+
+                        <RadioButton
+                            android:id="@+id/rb_bi_saral_swadhan_plus_life_assured_same_as_life_assured_yes"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="yes"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_bi_saral_swadhan_plus_life_assured_same_as_life_assured_no"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="No"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Gender" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_selGender"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@color/Light_Very_Grey"
+                        android:clickable="false"
+                        android:focusable="false" />
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/edt_proposerdetail_basicdetail_tele_code"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight=".3"
+                            android:maxLength="30"
+                            android:text="+91" />
+
+                        <EditText
+                            android:id="@+id/edt_saral_swadhan_contact_no"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".7"
+                            android:inputType="number"
+                            android:maxLength="10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:orientation="horizontal"
+                        android:weightSum="1"></LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Id " />
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />-->
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_saral_swadhan_Email_id"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:text="Confirm Email Id" />
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />-->
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_saral_swadhan_ConfirmEmail_id"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Policy Term" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_policyterm"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                    <!-- style="@android:style/Animation.Activity" -->
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="0.5"
+                        android:text="Premium Frequency" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_saral_swadhan_plus_premium_paying_mode"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@color/Light_Very_Grey" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/prem_amt"
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Amount (Rs.)" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(Min. 1500, Max. 5000) (In multiple of 500)"
+                            android:textColor="@color/Black" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/et_bi_saral_swadhan_plus_premium_amt"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="number"></EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_proceed_saral_swadhan_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_bi_saral_swadhan_plus_btnback"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:text="Back" />
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="0.04" />
+
+                    <Button
+                        android:id="@+id/btn_bi_saral_swadhan_plus_btnSubmit"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:text="Proceed" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

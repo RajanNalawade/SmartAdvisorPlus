@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+   
+       <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center_horizontal"
+     	android:layout_margin="5dp">
+       <LinearLayout android:layout_width="match_parent"
+       android:layout_height="wrap_content" 
+       android:orientation="vertical"> 
+       
+           <TextView 
+               android:id="@+id/txtcustinfo"              
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="15sp"
+               android:textColor="#000000"               
+               android:textStyle="bold"
+               />
+           
+          <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        >
+        
+        <TableRow>
+            
+            <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Product Name:"       	 	
+        /> 
+        
+             <TextView 
+                 android:id="@+id/txtproductname"     
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        />  
+    
+    </TableRow>
+    
+         <TableRow>
+            
+             <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Policy Holder:"
+            android:layout_weight="0.5"       	 	
+        /> 
+        
+             <TextView 
+                 android:id="@+id/txtpolicyholder"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"     	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Nominee:"    
+            android:layout_weight="0.5"   	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtnominee"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Address:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtadddress"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Channel:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtchannel"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+          android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Channel Id:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtchannelid"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Comments:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtcomment"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Policy No.:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtnumero"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"     	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Proposal No.:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtproposal"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+           <TableRow>
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Frequency:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtfreq"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+                <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Sum Assured:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtsumassu"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Inst Premium:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtinstpre"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"     	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Date of Commencement:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtDOC"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="Status:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtpstatus"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"    	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="First Unpaid Premium Date:"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtfupdate"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"     	 	
+        />  
+      
+    </TableRow>
+    
+           <TableRow>
+               
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+           android:textColor="@android:color/black"       	 	
+        	android:typeface="sans"
+        	android:textStyle="bold"
+            android:text="O Num:" 
+            android:visibility="gone"      	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtonum"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:visibility="gone"     	 	
+        />  
+      
+    </TableRow>
+              
+</TableLayout>
+             
+          <TextView 
+              android:id="@+id/txtpolicyinfo"               
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textSize="15sp"
+               android:textColor="#000000"               
+               android:textStyle="bold"
+               />
+          
+             <ListView android:id="@+id/listView11"
+                  android:layout_width="match_parent" 
+                 android:layout_height="wrap_content" 
+                 android:divider="#b5b5b5" 
+                 android:dividerHeight="1dp" 
+                 /> 
+                 
+             <LinearLayout 
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:visibility="gone"
+                 >
+                 <Button
+                    android:id="@+id/btnpaymentsummary"
+                     android:layout_width="wrap_content"
+                     android:layout_height="40dp"                     
+                     android:text="Payment Summary" 
+                     android:onClick="clik_payment_summary" 
+                     android:background="@drawable/exp_unselected" 
+                     android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"                       
+                     />
+                 
+                 <Button
+                      android:id="@+id/btnservicinghistory"
+                     android:layout_width="wrap_content"
+                     android:layout_height="40dp"  
+                     android:layout_marginLeft="5dp"                  
+                     android:text="Servicing History" 
+                     android:onClick="clik_servicing_history"
+                      android:background="@drawable/exp_unselected"  
+                      android:textColor="#ffffff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                     />
+                 
+             </LinearLayout>
+                 
+            <!--  <TextView 
+                 android:id="@+id/txtpaymentsummary"                  
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:textSize="20sp"
+               android:textColor="#000000"              
+               android:textStyle="bold"
+               /> -->
+                 
+             <ListView android:id="@+id/listViewTotalPaid"                
+                  android:layout_width="match_parent" 
+                 android:layout_height="wrap_content" 
+                 android:divider="#b5b5b5" 
+                 android:visibility="gone"
+                 android:dividerHeight="1dp" 
+                 android:layout_marginTop="10dp"/> 
+             
+             <ListView android:id="@+id/listViewUnPaid"                
+                  android:layout_width="match_parent" 
+                 android:layout_height="wrap_content" 
+                  android:layout_marginTop="10dp"
+                 android:divider="#b5b5b5" 
+                 android:visibility="gone"
+                 android:dividerHeight="1dp" />
+             
+              <ListView android:id="@+id/listViewTopUp"                
+                  android:layout_width="match_parent" 
+                 android:layout_height="wrap_content" 
+                  android:layout_marginTop="10dp"
+                 android:divider="#b5b5b5" 
+                 android:visibility="gone"
+                 android:dividerHeight="1dp" />
+              
+              <!--  <TextView
+                   android:id="@+id/txtservicinghist"               
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:textSize="20sp"
+               android:textColor="#000000"               
+               android:textStyle="bold"
+               /> -->
+               
+               
+               <TableLayout
+                   android:id="@+id/tblHistory"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"  
+        android:visibility="gone"      
+        >
+        
+        <TableRow>
+            
+            <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:text="DOP"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtDOP"     
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"    	 	
+        />  
+    
+    </TableRow>
+    
+         <TableRow>
+             
+             <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:text="Place"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtplace"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"       	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+               <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:text="User Id"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtuserid"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"    	 	
+        />  
+      
+    </TableRow> 
+    
+          <TableRow>
+              
+              <TextView                  
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:text="Description"       	 	
+        /> 
+            
+             <TextView 
+                 android:id="@+id/txtdesc"        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"      	 	
+        />  
+      
+    </TableRow> 
+    
+          </TableLayout>
+             
+           </LinearLayout>   
+           
+</ScrollView>
+</LinearLayout>
+</LinearLayout>

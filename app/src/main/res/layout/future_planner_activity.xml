@@ -1,0 +1,258 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/futureplanningbanner"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2" >
+
+                    <LinearLayout android:id="@+id/ll_childedu_planner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgbt_childedu_planner"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/childeducationplanner1" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Child Education Planner"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/ll_childedu_leads"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgbt_childedu_leads"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/childeducationleads1" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Child Education Planner Leads"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2" >
+
+                    <LinearLayout android:id="@+id/ll_retirement_planner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_vertical|center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgbt_retirement_planner"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/retirement_planner" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Retirement Planner"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/ll_retirement_plannerleads"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_horizontal|center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgbt_retirement_plannerleads"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/retirement_planner_leads" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Retirement Planner Leads"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRowHLVCalculator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2" >
+
+                    <LinearLayout android:id="@+id/linearLayoutHLVCalculator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_vertical|center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgageButtonHLVCalculatorplanner"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/humanlifevaluecalculator" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="HLV Calculator"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/linearLayoutHLVCalculatorleads"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:visibility="visible"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_horizontal|center"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imgbuttonHLVCalculatorleads"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/humanlifevalueleadsicon" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="HLV Calculator Leads"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

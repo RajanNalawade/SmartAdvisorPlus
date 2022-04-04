@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_color" >
+
+    <LinearLayout
+        android:id="@+id/ll_layout_otp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:id="@+id/ll_header_part"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#2183b0" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:padding="5dp"
+                    android:src="@drawable/sbilogo" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:visibility="gone"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:weightSum="2" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:text="As per IRDAI regulations, this proposal form needs to be digitally signed through Aadhar based eSignature process. Kindly proceed for generation of OTP for digitally signing the proposal form."
+                    android:textColor="@color/Black"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:weightSum="2" >
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2" />
+
+                <TextView
+                    android:id="@+id/tv_declaration_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.8"
+                    android:text=""
+                    android:layout_gravity="center"
+                    android:textColor="@color/Black"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select the option to complete eKYC process"
+                android:textColor="@color/DarkBlue"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- <LinearLayout -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="fill_parent" -->
+                <!-- android:orientation="horizontal" > -->
+
+
+                <!-- <TextView -->
+                <!-- style="@style/tv_default" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="" -->
+                <!-- android:textColor="@color/Red" -->
+                <!-- android:textStyle="bold" -->
+                <!-- android:visibility="visible" /> -->
+
+
+                <!-- <TextView -->
+                <!-- style="@style/tv_default" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:text="Select the option to complete eSignature process" -->
+                <!-- android:textColor="@color/DarkBlue" -->
+                <!-- android:textSize="15dp" -->
+                <!-- android:textStyle="bold" /> -->
+                <!-- </LinearLayout> -->
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:textStyle="bold" >
+
+                    <RadioButton
+                        android:id="@+id/rb_OTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Mobile based OTP"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:id="@+id/rb_finger_print"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="FingerPrint Device"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_IRIS"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="IRIS"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+                </RadioGroup>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/ll_OTP"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_GenerateOTP"
+                        style="@style/btn_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:text="Generate OTP"
+                        android:textColor="@color/White"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/edt_otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@layout/usernametextbox001"
+                        android:hint="Enter OTP here"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="Click the link above to generate OTP through UIDAI"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Fingerprint"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                <ImageView
+                    android:id="@+id/iv_ekyc_fingerprintcapture"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/White"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal" >
+
+                    <ProgressBar
+                        android:id="@+id/vertical_progressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="50"
+                        android:max="100"
+                        android:padding="10dp" />
+
+                    <TextView
+                        android:id="@+id/textViewMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="50"
+                        android:gravity="center"
+                        android:textColor="@color/Blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_ekyc_capture"
+                    style="@style/btnStyleBreakerBay"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Capture"
+                    android:textStyle="bold" >
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_IRIS"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/Red"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capture Type"
+                            android:textColor="@color/DarkBlue"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold" >
+
+                        <RadioButton
+                            android:id="@+id/rb_single_iris"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Single IRIS"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/ts_default"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_dual_iris"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Dual IRIS"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/ts_default"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/Black" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:weightSum="1" >
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/btn_selector"
+                    android:onClick="oncancel"
+                    android:text="Cancel"
+                    android:textStyle="bold" >
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/btn_selector"
+                    android:text="Submit"
+                    android:textStyle="bold" >
+                </Button>
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Black" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <SurfaceView
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="390dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#3f51b5"
+            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:padding="10dp"
+            android:text="Move the device near the eye..."
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/border_with_white_background" >
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical" >
+
+        <TableRow
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:background="#2183b0"
+            android:weightSum="1" >
+
+            <TextView
+                style="@style/tv_tableRow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Get Your Signature "
+                android:textColor="@color/White"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="320dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:weightSum="1" >
+
+            <Button
+                android:id="@+id/takesignature"
+                style="@style/btn_default"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Click Here to Capture Your Signature" >
+            </Button>
+
+            <!-- <View -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="1dp" -->
+            <!-- android:layout_weight="0.2" /> -->
+
+
+            <!-- <Button -->
+            <!-- android:id="@+id/uploadsignature" -->
+            <!-- style="@style/btn_default" -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:layout_weight="0.3" -->
+            <!-- android:background="@color/CornflowerBlue" -->
+            <!-- android:text="Upload Your Signature" > -->
+            <!-- </Button> -->
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.2" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black"
+            android:visibility="gone" />
+
+        <TableRow
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="gone"
+            android:weightSum="1" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.2" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_gravity="center"
+                android:layout_weight="0.2"
+                android:background="@drawable/buttonwith_shadow"
+                android:text="SAVE"
+                android:textColor="@color/Black" >
+            </Button>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.2" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/btn_height"
+                android:layout_gravity="center"
+                android:layout_weight="0.2"
+                android:background="@drawable/buttonwith_shadow"
+                android:text="CANCEL"
+                android:textColor="@color/Black" >
+            </Button>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="0.2" />
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+    </LinearLayout>
+
+</ScrollView>

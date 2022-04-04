@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Policy No"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtpolicyno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Policy Holder's Name"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtpolicyholdername"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Date of Commencement"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtdateofcommence"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Sum Assured"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtsumassured"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Plan"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtplan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Policy Term"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtpolicyterm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Date of Birth"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtDOB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Age as on Date"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Premium not paid since"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtpremium_not_paid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Quotation Date"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtquotationdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Frequency"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtfreq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Physical Extra"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtphysicalextra"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Installment Premium"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtinstPrem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="EMR Extra"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtEMRextra"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <TableRow
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text="Critical illness"
+                    android:textColor="@color/DimGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/txtCritiIllness"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text=""
+                    android:textColor="@color/Black"
+                    android:textSize="13dp" />
+
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/ll_grid_quotation_schedule"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Quotation Schedule"
+                        android:textColor="@color/Black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fillViewport="true"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            style="@style/tv_tableRow"
+                            android:layout_width="1000dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:background="@drawable/header"
+                            android:paddingTop="5dp"
+                            android:weightSum="10">
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="If Paid By"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Latest Due"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="No. of Premiums"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Total Amount\n(A)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Rate of Interest(%)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Late Fee\n(B)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Interest Waived\n(C)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Other Dues Pending the Policy (D)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Policy Deposit\n(E)"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Net Revival Amount\n((A+B+D)-(C+E))"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+                        </TableRow>
+
+                        <!--  <View
+                          android:layout_width="fill_parent"
+                          android:layout_height="0.1dp"
+                          android:background="@color/Black" />-->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <GridView
+                                android:id="@+id/gv_quotation_schedule"
+                                android:layout_width="1000dp"
+                                android:layout_height="wrap_content"></GridView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Share Quote"
+                    android:textColor="@color/Black"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutSendSMSEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <Button
+                    android:id="@+id/btnSavePDF"
+                    style="@style/button_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Via SMS" />
+
+                <Button
+                    android:id="@+id/btnSendEmail"
+                    style="@style/button_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:text="Via Whatsapp / Email" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_grid_breakup_dues"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breakup of other dues pending on policy:"
+                        android:textColor="@color/Black"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fillViewport="true"
+                    android:scrollbars="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TableRow
+                            style="@style/tv_tableRow"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="0dp"
+                            android:background="@drawable/header"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:weightSum="4">
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Bank Charges*"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Bank Dated Interest"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Earlier Shortfall"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+                            <View
+                                android:layout_width="0.1dp"
+                                android:layout_height="fill_parent"
+                                android:background="@color/Black" />
+
+                            <TextView
+                                style="@style/tv_heading"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Duplicate Policy"
+                                android:textColor="@color/White"
+                                android:textSize="14dp" />
+
+
+                        </TableRow>
+
+                        <!--  <View
+                          android:layout_width="fill_parent"
+                          android:layout_height="0.1dp"
+                          android:background="@color/Black" />-->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:orientation="vertical">
+
+                            <GridView
+                                android:id="@+id/gv_breakup_dues"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"></GridView>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

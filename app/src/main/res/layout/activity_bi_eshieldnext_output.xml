@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_weight="15"
+            android:background="@drawable/rectangle_rounded_corner"
+            android:paddingBottom="4dip"
+            android:shrinkColumns="1"
+            android:stretchColumns="1">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/DarkBlue"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="5dp"
+                    android:text="\nSBI Life Insurance Co. Ltd \n\n
+Registered and Corporate Office: 'Natraj', M.V. Road and Western Express, Highway Junction, Andheri (East) \n\n
+Mumbai – 400069. IRDAI Registration No. 111 \n\n
+Website: www.sbilife.co.in | Email: info@sbilife.co.in | CIN: L99999MH2000PLC129113 \n\n
+Toll Free: 1800 267 9090 (Between 9.00 am to 9.00 pm) \n\n
+Premium Quotation\n\n
+SBI Life- eShield Next (111N132V01) | An Individual, Non- Linked, Non-Participating Life Insurance Pure Risk Premium Product\n"
+                    android:textAlignment="center"
+                    android:textColor="@color/White"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_rounded_corner"
+                android:orientation="vertical">
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Product"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="SBI Life - eShield Next" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Plan"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_plan"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Increasing Cover" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Age"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Age"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="35" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gender"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Gender"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Male" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Smoker/Non-Smoker"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Smoker"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Non Smoker" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Premium Payment Option"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PremiumPaymentOption"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="LPPT" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Frequency"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Frequency"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Yearly" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Death Benefit Payment Mode"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_DeathBenefitPaymentMode"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Lumpsum + Monthly Installments"
+                        android:textColor="@color/Black" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Better Half Benefit(BHB)"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_better_half_benfits"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name of Spouse"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Spouse_Name"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Age of Spouse"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Spouse_Age"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Smoker/Non Smoker of Spouse"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_smoker_spouse"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gender of Spouse"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_Gender_spouse"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="" />
+                </TableRow>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/LightGrey"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Policy Term(Years)"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Premium Payment Term (Years)"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Sum Assured(Rs.)"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Premium (Rs.)"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Basic Cover"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PolicyTerm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="50"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PremiumPaymentTerm1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_SumAssured"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5,00,00,000"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_BasiCoverPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7,29,545.00"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Better Half Benefits"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PolicyTerm2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="15"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PremiumPaymentTerm2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_SumAssured2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="25,00,000"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_BetterHalfBenefitsPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="385.00"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Accidental Death Benefit Rider(UIN: 111B015V03)"
+                        android:textColor="@color/Black"
+                        android:textSize="11dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_TermForADBRider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="30"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PPTForADBRider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_ADBRiderSumAssured"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="50,00,000"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_ADBRiderPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2,500.00"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Accidental Total &amp; Permanent Disability Benefit Rider(UIN:111B016V03)"
+                        android:textColor="@color/Black"
+                        android:textSize="11dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_TermForATPDBRider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="20"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_PPTForATPDBRider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_ATPDBRiderSumAssured"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="50,00,000"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_ATPDBRiderPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2,000.00"
+                        android:textColor="@color/Black"
+                        android:textSize="10dp" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/Tv_installment_Premium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Yearly Installments Premium"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_YearlyInstallmentsPremium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7,34,430"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tr_installment_premium_staff_discount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/Tv_installment_Premium_staff_discount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Yearly Installments Premium with Channel Discount"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_YearlyInstallmentsPremiumWithChannelDiscount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="7,05,053"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Applicable Taxes"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EshieldNext_ApplicableTaxes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="1,26,910"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/tv_installment_prem_tax"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Yearly Installments Premium with Applicable taxes"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Textview_EShieldNext_YearlyInstallmentsPremiumWithApplicableTaxes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="8,31,963"
+                        android:textColor="@color/Black"
+                        android:textSize="12dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight=".1"
+                        android:src="@drawable/right_arrow"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.9"
+                        android:gravity="center_vertical"
+                        android:text="Disclaimers :"
+                        android:textColor="@color/Black"
+                        android:textSize="20dp" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight=".1"
+                        android:src="@drawable/right_arrow"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.9"
+                        android:gravity="center_vertical"
+                        android:text="1. For more details on risk factors, terms and conditions please read sales brochure carefully before concluding a sale."
+                        android:textColor="@color/Black"
+                        android:textSize="15dp" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight=".1"
+                        android:src="@drawable/right_arrow"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.9"
+                        android:gravity="center_vertical"
+                        android:text="2. The exact premium can be determined only at the time of acceptance of risk cover on the life to be assured after taking into consideration any extras required to be imposed."
+                        android:textColor="@color/Black"
+                        android:textSize="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight=".1"
+                        android:src="@drawable/right_arrow"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.9"
+                        android:gravity="center_vertical"
+                        android:text="3. Tax benefits, are as per the Income Tax laws &amp; are subject to change from time to time. Please consult your tax advisor for details."
+                        android:textColor="@color/Black"
+                        android:textSize="15dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight=".1"
+                        android:src="@drawable/right_arrow"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1.9"
+                        android:gravity="center_vertical"
+                        android:text="4.Applicable Taxes (including surcharge/cess etc), at the rate notified by the Central Government/ State Government / Union Territories of India from time to time and as per the provisions of the prevalent tax laws will be payable on premium/ or any other charges as per the product features."
+                        android:textColor="@color/Black"
+                        android:textSize="15dp" />
+                </TableRow>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/rectangle_rounded_corner"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You may receive a Welcome Call from our representative to confirm your proposal details like Date of Birth, Nominee Name, Address, Email ID, Sum Assured, Premium amount, Premium Payment Term etc."
+                    android:textColor="@color/Black" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You may have to undergo Medical tests based on our underwriting requirements."
+                    android:textColor="@color/Black" />
+
+
+                <TextView
+                    android:id="@+id/Textview_EShieldNext_BottomConclusion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your SBI Life – eShield Next (UIN: 111N132V01) is a LPPT policy, for which your first year Yearly premium is Rs. 831963. Your Policy Term is 50 years, Premium Payment Term is  7 years and Basic Sum Assured is Rs. 50000000"
+                    android:textColor="@color/Black" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/outputTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rectangle_rounded_corner"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/edt_smart_shield_proposer_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight=".3"
+                        android:ems="10"
+                        android:hint="Enter Name"
+                        android:textSize="@dimen/ts_small"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        android:gravity="center_vertical"
+                        android:text=", having received the information with respect to the above, have understood the above statement before entering into the contract."
+                        android:textColor="@color/Blue"
+                        android:textSize="@dimen/ts_small" />
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tr_need_analysis"
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:weightSum="1">
+
+                    <CheckBox
+                        android:id="@+id/cb_statement_need_analysis"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight=".2"
+                        android:gravity="center"
+                        android:text="I,"
+                        android:textColor="@color/Blue"
+                        android:textSize="@dimen/ts_small" />
+
+                    <TextView
+                        android:id="@+id/txt_proposer_name_need_analysis"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".8"
+                        android:gravity="center_vertical"
+                        android:text=", have undergone the Need Analysis &amp; after having reviewed the SBI Life Product options, I have opted for &apos;SBI LIFE-Saral Pension &apos;."
+                        android:textColor="@color/Blue"
+                        android:textSize="@dimen/ts_small" />
+                </TableRow>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/Black" />
+
+            <LinearLayout
+                android:id="@+id/llDownView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutProposerSignature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/Ibtn_signatureofPolicyHolders"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/signature"
+                            android:onClick="onsignatureofPolicyHolders" />
+
+                        <TextView
+                            style="@style/tr_header_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="Proposer&apos;s Signature"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/LightGrey" />
+                </LinearLayout>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Place" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_Policyholderplace"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:hint="Enter Place"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:gravity="left|center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:text="Date" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_PolicyholderDate"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:enabled="false"
+                        android:longClickable="false"
+                        android:onClick="onPolicyholderDate"
+                        android:text="Select Date" />
+
+                </TableRow>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutmarketingOfficerSignature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/Ibtn_signatureofMarketing"
+                            android:layout_width="fill_parent"
+                            android:layout_height="60dp"
+                            android:background="@drawable/signature"
+                            android:onClick="onsignatureofMarketing" />
+
+                        <TextView
+                            style="@style/tr_header_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Marketing official&apos;s Signature"
+                            android:textColor="@color/Black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="2"
+                            android:gravity="left|center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:text="Date" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_MarketingOfficalDate"
+                            style="@style/btn_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:clickable="false"
+                            android:enabled="false"
+                            android:longClickable="false"
+                            android:onClick="onMarketingOfficalDate"
+                            android:text="Select Date" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/LightGrey" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Select Transaction Mode"
+                    android:textSize="14sp" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="50dp"
+                    android:visibility="visible">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupTrasactionMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:weightSum="2">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonTrasactionModeManual"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="Manual"
+                            android:textColor="@color/Black" />
+
+                        <RadioButton
+                            android:id="@+id/radioButtonTrasactionModeParivartan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:text="Parivartan"
+                            android:textColor="@color/Black" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/linearlayoutTrasactionModeParivartan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/imageButtonProposerPhotograph"
+                        android:layout_width="180dp"
+                        android:layout_height="215dp"
+                        android:layout_gravity="center"
+                        android:background="@color/Black"
+                        android:src="@drawable/focus_imagebutton_photo"
+                        android:textColor="@color/Black" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/Black" />
+            </LinearLayout>
+
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/btn_smart_shield_proceed"
+                    style="@style/btnStyleGenoa"
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="10dp"
+                    android:onClick="onClickBuyOnline"
+                    android:text="I ACCEPT"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

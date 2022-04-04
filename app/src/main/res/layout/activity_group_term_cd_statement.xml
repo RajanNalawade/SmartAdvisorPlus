@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText android:id="@+id/edt_cd_statement_policy_no"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/edittext_dob_shape"
+        android:textColor="#000000"
+        android:inputType="number"
+        android:hint="Enter Policy Number"
+        android:textSize="15sp"/>
+
+    <Button android:id="@+id/btn_cd_statement_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Common_blue"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:text="@android:string/ok"
+        android:textColor="#ffffff" />
+
+    <TextView android:id="@+id/txt_cd_statement_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="errorasdsadsadsad"
+        android:textColor="#808080"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="10dp"/>
+
+</LinearLayout>
+</LinearLayout>

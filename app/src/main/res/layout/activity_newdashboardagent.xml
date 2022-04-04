@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/lnparentmain"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#046f9b"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:background="#046f9b"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="1" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="20dp"
+                        android:text="SBI Life News Feed"
+                        android:textColor="#ffffff"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:orientation="vertical" >
+
+                    <ViewFlipper
+                        android:id="@+id/flipperNews"
+                        android:layout_width="312dp"
+                        android:layout_height="100dp"
+                        android:background="#046f9b"
+                        android:flipInterval="4000" >
+
+                        <TextView
+                            android:layout_width="312dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SBI Life Insurance Inaugurates its Upgraded Regional Office in Ahmedabad"
+                            android:textColor="#f0f0f0"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SBI Life Insurance Inaugurates its New Regional Office at Bhopal"
+                            android:textColor="#f0f0f0"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SBI Life Launches &apos;SBI Life - Smart Bachat&apos; Plan"
+                            android:textColor="#f0f0f0"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="SBI Life’s New Business Premium grew by 77% at Rs 4,644 crores in H1 of FY 17"
+                            android:textColor="#f0f0f0"
+                            android:textSize="15sp" />
+                    </ViewFlipper>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <androidx.viewpager.widget.PagerTabStrip
+                    android:id="@+id/pager_title_strip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#00a1e3" />
+            </androidx.viewpager.widget.ViewPager>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

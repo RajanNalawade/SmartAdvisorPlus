@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="38" >
+
+        <TextView
+            android:id="@+id/tv_policy_year"
+            android:layout_width="0dp"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Policy Year" />
+
+        <TextView
+            android:id="@+id/tv_premium"
+             android:textColor="@color/Black"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:textSize="14sp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Premium *" />
+
+        <TextView
+            android:id="@+id/tv_premium_allocation_charge"
+          style="@style/tv_heading"
+          android:layout_width="0dp"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Premium Allocation Charge" />
+
+        <TextView
+            android:id="@+id/tv_amount_available_for_investment"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Amount available for investment" />
+        
+         <TextView
+            android:id="@+id/tv_option_charge"
+          style="@style/tv_heading"
+          android:layout_width="0dp"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Option Charges" />
+
+        <TextView
+            android:id="@+id/tv_policy_administration_charge"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Policy Administration Charge" />
+
+        <TextView
+            android:id="@+id/tv_mortality_charge1"
+              style="@style/tv_heading"
+               android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Mortality and Morbidity Charges" />
+
+        <TextView
+            android:id="@+id/tv_total_charge1"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Charges" />
+
+        <TextView
+            android:id="@+id/tv_total_service_tax1"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Total Applicable Tax on Charges" />
+
+        <TextView
+            android:id="@+id/tv_addition_to_fund1"
+              style="@style/tv_heading"
+               android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Addition to fund (if any)" />
+
+        <TextView
+            android:id="@+id/tv_fund_management_charge1"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Fund Management Charge" />
+
+
+        <TextView
+            android:id="@+id/tv_fund_value_at_end1"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Fund value at end" />
+
+        <TextView
+            android:id="@+id/tv_surrender_value1"
+              style="@style/tv_heading"
+               android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Surrender Value" />
+
+        <TextView
+            android:id="@+id/tv_death_benefit1"
+           style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Death Benefit" />
+
+        <TextView
+            android:id="@+id/tv_mortality_charge2"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Mortality and Morbidity Charges" />
+
+        <TextView
+            android:id="@+id/tv_total_charge2"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Charges" />
+
+        <TextView
+            android:id="@+id/tv_total_service_tax2"
+           style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Total Applicable Tax on Charges" />
+
+        <TextView
+            android:id="@+id/tv_addition_to_fund2"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Addition to fund (if any)" />
+
+        <TextView
+            android:id="@+id/tv_fund_management_charge2"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Fund Management Charge" />
+
+
+        <TextView
+            android:id="@+id/tv_fund_value_at_end2"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Fund value at end" />
+
+        <TextView
+            android:id="@+id/tv_surrender_value2"
+              style="@style/tv_heading"
+               android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Surrender Value" />
+
+        <TextView
+            android:id="@+id/tv_death_benefit2"
+            style="@style/tv_heading"
+             android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Death Benefit" />
+
+        <TextView
+            android:id="@+id/tv_commission"
+             style="@style/tv_heading"
+              android:textColor="@color/Black"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Commission/ Brokerage if payable" />
+    </TableRow>
+
+</LinearLayout>

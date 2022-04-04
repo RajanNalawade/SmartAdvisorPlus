@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btn_test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <TableRow
+        android:id="@+id/tr_header1"
+        style="@style/tr_default"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Light_Grey_Gainsboro"
+        android:weightSum="3" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#008FD5"
+            android:onClick="OnUpdatePolicy"
+            android:text="Update Issued Policy"
+            android:textColor="@color/LightGrey"
+            android:visibility="invisible" >
+        </Button>
+
+        <TextView
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/edt_search"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@drawable/search"
+            android:hint="Search"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <SearchView
+            android:id="@+id/search_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow
+        style="@style/tr_default"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:weightSum="3" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Please PRESS HARD on the PROPOSER NAME to PROCEED further."
+            android:textColor="@color/DarkBlue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_color" >
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableRow
+                    android:id="@+id/tr_header2"
+                    style="@style/tr_default"
+                    android:layout_width="2400dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tr_header1"
+                    android:background="@drawable/header"
+                    android:weightSum="9" >
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Candidate Name" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        android:text="Quotation Number" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="PF Number" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Sync Status" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Email Id" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="CIF Enrollment Date" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Mobile Number" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Aadhar Number" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="Contact Person Email ID" />
+                </TableRow>
+
+                <GridView
+                    android:id="@+id/gv_userinfo"
+                    android:layout_width="2400dp"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/tr_header2"
+                    android:listSelector="@drawable/list_selector" >
+                </GridView>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</LinearLayout>

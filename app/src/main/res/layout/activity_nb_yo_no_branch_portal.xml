@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".new_bussiness.NB_YoNoBranchPortalActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView android:id="@+id/txt_yono_pending_main_title"
+        style="@style/tv_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="KYC Pending"
+        android:textColor="@color/Blue"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"/>
+
+    <TextView
+        android:id="@+id/txt_yono_pending_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="No Data Found"
+        android:textColor="@color/Black"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_yono_pending_main_title"/>
+
+    <Spinner
+        android:id="@+id/spnr_yono_pending_proposals"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/textboxbg"
+        android:textColor="#484848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_yono_pending_error"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_yono_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spnr_yono_pending_proposals"
+        app:constraint_referenced_ids="ib_yono_pending_doc_view,ib_yono_pending_doc_capture,ib_yono_pending_doc_browse,
+                        ib_yono_pending_doc_upload" />
+
+    <ImageButton
+        android:id="@+id/ib_yono_pending_doc_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/White"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:src="@drawable/preview" />
+
+    <ImageButton
+        android:id="@+id/ib_yono_pending_doc_capture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:src="@drawable/ibtn_camera" />
+
+    <ImageButton
+        android:id="@+id/ib_yono_pending_doc_browse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:src="@drawable/ibtn_browsedoc" />
+
+    <ImageButton
+        android:id="@+id/ib_yono_pending_doc_upload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="5dp"
+        android:clickable="true"
+        android:src="@drawable/ibtn_uploaddoc"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

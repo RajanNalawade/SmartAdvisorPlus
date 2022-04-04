@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:id="@+id/HomeLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical"
+    android:paddingBottom="5dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/reports_banner"
+            android:orientation="vertical"
+            android:weightSum="1"></LinearLayout>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="4dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingHomePolicyServicing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/reports1" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Policy Servicing"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingNewBusiness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:clickable="false"
+                        android:src="@drawable/newbusinesses1" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="New Business"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="4dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingUnderwriting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/underwriting" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Underwriting"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingClaims"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/claims" />
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Claims"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="4dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingLinks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/link1" />
+
+                    <TextView
+                        android:id="@+id/tv_bdmtracker"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Links"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPPCDownload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_ppc_download" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Download/share PPC "
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tablerowGroupMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="4dp"
+            android:visibility="gone"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutGruoping"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:clickable="false"
+                        android:src="@drawable/groupiconnewbusiness" />
+
+                    <TextView
+                        android:id="@+id/txtGrouping"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="GO APP"
+                        android:textColor="#585858"
+                        android:clickable="false"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/groupiconnewbusiness" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="GO APP"
+                        android:textColor="#585858"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRowPPCDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:visibility="gone"
+            android:paddingTop="4dp"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutGetPPC"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:clickable="false"
+                        android:src="@drawable/ppcicon" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Download PPC"
+                        android:clickable="false"
+                        android:textColor="#585858"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/groupiconnewbusiness" />
+
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="GO APP"
+                        android:textColor="#585858"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
+</LinearLayout>

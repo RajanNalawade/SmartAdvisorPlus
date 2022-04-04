@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="17" >
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_end_year"
+            android:layout_width="0dp"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="End Year" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_yearly_basic_premium"
+            android:textColor="@color/Black"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="basic premium" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_SurvivalBenefits"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Survival Benefits" />
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_OtherBenefitsifAny"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Other Benefits ifAny" />
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_guaranteed_maturity_benefit"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="maturity benefit" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_guaranteed_death_benefit"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="death benefit" />
+
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_guaranteed_surrender_value"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="surrender value" />
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_swadhan_plus_nonGuaranSurrenderValue"
+            style="@style/tv_heading"
+            android:textColor="@color/Black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="non GuaranSurrender Value" />
+
+    </TableRow>
+
+</LinearLayout>

@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:id="@+id/sv_bi_smart_shield_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:overScrollMode="always">
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bi_text_background"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="SBI LIFE - Smart Shield\n (UIN - 111N067V07)"
+                android:textColor="@color/Blue"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <ScrollView
+            android:id="@+id/ScrollView01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TableRow
+                    android:id="@+id/tr_smart_shield_staff_disc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <CheckBox
+                        android:id="@+id/cb_staffdisc"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="Staff Discount" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tablerowKerlaDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_kerladisc"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="Kerala Resident"
+                        android:visibility="visible" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_bi_smart_shield_JKResident"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="J &amp; K Resident" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_smart_shield_smoker_or_not"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:text="Smoker/Non-Smoker" />
+
+                    <RadioGroup
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:weightSum="1">
+
+                        <RadioButton
+                            android:id="@+id/rb_smart_shield_proposer_smoker_yes"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="Smoker"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_smart_shield_proposer_smoker_no"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="Non Smoker"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_flexi_smart_life_assured_detail1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Life Assured Title" />
+
+                        <TextView
+                            android:id="@+id/tv_mandatory_bi_flexi_smart_life_assured_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_life_assured_title"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="First Name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_bi_smart_shield_life_assured_first_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="First Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="90" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:text="Middle Name" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_smart_shield_life_assured_middle_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                        android:hint="Middle Name"
+                        android:inputType="textPersonName"
+                        android:maxLength="20" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Last Name" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_bi_smart_shield_life_assured_last_name"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                        android:hint="Last Name*"
+                        android:inputType="textPersonName"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_life_assured_detail2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of Birth" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_bi_smart_shield_life_assured_date"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:onClick="onClickLADob"
+                        android:text="Select Date" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:minHeight="40dp"
+                    android:weightSum="4">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="Age" />
+
+                    <EditText
+                        android:id="@+id/edt_bi_smart_shield_life_assured_age"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:editable="false"
+                        android:visibility="gone" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_age"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@color/Light_Very_Grey"
+                        android:clickable="false" />
+
+
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number " />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <EditText
+                            android:id="@+id/edt_proposerdetail_basicdetail_tele_code"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight=".25"
+                            android:maxLength="30"
+                            android:text="+91" />
+
+                        <EditText
+                            android:id="@+id/edt_smart_shield_contact_no"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".75"
+                            android:inputType="number"
+                            android:maxLength="10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:orientation="horizontal"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:orientation="horizontal"
+                        android:weightSum="1"></LinearLayout>
+                </TableRow>
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight=".5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email Id " />
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />-->
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_smart_shield_Email_id"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:minHeight="40dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:text="Confirm Email Id" />
+
+                        <!--<TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:textStyle="bold" />-->
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edt_smart_shield_ConfirmEmail_id"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_propsoser_same_as_life_assured"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".6"
+                        android:text="Whether life_assured Is Same As life Assured" />
+
+                    <RadioGroup
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:weightSum="1">
+
+                        <RadioButton
+                            android:id="@+id/rb_bi_smart_shield_life_assured_same_as_life_assured_yes"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="yes"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_bi_smart_shield_life_assured_same_as_life_assured_no"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight=".5"
+                            android:text="No"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Gender" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_selGender"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@color/Light_Very_Grey"
+                        android:clickable="false" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Plan" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_plan"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                    <!-- style="@android:style/Animation.Activity" -->
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:text="Policy Term" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_policyterm"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                    <!-- style="@android:style/Animation.Activity" -->
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="0.5"
+                        android:text="Premium Frequency" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_premium_paying_mode"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_rate_of_interest1"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:text="Loan Rate of Interest" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_rate_of_interest"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_loan_rate_of_interest"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/prem_amt"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="0.5"
+                        android:text="Sum Assured" />
+
+                    <EditText
+                        android:id="@+id/et_bi_smart_shield_sum_assured"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:inputType="number"></EditText>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/ll_loan_protection"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0sp"
+                        android:background="@color/LightGrey"
+                        android:gravity="center"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_tableRow"
+                            android:layout_height="wrap_content"
+                            android:text="Loan Details"
+                            android:textSize="30sp" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/Black" />
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10sp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Loan Account No"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_loan_account_no"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                            android:hint="Loan Account No"
+                            android:maxLength="20" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".2" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Financing Institute Name"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_name_of_institude"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 "
+                            android:hint="Institute Name"
+                            android:maxLength="30" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10sp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Loan Category"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_loan_category"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+                            android:hint="Loan Category"
+                            android:maxLength="30" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sum Assured/OutStanding Loan Amount"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_loan_protection_sum_assured"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="Sum Assured"
+                            android:inputType="number"
+                            android:maxLength="12" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10sp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Balance Loan Tenure(In Month)"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_loan_tenure"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="Loan Tenure"
+                            android:inputType="number"
+                            android:maxLength="12" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".2" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:orientation="horizontal"
+                            android:visibility="invisible">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Loan Rate Of Interest"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edt_plandetail_loan_rate_of_interest"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:hint="Rate of Interest"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="10"
+                            android:visibility="invisible" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10sp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date of 1st EMI"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_plandetail_loan_1st_emi_date"
+                            style="@style/btn_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:onClick="emiDate1"
+                            android:text="Select Date"></Button>
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".2" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".8"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_tableRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date of Last EMI"
+                                android:textSize="15sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btn_plandetail_loan_last_emi_date"
+                            style="@style/btn_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:onClick="emiDate2"
+                            android:text="Select Date"></Button>
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/LightGrey" />
+                </LinearLayout>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_bi_smart_shield_criti_care_13_non_linked_rider"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="SBI Life - Criti Care 13 Non Linked Rider" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_criti_care_13_non_linked_rider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Term For Criti Care-13" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_criti_care_13_non_linked_rider_term"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:focusable="false" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_criti_care_13_non_linked_rider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Criti Care-13 Sum Assured" />
+
+                    <EditText
+                        android:id="@+id/et_bi_smart_shield_criti_care_13_non_linked_rider_sum_assured"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"></EditText>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/cb_bi_smart_shield_adb_rider"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="SBI Life - Accidental Death Benefit (ADB) Rider" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_adb_rider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Term For ADB Rider" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_adb_rider_term"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_adb_rider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="ADB Sum Assured" />
+
+                    <EditText
+                        android:id="@+id/et_bi_smart_shield_adb_rider_sum_assured"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"></EditText>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/cb_bi_smart_shield_atpdb_rider"
+                        style="@style/cb_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:clickable="true"
+                        android:text="SBI Life - Accidental Total and Permanent Disability (ATPDB) Benefit Rider" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_atpd_rider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Term For ATPDB Rider" />
+
+                    <Spinner
+                        android:id="@+id/spnr_bi_smart_shield_atpdb_rider_term"
+                        style="@style/spnr_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tr_bi_smart_shield_atpd_rider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="ATPDB Rider Sum Assured" />
+
+                    <EditText
+                        android:id="@+id/et_bi_smart_shield_atpd_rider_sum_assured"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:inputType="number"></EditText>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow_proceed_smart_shield"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/btn_bi_smart_shield_btnback"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:text="Back" />
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="0.04" />
+
+                    <Button
+                        android:id="@+id/btn_bi_smart_shield_btnSubmit"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.48"
+                        android:text="Proceed" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

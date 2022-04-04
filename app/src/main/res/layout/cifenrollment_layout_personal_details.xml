@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f0f0f0" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" >
+
+            <!--
+                 <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#f0f0f0" />
+            -->
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible" >
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:text="Personal Details"
+                    android:textColor="@color/Blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <!-- <TableRow -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:visibility="gone" > -->
+
+
+            <!-- <TextView -->
+            <!-- style="@style/tv_default" -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginBottom="20dp" -->
+            <!-- android:layout_weight=".5" -->
+            <!-- android:gravity="center_horizontal" -->
+            <!-- android:text="BANCA-CIF recruitment module" -->
+            <!-- android:textSize="20dp" /> -->
+            <!-- </TableRow> -->
+
+
+            <!--
+                 <View
+                android:layout_width="match_parent"
+                android:layout_height="5dip"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/light_Grey1" />
+            -->
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" >
+
+                <EditText
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" >
+                </EditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PF Number" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" *"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <!--
+                <EditText
+                    android:id="@+id/edt_pf_number"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:textColor="@color/Blue" >
+                </EditText>
+                -->
+
+                <EditText
+                    android:id="@+id/edt_pf_number"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_bordernew1"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:padding="10dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" *"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <!--
+                <EditText
+                    android:id="@+id/edt_candidate_corporate_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:inputType="textPersonName"
+                    android:maxLength="100" >
+                </EditText>
+                -->
+
+                <EditText
+                    android:id="@+id/edt_candidate_corporate_name"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_bordernew1"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:inputType="textPersonName"
+                    android:maxLength="100"
+                    android:padding="10dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Father Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" *"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <!--
+                <EditText
+                    android:id="@+id/edt_father_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:inputType="textPersonName"
+                    android:maxLength="60" >
+                </EditText>
+                -->
+
+                <EditText
+                    android:id="@+id/edt_father_name"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_bordernew1"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:inputType="textPersonName"
+                    android:maxLength="60"
+                    android:padding="10dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Category"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" *"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <!--
+                     <Spinner
+                    android:id="@+id/spnr_category"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+                -->
+
+                <Spinner
+                    android:id="@+id/spnr_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/textboxbg"
+                    android:textColor="#484848" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aadhar Number" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" *"
+                        android:visibility="invisible"
+                        android:textColor="@color/Red" />
+                </LinearLayout>
+
+                <!--
+                <EditText
+                    android:id="@+id/edt_father_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:inputType="textPersonName"
+                    android:maxLength="60" >
+                </EditText>
+                -->
+
+                <EditText
+                    android:id="@+id/edt_aadhar_card_no"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/my_bordernew1"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:padding="10dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/White" />
+
+            <TableRow
+                android:id="@+id/tr_personal_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:weightSum="1" >
+
+                <!--
+                     <Button
+                    android:id="@+id/btn_next"
+                    style="@style/btn_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:text="Next" />
+                -->
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Next"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

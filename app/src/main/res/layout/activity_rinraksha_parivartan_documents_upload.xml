@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@color/White"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:text="Membership Form Number"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtRinPariDocUploadProposalNo"
+                style="@style/et_default"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:hint="Enter Membership Form Number"
+                android:inputType="textCapCharacters"
+                android:maxLength="10"
+                android:layout_weight="2"/>
+
+            <Button
+                android:id="@+id/btnRinPariDocUploadProposalNoOk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00a1e3"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="6dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="6dp"
+                android:layout_weight="4"
+                android:text="OK"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/btnRinPariDocUploadProposalNoReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00a1e3"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingBottom="6dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="6dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="4"
+                android:text="@string/Reset"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRinPariDocUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/DarkGray" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Gray"
+            android:weightSum="7" >
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:text="Proof of" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textSize="16sp"
+                android:layout_weight="2"
+                android:text="Document" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:text="Capture" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:text="Browse" />
+
+            <TextView
+                style="@style/tr_header_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:gravity="center_horizontal"
+                android:text="Upload" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/trRinPariAgeProof"
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:gravity="center"
+            android:weightSum="3.5" >
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Age Proof" />
+
+            <Spinner
+                android:id="@+id/spnrRinPariAgeProof"
+                style="@style/spnr_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariAgeProofPreview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onPreview_ageProof"
+                android:layout_weight=".25"
+                android:background="@color/White"
+                android:src="@drawable/preview"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariAgeProofDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:onClick="onDelete_ageProof"
+                android:background="@color/White"
+                android:src="@drawable/trash_icon"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariAgeProofCapture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:src="@drawable/ibtn_camera" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariAgeProofBrowse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:onClick="onBrowse_AgeProof"
+                android:background="@color/White"
+                android:clickable="true"
+                android:src="@drawable/ibtn_browsedoc" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariAgeProofUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:onClick="onUpload_AgeProof"
+                android:background="@color/White"
+                android:clickable="true"
+                android:src="@drawable/ibtn_uploaddoc" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/LightGrey" />
+
+        <TableRow
+            android:id="@+id/trRinPariIncomeProof"
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:gravity="center"
+            android:weightSum="3.5" >
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Income Proof" />
+
+            <Spinner
+                android:id="@+id/spnrRinPariIncomeProof"
+                style="@style/spnr_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariIncomeProofPreview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:onClick="onPreview_incomeProof"
+                android:background="@color/White"
+                android:src="@drawable/preview"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariIncomeProofDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:onClick="onDelete_incomeProof"
+                android:background="@color/White"
+                android:src="@drawable/trash_icon"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariIncomeProofCapture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:src="@drawable/ibtn_camera" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariIncomeProofBrowse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:onClick="onBrowse_IncomeProof"
+                android:background="@color/White"
+                android:clickable="true"
+                android:src="@drawable/ibtn_browsedoc" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariIncomeProofUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:onClick="onUpload_IncomeProof"
+                android:background="@color/White"
+                android:clickable="true"
+                android:src="@drawable/ibtn_uploaddoc" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/LightGrey" />
+
+        <TableRow
+            android:id="@+id/trRinPari1PagerProof"
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="3.5" >
+
+            <TextView
+                android:id="@+id/txtibRinPari1PagerProof"
+                style="@style/tv_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:text="One Pager" />
+
+            <!--<EditText
+                android:id="@+id/edtRinPari1PagerProof"
+                style="@style/et_default"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:hint="Enter One Pager Name" />-->
+
+            <ImageButton
+                android:id="@+id/ibRinPari1PagerProofPreview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:background="@color/White"
+                android:onClick="onPreview_onePagerProof"
+                android:src="@drawable/preview"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPari1PagerProofDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:onClick="onDelete_onePagerProof"
+                android:background="@color/White"
+                android:src="@drawable/trash_icon"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPari1PagerProofCapture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:src="@drawable/ibtn_camera" />
+
+            <ImageButton
+                android:id="@+id/ibRinPari1PagerProofBrowse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:onClick="onBrowse_OnePagerProof"
+                android:clickable="true"
+                android:src="@drawable/ibtn_browsedoc" />
+
+            <ImageButton
+                android:id="@+id/ibRinPari1PagerProofUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:onClick="onUpload_OnePagerProof"
+                android:clickable="true"
+                android:src="@drawable/ibtn_uploaddoc" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/LightGrey" />
+
+        <TableRow
+            android:id="@+id/trRinPariOthersProof"
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="3.5" >
+
+            <TextView
+                android:id="@+id/txtibRinPariOthersProof"
+                style="@style/tv_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".5"
+                android:text="Other Documents" />
+
+            <EditText
+                android:id="@+id/edtRinPariOthersProof"
+                style="@style/et_default"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:hint="Enter Other Document Name" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariOthersProofPreview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:background="@color/White"
+                android:src="@drawable/preview"
+                android:onClick="onPreview_othersProof"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariOthersProofDelete"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".25"
+                android:onClick="onDelete_othersProof"
+                android:background="@color/White"
+                android:src="@drawable/trash_icon"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariOthersProofCapture"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:src="@drawable/ibtn_camera" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariOthersProofBrowse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:onClick="onBrowse_OthersProof"
+                android:clickable="true"
+                android:src="@drawable/ibtn_browsedoc" />
+
+            <ImageButton
+                android:id="@+id/ibRinPariOthersProofUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:onClick="onUpload_OthersProof"
+                android:layout_weight=".5"
+                android:background="@color/White"
+                android:clickable="true"
+                android:src="@drawable/ibtn_uploaddoc" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/LightGrey" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

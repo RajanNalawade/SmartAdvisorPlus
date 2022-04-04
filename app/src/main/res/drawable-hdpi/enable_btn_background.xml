@@ -1,0 +1,20 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_enabled="true">
+        <shape>
+            <solid android:color="@color/Common_blue"/>
+        </shape>
+    </item>
+    <!--<item android:state_focused="true">-->
+    <!--<shape>-->
+    <!--<gradient android:endColor="#ff4b46" android:startColor="#ff4b46" />-->
+    <!--</shape>-->
+    <!--</item>-->
+    <item android:state_enabled="false">
+        <shape>
+            <solid android:color="@color/light_gray_3"/>
+
+        </shape>
+    </item>
+
+</selector>

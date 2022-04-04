@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:id="@+id/HomeLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8f8"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--<TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:weightSum="2">
+                <LinearLayout
+                    android:id="@+id/lltMonthlyGradAllowReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_monthly_graduation_allowance_report" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:text="Monthly Graduation Allowance Report"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/layoutCOTTOTTentativeReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_COTTOTTentativeReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_icon_cot_tot_report" />
+
+                    <TextView
+                        android:id="@+id/textViewCOTTOTTentativeReport"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="COT and TOT Tentative Standings Report"
+                        android:textColor="#808080"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutJOTCReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/imgbtJOTCReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_ppc_download" />
+
+                    <TextView
+                        android:id="@+id/tv_JOTCReport"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="JOTC Report"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDOGHCovid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/dogh_covid" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="DOGH/Covid"
+                        android:textColor="#808080" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/llCovidSelfDeclaration"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_covid_self_declaration" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="Covid Self Declaration"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutLMClubMemberShipReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageButton
+                        android:id="@+id/imgbtLMClubMemberShipReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_icon_club_memebership_report" />
+
+                    <TextView
+                        android:id="@+id/tv_LMClubMemberShipReport"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="LM Club Membership Report"
+                        android:textColor="#808080"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

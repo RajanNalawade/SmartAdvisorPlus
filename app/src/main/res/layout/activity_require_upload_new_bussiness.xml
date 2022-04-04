@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <EditText android:id="@+id/edt_require_upload_quote_no"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edittext_dob_shape"
+            android:textColor="#000000"
+            android:hint="Enter Quotation Number"
+            android:textSize="15sp"/>
+
+        <Button android:id="@+id/btn_require_upload_quote_no_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/Common_blue"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:text="@android:string/ok"
+            android:textColor="#ffffff" />
+
+        <TextView android:id="@+id/txt_require_upload_quote_no_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="errorasdsadsadsad"
+            android:textColor="#808080"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutParivartanDocumentsUpload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_doc_upload_proof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableRow
+                android:id="@+id/tr_health_details_if_having_disease_header"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/Gray"
+                android:weightSum="7">
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="Proof of"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="2"
+                    android:text="Document"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Capture"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Browse"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/tr_header_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="Upload"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_ageproof"
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:weightSum="3.5">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Requirement" />
+
+                <Spinner
+                    android:id="@+id/spnr_document_upload_document_age"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_preview_image_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onPreview_ageProof"
+                    android:src="@drawable/preview"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_delete_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onDelete_ageProof"
+                    android:src="@drawable/trash_icon"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_image_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_browse_age"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onBrowse_AgeProof"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_age_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onUpload_AgeProof1"
+                    android:src="@drawable/ibtn_uploaddoc" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:background="@color/LightGrey" />
+
+            <TableRow
+                android:id="@+id/tr_identityproof"
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:visibility="gone"
+                android:weightSum="3.5">
+
+                <TextView
+                    android:id="@+id/txt_document_upload_proof_of_identity"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Identity" />
+
+                <Spinner
+                    android:id="@+id/spnr_document_upload_document_identity"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_preview_image_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onPreview_IdentityProof"
+                    android:src="@drawable/preview"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_delete_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onDelete_identityProof"
+                    android:src="@drawable/trash_icon"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_image_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_browse_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onBrowse_IdentityProof"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_identity_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onUpload_IdentityProof1"
+                    android:src="@drawable/ibtn_uploaddoc" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:background="@color/LightGrey" />
+
+            <TableRow
+                android:id="@+id/tr_addressproof"
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:gravity="center"
+                android:visibility="gone"
+                android:weightSum="3.5">
+
+                <TextView
+                    android:id="@+id/txt_document_upload_proof_of_address"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Address" />
+
+                <Spinner
+                    android:id="@+id/spnr_document_upload_document_address"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_preview_image_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onPreview_AddressProof"
+                    android:src="@drawable/preview"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_delete_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".25"
+                    android:background="@color/White"
+                    android:onClick="onDelete_addressProof"
+                    android:src="@drawable/trash_icon"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_image_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:src="@drawable/ibtn_camera" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_click_browse_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onBrowse_AddressProof"
+                    android:src="@drawable/ibtn_browsedoc" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_document_upload_address_upload"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:background="@color/White"
+                    android:clickable="true"
+                    android:onClick="onUpload_AddressProof1"
+                    android:src="@drawable/ibtn_uploaddoc" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/LightGrey" />
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

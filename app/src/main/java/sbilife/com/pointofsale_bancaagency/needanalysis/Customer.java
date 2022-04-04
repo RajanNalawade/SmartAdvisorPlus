@@ -1,0 +1,64 @@
+package sbilife.com.pointofsale_bancaagency.needanalysis;
+
+class Customer {
+    String sex;
+    String maritalStatus;
+    int dependCh;
+    double income;
+    double totExp;
+    int age;
+    double multipFactor;
+    double lifeCovAmt;
+    String lifeProtProdListTrad;
+    String lifeProtProdListUnit;
+    String pesionProdListTrad;
+    String pesionProdListUnit;
+    String childProdListTrad;
+    String childProdListUnit;
+    String wealthProdListTrad;
+    String wealthProdListUnit;
+    int retiAge;
+    double PrOutStaHmLoanAmt;
+    double PrOutStaOthrLoanAmt;
+    double currLifeInCov;
+    double currRetCorpSav;
+    String PrPostRetLife;
+    double PrEduChBudExpNoYrs1;
+    double PrEduChBudEXp1;
+    double PrEduChCurrEXp1;
+    double PrEduChBudExpNoYrs2;
+    double PrEduChBudEXp2;
+    double PrEduChCurrEXp2;
+    double PrEduChBudExpNoYrs3;
+    double PrEduChBudEXp3;
+    double PrEduChCurrEXp3;
+    double PrEduChBudExpNoYrs4;
+    double PrEduChBudEXp4;
+    double PrEduChCurrEXp4;
+    double PrMaChBudExpNoYrs1;
+    double PrMaChBudEXp1;
+    double PrMaChCurrEXp1;
+    double PrMaChCurrExpNoYrs2;
+    double PrMaChBudEXp2;
+    double PrMaChCurrEXp2;
+    double PrMaChBudExpNoYrs3;
+    double PrMaChBudEXp3;
+    double PrMaChCurrEXp3;
+    double PrMaChBudExpNoYrs4;
+    double PrMaChBudEXp4;
+    double PrMaChCurrEXp4;
+    double PrProWeCrNoofYr;
+    double PrProWeCrBudExp;
+    double PrProWeCrCurrExp;
+    double PrOthFinWeCrNoofYr;
+    double PrOthFinWeCrBudExp;
+    double PrOthFinWeCrCurrExp;
+    double inflationrate;
+    int PrEduCurAge1;
+    int PrEduCurAge2;
+    int PrEduCurAge3;
+    int PrEduCurAge4;
+    String strRiskAppetite;
+
+
+}

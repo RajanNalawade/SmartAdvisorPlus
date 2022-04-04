@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llDOGHCovidDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/Common_blue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="IA Name "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvIAName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="Policy Number  "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvPolicyNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="Master Policy Holder Name "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvMasterHolderName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="Age "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvAge"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="Date Of Birth "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvDOB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="Gender "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.45"
+                        android:gravity="left"
+                        android:text="MPH Name "
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:gravity="center"
+                        android:text="-"
+                        android:textColor="@android:color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/tvMPHName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:gravity="left"
+                        android:text=""
+                        android:textColor="@color/DarkGreySolid"
+                        android:textSize="13sp"
+                        android:typeface="sans" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/Common_blue" />
+
+            <LinearLayout
+                android:id="@+id/llCovidQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="COVID Questionnaire (UWM029)"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="1) In last one month did you have symptoms like loss of sense of smell or taste, any fever, Cough, Shortness of breath, Malaise (flu-like tiredness), Rhinorrhea (mucus discharge from the nose/running nose), Sore throat, or Gastro-intestinal symptoms such as nausea, vomiting and/or diarrhea, body ache or backache?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQuesNoOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="2) Have you or your family member(s) been diagnosed with Covid 19 or have been advised to take Covid 19 test or kept in quarantine where results are awaited?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQuesNoTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3) Have you or your family member(s) been in close contact with anyone who has been quarantined / who has been diagnosed with COVID-19 OR advised to be tested for COVID19 OR awaiting the result of COVID19 test?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQueNoThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="4) Have you or your family members travelled overseas over last 2 months OR plan to travel during the next 6 months ?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQueNoFour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="5) Do you work in an occupation (like health care worker/Corona warrior etc) where you have a higher risk to get in close contact with COVID-19 patients? "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQueNoFive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="6) Have you experienced any adverse reaction post COVID19 vaccination? (if vaccinated) "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupCovidQueNoSix"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="If any of the question is answered as Yes, kindly provide details for the same"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAnyQuestCoronaDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter the details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDOGHQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Health Questionnaire for Group Life Insurance"
+                    android:textColor="@color/blue"
+                    android:textSize="17sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold" />
+                <CheckBox
+                    android:id="@+id/checkBoxDisclaimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text=""
+                    android:textColor="@color/DarkGray"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxCovidDisclaimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text=""
+                    android:textColor="@color/DarkGray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Details of the Life to be insured (Member)"
+                    android:textColor="@color/Black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Designation"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Designation"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Nature of Duties"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etDutyNature"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Nature Of Duties"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Marrital Status"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupMarritalStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Married"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Unmarried"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Nominee Details"
+                    android:textColor="@color/Black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Nominee Title"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerNomineeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/textboxbg"
+                    android:padding="7dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Nominee Name"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etNomineeName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Nominee Name"
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Nominee DOB"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvNomineeDOB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:onClick="onClickLADob"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Relation with Nominee"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etNomineeRelation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Relation with Nominee "
+                        android:inputType="text"
+                        android:maxLength="100"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Residence Status"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupResidentStatus"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Resident Individual"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Non Resident Indian"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Person of Indian Origin"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Foreign National"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Country of Residence "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Type Country Name"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextViewCountryResidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text=""
+                    android:textColor="#484848" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Address"
+                        android:textColor="@color/Black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Address One"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Address One"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Address Two"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Address Two"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Address Three"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Address Three"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Taluka"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressTaluka"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Taluka"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="District"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressDistrict"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter District"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="State"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressState"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter State"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="PIN"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etAddressPIN"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter PIN"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Contact Number"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etContactNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Contact Number"
+                        android:inputType="number"
+                        android:maxLength="15"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="HEALTH DETAILS OF PROPOSED INSURED"
+                        android:textColor="@color/Black"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="Height (in Cms)"
+                                android:textColor="@color/Black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/etHeights"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="Enter Height"
+                                android:inputType="numberDecimal"
+                                android:maxLines="1"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="Weight (in Kgs)"
+                                android:textColor="@color/Black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/etWeight"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="Enter Weight"
+                                android:inputType="numberDecimal"
+                                android:maxLength="3"
+                                android:maxLines="1"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="1) In last five years, apart from minor ailments like cough/cold etc, have you received any treatment under doctor’s consultation and/or undergone any major surgery and/or been hospitalized and/or undergone major investigations like CT/MRI scan, Angiogram, Endoscopy, Biopsy etc ?If yes, please provide full details in the space below"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupMajorSurgeryDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llMajorSurgery"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Treatment/Major Surgery Details"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etMajorSurgeryDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Treatment/Major Surgery Details"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="2) Do you suffer from or have ever suffered from:"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Raised Blood sugar, Diabetes mellitus, high blood pressure, Disease of heart, lung, kidney, Liver, thyroid, brain/nervous system, bone/joint/spine, Genitourinary tract, any part of the body or blood disorder, digestive disorder, Gynaecological disorder, Psychiatric disorder, HIV/AIDS and/or cancer/tumor of any part of the body ? If yes, please provide full details in the space below."
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupSufferedDisease"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llMultipleDiseaseDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Multiple Disease Details"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etMultipleDiseaseDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Multiple Disease Details"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="3) Do you consume more than 10 cigarettes / bidi's per day? "
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupCigarBidi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llCigaretteBidiDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="Sticks/packets Per Week"
+                                android:textColor="@color/Black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/etSticksPacketsCigarBidi"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="Sticks/packets Per Week"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="7dp"
+                                android:layout_marginBottom="2dp"
+                                android:text="No of years used"
+                                android:textColor="@color/Black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/etNoOfYearsUsedCigarBidi"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/edittext_dob_shape"
+                                android:hint="No of years used"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:maxLines="1"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="4) Has your proposal for life insurance, critical illness or health insurance, ever been denied, declined, rejected, postponed or accepted with extra premium, due to health or lifestyle reason?If yes, please provide full details in the space below."
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupProposalRejection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llProposalRejectionDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Proposal Rejection Details"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etProposalRejectionDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Proposal Rejection Details"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:text="If any of the question is answered as Yes, kindly provide details for the same"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etAnyQuestHealthDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter the details"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <CheckBox
+                    android:id="@+id/checkBoxDisclaimerSecond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text=""
+                    android:textColor="@color/DarkGray"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxDisclaimerIlleterate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text=""
+                    android:textColor="@color/DarkGray"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="0.5"
+                    android:text="Place"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edittextPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter Place "
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llOTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/etOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter OTP Received"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonGenerateOTP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@color/Common_blue"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Generate OTP"
+                        android:textColor="#ffffff" />
+
+                    <Button
+                        android:id="@+id/buttonValidateOTP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="0.5"
+                        android:background="@color/DarkGray"
+                        android:enabled="false"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Validate OTP"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

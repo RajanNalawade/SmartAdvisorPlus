@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@color/LightGrey_header">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Personal"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:focusable="true"
+                    android:background="@color/GreenYellow"
+                    android:focusableInTouchMode="true"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Occupation"
+                    android:background="@color/GreenYellow"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Nomination"
+                    android:background="@color/Common_blue"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                    <requestFocus/>
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Bank"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Exam And Training"
+                    android:textStyle="bold"
+                    android:padding="10dp">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Terms And Conditions"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Nomination"
+                    android:textColor="@color/Blue"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:text="I hereby nominate the following person as my Nominee. Any amount found due and payable to me on my death and thereafter by SBI Life Insurance Co Ltd shall be paid to the said nominee (mentioned herein below) and the receipt thereof by the said nominee shall constitute a valid discharge of the liability of SBI Life Insurance Co Ltd. against me. This nomination supersedes any nomination made by me earlier and any such earlier nomination shall be deemed as cancelled.\n\nIf nominee is minor, appointee details will be required"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:justificationMode="inter_word"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Title *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_nominee_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Full Name *"
+                        android:textColor="@color/Black"/>
+
+                    <EditText android:id="@+id/edt_aob_nominee_full_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:maxLength="60"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ. "
+                        android:inputType="textCapCharacters"
+                        android:hint="Enter Full Name"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Date of birth *"
+                        android:textColor="@color/Black"/>
+
+                    <TextView android:id="@+id/txt_aob_nominee_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:drawableRight="@drawable/dt"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="What is your relationship with nominee? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_nominee_relation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Gender *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_nominee_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Percentage *"
+                        android:textColor="@color/Black"/>
+
+                    <EditText android:id="@+id/edt_aob_nominee_percentage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:maxLength="3"
+                        android:text="100"
+                        android:enabled="false"
+                        android:inputType="number"
+                        android:hint="Enter Percentage"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Is nominee address same as per applicant? *"
+                        android:textColor="@color/Black"/>
+
+                    <RadioGroup android:id="@+id/rg_aob_nominee_same_add_as_applicant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton android:id="@+id/rb_aob_nominee_same_add_as_yes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="#484848"
+                            android:checked="true"
+                            android:text="Yes"/>
+
+                        <RadioButton android:id="@+id/rb_aob_nominee_same_add_as_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No"
+                            android:textColor="#484848" />
+
+                    </RadioGroup>
+
+                    <LinearLayout android:id="@+id/ll_aob_nominee_address_not_same"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="Address *"
+                                android:textColor="@color/Black"/>
+
+                            <EditText android:id="@+id/edt_aob_nominee_address"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:padding="10dp"
+                                android:maxLines="1"
+                                android:inputType="textCapCharacters"
+                                android:maxLength="100"
+                                android:hint="Enter Address 1 in 100 characters"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                            <EditText android:id="@+id/edt_aob_nominee_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:padding="10dp"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:maxLines="1"
+                                android:inputType="textCapCharacters"
+                                android:maxLength="100"
+                                android:hint="Enter Address 2 in 100 characters"
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                            <EditText android:id="@+id/edt_aob_nominee_address3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:padding="10dp"
+                                android:maxLines="1"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:inputType="textCapCharacters"
+                                android:maxLength="100"
+                                android:hint="Enter Address 3 in 100 characters"
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="City *"
+                                android:textColor="@color/Black"/>
+
+                            <EditText android:id="@+id/edt_aob_nominee_address_city"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:padding="10dp"
+                                android:inputType="textCapCharacters"
+                                android:hint="Enter City Name"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="State *"
+                                android:textColor="@color/Black"/>
+
+                            <EditText android:id="@+id/edt_aob_nominee_address_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:padding="10dp"
+                                android:inputType="textCapCharacters"
+                                android:hint="Enter State"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="Pincode *"
+                                android:textColor="@color/Black"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText android:id="@+id/edt_aob_nominee_address_pincode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:padding="10dp"
+                                    android:inputType="textPostalAddress"
+                                    android:hint="Enter Pincode"
+                                    android:layout_weight="1"
+                                    android:maxLength="6"
+                                    android:digits="0123456789"
+                                    android:textColor="#484848"
+                                    android:textSize="15sp" />
+
+                                <Button android:id="@+id/btn_aob_nominee_address_pincode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="2"
+                                    android:padding="10dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:textColor="@color/white"
+                                    android:background="@drawable/btn_rounded_green"
+                                    android:textStyle="bold"
+                                    android:text="verify"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_aob_appointee_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="Appointee Details"
+                            android:textColor="@color/Black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Title *"
+                            android:textColor="@color/Black"/>
+
+                        <Spinner android:id="@+id/spnr_aob_nom_appointee_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/textboxbg"
+                            android:textColor="#484848"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Full Name *"
+                            android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_nom_appointee_full_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="60"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ. "
+                            android:hint="Enter Full Name"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Date of birth *"
+                            android:textColor="@color/Black"/>
+
+                        <TextView android:id="@+id/txt_aob_appointee_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:drawableRight="@drawable/dt"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Relationship with nominee *"
+                            android:textColor="@color/Black"/>
+
+                        <Spinner android:id="@+id/spnr_aob_nom_appointee_relation"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/textboxbg"
+                            android:textColor="#484848" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Is appointee address same as per nominee? *"
+                            android:textColor="@color/Black"/>
+
+                        <RadioGroup android:id="@+id/rg_aob_appointee_same_add_as_nominee"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton android:id="@+id/rb_aob_appointee_same_add_as_yes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="#484848"
+                                android:checked="true"
+                                android:text="Yes"/>
+
+                            <RadioButton android:id="@+id/rb_aob_appointee_same_add_as_no"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="No"
+                                android:textColor="#484848" />
+
+                        </RadioGroup>
+
+                        <LinearLayout android:id="@+id/ll_aob_appointee_address_not_same"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="Address *"
+                                    android:textColor="@color/Black"/>
+
+                                <EditText android:id="@+id/edt_aob_appointee_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:padding="10dp"
+                                    android:maxLines="1"
+                                    android:maxLength="100"
+                                    android:hint="Enter Address-1 in 100 characters"
+                                    android:textColor="#484848"
+                                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:inputType="textCapCharacters"
+                                    android:textSize="15sp" />
+
+                                <EditText android:id="@+id/edt_aob_appointee_address2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:padding="10dp"
+                                    android:maxLines="1"
+                                    android:maxLength="100"
+                                    android:hint="Enter Address-2 in 100 characters"
+                                    android:textColor="#484848"
+                                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:inputType="textCapCharacters"
+                                    android:textSize="15sp" />
+
+                                <EditText android:id="@+id/edt_aob_appointee_address3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:padding="10dp"
+                                    android:maxLines="1"
+                                    android:maxLength="100"
+                                    android:hint="Enter Address-3 in 100 characters"
+                                    android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:textColor="#484848"
+                                    android:inputType="textCapCharacters"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="City *"
+                                    android:textColor="@color/Black"/>
+
+                                <EditText android:id="@+id/edt_aob_appointee_address_city"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:padding="10dp"
+                                    android:inputType="textCapCharacters"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:hint="Enter City Name"
+                                    android:textColor="#484848"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="State *"
+                                    android:textColor="@color/Black"/>
+
+                                <EditText
+                                    android:id="@+id/edt_aob_appointee_address_state"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:hint="Enter State"
+                                    android:inputType="textCapCharacters"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:padding="10dp"
+                                    android:textColor="#484848"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="10dp"
+                                    android:text="Pincode *"
+                                    android:textColor="@color/Black"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <EditText android:id="@+id/edt_aob_appointee_address_pincode"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/my_bordernew1"
+                                        android:padding="10dp"
+                                        android:layout_weight="1"
+                                        android:maxLength="6"
+                                        android:inputType="textPostalAddress"
+                                        android:digits="0123456789"
+                                        android:hint="Enter Pincode"
+                                        android:textColor="#484848"
+                                        android:textSize="15sp" />
+
+                                    <Button android:id="@+id/btn_aob_appointee_address_pincode"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="2"
+                                        android:padding="10dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:textColor="@color/white"
+                                        android:background="@drawable/btn_rounded_green"
+                                        android:textStyle="bold"
+                                        android:text="verify"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <CheckBox android:id="@+id/chkbox_aob_witness_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Is the sign of applicant in any language other than in English?"
+                    android:textColor="@color/Black"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left|center_vertical"/>
+
+                <LinearLayout android:id="@+id/ll_aob_nominee_witness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="16sp"
+                            android:text="Witness"
+                            android:textColor="@color/Black"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Witness Occupation *"
+                            android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_nom_witness_occupation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:maxLength="60"
+                            android:inputType="textCapCharacters"
+                            android:hint="Enter Witness Occupation"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Full Address *"
+                            android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_nom_witness_full_add"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:lines="3"
+                            android:inputType="textCapCharacters"
+                            android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                            android:hint="Enter address in 100 characters\npincode mandatory"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Name *"
+                            android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_nom_witness_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:maxLength="60"
+                            android:inputType="textCapCharacters"
+                            android:hint="Enter witness full name"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button android:id="@+id/btn_aob_nomination_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_rounded_green"
+                        android:textStyle="bold"
+                        android:text="Back"/>
+
+                    <Button android:id="@+id/btn_aob_nomination_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btn_rounded_green"
+                        android:textStyle="bold"
+                        android:text="Next"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+

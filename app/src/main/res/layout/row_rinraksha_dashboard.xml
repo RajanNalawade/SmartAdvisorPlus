@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:orientation="horizontal" >
+
+    <TextView android:id="@+id/tv_rinraksha_quotation"
+        style="@style/app_TextColor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|left"
+        android:padding="7dp"
+        android:text="quo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <LinearLayout android:id="@+id/ll_rinraksha_borro1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView android:id="@+id/tv_rinraksha_borro1"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Borrower 1 :" />
+
+            <TextView android:id="@+id/tv_rinraksha_borro1_urn"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="quo" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/ll_rinraksha_borro2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView android:id="@+id/tv_rinraksha_borro2"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Borrower 2 :" />
+
+            <TextView android:id="@+id/tv_rinraksha_borro2_urn"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="quo" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/ll_rinraksha_borro3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView android:id="@+id/tv_rinraksha_borro3"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Borrower 3 :" />
+
+            <TextView android:id="@+id/tv_rinraksha_borro3_urn"
+                style="@style/app_TextColor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="quo" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

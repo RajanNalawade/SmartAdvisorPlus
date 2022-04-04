@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+         android:background="@drawable/header">
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"            
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white"
+            android:clickable="true" />
+       
+    </LinearLayout>
+
+    <ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+         >
+         
+    <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"  
+            android:layout_marginTop="5dp"          
+         >
+     <TextView
+       
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_weight="0.5"
+        android:text="Activity"
+         android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <EditText
+        android:id="@+id/Activity"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+         android:background="@drawable/shape"        
+       		 android:singleLine="true"       		
+       		    android:textColor="#000000"
+       		 android:textSize="15sp"
+        android:layout_weight="0.5" 
+        android:enabled="false"
+        android:editable="false">
+
+    </EditText>
+
+    
+    
+</TableRow>
+   <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"     
+            android:layout_marginTop="5dp"       
+         >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Sub Activity:"
+             android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+
+        <Spinner
+            android:id="@+id/selSubActivity"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/bgspinner"
+            android:popupBackground="@drawable/myspinner_border"
+            android:spinnerMode="dropdown"
+            android:layout_weight="0.5"/>
+        
+        
+   </TableRow>           
+    
+     <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"            
+         >
+     <TextView
+       
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_weight="0.5"
+        android:text="Branch"
+         android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <EditText
+        android:id="@+id/Branch"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+         android:background="@drawable/shape"        
+       		 android:singleLine="true"       		
+       		    android:textColor="#000000"
+       		 android:textSize="15sp"
+        android:layout_weight="0.5" 
+        
+        android:enabled="false"
+        android:editable="false">
+
+    </EditText>
+
+    
+    
+</TableRow>
+
+      <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"            
+         >
+    
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Date:"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <TextView
+            android:id="@+id/effectiveDate"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"   
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+    
+     
+      <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"           
+            android:layout_marginTop="5dp"  
+            android:visibility="gone"         
+         >
+    
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Time From:"
+            android:textColor="#000000"            
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <TextView
+            android:id="@+id/timeFrom"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"            
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"   
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+     
+       <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"   
+               android:visibility="gone"      
+         >
+    
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Time To:"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <TextView
+            android:id="@+id/timeTo"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"   
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+		
+       <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="4dp" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Activity Time"
+                        android:textColor="#000000"
+                        android:textAppearance="?android:attr/textAppearanceMedium" 
+                        android:textStyle="bold" 
+                        android:layout_weight="0.5"/>
+
+                    <Spinner
+                        android:id="@+id/selActivityTime_view"
+                        android:layout_width="fill_parent"
+                        android:layout_height="45dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/bgspinner"
+                        android:entries="@array/activitytimeslot"
+                        android:popupBackground="@drawable/myspinner_border"
+                        android:spinnerMode="dropdown" />
+                </TableRow>
+		
+       <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"            
+         >
+    
+        <TextView            
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Remark"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <EditText 
+            android:id="@+id/rdremark"           
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"              
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+		
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"            
+         >
+    
+        <TextView            
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="Leads Generated"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_weight="0.5"/>
+        
+        <EditText 
+            android:id="@+id/rdactlead"           
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:textSize="15sp"
+            android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+             android:background="@drawable/shape"
+             android:inputType="number"
+             android:singleLine="true"              
+            android:layout_weight="0.5"/>
+    
+		</TableRow>
+		
+      <TableRow
+            android:id="@+id/tableRow18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"   
+            android:layout_marginTop="5dp"         
+         >
+
+     <Button
+         android:id="@+id/btnSubmit"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+          android:background="@drawable/btn_indicator"
+         android:textColor="@android:color/white"
+         android:text="Submit" />
+
+
+
+
+     <Button
+         android:id="@+id/back"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.5"
+          android:background="@drawable/btn_indicator"
+         android:textColor="@android:color/white"
+         android:text="Cancel" />
+
+ </TableRow>
+</TableLayout>
+    </ScrollView>
+
+</LinearLayout>

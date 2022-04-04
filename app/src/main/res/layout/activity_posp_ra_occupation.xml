@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@color/LightGrey_header">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Personal"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:focusable="true"
+                    android:background="@color/GreenYellow"
+                    android:focusableInTouchMode="true"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Occupation"
+                    android:background="@color/Common_blue"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                    <requestFocus/>
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Nomination"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Bank"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Exam And Training"
+                    android:textStyle="bold"
+                    android:padding="10dp">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Terms And Conditions"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Occupational Information"
+                    android:textColor="@color/Blue"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Employment Details"
+                    android:textColor="@color/Black"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Please select whichever is applicable to you? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_applicable"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <EditText android:id="@+id/edt_aob_occu_applicable_commnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:maxLength="50"
+                        android:hint="Enter Comment in 50 characters"
+                        android:visibility="gone"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Are you self employed? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_self_employed"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <EditText android:id="@+id/edt_aob_occu_self_employed_cmmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:maxLength="50"
+                        android:hint="Enter Comment in 50 characters"
+                        android:visibility="gone"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="What is your area of operation? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_area_ops"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="What is your income per annual? (self + spouse) *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_annual_income"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Do you hold agency or empanelment with any of these? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_agency"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <LinearLayout android:id="@+id/ll_aob_occu_agency_else"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Name of the Firm / Company *"
+                            android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_occu_company"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:hint="Enter Name of Insurance Company"
+                            android:maxLength="100"
+                            android:layout_marginTop="10dp"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:textSize="15sp"/>
+
+                        <EditText android:id="@+id/edt_aob_occu_company_cmmnt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:hint="Enter comment in 100 characters"
+                            android:maxLength="100"
+                            android:layout_marginTop="10dp"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Have you ever surrendered your license/agency or has your license/agency ever been cancelled? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_evr_surrendered"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <EditText android:id="@+id/edt_aob_occu_evr_surrendered_cmmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:hint="Comment box in 100 characters"
+                        android:maxLength="100"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Do you have any tie up with any other insurer as an employee or director or promoter Or hold any insurance  activity related  license  or hold any position with any Corporate Agent/ Broker/ TPA / Insurance Marketing Firm/ any other insurance intermediary? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_other_insurer"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <LinearLayout android:id="@+id/ll_aob_occu_other_insurer_cmmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <EditText android:id="@+id/edt_aob_occu_other_insurer_comapny"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Name of the firm / company"
+                            android:textColor="#484848"
+                            android:maxLength="100"
+                            android:inputType="textCapSentences"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_other_insurer_comapny_cmmnt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:maxLength="100"
+                            android:inputType="textCapSentences"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter comment in 100 words"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Are you one of the promoter or partner or director in any firm or company? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_r_u_promoter"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <LinearLayout android:id="@+id/ll_aob_occu_r_u_promoter_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <EditText android:id="@+id/edt_aob_occu_r_u_promoter_comapany"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:maxLength="100"
+                            android:inputType="textCapSentences"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Name of the firm / company"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_r_u_promoter_comapany_pan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter PAN of firm/company 10 words"
+                            android:textColor="#484848"
+                            android:maxLength="10"
+                            android:inputType="textCapCharacters"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_r_u_promoter_comapany_tin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter TIN of firm/company"
+                            android:textColor="#484848"
+                            android:maxLength="10"
+                            android:inputType="textCapCharacters"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Is the firm/Company associated/empanelled with SBI Life as vendor? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_company_asso_with_sbil"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <EditText android:id="@+id/edt_aob_occu_company_asso_with_sbil_cmmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:maxLength="100"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:hint="Enter Comment in 100 characters"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Are you related to any employee of SBI Life Insurance Co. Ltd or State Bank of India (SBI)/any of SBI Associate? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_releted_sbil_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <LinearLayout android:id="@+id/ll_aob_occu_releted_sbil_employee_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <EditText android:id="@+id/edt_aob_occu_releted_sbil_employee_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:maxLength="50"
+                            android:inputType="textCapSentences"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Name of Employee"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_releted_sbil_employee_design"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Designation"
+                            android:maxLength="50"
+                            android:inputType="textCapSentences"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_releted_sbil_employee_relation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Employee relation with applicant"
+                            android:maxLength="50"
+                            android:inputType="textCapSentences"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                        <EditText android:id="@+id/edt_aob_occu_releted_sbil_employee_insu_off"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="Enter Details of Bank/SBI Assocaite/SBI LIFE Insurance Office"
+                            android:maxLength="50"
+                            android:inputType="textCapSentences"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Are you dependent on the aforeside relative? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_aforeside_relative"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <EditText android:id="@+id/edt_aob_occu_releted_sbil_employee_bank_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="Enter Address of bank in 100 characters"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Whether you are ex-employee of SBI or its associate banks? *"
+                        android:textColor="@color/Black"/>
+
+                    <Spinner android:id="@+id/spnr_aob_occu_sbi_x_employee"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848"/>
+
+                    <LinearLayout android:id="@+id/ll_aob_occu_sbi_x_employee_cmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <EditText android:id="@+id/edt_aob_occu_sbi_x_employee_cmmnt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:hint="Enter Comment in 100 words"
+                            android:textColor="#484848"
+                            android:maxLength="100"
+                            android:inputType="textCapSentences"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Last date of employment *"
+                            android:textColor="@color/Black"/>
+
+                        <TextView android:id="@+id/txt_aob_occu_employment_last_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:drawableRight="@drawable/dt"/>
+
+                        <EditText android:id="@+id/edt_aob_occu_employment_cmmnt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
+                            android:maxLength="100"
+                            android:inputType="textCapSentences"
+                            android:hint="Comment box in 100 characters"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button android:id="@+id/btn_aob_occupation_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/btn_rounded_green"
+                        android:textStyle="bold"
+                        android:text="Back"/>
+
+                    <Button android:id="@+id/btn_aob_occupation_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btn_rounded_green"
+                        android:textStyle="bold"
+                        android:text="Next"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="yellow1">#F9E60E</color>
+    <color name="yellow2">#F9F89D</color>
+    <color name="orange4">#F7BE45</color>
+    <color name="orange5">#F7D896</color>
+    <color name="blue2">#19FCDA</color>
+    <color name="blue25">#D9F7F2</color>
+    <color name="grey05">#ACA899</color>
+    <color name="transparent_tabMedium">#605d5d5d</color>
+    <color name="white1">#181818</color>
+    <color name="white2">#3A3C39</color>
+    <color name="title_color">#008FD5</color>
+    <color name="blue">#0000CD</color>
+    <color name="lightgreen">#6bd825</color>
+    <color name="app_background">#fff5f5f5</color>
+    <color name="light_red">#ba0305</color>
+    <color name="dark_red">#9d0c0f</color>
+    <color name="text_tab_selected">#5d5d5d</color>
+    <color name="text_tab_unselected">#838183</color>
+
+    <!--
+    <color name="tabMedium">#2B2B2B</color>
+	<color name="tabDark">#000000</color>
+	<color name="tabTransparent">#10ffffff</color>
+    -->
+
+    <color name="tabMedium">#0198E1</color>
+    <color name="tabDark">#0BB5FF</color>
+    <color name="tabTransparent">#10ffffff</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="dark_gray">#696969</color>
+    <color name="light_gray_3">#A8A7A7</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

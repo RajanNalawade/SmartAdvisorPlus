@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bottom1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/table_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/buttonbg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:text="TextView"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tablerow_disclaimerMsg"
+                android:layout_width="fill_parent"
+                android:layout_height="500dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <ScrollView
+                        android:id="@+id/scrollView_disclaimer"
+                        android:layout_width="350dp"
+                        android:layout_height="400dp"
+                        android:layout_gravity="center" >
+
+                        <LinearLayout
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:id="@+id/tv_message"
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:gravity="left|center"
+                                android:padding="15dp"
+                                android:text="SBI Life Smart Advisor is an Android Mobile Application specifically developed to provide SBI Life Insurance Advisors access to their key business data like Policy and Customer details, Product and Premium details News and Updates on SBI Life etc."
+                                android:textColor="#00a1e3" />
+                        </LinearLayout>
+                    </ScrollView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:weightSum="2"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:orientation="vertical"
+                            android:paddingRight="10dp" >
+
+                            <Button
+                                android:id="@+id/bt_yes"
+                                style="?android:attr/buttonStyleSmall"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/buttonbg"
+                                android:gravity="center"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:text="Button"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp" >
+
+                            <Button
+                                android:id="@+id/bt_no"
+                                style="?android:attr/buttonStyleSmall"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/buttonbg"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:text="Button"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

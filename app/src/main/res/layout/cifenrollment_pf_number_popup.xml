@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+
+        <TableRow
+            android:id="@+id/tr_CIF_Code"
+            style="@style/tr_default"
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:weightSum="1" >
+
+            <EditText
+                android:id="@+id/edt_cif_pf_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:background="@drawable/my_bordernew1"
+                android:inputType="number"
+                android:hint=" * Please enter PF Number"
+                android:maxLength="30"
+                android:textColor="#484848"
+                android:textColorHint="#2b5988" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:weightSum="1" >
+
+            <Button
+                android:id="@+id/btn_view_dashboard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight=".50"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:background="@color/Common_blue"
+                android:textColor="#ffffff"
+                android:text="View Dashboard" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight=".50"
+                android:layout_marginRight="5dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:background="@color/Common_blue"
+                android:textColor="#ffffff"
+                android:text="Submit" >
+            </Button>
+
+        </TableRow>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+
+        <LinearLayout android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <LinearLayout android:id="@+id/ll_tcc_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/ib_tcc_upload"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_tcc" />
+
+                    <TextView
+                        android:id="@+id/tv_tcc_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="TCC and Details"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_score_card_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/ib_score_card_upload"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_score_card_upload" />
+
+                    <TextView
+                        android:id="@+id/tv_score_card_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Score Card Upload"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:weightSum="2" >
+
+                <LinearLayout android:id="@+id/ll_cor_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/ib_cor_download"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_cor_download" />
+
+                    <TextView
+                        android:id="@+id/tv_cor_download"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="CoR Download"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_cif_doc_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/ib_cif_doc_upload"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_cif_uocument_upload" />
+
+                    <TextView android:id="@+id/tv_cif_doc_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Document Re-Upload"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/Black" />
+
+    </LinearLayout>
+
+</RelativeLayout>

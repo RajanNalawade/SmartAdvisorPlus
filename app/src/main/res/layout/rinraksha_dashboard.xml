@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always" >
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header"
+        android:padding="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_input_activityheader"
+            style="@style/app_TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SBI LIFE - RINNRAKSHA DASHBOARD"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txt_input_activityheader1"
+            style="@style/app_TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="(UIN:111N078V02)"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+        
+        <!-- <Button android:background="@drawable/btn_indicator"
+             android:layout_width="wrap_content" 
+             android:layout_height="wrap_content"
+              android:onClick="OnProductDtls" 
+              android:text="Product Detail" 
+              android:textColor="#ffffff" 
+              android:textSize="12dp" 
+              android:textStyle="bold"
+               android:layout_gravity="right" /> --> 
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        
+        <TextView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/app_TextColor"
+            android:text="Quotation No."
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="7dp"
+            android:textSize="16sp"/>
+        
+        <TextView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/app_TextColor"
+            android:text="Borrower"
+            android:padding="7dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="16sp"/>
+        
+        <TextView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/app_TextColor"
+            android:text="URN No."
+            android:padding="7dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="16sp"/>
+        
+    </LinearLayout>
+    
+    <ListView android:id="@+id/lv_rinraksha_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"/>
+    
+</LinearLayout>

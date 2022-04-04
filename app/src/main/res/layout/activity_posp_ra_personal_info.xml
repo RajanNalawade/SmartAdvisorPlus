@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="@color/LightGrey_header">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+
+                <!--<TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/GreenYellow"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Basic Details"
+                    android:textStyle="bold">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" />-->
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Personal"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:background="@color/Common_blue"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                    <requestFocus/>
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Occupation"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Nomination"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Bank"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Exam And Training"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Terms And Conditions"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                </TextView>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Document Upload"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Personal Information"
+                    android:textColor="@color/Blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Edit if not same as Aadhaar Card"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Title *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:paddingLeft="5dp"
+                        android:textColor="@color/Black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Full Name (As on PAN Card) *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_full_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Full Name (As on PAN Card)"
+                        android:padding="10dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ. "
+                        android:inputType="textPersonName|textCapCharacters"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_aob_personal_maiden_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Maiden Name *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_maiden_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Maiden Name"
+                        android:maxLength="50"
+                        android:inputType="textCapCharacters"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Date of birth *"
+                        android:textColor="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/txt_aob_personal_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Gender *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Nationality *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_posp_ra_nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                    <EditText
+                        android:id="@+id/edt_posp_personal_nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Nationality"
+                        android:maxLines="1"
+                        android:visibility="gone"
+                        android:inputType="textCapWords"
+                        android:padding="10dp"
+                        android:maxLength="12"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Aadhaar Number"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_aadhaar_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Aadhaar Number"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:maxLength="12"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="PAN Number"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_pan_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter PAN Number"
+                        android:maxLength="10"
+                        android:inputType="textCapCharacters"
+                        android:enabled="false"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Communication Address *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_communication_address1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Address 1"
+                        android:maxLines="1"
+                        android:maxLength="100"
+                        android:inputType="textPostalAddress|textCapCharacters"
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_communication_address2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Address 2"
+                        android:maxLines="1"
+                        android:maxLength="100"
+                        android:padding="10dp"
+                        android:inputType="textPostalAddress|textCapCharacters"
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_communication_address3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Address 3"
+                        android:inputType="textPostalAddress|textCapCharacters"
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:maxLines="1"
+                        android:maxLength="100"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="PIN Code *"
+                        android:textColor="@color/Black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edt_aob_personal_communication_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/my_bordernew1"
+                            android:hint="Enter PIN Code"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:padding="10dp"
+                            android:textColor="#484848"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/btn_aob_personal_permanent_pin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="2"
+                            android:background="@drawable/btn_rounded_green"
+                            android:padding="10dp"
+                            android:text="verify"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Is permanent address same as the communication address? *"
+                        android:textColor="@color/Black" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_aob_personal_info_same_permanent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_aob_personal_info_same_add_as_yes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="Yes"
+                            android:textColor="#484848" />
+
+                        <RadioButton
+                            android:id="@+id/rb_aob_personal_info_same_add_as_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No"
+                            android:textColor="#484848" />
+
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/ll_personal_info_communication_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="Permanent Address "
+                                android:textColor="@color/Black" />
+
+                            <EditText
+                                android:id="@+id/edt_aob_personal_permnt_address1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:hint="Address 1"
+                                android:maxLines="1"
+                                android:inputType="textPostalAddress|textCapCharacters"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:maxLength="100"
+                                android:padding="10dp"
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/edt_aob_personal_permnt_address2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:hint="Address 2"
+                                android:inputType="textPostalAddress|textCapCharacters"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:maxLines="1"
+                                android:maxLength="100"
+                                android:padding="10dp"
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/edt_aob_personal_permnt_address3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/my_bordernew1"
+                                android:hint="Address 3"
+                                android:inputType="textPostalAddress|textCapCharacters"
+                                android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                android:maxLines="1"
+                                android:maxLength="100"
+                                android:padding="10dp"
+                                android:textColor="#484848"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:text="PIN Code"
+                                android:textColor="@color/Black" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/edt_aob_personal_permnt_pin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/my_bordernew1"
+                                    android:hint="Enter PIN Code"
+                                    android:inputType="number"
+                                    android:maxLength="6"
+                                    android:padding="10dp"
+                                    android:textColor="#484848"
+                                    android:textSize="15sp" />
+
+                                <Button
+                                    android:id="@+id/btn_aob_personal_comm_pin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="2"
+                                    android:background="@drawable/btn_rounded_green"
+                                    android:padding="10dp"
+                                    android:text="verify"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Father / Husband's Name *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_father_husbund_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Father / Husband's Name"
+                        android:inputType="textPersonName|textCapCharacters"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ, "
+                        android:maxLength="50"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Relation with Applicant *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_relation_applicant"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Marital Status *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_marital_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Caste Category *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_caste_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Mobile Number *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Mobile Number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Residence Number *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_residence_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Residence Number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Email ID *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_email_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Email ID"
+                        android:inputType="textEmailAddress"
+                        android:maxLength="50"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Educational Details"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Basic Qualification *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_bas_qualification"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Provide your passing details"
+                        android:textColor="@color/Black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"
+                        android:padding="10dp"
+                        android:text="Roll Number *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_pass_roll_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Roll Number"
+                        android:inputType="textCapCharacters"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_aob_personal_pass_university"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Board / University *"
+                        android:textColor="@color/Black" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_pass_university"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter Board / University"
+                        android:inputType="textCapCharacters"
+                        android:digits="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                        android:maxLength="50"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Year Passing *"
+                        android:textColor="@color/Black" />
+
+                    <TextView
+                        android:id="@+id/txt_aob_personal_pass_year_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:hint="month and year"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Professional Qualification *"
+                        android:textColor="@color/Black" />
+
+                    <Spinner
+                        android:id="@+id/spnr_aob_personal_pro_qualification"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/textboxbg"
+                        android:textColor="#484848" />
+
+                    <EditText
+                        android:id="@+id/edt_aob_personal_pro_qualification_cmnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="in 100 characters"
+                        android:maxLength="100"
+                        android:inputType="textCapCharacters"
+                        android:padding="10dp"
+                        android:textColor="#484848"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_aob_personal_info_back"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_rounded_green"
+                        android:padding="10dp"
+                        android:text="Back"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_aob_personal_info_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_rounded_green"
+                        android:padding="10dp"
+                        android:text="Send OTP"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_posp_ra_verify_otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edt_posp_ra_otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/my_bordernew1"
+                        android:hint="Enter otp"
+                        android:inputType="numberDecimal"
+                        android:padding="10dp"
+                        android:maxLength="6"
+                        android:textColor="#484848"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btn_posp_ra_verify_otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/btn_rounded_green"
+                        android:padding="10dp"
+                        android:text="Next"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+

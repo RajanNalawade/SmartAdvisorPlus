@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvOptionLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/strLanguageChooseOption"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/radioButtonHindi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Hindi"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonEnglish"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="English"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvOptionOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:text="1. How long have you been associated with SBI Life as an LM?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerAssociationSBIL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LMsbil_association"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#484848" />
+
+            <TextView
+                android:id="@+id/tvOptionTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="2. Kindly let us know about your educational details?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerEducationalDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_education_details"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="3. Kindly let us know whether you work with SBI Life for?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerWorkDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_work_details"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="4. If the answer to above question is “part time” what is your main occupation"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextPartimeOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="5. Are you selling any other financial products given below apart from SBI Life insurance products?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBMutualFund"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strMutualFund"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBPostOfficePlans"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strPostOfficePlans"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBHealthInsurance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strHealthInsurance"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBGeneralInsurance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strGeneralInsurance"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/CBNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0.5"
+                android:gravity="left|center_vertical"
+                android:text="@string/strNO"
+                android:textColor="@color/Blue"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvOptionSix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="6. In brief kindly describe your on boarding experience (applicable for LM who have joined less than a year back)"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/TVProductTraining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/strProductTraining"
+                android:textColor="@color/Blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextProductTraining"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:id="@+id/TVNeedAnalysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/strNeedAnalysis"
+                android:textColor="@color/Blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextNeedAnalysis"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/TVHandedDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/strHandedDetails"
+                android:textColor="@color/Blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextHandedDetails"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/TVCommissionStructure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/strCommissionStructure"
+                android:textColor="@color/Blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextCommissionStructure"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/TVstrUsage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/strUsage"
+                android:textColor="@color/Blue"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edittextstrUsage"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:gravity="top|left"
+                android:inputType="textMultiLine"
+                android:lines="8"
+                android:maxLines="10"
+                android:minLines="6"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionSeven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="7. How many products of SBI Life are you aware of ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSBILProductsAware"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_products_Aware"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionEight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="8. How many products of SBI Life do you sell ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSBILProductsSell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_products_sell"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionNine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="9. How many customers do you meet in a week?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerCustomerMeetCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_cust_meet_count"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="10. How many days of training have you attended in the past 1 year?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerTotalTrainingDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_training_days"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionEleven"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="11. What according to you are the biggest strengths of SBI Life from customer point of view? Rank in the order of importance, 1 being most important and 4 being least important.Swipe(Up &amp; Down) options to arrange"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionElevenSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/tvOptionElevenSub"
+                android:textColor="@color/Red"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewLMBiggestStrength"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvOptionTwelve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="12. What do you find attractive as a LM, from career point of view in SBI Life ? Rank in the order of importance, 1 being most important and 5 being least important"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tvOptionTwelveSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/tvOptionElevenSub"
+                android:textColor="@color/Red"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewLMAttracttion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvOptionThirteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="13. What training interventions do you feel are required by you to increase your productivity, let’s say in the coming 6 months? Rank in the order of importance, 1 being most important and 5 being least important"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/tvOptionThirteenSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/tvOptionElevenSub"
+                android:textColor="@color/Red"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerviewLMProductivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvOptionFourteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="14. Select the features you are aware about in Smart Advisor Application. Select more than one if applicable"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBproposalStatusEnq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strProposalStatusEnq"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBRenewalDueList"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strRenewalDueList"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBProductDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strProductDetails"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBPremiumCalculator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strPremiumCalc"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBMTDYTD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strMISMTDYTD"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBNewsUpdates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strSBINEws"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvOptionFifteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="15. What new features would you like to be added in Smart advisor application?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextAdvsiorFeatureRequired"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionsixteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="16. Are you given support through leads allotment by your branch ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSupportStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_yes_no"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/textViewSatisfactionScale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="17. On a scale of 1-5 how satisfied are you with branch infrastructure and support provided at branch level, with 1 being extremely poor and 5 being extremely good?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupSatisfactionScale"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/radioButtonSatisfactionScaleOne"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.2"
+                    android:checked="false"
+                    android:text="1"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSatisfactionScaleTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.2"
+                    android:checked="false"
+                    android:text="2"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSatisfactionScaleThree"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.2"
+                    android:checked="false"
+                    android:text="3"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSatisfactionScaleFour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.2"
+                    android:checked="false"
+                    android:text="4"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonSatisfactionScaleFive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.2"
+                    android:checked="false"
+                    android:text="5"
+                    android:textColor="@color/Black"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textviewBranchRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="18. If rating is between 1-3 for above question then what do you feel could be done better ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextLowSatisfactionScale"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionNineteen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="19. Select the benefits of club membership program of SBI Life that you are aware of? Select more than one if applicable"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/CBVisitingCards"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strVisitCard"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/CBGroupmedicalcover"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/strGroupMedicalCover"
+                    android:textColor="@color/Blue"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/CBOnetimedirectcredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="left|center_vertical"
+                android:text="@string/strOneTimeDirectCredit"
+                android:textColor="@color/Blue"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/CBInsuranceCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="left|center_vertical"
+                android:text="@string/strLifeINsurancePersonalAccCover"
+                android:textColor="@color/Blue"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/CBAllowances"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="left|center_vertical"
+                android:text="@string/strMaintAllowances"
+                android:textColor="@color/Blue"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/CBOpportunity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:gravity="left|center_vertical"
+                android:text="@string/strOppParConv"
+                android:textColor="@color/Blue"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvOptionTwenty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="20. Do you get the commission and incentives in Time?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerIncentiveTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_yes_no"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionTwentyOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="21. Are you aware of the SQS policy for the LM of SBI Life ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSOSPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_yes_no"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionTwentyTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="22. Are you aware of “PaisaGenie” Financial planning application exclusive for SBI Life customers and asking customers to download the same?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinnerPaisaGenieStaus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/LM_yes_no"
+                android:paddingLeft="5dp"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#808080" />
+
+            <TextView
+                android:id="@+id/tvOptionTwentyThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="23. What according to you should SBI Life do to increase the income and productivity of its LM ?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextIncreaseProductvityNotes"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvOptionTwentyFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:text="24. What steps should SBI Life take to increase brand loyalty among the customers?"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextIncreaseLoyaltyNotes"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonSave"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.5"
+                    android:background="@color/Common_blue"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Save"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/buttonSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/Common_blue"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Submit"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

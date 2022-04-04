@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:id="@+id/sv_bi_shubh_nivesh_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:orientation="vertical"
+        android:overScrollMode="always">
+
+        <TableRow
+            android:id="@+id/tr1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="@color/bi_text_background"
+                android:gravity="center_horizontal|center_vertical"
+                android:padding="5dp"
+                android:text="SBI LIFE - Shubh Nivesh\n (UIN - 111N055V04)"
+                android:textColor="@color/Blue"
+                android:textSize="16sp" />
+        </TableRow>
+
+
+        <!-- <LinearLayout -->
+        <!-- android:id="@+id/LinearLayout1" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:background="#787C80" -->
+        <!-- android:orientation="vertical" > -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/textView1" -->
+        <!-- style="@style/tv_default" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center_horizontal" -->
+        <!-- android:text="SBI LIFE - SHUBH NIVESH" -->
+        <!-- android:textColor="@android:color/black" /> -->
+
+
+        <!-- <TextView -->
+        <!-- android:id="@+id/textView1" -->
+        <!-- style="@style/tv_default" -->
+        <!-- android:layout_width="wrap_content" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center_horizontal" -->
+        <!-- android:text="(UIN:111N055V04)" -->
+        <!-- android:textColor="@android:color/white" /> -->
+        <!-- </LinearLayout> -->
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp">
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_staff_disc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <CheckBox
+                    android:id="@+id/cb_staffdisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Staff Discount"
+                    android:visibility="visible" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tablerowKerlaDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_kerladisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Kerala Resident"
+                    android:visibility="visible" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_jk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_shubh_nivesh_jk"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="J &amp; K Resident"
+                    android:visibility="visible" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/cb_BankAssuranceDisc"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Bancassurance Discount"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/cb_JKResident"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="J &amp; K Resident" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_life_assured_detail1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Life Assured Title" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_shubh_nivesh_life_assured_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_shubh_nivesh_life_assured_title"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="First Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_life_assured_first_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="First Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="90" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:text="Middle Name" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_life_assured_middle_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="20" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Name" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_life_assured_last_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                    android:hint="Last Name*"
+                    android:inputType="textPersonName"
+                    android:maxLength="50" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Gender:" />
+
+                <Spinner
+                    android:id="@+id/selGender"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@color/Light_Very_Grey"
+                    android:clickable="false"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_life_assured_detail2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_bi_shubh_nivesh_life_assured_date"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:onClick="onClickLADob"
+                    android:text="Select Date" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="40dp"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/textview8"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Age:" />
+
+                <Spinner
+                    android:id="@+id/age"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@color/Light_Very_Grey"
+                    android:clickable="false"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Age"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_life_assured_age"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:editable="false"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_bi_shubh_nivesh_dob_life_assured_gender"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Gender"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_shubh_nivesh_dob_life_assured_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_shubh_nivesh_life_assured_gender"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/edt_proposerdetail_basicdetail_tele_code"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight=".3"
+                        android:maxLength="30"
+                        android:text="+91" />
+
+                    <EditText
+                        android:id="@+id/edt_shubh_nivesh_contact_no"
+                        style="@style/et_default"
+                        android:layout_width="0dp"
+                        android:layout_weight=".7"
+                        android:inputType="number"
+                        android:maxLength="10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:orientation="horizontal"
+                    android:weightSum="1"></LinearLayout>
+            </TableRow>
+
+            <TableRow
+                style="@style/tr_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Id " />
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />-->
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_shubh_nivesh_Email_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="40dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Confirm Email Id" />
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textStyle="bold" />-->
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edt_shubh_nivesh_ConfirmEmail_id"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="50" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_proposer_detail1"
+                style="@style/tr_default"
+                android:layout_width="fill_parent"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".25"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_bi_shubh_nivesh_proposer_name"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:text="Proposer Name" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_shubh_nivesh_proposer_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_shubh_nivesh_proposer_title"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".15" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_proposer_first_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight=".20"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="First Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="90" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_proposer_middle_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".20"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                    android:hint="Middle Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="20" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_proposer_last_name"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight=".20"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                    android:hint="Last Name"
+                    android:inputType="textPersonName"
+                    android:maxLength="50" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_shubh_nivesh_proposer_detail2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="60dp"
+                android:visibility="gone"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:text="Date of Birth" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_bi_shubh_nivesh_proposer_date"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:onClick="onClickDob"
+                    android:text="Select Date" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="Age"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/edt_bi_shubh_nivesh_proposer_age"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:editable="false"
+                    android:visibility="invisible" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/tv_bi_smart_wealth_builder_dob_life_assured_gender"
+                        style="@style/tv_default"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:text="Gender"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_bi_smart_wealth_builder_dob_life_assured_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight=".2"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/spnr_bi_smart_wealth_builder_life_assured_gender"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:visibility="invisible" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tr_propsoser_same_as_life_assured"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".6"
+                    android:text="Whether Proposer Is Same As life Assured" />
+
+                <RadioGroup
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/rb_shubh_nivesh_proposer_same_as_life_assured_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_weight=".5"
+                        android:text="yes"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_shubh_nivesh_proposer_same_as_life_assured_no"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_weight=".5"
+                        android:text="No"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Plan Option:" />
+
+                <Spinner
+                    android:id="@+id/selplan"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <!-- <TableRow -->
+            <!-- android:id="@+id/tableRow4" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:visibility="gone" > -->
+
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/linerarlayout8" -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_weight="0.5" -->
+            <!-- android:orientation="vertical" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/textview8" -->
+            <!-- style="@style/tv_default" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="Age:" /> -->
+
+
+            <!-- <TextView -->
+            <!-- style="@style/tv_default" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="(As on Last Birthday)" -->
+            <!-- android:textColor="#4C4C4C" /> -->
+            <!-- </LinearLayout> -->
+
+
+            <!-- <Spinner -->
+            <!-- android:id="@+id/age" -->
+            <!-- style="@style/spnr_default" -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_weight="0.5" -->
+            <!-- android:clickable="false" -->
+            <!-- android:spinnerMode="dropdown" /> -->
+            <!-- </TableRow> -->
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Policy Term :" />
+
+                <Spinner
+                    android:id="@+id/policyterm"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="0.5"
+                    android:text="Premium Payment Mode:" />
+
+                <Spinner
+                    android:id="@+id/premiumfreq"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tv_monthly_mode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For monthly mode, 3 months premium to be paid in advance and Renewal Premium Payment is allowed only through ECS, Credit Card, Direct Debit and SI-EFT"
+                    android:textColor="@color/Red"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/prem_amt"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Sum Assured (Rs.)" />
+
+                <EditText
+                    android:id="@+id/premium_amt"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:inputType="number"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wish to Backdate Policy " />
+
+                    <TextView
+                        android:id="@+id/tv_mandatory_proposerdetail_personaldetail_backdating"
+                        style="@style/tv_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/Red"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/rb_shubh_nivesh_backdating_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="Yes"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_shubh_nivesh_backdating_no"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/default_height"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="No"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/ll_backdating1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/Black" />
+
+                <TableRow
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_tableRow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="BackDating Date "
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tv_mandatory_proposerdetail_personaldetail_backdatingdate"
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/Red"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_shubh_nivesh_backdatingdate"
+                        style="@style/btn_default"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:onClick="onClickBackDating"
+                        android:text="Select Date"></Button>
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/Black" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRow9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/selPTA"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Preferred Term Rider (UIN:111B014V02)" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/selPTATerm_txt1"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="PTA Rider Term"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/selPTATerm"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/selPTATerm_txt2"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="PTA Rider Sum Assured(Rs.)"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/sumAssuredPTA"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/ADB"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Accidental Death Benefit Rider (UIN:111B015V03)" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adb_txt1"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="ADB Rider Term"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/adb_term"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adb_txt2"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="0.5"
+                    android:text="ADB Rider Sum Assured(Rs.)"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/sumAssuredADB"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/ATPDB"
+                    style="@style/cb_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Accidental Total And Permanent Disability Benefit Rider (UIN:111B016V03)" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/atpdb_txt1"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="ATPDB Rider Term:"
+                    android:visibility="gone" />
+
+                <Spinner
+                    android:id="@+id/atpdb_term"
+                    style="@style/spnr_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:spinnerMode="dropdown"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/atpdb_txt2"
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="0.5"
+                    android:text="ATPDB Rider Sum Assured(Rs.):"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/sumAssuredATPDB"
+                    style="@style/et_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_proceed_shubhNivesh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/back"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:text="Back" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="0dp"
+                    android:layout_height="66dp"
+                    android:layout_weight="0.04" />
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    style="@style/btn_default"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.48"
+                    android:text="Proceed" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

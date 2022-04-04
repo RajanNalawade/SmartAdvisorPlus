@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llDOGHCovidDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/Common_blue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="IA Name "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvIAName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="Policy Number  "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvPolicyNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="Master Policy Holder Name "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvMasterHolderName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="Age "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="Date Of Birth "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvDOB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="Gender "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.45"
+                    android:gravity="left"
+                    android:text="MPH Name "
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/tvMPHName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/DarkGreySolid"
+                    android:textSize="13sp"
+                    android:typeface="sans" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/Common_blue" />
+
+
+            <CheckBox
+                android:id="@+id/checkBoxDisclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/DarkGray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="Are you currently taking or in the past have taken any treatment or medications for any of illness mentioned above (If Yes, Kindly provide the details)"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+            <RadioGroup
+                android:id="@+id/radioGroupIllnessDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/llIllnessDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Illness Details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etIllnessDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:enabled="false"
+                    android:hint="Enter details"
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkBoxDisclaimerSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text=""
+                android:textColor="@color/DarkGray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:text="COVID Questionnaire (UWM029)"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="1.Have you visited any foreign country after 1.1.2020,then please answer the following"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupPastForeignVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbPastForeignVisitYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbPastForeignVisitNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/llPastCountryVisited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="1.1 Name of country visited"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etPastCountryVisited"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:enabled="false"
+                    android:hint="Enter Country Name"
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="2dp"
+                android:text="1.2 Duration"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="From Date"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvPastFromDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="To Date"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvPastToDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="1.3 Date of return to India"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvPastReturnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:enabled="false"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="1.4 If you have been screened at the airport please provide copy of report provided"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupScreenedAtAirport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbScreenedAtAirportYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbScreenedAtAirportNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="2 Have you been tested for COVID-19. If yes, all the reports of same till date"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupTestedForCovid19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbTestedForCovid19Yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbTestedForCovid19No"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="3 Please confirm if either of the following is applicable to you"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="3.1 Kept in home quarantine anytime (till date) since1.1.2020"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupHomeQuarantine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbHomeQuarantineYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbHomeQuarantineNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+            <!--
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="3.1 Kept in home quarantine anytime (till date) since1.1.2020"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+                    <RadioGroup
+                        android:id="@+id/radioGroupHomeQurantine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:id="@+id/rbHomeQurantineYes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbHomeQurantineNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+            -->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="3.2 Kept under observation anytime (till date) since1.1.2020"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupUnderObservation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbUnderObservationYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbUnderObservationNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="3.3 Kept in home isolation/self isolation anytime (till date)since 1.1.2020"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupSelfIsolation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbSelfIsolationYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSelfIsolationNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="4 Do you plan to travel to any foreign countries in next 6 months"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupFutureCountryVisit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbFutureCountryVisitYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbFutureCountryVisitNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/llFutureCountryVisited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="4.1 Name of country visited"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etFutureCountryVisited"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:enabled="false"
+                    android:hint="Enter Country Name"
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="2dp"
+                android:text="4.2 Duration"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="From Date"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvFutureFromDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp"
+                        android:textColor="#484848" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="To Date"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvFutureToDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="4.3 Date of return to India"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvFutureReturnDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:enabled="false"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="5 Have you or your immediate family members/co-habitants suffered from any signs and symptoms of flu(cough, cold, fever more than 05 days) since 1.1.2020(whether any medical consultation taken or not)?"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupSymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbSymptomsYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbSymptomsNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="6 Have you or your immediate family members undergoneor been advised to undergo any test/investigations orhospitalized for observation or treatment in past 2 monthsfor respiratory symptoms?"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupRespiratorySymptoms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbRespiratorySymptomsYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbRespiratorySymptomsNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="7 Have you or any of your immediate familymembers/cohabitants come in contact with suspected orconfirmed cases of coronavirus"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupContactWithCorona"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:id="@+id/rbContactWithCoronaYes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/rbContactWithCoronaNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="If any of the question is answered as Yes, kindly provide details for the same"
+
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etAnyQuestCoronaDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter the details"
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="0.5"
+                    android:text="Place"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/edittextPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter Place "
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llOTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/etOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter OTP Received"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/buttonGenerateOTP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@color/Common_blue"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Generate OTP"
+                        android:textColor="#ffffff" />
+
+                    <Button
+                        android:id="@+id/buttonValidateOTP"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="0.5"
+                        android:background="@color/DarkGray"
+                        android:enabled="false"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="Validate OTP"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

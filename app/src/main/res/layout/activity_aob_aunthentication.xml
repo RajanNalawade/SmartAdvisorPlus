@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/cifenrollment_pf_activity_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/tv_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text="Authentication"
+                android:textColor="@color/Blue"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <LinearLayout android:id="@+id/ll_manual_kyc_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="IA Type *"
+                    android:textColor="@color/Black"/>
+
+                <RadioGroup
+                    android:id="@+id/rg_aob_auth_ia_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_aob_auth_ia_new"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="New"
+                        android:checked="true"
+                        android:textColor="#484848" />
+
+                    <RadioButton
+                        android:id="@+id/rb_aob_auth_ia_upgrade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="IA-Upgrade"
+                        android:textColor="#484848" />
+
+                </RadioGroup>
+
+                <LinearLayout android:id="@+id/ll_aob_auth_ia_upgrade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="PAN Card Of Advisor(Applicant) *"
+                        android:textColor="@color/Black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText android:id="@+id/edt_aob_auth_ia_upgrade_pan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:hint="Enter PAN Card Number"
+                            android:layout_marginTop="5dp"
+                            android:maxLength="10"
+                            android:layout_weight="1"
+                            android:inputType="textCapCharacters" />
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_aob_auth_ia_upgrade_submit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@color/White"
+                            android:src="@drawable/submit_btn" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_aob_auth_ia_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView android:id="@+id/txtAOBPanLookUpLink"
+                        style="@style/tv_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="#00a1e3"
+                        android:text="PAN Look Up Link *"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text="Advisor(Applicant) Date of birth *"
+                            android:textColor="@color/Black"/>
+
+                        <TextView
+                            android:id="@+id/txt_aob_auth_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/my_bordernew1"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableRight="@drawable/dt"
+                            android:padding="10dp"
+                            android:textColor="#484848" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="PAN Card Of Advisor(Applicant) *"
+                        android:textColor="@color/Black"/>
+
+                        <EditText android:id="@+id/edt_aob_auth_pan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/my_bordernew1"
+                            android:hint="Enter PAN Card Number"
+                            android:layout_marginTop="5dp"
+                            android:padding="10dp"
+                            android:maxLength="10"
+                            android:layout_weight="1"
+                            android:inputType="textCapCharacters" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <ImageButton
+                                android:id="@+id/imgbtn_aob_auth_pan_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.5"
+                                android:background="@color/White"
+                                android:src="@drawable/preview" />
+
+                            <ImageButton
+                                android:id="@+id/imgbtn_aob_auth_pan_camera"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.5"
+                                android:background="@color/White"
+                                android:src="@drawable/ibtn_camera" />
+
+                            <ImageButton
+                                android:id="@+id/imgbtn_aob_auth_pan_browse"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1.5"
+                                android:layout_gravity="center"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:src="@drawable/ibtn_browsedoc" />
+
+                            <ImageButton
+                                android:id="@+id/imgbtn_aob_auth_pan_upload"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.5"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:src="@drawable/ibtn_uploaddoc" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_aob_aadhaar_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_margin="5dp"
+                    android:weightSum="2" >
+
+                    <LinearLayout android:id="@+id/ll_aob_ekyc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imageButtonAOBEkyc"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#f0f0f0"
+                            android:contentDescription="@string/contentDescDOB"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_aob_agent_details" />
+
+                        <TextView
+                            android:id="@+id/textviewAOBEkyc"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:text="Offline-eKYC"
+                            android:textColor="#585858"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/ll_aob_manual_kyc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageButton
+                            android:id="@+id/imageButtonAOBManualKYC"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:layout_marginTop="5dp"
+                            android:background="#f0f0f0"
+                            android:contentDescription="@string/contentDescDOB"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/icon_aob_req_doc" />
+
+                        <TextView
+                            android:id="@+id/textviewAOBManualKYC"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingBottom="5dp"
+                            android:text="Manual KYC"
+                            android:textColor="#585858"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/ll_aob_auth_aadhhar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"
+                    android:text="Upload Aadhaar Card of Advisor (Applicant) *"
+                    android:textColor="@color/Black" />
+
+                <EditText
+                    android:id="@+id/edt_aob_auth_aadhaar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:hint="Enter Aadhaar Card Number / Virtual ID"
+                    android:inputType="numberDecimal"
+                    android:maxLength="16"
+                    android:layout_margin="5dp"
+                    android:padding="5dp" />
+
+                <RadioGroup android:id="@+id/rg_aob_ekyc_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:textColor="#000000"
+                    android:visibility="visible"
+                    android:layout_margin="5dp"
+                    android:textStyle="bold">
+
+                    <RadioButton
+                        android:id="@+id/rb_aob_aadhaar_OTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mobile based OTP"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_aob_aadhaar_finger_print"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="FingerPrint Device"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/rb_aob_aadhaar_IRIS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="IRIS"
+                        android:textColor="@color/Black"
+                        android:textSize="@dimen/ts_default"
+                        android:textStyle="bold"/>
+                </RadioGroup>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_aob_aadhaar_OTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_aob_aadhaar_GenerateOTP"
+                            style="@style/btn_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:text="Generate OTP"
+                            android:textColor="@color/White"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edt_aob_aadhaar_otp"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@layout/usernametextbox001"
+                            android:hint="Enter OTP here"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:textColor="@color/Black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="Click the link above to generate OTP through UIDAI"
+                        android:textColor="@color/Black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_aob_aadhaar_Fingerprint"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/iv_aob_aadhaar_ekyc_fingerprintcapture"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <!--<ProgressBar
+                            android:id="@+id/vertical_aob_aadhaar_progressbar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="50"
+                            android:max="100"
+                            android:padding="10dp" />-->
+
+                        <TextView
+                            android:id="@+id/tv_aob_aadhaar_textViewMessage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="50"
+                            android:gravity="center"
+                            android:textColor="@color/Blue"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!--<Button
+                        android:id="@+id/btn_aob_aadhaar_ekyc_capture"
+                        style="@style/btnStyleBreakerBay"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Capture"
+                        android:textStyle="bold"/>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_aob_aadhaar_IRIS"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/Red"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capture Type"
+                            android:textColor="@color/DarkBlue"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <RadioGroup
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:textColor="#000000"
+                        android:textStyle="bold">
+
+                        <RadioButton
+                            android:id="@+id/rb_aob_aadhaar_single_iris"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight="1"
+                            android:text="Single IRIS"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/ts_default"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/rb_aob_aadhaar_dual_iris"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/default_height"
+                            android:layout_weight="1"
+                            android:text="Dual IRIS"
+                            android:textColor="@color/Black"
+                            android:textSize="@dimen/ts_default"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/light_Grey1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_aob_aadhaar_cancel"
+                        style="@style/btn_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/btn_selector"
+                        android:text="Back"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btn_aob_aadhaar_ok"
+                        style="@style/btn_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight=".5"
+                        android:background="@drawable/btn_selector"
+                        android:text="OK"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/light_Grey1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <LinearLayout android:id="@+id/ll_aob_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButton_aob_dashboard"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_aob_agent_details" />
+
+                    <TextView
+                        android:id="@+id/textview_aob_dashboard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Dashboard"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!--<LinearLayout android:id="@+id/ll_ia_upgrade_rejecti_remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:layout_weight=".5"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButton_ia_upgrade_rejecti_remark"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_posp_aob_rejection_remarks" />
+
+                    <TextView
+                        android:id="@+id/textview_ia_upgrade_rejecti_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Rejection Remarks"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>-->
+
+            </LinearLayout>
+            <!--<LinearLayout android:id="@+id/ll_aob_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight=".5"
+                android:background="@drawable/btn_selector"
+                android:text="Dashboard"
+                android:textStyle="bold" />-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:background="@color/light_Grey1" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <SurfaceView
+                    android:id="@+id/surface_aob_aadhaar_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="390dp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_aob_aadhaar_Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="#3f51b5"
+                android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                android:padding="10dp"
+                android:text="Move the device near the eye..."
+                android:textColor="#ffffff"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

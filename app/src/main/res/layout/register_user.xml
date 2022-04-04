@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/registration_title" />
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0"
+        android:paddingTop="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="20dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/login" />
+                </LinearLayout>
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|center"
+                android:paddingTop="5dp"
+                android:text=" * Select Role"
+                android:textColor="#2b5988"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:typeface="normal" />
+
+            <Spinner
+                android:id="@+id/spinnerRoleRegistrationUser"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/textboxbg"
+                android:textColor="#484848" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRegistrationUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edittextUserCodeRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Code "
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <EditText
+                    android:id="@+id/edittextDOBRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:focusable="false"
+                    android:hint=" * Enter DOB"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <EditText
+                    android:id="@+id/edittextMobileNumberRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Mobile No"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <EditText
+                    android:id="@+id/edittextEmailRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <EditText
+                    android:id="@+id/edittextAgentPasswordRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Password"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/edittextPinRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter PIN"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberPassword"
+                    android:maxLength="6"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <EditText
+                    android:id="@+id/edittextConfirmPinRegistrationUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Confirm PIN"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:maxLength="6"
+                    android:paddingLeft="4dp"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+                <EditText
+                    android:id="@+id/edittextOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter OTP"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:paddingLeft="4dp"
+                    android:visibility="gone"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tvCaptchaCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/captcha_background"
+                        android:gravity="center_vertical|center"
+                        android:layout_gravity="center_horizontal"
+                        android:text="1 2 1 2 1 2 1"
+                        android:layout_weight="1"
+                        android:textColor="@color/Black"
+                        android:textStyle="bold"
+                        android:textSize="35sp" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/edittextCaptcha"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.9"
+                        android:background="@drawable/my_bordernew1"
+                        android:ems="10"
+                        android:hint="*Enter Captcha"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="#484848"
+                        android:textColorHint="#2b5988"
+                        android:textSize="15sp">
+                        <requestFocus />
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/imageCaptchaRefresh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/captcha_refresh"
+                        android:contentDescription="captchaRefresh"/>
+
+                </TableRow>
+
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonGenerateOTP"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:text="Generate OTP"
+                    android:textColor="#ffffff"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/buttonSaveRegistrationUser"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/DarkGray"
+                    android:enabled="false"
+                    android:gravity="center"
+                    android:text="Validate"
+                    android:textColor="#ffffff" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowHomeCIFEnrollment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:visibility="visible"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:id="@+id/layout_cif_on_boarding"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/imagebuttonCIFEnrollment"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/cif_on_boarding_icon" />
+
+                        <TextView
+                            android:id="@+id/textviewCIFEnrollment"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="CIF On Boarding"
+                            android:textColor="#808080" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

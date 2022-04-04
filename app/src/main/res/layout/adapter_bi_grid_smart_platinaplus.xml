@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/tr_header2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="16">
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_end_year"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Policy year"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_yearly_basic_premium"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Annualized premium"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_cumulative_premium"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Survival Benefits / Loyalty Additions"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_guaranteed_addition"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Other Benefits"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_guaranteed_maturity_benefit"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Maturity Benefit"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_guaranteed_death_benefit"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:text="Death Benefit"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_smart_guaranteed_guaranteed_surrender_value"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Minimum Guaranteed Surrender Value"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_adapter_bi_grid_special_surrender_value"
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Special Surrender Value"
+            android:textColor="@color/Black"
+            android:textSize="14dp" />
+
+
+    </TableRow>
+
+</LinearLayout>

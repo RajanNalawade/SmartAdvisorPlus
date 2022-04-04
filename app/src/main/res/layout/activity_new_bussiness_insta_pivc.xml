@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/window_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:id="@+id/edtNBInstaPIVC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/my_bordernew1"
+        android:hint="Enter Proposal No."
+        android:inputType="textCapCharacters"
+        android:maxLength="10"
+        android:padding="10dp"
+        android:textColor="#484848"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnNBInstaPIVC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@color/Common_blue"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="PIWC"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+</LinearLayout>

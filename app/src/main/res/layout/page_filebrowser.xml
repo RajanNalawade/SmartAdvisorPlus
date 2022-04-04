@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="660dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/upDirectoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:drawableLeft="@drawable/dir_up"
+            android:text="Up"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/selectCurrentDirectoryButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Select" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            android:text="Current folder:"
+            android:textColor="#000000"
+            android:textSize="23sp"
+           android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/currentDirectoryTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:padding="2dp"
+            android:text="Current folder:\n /THis/is/a/long/path/to/test/if/this/will/span/multiple/lines"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/fileListView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

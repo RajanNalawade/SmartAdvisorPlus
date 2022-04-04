@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<array name="entries">	
+	    <item>@drawable/house_new</item>	    
+		<item>@drawable/office_calendar1</item>		
+		<item>@drawable/box1</item> 		
+		<item>@drawable/calculator1</item>		
+		<item>@drawable/network_service3</item>
+		<!-- <item>@drawable/books</item> -->
+		<item>@drawable/online_link</item>		
+		<item>@drawable/question2</item>						
+	</array>	
+	<array name="names">	
+	    <item>DashBoard</item>    
+	    <item>Planner</item>
+	    <item>Product</item>
+	    <item>Premium Calculator</item>
+	    <item>Reports</item>
+	    <!-- <item>T-Shiksha</item> -->
+	    <item>Links</item>
+	    <item>Help</item>
+	</array>
+
+	<!--hirarchy starts list-->
+
+	<array name="list_um">
+		<item>um</item>
+		<item>unit manager</item>
+		<item>development manager</item>
+	</array>
+
+	<array name="list_sam">
+		<item>sam m5 l1</item>
+		<item>sam</item>
+		<item>sr area manager m5 l1</item>
+	</array>
+
+	<array name="list_am">
+		<item>area manager</item>
+		<item>am</item>
+	</array>
+
+	<array name="list_bsm">
+		<item>bsm</item>
+		<item>branch head</item>
+	</array>
+
+	<array name="list_dsm">
+		<item>dsm</item>
+		<item>srdsm</item>
+		<item>divisional head</item>
+	</array>
+
+	<array name="list_asm">
+		<item>asm</item>
+		<item>area head</item>
+	</array>
+
+
+
+	<!--hirarchy end list-->
+
+
+</resources>

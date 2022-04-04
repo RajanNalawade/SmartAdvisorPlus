@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+
+        <LinearLayout
+            android:id="@+id/lnPolicyRenewal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Months"
+                        android:padding="5dp"
+                        android:textColor="#808080"
+                        android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/spnRewmonths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/textboxbg"
+                    android:entries="@array/rewmonth"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" >
+                </Spinner>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <Button
+                        android:id="@+id/btn_ren"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/Common_blue"
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:text="@android:string/ok"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/gotoGeoLocationTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/Common_blue"
+                        android:padding="5dp"
+                        android:layout_gravity="center"
+                        android:text="Geo Location"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--<TextView-->
+                <!--android:id="@+id/gotoGeoLocationTxt"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:textSize="15sp"-->
+                <!--android:text="Geo Location"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:textStyle="bold" />-->
+
+            <TextView
+                android:id="@+id/txterrordescrevival1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtrevivallistcount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textviewSearchHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/Black"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                android:text="Search Policy No/First Name/Status/Due Date/Premium"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edittextSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/my_bordernew1"
+                android:hint="Enter Keyword"
+                android:padding="10dp"
+                android:textColor="#484848"
+                android:visibility="gone"
+                android:layout_margin="5dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/textviewRenewalNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/DarkGreySolid"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+
+
+</ScrollView>
+</LinearLayout>

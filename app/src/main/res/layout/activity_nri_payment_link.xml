@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/window_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Proposal Number:"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etPolicyNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Proposal Number"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Transaction Amount"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etTransactionAmount"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Transaction Amount"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Customer Name"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etCustName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Customer Name"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Customer Mobile"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etCustMobile"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Customer Mobile"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Customer Email"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etCustEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Customer Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Confirm Customer Email"
+                android:textColor="#808080"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etConfirmCustEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Confirm Customer Email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/llUserCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUserCodeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="left"
+                    android:text="User Code"
+                    android:textColor="#808080"
+                    android:textSize="15sp" />
+
+
+                <EditText
+                    android:id="@+id/etUserCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter User Code"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonOk"
+                    android:layout_width="150dp"
+                    android:layout_height="45dp"
+                    android:background="@color/Common_blue"
+                    android:text="@android:string/ok"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

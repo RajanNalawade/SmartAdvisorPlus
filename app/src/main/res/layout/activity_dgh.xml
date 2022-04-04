@@ -1,0 +1,3602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="7dp"
+                android:text="Policy Number"
+                android:textColor="@color/Black"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etPolicyNumber"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Policy/ Proposal Number"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonGetDetails"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Common_blue"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@android:string/ok"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_dgh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Name of the Life Assured"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+
+                <EditText
+                    android:id="@+id/etLifeAssuredName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter name of Life Assured"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text="Date of Birth"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvDateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/my_bordernew1"
+                    android:drawableRight="@drawable/dt"
+                    android:padding="10dp"
+                    android:textColor="#484848" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:text="Age"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:padding="10dp"
+                            android:textColor="#484848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Gender"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <Spinner
+                            android:id="@+id/spinnerGender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/textboxbg"
+                            android:entries="@array/auto_mandate_status_type"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Occupation"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+
+                <!--<EditText
+                android:id="@+id/etOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Occupation"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />-->
+
+                <Spinner
+                    android:id="@+id/spinnerOccupation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/textboxbg"
+                    android:popupBackground="@drawable/myspinner_border"
+                    android:spinnerMode="dropdown"
+                    android:textColor="#484848" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Residence Status"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupResidentStatus"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Resident Individual"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResidentNRI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Non Resident Indian"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResidentPOI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Person of Indian Origin"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResidentForeignNational"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="Foreign National"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Country of Residence "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Type Country Name"
+                    android:textColor="@color/red"
+                    android:textSize="15sp" />
+                <!--<EditText
+                android:id="@+id/etCountryResidence"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@drawable/edittext_dob_shape"
+                android:hint="Enter Country of Residence"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="15sp" />-->
+
+                <!--<Spinner
+                android:id="@+id/spinnerCountryResidence"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/textboxbg"
+                android:popupBackground="@drawable/myspinner_border"
+                android:spinnerMode="dropdown"
+                android:textColor="#484848" />-->
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextViewCountryResidence"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:text=""
+                    android:textColor="#484848" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="Contact Details "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Country Code"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+
+                        <EditText
+                            android:id="@+id/etCountryCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Country Code"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Mobile Number"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etMobileNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Mobile Number"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="Email Id"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etEmailId"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter Email-Id"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Height (in Cms)"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etHeights"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Height"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Weight (in Kgs)"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Weight"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="1) Are you at present in GOOD health? If No, Please provide details below"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupHealthStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbHealthStatusYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbHealthStatusNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llHealthStatusQ1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Health Status"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etHealthStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Health Status"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="2) During the last one year, has there been any increase/decrease in your weight over 5 Kilograms.If yes, please provide full details in the space below "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupWeightLoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbWeightLossYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbWeightLossNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llWeightLoss"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Weight Loss Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etWeightLoss"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Weight Loss Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3) Since the Date of Proposal of this policy "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="a) Have you suffered from any illness / disease requiring treatment for 3 or more days? If yes, give full details "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgDateOfProposalDetailsOptionA"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llDateOfProposalDetailsOptionAYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text=" Illness / Disease Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etDateOfProposalDetailsOptionAYes"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter  Illness / Disease Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="b) Do you plan or have been advised to undergo any surgery or hospitalization or visit to doctor or practitioner for any physical, mental or emotional condition, injury, or sickness in near future. If yes, please provide details in the space below "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgDateOfProposalDetailsOptionB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llDateOfProposalDetailsOptionBYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Operation, Accident or Injury details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etDateOfProposalDetailsOptionBYes"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Operation, Accident or Injury details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="c)  In the last 5 year, apart from minor ailments like cough/cold etc, have you received any treatment under doctor’s consultation and /or undergone any major surgery and/or been hospitalized and/or undergone major investigations like CT/MRI scan, Angiogram, Endoscopy, Biopsy etc?  If yes, please provide full details in the space below"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgDateOfProposalDetailsOptionC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llDateOfProposalDetailsOptionCYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Medical examinations including but not limited to ECG, X-Ray, CT scan / MRI, Blood/Urine / Stool tests or Examinations?"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etDateOfProposalDetailsOptionCYes"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Examinations details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="4) Do you suffer from or have ever suffered from: Raised Blood sugar, Diabetes mellitus, high blood pressure, Disease of heart, lung, kidney, Liver, thyroid, brain/nervous system, bone/joint/spine, Genitourinary tract, any part of the body or blood disorder, digestive disorder, Gynaecological disorder, Psychiatric disorder, HIV/AIDS and/or cancer/tumour of any part of the body. If yes, please provide full details in the space below"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/rgMultipleDiseaseDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llMultipleDiseaseDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Multiple Disease Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etMultipleDiseaseDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Multiple Disease Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="5)  Has any of your proposals for life insurance, critical illness or health insurance, ever been denied, declined, rejected, postponed or accepted with extra premium due to health or lifestyle reason If yes, please provide full details in the space below"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion5New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion5New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Proposal Rejection Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion5New"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Proposal Rejection Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="6) Are you exposed to any special hazard associated with your occupation (e.g. chemical factory, mines, explosives, corrosives, combative duties, oil exploration, high sea voyage etc.) which may render you susceptible to injuries or illnesses?
+If Yes, please provide details in the occupation questionnaire and submit along with this declaration."
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion6New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion6New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Hazardous Occupation Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion6New"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Hazardous Occupation Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="7) Are you a “Politically Exposed Person” (PEP) or a close relative of PEP?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="PEPs are individuals who are or have been entrusted with prominent public functions, i.e. heads / ministers of central / state govt., senior politicians, senior govt, judicial or military officials, senior executives of govt. companies, important political party officials, immediate family member of above persons (would include spouse, parents, siblings, children, spouses parents or siblings and close associates of PEPs"
+                    android:textColor="@color/Gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="If yes, give full details. If No, in case of change in your PEP status in future, you shall inform SBI Life of such change"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion7New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion7New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="PEP Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion7New"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter PEP Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="8) History of criminal proceedings, FIR or conviction."
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="a) Has any FIR or Criminal Complaint ever been registered or lodged against you? If yes, give full details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion8NewA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion8NewA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Crime Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion8NewA"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Crime Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="b) Have there been any Criminal proceedings initiated against you either in the past or in the present? If yes, give full details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion8NewB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbQuestion6BYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuestion6BNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion8NewB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Criminal Proceedings Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion8NewB"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Criminal Proceedings Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="c) Do you have any history of conviction under any criminal proceedings in India or abroad? If yes, give full details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion8NewC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion8NewC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Criminal Conviction Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion8NewC"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Criminal Conviction Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="9) Do you take part in or have you any intention of taking part in any hazardous sports, hobbies, activities or pursuits, for example mountaineering, Diving, racing or aviation other than as a fare paying passenger, that could be dangerous in any way?  If yes, give full details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupQuestion9New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llQuestion9New"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Hazardous Sports Details"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etQuestion9New"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Hazardous Sports Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="10) a)	Do you consume any of the following? "
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:text="Tobacco (cigs, cigar, gutkha, etc)"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupQuestion10A1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll10A1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Sticks/packets Per day"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etSticksPackets10A1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Sticks/packets Per day"
+                            android:inputType="number"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="No of years used"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etNoOfYearsUsed10A1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="No of years used"
+                            android:inputType="number"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:text="Alcohol"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupQuestion10A2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll10A2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Kind of alcohol i.e whisky, beer, etc"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etQuantity10A2AlcoholType"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Kind of alcohol i.e whisky, beer, etc"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Quantity per week ml"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etQuantity10A2Ml"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Quantity per week in ml"
+                            android:inputType="number"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="No of years used"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etNoOfYearsUsed10A2"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="No of years used"
+                            android:inputType="number"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:text="Any Narcotics"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupQuestion10A3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll10A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="Type Of Drug"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etTypeOfDrug10A3"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="Enter Type Of Drug"
+                            android:inputType="text"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="No of years used"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/etNoOfYearsUsed10A3"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edittext_dob_shape"
+                            android:hint="No of years used"
+                            android:inputType="number"
+                            android:maxLength="500"
+                            android:maxLines="1"
+                            android:textColor="#000000"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="b) If you have quit any of the above in the last 1 year, kindly provide details"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/etConsumptionQuit10B"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edittext_dob_shape"
+                    android:hint="Enter Consumption Quit details if any"
+                    android:inputType="text"
+                    android:maxLength="500"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/Common_blue" />
+
+                <LinearLayout
+                    android:id="@+id/llFemaleLivesOnly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="11)For Female Lives Only: \n\n a) Are you presently pregnant? "
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupQuestion11A"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/etPregnancyMonth11A"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter pregnancy Month"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="b) Have you ever suffered from or have undergone any investigations or treatment for any gynecological problems related to cervix, uterus, ovaries, breast, breast lump/cyst etc or undergone surgical procedure like hysterectomy"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupQuestion11B"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+
+                    <EditText
+                        android:id="@+id/etGynecologicalProblem11B"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Gynecological Problems Details"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@color/Common_blue" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="Space for providing details pertaining to the above questions. If required, please use an additional sheet of paper and attach"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:scrollbars="vertical" />
+
+                <Button
+                    android:id="@+id/buttonAddRow"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:background="@color/Common_blue"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Add"
+                    android:textColor="#ffffff"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="COVID Questionnaire (UWM029)"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="1.Have you visited any foreign country after 1.1.2020,then please answer the following"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupPastForeignVisit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbPastForeignVisitYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbPastForeignVisitNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llPastCountryVisited"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="1.1 Name of country visited"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etPastCountryVisited"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:enabled="false"
+                        android:hint="Enter Country Name"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="1.2 Duration"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="From Date"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+
+                        <TextView
+                            android:id="@+id/tvPastFromDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:drawableRight="@drawable/dt"
+                            android:enabled="false"
+                            android:padding="10dp"
+                            android:textColor="#484848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="To Date"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvPastToDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:drawableRight="@drawable/dt"
+                            android:enabled="false"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="1.3 Date of return to India"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvPastReturnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="1.4 If you have been screened at the airport please provide copy of report provided"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupScreenedAtAirport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbScreenedAtAirportYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbScreenedAtAirportNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="2 Have you been tested for COVID-19. If yes, all the reports of same till date"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTestedForCovid19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbTestedForCovid19Yes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbTestedForCovid19No"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3 Please confirm if either of the following is applicable to you"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3.1 Kept in home quarantine anytime (till date) since1.1.2020"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupHomeQuarantine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbHomeQuarantineYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbHomeQuarantineNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+                <!--
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="3.1 Kept in home quarantine anytime (till date) since1.1.2020"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+                    <RadioGroup
+                        android:id="@+id/radioGroupHomeQurantine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <RadioButton
+                            android:id="@+id/rbHomeQurantineYes"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="Yes"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                        <RadioButton
+                            android:id="@+id/rbHomeQurantineNo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:checked="false"
+                            android:text="No"
+                            android:textColor="@color/Gray"
+                            android:textSize="16sp" />
+
+                    </RadioGroup>
+            -->
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3.2 Kept under observation anytime (till date) since1.1.2020"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupUnderObservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbUnderObservationYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbUnderObservationNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="3.3 Kept in home isolation/self isolation anytime (till date)since 1.1.2020"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupSelfIsolation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbSelfIsolationYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbSelfIsolationNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="4 Do you plan to travel to any foreign countries in next 6 months"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupFutureCountryVisit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbFutureCountryVisitYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbFutureCountryVisitNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llFutureCountryVisited"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="4.1 Name of country visited"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/etFutureCountryVisited"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:enabled="false"
+                        android:hint="Enter Country Name"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="4.2 Duration"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="From Date"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+
+                        <TextView
+                            android:id="@+id/tvFutureFromDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:drawableRight="@drawable/dt"
+                            android:enabled="false"
+                            android:padding="10dp"
+                            android:textColor="#484848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginBottom="2dp"
+                            android:text="To Date"
+                            android:textColor="@color/Black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvFutureToDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/my_bordernew1"
+                            android:drawableRight="@drawable/dt"
+                            android:enabled="false"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="4.3 Date of return to India"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvFutureReturnDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/my_bordernew1"
+                        android:drawableRight="@drawable/dt"
+                        android:enabled="false"
+                        android:padding="10dp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="5 Have you or your immediate family members/co-habitants suffered from any signs and symptoms of flu(cough, cold, fever more than 05 days) since 1.1.2020(whether any medical consultation taken or not)?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupSymptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbSymptomsYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbSymptomsNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="6 Have you or your immediate family members undergoneor been advised to undergo any test/investigations orhospitalized for observation or treatment in past 2 monthsfor respiratory symptoms?"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupRespiratorySymptoms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbRespiratorySymptomsYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbRespiratorySymptomsNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="7 Have you or any of your immediate familymembers/cohabitants come in contact with suspected orconfirmed cases of coronavirus"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupContactWithCorona"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+
+                    <RadioButton
+                        android:id="@+id/rbContactWithCoronaYes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="Yes"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbContactWithCoronaNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="0.5"
+                        android:checked="false"
+                        android:text="No"
+                        android:textColor="@color/Gray"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:id="@+id/tr_identityproof"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:weightSum="3.5">
+
+                        <TextView
+                            android:id="@+id/txt_document_upload_proof_of_identity"
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:text="Identity" />
+
+                        <Spinner
+                            android:id="@+id/spnr_document_upload_document_identity"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/llIdentityAadhaarScan"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.0"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_preview_image_identity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".25"
+                                android:background="@color/White"
+                                android:onClick="onPreview_IdentityProof"
+                                android:src="@drawable/preview"
+                                android:visibility="invisible" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_delete_identity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".25"
+                                android:background="@color/White"
+                                android:onClick="onDelete_identityProof"
+                                android:src="@drawable/trash_icon"
+                                android:visibility="invisible" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_click_image_identity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:src="@drawable/ibtn_camera" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_click_browse_identity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:onClick="onBrowse_IdentityProof"
+                                android:src="@drawable/ibtn_browsedoc" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_identity_upload"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:onClick="onUpload_IdentityProof1"
+                                android:src="@drawable/ibtn_uploaddoc" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llIdentityQR"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.0"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <ImageButton
+                                android:id="@+id/img_btn_QR_Identity_scan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight="1.0"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:src="@drawable/icon_barcode" />
+
+                            <Button
+                                android:id="@+id/btn_offline_ekyc_identity"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1.0"
+                                android:background="@color/Common_blue"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="Offline Ekyc"
+                                android:textColor="#ffffff"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/LightGrey" />
+
+                    <TableRow
+                        android:id="@+id/tr_addressproof"
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:weightSum="3.5">
+
+                        <TextView
+                            android:id="@+id/txt_document_upload_proof_of_address"
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:text="Address" />
+
+                        <Spinner
+                            android:id="@+id/spnr_document_upload_document_address"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/llAddressAadhaarScan"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.0"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_click_preview_image_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".25"
+                                android:background="@color/White"
+                                android:onClick="onPreview_AddressProof"
+                                android:src="@drawable/preview"
+                                android:visibility="invisible" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_delete_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".25"
+                                android:background="@color/White"
+                                android:onClick="onDelete_addressProof"
+                                android:src="@drawable/trash_icon"
+                                android:visibility="invisible" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_click_image_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:src="@drawable/ibtn_camera" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_click_browse_address"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:onClick="onBrowse_AddressProof"
+                                android:src="@drawable/ibtn_browsedoc" />
+
+                            <ImageButton
+                                android:id="@+id/img_btn_document_upload_address_upload"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_weight=".5"
+                                android:background="@color/White"
+                                android:clickable="true"
+                                android:onClick="onUpload_AddressProof1"
+                                android:src="@drawable/ibtn_uploaddoc" />
+
+                        </LinearLayout>
+
+
+
+                    </TableRow>
+
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="3.5">
+
+                        <TextView
+                            android:id="@+id/txt_document_upload_proof_of_others"
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:text="Others" />
+
+                        <EditText
+                            android:id="@+id/edt_document_upload_document_others"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:hint="Enter Other Doc Name" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_document_upload_click_preview_image_others"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight=".25"
+                            android:background="@color/White"
+                            android:onClick="onPreview_OthersProof"
+                            android:src="@drawable/preview"
+                            android:visibility="invisible" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_document_delete_Others"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight=".25"
+                            android:background="@color/White"
+                            android:onClick="onDelete_othersProof"
+                            android:src="@drawable/trash_icon"
+                            android:visibility="invisible" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_document_upload_click_image_others"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight=".5"
+                            android:background="@color/White"
+                            android:src="@drawable/ibtn_camera" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_document_upload_click_browse_Others"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight=".5"
+                            android:background="@color/White"
+                            android:clickable="true"
+                            android:onClick="onBrowse_OtherProof"
+                            android:src="@drawable/ibtn_browsedoc" />
+
+                        <ImageButton
+                            android:id="@+id/img_btn_document_upload_Others_upload"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_weight=".5"
+                            android:background="@color/White"
+                            android:clickable="true"
+                            android:onClick="onUpload_OthersProof1"
+                            android:src="@drawable/ibtn_uploaddoc" />
+                    </TableRow>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@color/LightGrey" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text="FOR OFFICE USE  "
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    style="@style/tv_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical"
+                    android:text="KYC Details "
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="Life Assured Photo"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/ibUserPhotoPreview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/White"
+                            android:onClick="onPreviewUserPhoto"
+                            android:src="@drawable/preview"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/imagePhotoGraphGPSCord"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:background="@color/Black"
+                            android:src="@drawable/focus_imagebutton_photo"
+                            android:textColor="@color/Black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="ID Proof"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvImageIDProofDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.7"
+                        android:text="ID Proof Details"
+                        android:textColor="@color/Gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="Address Proof"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/TVImageAddressProofDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.7"
+                        android:text="Address Proof Details"
+                        android:textColor="@color/Gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="Other Proof"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/TVImageOtherProofDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.7"
+                        android:text="Other Proof Details"
+                        android:textColor="@color/Gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvUserTypeDescritionTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="LM/CIF/BDM/UM"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/TVLMCIFBDMUMGPSDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.7"
+                        android:text="LM/CIF/BDM/UM"
+                        android:textColor="@color/Gray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvUserTypePhotoTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_weight="0.3"
+                        android:text="LM/CIF/BDM/UM Photo"
+                        android:textColor="@color/Black"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/ibAgentTypeUploadPhoto"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:background="@color/Black"
+                            android:src="@drawable/focus_imagebutton_photo"
+                            android:textColor="@color/Black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="7dp"
+                    android:text="DECLARATION WHEN THE DGH IS FILLED BY A PERSON OTHER THAN THE PROPOSER /POLICYHOLDER / MEMBER INSURED IN VERNACULAR LANGUAGE/ PROPOSER /POLICYHOLDER / MEMBER INSURED IS ILLITERATE"
+                    android:textColor="@color/Black"
+                    android:textSize="15sp" />
+
+
+                <!--<RadioGroup
+                android:id="@+id/radioGroupFormFiller"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.5"
+                    android:checked="false"
+                    android:text="No"
+                    android:textColor="@color/Gray"
+                    android:textSize="16sp" />
+
+            </RadioGroup>-->
+
+                <LinearLayout
+                    android:id="@+id/llFillerOtherThanProp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBoxOtherUserDeclaration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:gravity="top"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="7dp"
+                        android:text="Select Form Content Explanation Language "
+                        android:textColor="#808080"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLanguages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/textboxbg"
+                        android:padding="5dp"
+                        android:popupBackground="@drawable/myspinner_border"
+                        android:spinnerMode="dropdown"
+                        android:textColor="#484848" />
+                    <CheckBox
+                        android:id="@+id/checkBoxOtherUserDeclarationSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:gravity="top"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/DarkGray"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Place"
+                        android:textColor="#808080"
+                        android:textSize="13sp" />
+
+                    <EditText
+                        android:id="@+id/etPlace"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter Place"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tvUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="User Name"
+                        android:textColor="#808080"
+                        android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/tvUserCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="User Code"
+                        android:textColor="#808080"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llOTP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/etOTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edittext_dob_shape"
+                        android:hint="Enter OTP Received"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/buttonGenerateOTP"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="@color/Common_blue"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Generate OTP"
+                            android:textColor="#ffffff" />
+
+                        <Button
+                            android:id="@+id/buttonValidateOTP"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/DarkGray"
+                            android:enabled="false"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="Validate OTP"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

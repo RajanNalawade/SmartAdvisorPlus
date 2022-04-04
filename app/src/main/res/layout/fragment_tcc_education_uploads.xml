@@ -1,0 +1,310 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#f0f0f0">
+
+    <TextView
+        style="@style/tv_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Education Documents Upload"
+        android:textColor="@color/Blue"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:background="@color/LightGrey" />
+
+    <LinearLayout android:id="@+id/ll_tcc_education_ssc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="SSC" />
+
+        <Spinner
+            android:id="@+id/spnr_tcc_education_doc_ssc"
+            style="@style/spnr_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+
+        <!--<ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_ssc_preview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:onClick="onPreview_ageProof"
+            android:src="@drawable/preview"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_ssc_dlt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:background="@color/White"
+            android:onClick="onDelete_ageProof"
+            android:src="@drawable/trash_icon"
+            android:visibility="invisible" />-->
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_ssc_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@color/White"
+            android:src="@drawable/ibtn_camera" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_ssc_browse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@color/White"
+            android:clickable="true"
+            android:onClick="onBrowse_AgeProof"
+            android:src="@drawable/ibtn_browsedoc" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_ssc_upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@color/White"
+            android:clickable="true"
+            android:onClick="onUpload_AgeProof1"
+            android:src="@drawable/ibtn_uploaddoc" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/LightGrey" />
+
+    <LinearLayout android:id="@+id/ll_tcc_education_hsc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="HSC" />
+
+        <Spinner
+            android:id="@+id/spnr_tcc_education_doc_hsc"
+            style="@style/spnr_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+
+        <!--<ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_hsc_preview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:onClick="onPreview_ageProof"
+            android:src="@drawable/preview"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_hsc_dlt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:background="@color/White"
+            android:onClick="onDelete_ageProof"
+            android:src="@drawable/trash_icon"
+            android:visibility="invisible" />-->
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_hsc_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ibtn_camera" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_hsc_browse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:onClick="onBrowse_AgeProof"
+            android:src="@drawable/ibtn_browsedoc" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_hsc_upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:onClick="onUpload_AgeProof1"
+            android:src="@drawable/ibtn_uploaddoc" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/LightGrey" />
+
+    <LinearLayout android:id="@+id/ll_tcc_education_degree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/tv_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:text="Degree" />
+
+        <Spinner
+            android:id="@+id/spnr_tcc_education_doc_degree"
+            style="@style/spnr_default"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+
+        <!--<ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_degree_preview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:layout_gravity="center"
+            android:background="@color/White"
+            android:onClick="onPreview_ageProof"
+            android:src="@drawable/preview"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_degree_dlt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".25"
+            android:background="@color/White"
+            android:onClick="onDelete_ageProof"
+            android:src="@drawable/trash_icon"
+            android:visibility="invisible" />-->
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_degree_camera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ibtn_camera" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_degree_browse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:onClick="onBrowse_AgeProof"
+            android:src="@drawable/ibtn_browsedoc" />
+
+        <ImageButton
+            android:id="@+id/imgbtn_tcc_education_doc_degree_upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight=".5"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:onClick="onUpload_AgeProof1"
+            android:src="@drawable/ibtn_uploaddoc" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/LightGrey" />
+
+    <Button android:id="@+id/btn_tcc_education_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/Common_blue"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:text="NEXT"/>
+
+
+</LinearLayout>

@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/HomeLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:autoStart="true"
+                android:flipInterval="5000"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/imageviewLMSurvey"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/banner_lm_survey" />
+
+                <ImageView
+                    android:id="@+id/imageviewOfflineEkyc"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/offline_ekyc" />
+
+                <ImageView
+                    android:id="@+id/imageviewThanksaDot"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/banner_thinks_dot" />
+
+            </ViewFlipper>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_dashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_dashboard"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/dashboard1" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Dashboard"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_products"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_products"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/products1" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Products"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="2dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_new_bussiness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_new_business"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/newbusinesses1" />
+
+                        <TextView
+                            android:id="@+id/tv_nb"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="New Business"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_require_upload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_utility"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/uploaddocument1" />
+
+                        <TextView
+                            android:id="@+id/tv_requirementupload"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Requirement Upload"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:paddingTop="2dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_future_planner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/future_planner"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/childeducationplanner1" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Future Planner"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_servicing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_Servicing"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/servicingnew" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Servicing"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowHomeBDMTracker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/ll_home_branchLocator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageButton
+                            android:id="@+id/imagebuttonBranchLocator"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/branch_locator" />
+
+                        <TextView
+                            android:id="@+id/textviewbranchLocator"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Branch Locator"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_sales_kit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imgbtn_sal"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/sales_kit" />
+
+                        <TextView
+                            android:id="@+id/tv_sales"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Sales Kit"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPDFBancaRetailProtectionPresentation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_protection_presentation_for_distributors" />
+
+                    <TextView
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="Protection Presentation for Distributors"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutPDFBancaRetailReferenceSlides"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_reference_slides" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="Reference Slides"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRowHomeEkyc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/ll_ekyc_policylist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/ib_ekyc_policylist"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/link_to_aadhar_policy_list" />
+
+                        <TextView
+                            android:id="@+id/txt_ekyc_policylist"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="Link To Aadhar Policy List"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_ekyc_dashboard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/reportgridbg"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/ib_ekyc_dashboard"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="4dp"
+                            android:background="#f0f0f0"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/round_link_aadhar_policy_dashboard" />
+
+                        <TextView
+                            android:id="@+id/txt_ekyc_dashboard"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center"
+                            android:text="eKyc DashBoard"
+                            android:textColor="#808080" />
+                    </LinearLayout>
+                </LinearLayout>
+            </TableRow>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutProductExplainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <ImageButton
+                        android:id="@+id/imagebuttonProductExplainer"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_product_explainer" />
+
+                    <TextView
+                        android:id="@+id/textviewProductExplainer"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:text="Product Explainer"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutLMCorner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <ImageButton
+                        android:id="@+id/imagebuttonLMCorner"
+                        android:layout_width="60dp"
+                        android:layout_height="53dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_icon_lm_corner" />
+
+                    <TextView
+                        android:id="@+id/textviewLMCorner"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="LM Corner"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <!--<LinearLayout
+                    android:id="@+id/layoutLMClubMemberShipReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/imgbtLMClubMemberShipReport"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bdmtrackernew" />
+
+                    <TextView
+                        android:id="@+id/tv_LMClubMemberShipReport"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:clickable="false"
+                        android:text="LM Club Membership Report"
+                        android:textColor="#808080" />
+                </LinearLayout>-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutLMSurvey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/lm_survey" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="LM Survey"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutRinnRakshaDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageButton
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_aob" />
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:clickable="false"
+                        android:gravity="center"
+                        android:text="Rinn Raksha Dashboard"
+                        android:textColor="#808080" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutScoreCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                    <ImageButton
+                        android:id="@+id/imagebuttonScoreCard"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:clickable="false"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_operations_quality_score_card" />
+
+                    <TextView
+                        android:id="@+id/tvScoreCard"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:clickable="false"
+                        android:text="Operations Quality Score Card"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_bdmtracker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_bdmtracker"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bdmtrackernew" />
+
+                    <TextView
+                        android:id="@+id/tv_bdmtracker"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="BDM Tracker"
+                        android:textColor="#808080" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/layoutAOBInterviewQuestions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/imagebuttonAOBInterviewQuestions"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_aob_intrview_que" />
+
+                    <TextView
+                        android:id="@+id/textviewAOBInterviewQuestions"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="AOB Interview Questions"
+                        android:textColor="#808080" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_agent_on_boarding"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageButton
+                        android:id="@+id/imgbtn_agent_on_boarding"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="4dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_aob" />
+
+                    <TextView
+                        android:id="@+id/tv_agent_on_boarding"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:text="Agent On Boarding"
+                        android:textColor="#808080" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </TableLayout>
+    </TableLayout>
+
+</ScrollView>

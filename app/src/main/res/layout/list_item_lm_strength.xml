@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayoutBiggestStrength"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvListItemLMStrength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.8"
+        android:layout_marginBottom="2dp"
+        android:text="@string/strUsage"
+        android:textColor="@color/Blue"
+        android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvListRank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.1"
+            android:layout_marginBottom="2dp"
+            android:text="1"
+            android:visibility="invisible"
+            android:textColor="@color/Blue"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edittextOthers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/edittext_dob_shape"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+</LinearLayout>

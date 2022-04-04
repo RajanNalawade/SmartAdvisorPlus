@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="confirmclose_title">Closing viewer&#8230;</string>
+    <string name="confirmclose_msg">Do you really want to close this document?</string>
+    <string name="confirmsave_msg">Would you like to save this document?</string>
+    <string name="confirmsave_yes_btn">Save and close</string>
+    <string name="confirmsave_no_btn">Close</string>
+
+    <string name="error_dlg_title">Application error</string>
+    <string name="msg_bad_intent">"Bad intent or scheme:\n%s"</string>
+    <string name="msg_no_intent_data">"No intent data:\n%s"</string>
+    <string name="msg_unknown_intent_data_type">"Unknown intent data type:\n%s"</string>
+
+    <string name="msg_loading_book">"Loading book: %1$s&#8230;"</string>
+
+    <string name="msg_wrong_password">"Wrong password&#8230;"</string>
+    <string name="msg_password_required">"Enter password&#8230;"</string>
+
+    <string name="msg_unexpected_error">"An unexpected error has occurred:\n%s"</string>
+
+    <string name="msg_search_text_on_page">"Searching on page %1$d&#8230;"</string>
+    <string name="msg_no_text_found">"Text not found"</string>
+
+    <string name="dialog_title_goto_page">Go to...</string>
+    <string name="button_goto_page">Go</string>
+    <string name="text_page">Page</string>
+    <string name="error_close">Close</string>
+
+    <string name="dialog_backup_name_hint">Enter new backup name&#8230;</string>
+    <string name="dialog_backup_backup">Backup&#8230;</string>
+    <string name="dialog_backup_restore">Restore&#8230;</string>
+    <string name="dialog_backup_remove">Remove&#8230;</string>
+
+    <string name="add_bookmark_name">Enter bookmark description</string>
+    <string name="bookmark_start">Start</string>
+    <string name="bookmark_current">Current position</string>
+    <string name="bookmark_end">End</string>
+    <string name="bookmark_invalid_page">Page number out of range. Valid range: %1$d-%2$d</string>
+
+    <string name="bookmarks_title">Bookmarks</string>
+    <string name="clear_bookmarks_title">Clear bookmarks</string>
+    <string name="clear_bookmarks_text">This action will remove all bookmarks from the selected book. Continue?</string>
+
+    <string name="del_bookmark_title">Remove bookmark</string>
+    <string name="del_bookmark_text">Remove this bookmark?</string>
+
+    <string name="clear_recent_title">Clear recent items</string>
+    <string name="clear_recent_text">This action will remove all books from the recent list. Continue?</string>
+
+    <string name="bookcase_shelves">Bookshelves</string>
+    <string name="recent_title">Recent books</string>
+
+    <string name="list_clear_recent_mode_clear_recent_list">Clear recent books list</string>
+    <string name="list_clear_recent_mode_delete_bookmarks">Delete all bookmarks</string>
+    <string name="list_clear_recent_mode_delete_book_settings">Clear all book settings</string>
+    <string name="list_clear_recent_mode_delete_cached_data">Delete all cached data from disk</string>
+
+    <string name="about_prefix">en</string>
+    <string name="about_title">About EBookDroid</string>
+    <string name="about_commmon_title">Application info</string>
+    <string name="about_fonts_title">Fonts</string>
+    <string name="about_license_title">License</string>
+    <string name="about_3dparty_title">Third party software</string>
+    <string name="about_changelog_title">Change Log</string>
+    <string name="about_thanks_title">Acknowledgments</string>
+    <string name="about_donations">Donations</string>
+
+    <string name="opds">OPDS Browser</string>
+    <string name="menu_opds">OPDS Browser</string>
+
+    <string name="opds_connecting">"Connecting&#8230;"</string>
+    <string name="opds_loading_catalog">"Loading catalog&#8230;"</string>
+    <string name="opds_loading_book">"Loading book: %1$s/%2$s&#8230;"</string>
+    <string name="opds_unpacking_book">"Unpacking book: %1$s/%2$s&#8230;"</string>
+
+    <string name="opds_download_complete">"Book download complete: %1$s"</string>
+    <string name="opds_download_error">"Book download failed: %1$s"</string>
+
+    <string name="opds_add_new_feed">Add new feed</string>
+    <string name="opds_addfeed_title">"Adding new catalog"</string>
+    <string name="opds_addfeed_msg">"Enter alias and URL for the catalog"</string>
+    <string name="opds_addfeed_ok">"Add"</string>
+    <string name="opds_addfeed_alias">"Alias:"</string>
+    <string name="opds_addfeed_url">"URL:"</string>
+    <string name="opds_addfeed_auth">"Authorization required"</string>
+    <string name="opds_editfeed_title">"Edit catalog"</string>
+    <string name="opds_editfeed_msg">"Enter alias and URL for this catalog"</string>
+    <string name="opds_editfeed_ok">"Save"</string>
+    <string name="opds_deletefeed_title">"Delete catalog"</string>
+    <string name="opds_deletefeed_msg">"Do you really want to delete this catalog?"</string>
+    <string name="opds_deletefeed_ok">"Delete"</string>
+    <string name="opds_authfeed_title">"Authorization"</string>
+    <string name="opds_authfeed_msg">"Enter user name and password for this catalog"</string>
+    <string name="opds_authfeed_username">"Username:"</string>
+    <string name="opds_authfeed_password">"Password:"</string>
+    <string name="opds_authfeed_ok">"Login"</string>
+    <string name="opds_error_title">"OPDS Error"</string>
+    <string name="opds_error_msg">"%s"</string>
+    <string name="opds_retry_download">"Retry"</string>
+
+    <string name="book_copy_start">"Copying book&#8230;"</string>
+    <string name="book_copy_progress">"Copying book: %1$s/%2$s&#8230;"</string>
+    <string name="book_copy_complete">"Book copy complete: %s"</string>
+    <string name="book_copy_error">"Book copy failed: %s"</string>
+
+    <string name="book_move_start">"Moving book&#8230;"</string>
+    <string name="book_move_progress">"Moving book: %1$s/%2$s&#8230;"</string>
+    <string name="book_move_complete">"Book move complete: %s"</string>
+    <string name="book_move_error">"Book move failed: %s"</string>
+
+    <string name="book_rename_title">"Rename book"</string>
+    <string name="book_rename_msg">"Enter new book file name:"</string>
+
+    <string name="book_delete_title">"Delete book"</string>
+    <string name="book_delete_msg">"Are you sure you want to delete this book?"</string>
+
+    <string name="outline_title">Outline</string>
+    <string name="outline_missed">No outline available</string>
+
+    <string name="error_page_out_of_rande">Page number out of range. Valid range: 1-%1$d</string>
+
+    <string name="msg_loading">Loading&#8230; Please wait</string>
+    <string name="msg_getting_page_size">Assessing page size %1$d/%2$d</string>
+
+    <string name="tap_zones_single_tap">Single Tap</string>
+    <string name="tap_zones_double_tap">Double Tap</string>
+    <string name="tap_zones_long_tap">Long tap</string>
+    <string name="tap_zones_two_finger_tap">Two finger tap</string>
+    <string name="tap_zones_reset">Reset</string>
+    <string name="tap_zones_delete">Delete</string>
+    <string name="tap_zones_clear">Clear</string>
+
+    <string name="search_results_title">Search results</string>
+    <string name="search_book_dlg_title">Search&#8230;</string>
+
+    <string name="folder_books_count" >"Books: %1$d"</string>
+    <string name="copy_book_to_dlg_title" >"Copy book to&#8230;"</string>
+    <string name="move_book_to_dlg_title" >"Move book to&#8230;"</string>
+
+    <string name="opds_downloading_type_dlg_title">"Select type of book to download"</string>
+    <string name="opds_downloading_dlg_title">"Downloading book as&#8230;"</string>
+    <string name="opds_downloading_dlg_raw_type">"Raw type"</string>
+
+    <string name="notification_file_add">"File added to library"</string>
+    <string name="notification_file_delete">"File removed from library"</string>
+
+    <string name="font_reminder_title">Warning</string>
+    <string name="font_reminder">Starting with version 1.5, PDF and FB2 fonts are no longer embedded in the application. Standard Android fonts are used instead. If you wish to restore legacy fonts or install custom fonts, please use font package installers from Google Play Market: &lt;ul&gt;&lt;li&gt;&lt;a href=&quot;market://details?id=org.ebookdroid.fontpack.legacy&quot;&gt;Legacy fonts&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</string>
+
+    <string name="cache_moving_text">Moving cached files&#8230;</string>
+    <string name="cache_moving_progress">Moving cached files %1$d/%2$d</string>
+
+    <string name="error_invalid_view_mode">This action is only available in view mode %1$s</string>
+
+    <string-array name="arr_select_title">
+        <item>Select Title</item>
+        <item>Mr.</item>
+        <item>Ms.</item>
+        <item>Mrs.</item>
+    </string-array>
+
+    <!--Agent on boarding-->
+
+    <string-array name="arr_aob_title">
+        <item>Select Title</item>
+        <item>Mr</item>
+        <item>Mrs</item>
+        <item>Ms</item>
+        <item>Mx</item>
+    </string-array>
+
+    <string-array name="arr_aob_relation_with_applicant">
+        <item>Select Relation</item>
+        <item>Father</item>
+        <item>Husband</item>
+    </string-array>
+
+    <string-array name="arr_aob_marital_status">
+        <item>Select Marital Status</item>
+        <item>Married</item>
+        <item>Single</item>
+        <item>Divorced</item>
+        <item>Widow</item>
+    </string-array>
+
+    <string-array name="arr_aob_caste_category">
+        <item>Select Caste Category</item>
+        <item>GEN</item>
+        <item>OBC</item>
+        <item>SC</item>
+        <item>ST</item>
+    </string-array>
+
+    <string-array name="arr_aob_basic_qualification">
+        <item>Select Basic Qualification</item>
+        <item>Class X</item>
+        <item>Class XII</item>
+    </string-array>
+
+    <string-array name="arr_aob_pro_qualification">
+        <item>Select Professional Qualification</item>
+        <item>Associate / Fellow of Acturial Society of India</item>
+        <item>Associate / Fellow of Institute of Chartered Accountants of India</item>
+        <item>Associate / Fellow of Institute of Company Secretories of India</item>
+        <item>Graduate</item>
+        <item>Associate / Fellow of Institute of Costs and Works Accountants of India</item>
+        <item>Associate / Fellow of Institute of Insurance Institute of India</item>
+        <item>Master of Bussiness Administration</item>
+        <item>Others</item>
+        <item>Professional Qualification in Marketing</item>
+        <item>Class X</item>
+        <item>Class XII</item>
+        <item>Certified Associateship of Indian Institute of Bankers</item>
+    </string-array>
+
+    <string-array name="arr_aob_occupation_applicable">
+        <item>Select Occupation</item>
+        <item>Business</item>
+        <item>Farmer</item>
+        <item>Service</item>
+        <item>Unemployed</item>
+    </string-array>
+
+    <string-array name="arr_aob_ans_yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="arr_aob_occu_area_ops">
+        <item>Select Area of Operation</item>
+        <item>Rural</item>
+        <item>Urban</item>
+    </string-array>
+
+    <string-array name="arr_aob_occu_anual_income">
+        <item>&lt;1,00,000</item>
+        <item>1,00,000 - 2,00,000</item>
+        <item>2,00,000 - 3,00,000</item>
+        <item>&gt;3,00,000</item>
+    </string-array>
+
+    <string-array name="arr_aob_occu_agency">
+        <item>Select Agency</item>
+        <item>None</item>
+        <item>General</item>
+        <item>Health</item>
+        <item>Mono-line</item>
+        <item>Life</item>
+    </string-array>
+
+    <string-array name="arr_posp_ra_occu_agency">
+        <item>Select Agency</item>
+        <item>None</item>
+        <item>General</item>
+        <item>Health</item>
+        <item>Mono-line</item>
+        <item>Life</item>
+        <item>Point of Sales Person</item>
+    </string-array>
+
+    <string-array name="arr_aob_nominee_relation">
+        <item>Select Relation</item>
+        <item>Adopted Heirs</item>
+        <item>Aunty</item>
+        <item>Brother-in-law</item>
+        <item>Brother</item>
+        <item>Cousin</item>
+        <item>Daughter in law</item>
+        <item>Daughter</item>
+        <item>Father</item>
+        <item>Father in law</item>
+        <item>Grand daughter</item>
+        <item>Grand Father</item>
+        <item>Grand Mother</item>
+        <item>Grand Son</item>
+        <item>Legal Guardian</item>
+        <item>Mother in law</item>
+        <item>Mother</item>
+        <item>Nephew</item>
+        <item>Niece</item>
+        <item>Sister-in-law</item>
+        <item>Sister</item>
+        <item>Son in law</item>
+        <item>Son</item>
+        <item>Spouse</item>
+        <item>Trustee</item>
+        <item>Uncle</item>
+    </string-array>
+
+    <string-array name="arr_aob_bank_account">
+        <item>Select Account Type</item>
+        <item>EFT</item>
+        <item>NEFT</item>
+    </string-array>
+
+    <string-array name="arr_aob_exam_language">
+        <item>Select Language</item>
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Gujarati</item>
+        <item>Marathi</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+        <item>Malayalam</item>
+        <item>Bengali</item>
+        <item>Kannada</item>
+        <item>Punjabi</item>
+        <item>Urdu</item>
+        <item>Oriya</item>
+        <item>Assamese</item>
+    </string-array>
+
+    <string-array name="arr_aob_enrollment_type">
+        <item>Select Enrollment Type</item>
+        <item>Fresh</item>
+        <item>Transfer</item>
+        <item>Composite</item>
+        <item>Recode</item>
+    </string-array>
+
+    <!--e MHR starts-->
+
+    <string name="str_mhr_introduction">Introduction\nMHR is based on your verification of identity of person, age, address, occupation, health, income and social and financial status. All the facts mentioned in the report must be adequately verified by you. If proposer and the life assured are the different then MHR should cointain information about both the persons. Where the Premium is paid by the person other than proposer, the financial details of premium payer is to be verified and mentioned in the MHR.</string>
+    <string name="str_mhr_point_d">D. While Discussing health and medical status did you see or discover any physical or mental deformity or history or current status or immidiate plans of medical treatment/disease or surgery/hospitalization *</string>
+    <string name="str_mhr_point_e">E. Is there any other detail with respect to the client which would add to the risk, legally (criminal proceedings etc) or from the point of view of KYC or AML guidelines? *</string>
+    <string name="str_mhr_point_f">F. Opinion and Recommendations * :(Mandatory) It must include your opinion with regard to adequacy of cover amount applied for, capacity to pay regular premium, adequacy of source of funding, payment of premium from own bank account, and insurability and acceptability of the risk *</string>
+    <string name="str_mhr_point_elabrorate">Please elaborate the above points adequately in case the proposer/life assured in finically depended(student, housewife etc.), widows or premium is funded by a person other than the proposer. You may use additional sheets if required to elaborate your views. You may also attach documents to support the evidence.</string>
+    <string name="str_mhr_point_verify">I have personally verified the details mentioned in this report and declare that the details are true. I understand that the person who is authorised to give this report as per the MHR circular is primarily responsible for the facts presented in this reports, even if other persons have put their signature along with him/her in this report.</string>
+
+    <string-array name="arr_mhr_agri_ownership">
+        <item>Select Ownership</item>
+        <item>Land Owner</item>
+        <item>Tenant</item>
+    </string-array>
+
+    <string-array name="arr_mhr_occupation_verification">
+        <item>Select Role</item>
+        <item>Proposer</item>
+        <item>Premium Payer</item>
+    </string-array>
+
+    <string-array name="arr_mhr_occupation_details">
+        <item>Select Occupation</item>
+        <item>Service</item>
+        <item>Professional</item>
+        <item>Business</item>
+        <item>Self employed</item>
+        <item>Agriculturist</item>
+        <item>Housewife</item>
+        <item>Retired</item>
+        <item>Defence Retired</item>
+        <item>Student</item>
+        <item>Construction Workers</item>
+        <item>Agriculture Labor</item>
+        <item>Family Pension</item>
+        <item>Army</item>
+        <item>Navy</item>
+        <item>Air Force</item>
+        <item>Indian Coast Guard</item>
+        <item>Rashtriya Rifles</item>
+        <item>Border Roads/GREF</item>
+        <item>Assam Rifles</item>
+        <item>BSF</item>
+        <item>CISF</item>
+        <item>CRPF</item>
+        <item>ITBP</item>
+        <item>NSG</item>
+        <item>SSB</item>
+        <item>Other Arm Forces except police</item>
+    </string-array>
+
+    <string-array name="arr_mhr_personal_dob_details">
+        <item>Select Document</item>
+        <item>Aadhar card with complete DOB</item>
+        <item>Aadhar card with incomplete DOB</item>
+        <item>Pan Card</item>
+        <item>Birth Certificate</item>
+        <item>School/College Certificate</item>
+        <item>Passport</item>
+        <item>Service Extract (PSU)</item>
+        <item>Identity Card (Defence)</item>
+        <item>Driving License</item>
+        <item>Voter s Identity Card</item>
+    </string-array>
+
+    <string-array name="arr_mhr_personal_address_details">
+        <item>Select Document</item>
+        <item>Passport</item>
+        <item>Driving License</item>
+        <item>Voter s Identity Card</item>
+        <item>Aadhar Card</item>
+        <item>Job Card issued by NREGA</item>
+        <item>Letter issued by National Population Register</item>
+    </string-array>
+
+    <string-array name="arr_mhr_personal_identity_details">
+        <item>Select Document</item>
+        <item>Passport</item>
+        <item>Driving License</item>
+        <item>Pan Card</item>
+        <item>Aadhar Card</item>
+        <item>Voter s Identity Card</item>
+        <item>NREGA Job Card</item>
+        <item>Letter issued by National Population Register</item>
+    </string-array>
+
+    <!--e MHR ends-->
+
+</resources>

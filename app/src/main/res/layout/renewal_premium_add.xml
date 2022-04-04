@@ -1,0 +1,493 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <!--
+             <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:text="Renewal Premium"                
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/header"/>
+        -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/policy_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_policy_no"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/hint_policy_no"
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:maxLength="11"
+            android:nextFocusDown="@+id/et_rene_paymnt_dob"
+            android:paddingLeft="4dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/dob"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_dob"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:clickable="true"
+            android:hint="@string/hint_dob"
+            android:inputType="date"
+            android:nextFocusDown="@+id/et_rene_paymnt_micr_code"
+            android:paddingLeft="4dp" />
+
+        <!-- *********************** MICR Code ****************************** -->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#d3d3d3" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/micr_code"
+                    android:textColor="#000000" />
+
+                <RadioGroup
+                    android:id="@+id/rg_rp_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_rp_add_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        android:textColor="#000000" />
+
+                    <RadioButton
+                        android:id="@+id/rb_rp_add_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/no"
+                        android:textColor="#000000" />
+                </RadioGroup>
+            </TableRow>
+        </TableLayout>
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_micr_code"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="1234567890"
+            android:hint="@string/hint_micr_code"
+            android:inputType="number"
+            android:maxLength="9"
+            android:nextFocusDown="@+id/et_rene_paymnt_mobile_num"
+            android:paddingLeft="4dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_rene_paymnt_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/bank_name"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_bank_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:drawableRight="@drawable/search"
+            android:hint="@string/hint_bank_name"
+            android:inputType="text"
+            android:paddingLeft="4dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_rene_paymt_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/branch_name"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_branch_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:hint="@string/hint_branch_name"
+            android:inputType="text"
+            android:paddingLeft="4dp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#d3d3d3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/alt_mob_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_rene_paymnt_mobile_num"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="1234567890"
+            android:hint="@string/hint_altr_mobile_no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:nextFocusDown="@+id/btn_send"
+            android:paddingLeft="4dp" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/Common_blue"
+            android:nextFocusDown="@+id/btn_rene_premium_camera"
+            android:text="@string/submit"
+            android:textColor="#ffffff" />
+
+        <!-- *********************************** Amount Details *********************************************** -->
+
+        <TableLayout
+            android:id="@+id/tb_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:stretchColumns="1"
+            android:visibility="gone" >
+
+            <View
+                android:id="@+id/view_after_btn_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#d3d3d3" />
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txt_rene_pay_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/amount"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txt_rene_pay_amount_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:text="Rs.2500"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/txt_rene_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/due_date"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/txt_rene_due_date_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:text="01/01/2015"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- ********************************** Cheque Details ************************************************ -->
+
+        <LinearLayout
+            android:id="@+id/ll_cheque_details"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <View
+                android:id="@+id/view_after_mobile_no"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#d3d3d3" />
+
+            <TextView
+                android:id="@+id/txt_rene_accnt_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/account_no"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_rene_accnt_no"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/my_bordernew1"
+                android:digits="0123456789"
+                android:hint="@string/hint_account_no"
+                android:inputType="number"
+                android:paddingLeft="4dp" />
+
+            <TextView
+                android:id="@+id/txt_rene_cheque_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/cheque_no"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_rene_cheque_no"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/my_bordernew1"
+                android:digits="0123456789"
+                android:hint="@string/hint_cheque_no"
+                android:inputType="number"
+                android:maxLength="30"
+                android:paddingLeft="4dp" />
+
+            <TextView
+                android:id="@+id/txt_rene_cheque_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/cheque_date"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_rene_cheque_date"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/my_bordernew1"
+                android:clickable="true"
+                android:hint="@string/hint_cheque_date"
+                android:inputType="date"
+                android:paddingLeft="4dp" />
+
+            <TextView
+                android:id="@+id/txt_rene_cheque_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/cheque_amount"
+                android:textColor="#000000" />
+
+            <EditText
+                android:id="@+id/et_rene_cheque_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/my_bordernew1"
+                android:editable="false"
+                android:paddingLeft="4dp" />
+
+            <TextView
+                android:id="@+id/txt_rene_pay_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/pay_mode"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/sp_rene_paymode"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/payModes" />
+
+            <TextView
+                android:id="@+id/txt_rene_pay_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/pay_type"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/sp_rene_pay_type"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/payTypes" />
+
+            <TextView
+                android:id="@+id/txt_rene_payment_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/pay_type"
+                android:textColor="#000000" />
+
+            <Spinner
+                android:id="@+id/sp_rene_payment_type"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/textboxbg"
+                android:entries="@array/paymentTypes" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tb_doc_image"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:stretchColumns="1"
+            android:visibility="gone" >
+
+            <!--
+          <View 
+		        android:id="@+id/view_after_cheque_dtls"
+			    android:layout_height="1dp"
+			    android:background="#d3d3d3"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginBottom="8dp"/>
+		        
+		    <TableRow>		          
+		        <Button 
+			        android:id="@+id/btn_rene_premium_camera"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/camera"
+			        android:drawableLeft="@drawable/ic_camera"
+			        android:background="@drawable/btn_image_indicator"
+			        android:nextFocusDown="@+id/btn_rene_premium_gallery"
+			        android:layout_gravity="left"/>     
+			        
+			   <Button 
+			       android:id="@+id/btn_rene_premium_gallery"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:drawableLeft="@drawable/ic_gallery"
+			       android:text="@string/gallery"
+			       android:background="@drawable/btn_image_indicator"
+			       android:nextFocusDown="@+id/btn_rene_premium_view"
+			       android:layout_gravity="center_horizontal"/>
+			        
+			  <Button 
+			       android:id="@+id/btn_rene_premium_view"
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:text="@string/view"
+			       android:background="@drawable/btn_image_indicator"
+			       android:drawableLeft="@drawable/ic_view"
+			       android:nextFocusDown="@+id/btn_rene_premium_upload"
+			       android:layout_gravity="right"/>			          
+		   </TableRow>        
+		                   
+		  <View 
+			 android:id="@+id/view_below_camera"
+		 	 android:layout_height="1dp"
+		   	 android:background="#d3d3d3"
+			 android:layout_marginTop="8dp"
+		 	 android:layout_marginBottom="8dp"/>
+            -->
+
+            <Button
+                android:id="@+id/btn_rene_premium_upload"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/btn_indicator"
+                android:text="@string/sync"
+                android:textColor="#ffffff" />
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

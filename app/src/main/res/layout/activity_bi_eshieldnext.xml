@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/White"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/White"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:overScrollMode="always">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp">
+
+                    <TableRow
+                        android:minHeight="@dimen/def_min_height"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Distribution Channel" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_DistributionChannel"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_EShieldnext_StaffDiscount"
+                            style="@style/cb_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:clickable="true"
+                            android:text="Staff Discount"
+                            android:visibility="visible" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tablerowKerlaDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/cb_kerladisc"
+                            style="@style/cb_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:clickable="true"
+                            android:text="Kerala Resident"
+                            android:visibility="visible" />
+
+                    </TableRow>
+
+                    <TableRow android:minHeight="@dimen/def_min_height">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_height="wrap_content"
+                            android:text="Life Assured Name" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Life Assured Title" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_LATitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Life Assured First Name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_LAFirstName"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                            android:hint="First Name*"
+                            android:inputType="textPersonName"
+                            android:maxLength="90" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Life Assured Middle Name" />
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_LAMiddleName"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                            android:hint="Middle Name"
+                            android:inputType="textPersonName"
+                            android:maxLength="25" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Life Assured Last Name" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_LALastName"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight=".5"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                            android:hint="Last Name*"
+                            android:inputType="textPersonName"
+                            android:maxLength="25" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:minHeight="@dimen/def_min_height"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Date of Birth" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Age" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:weightSum="4">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Date of Birth" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/btn_bi_eShield_next_life_assured_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="2"
+                            android:background="@drawable/my_bordernew1"
+                            android:drawableRight="@drawable/dt"
+                            android:onClick="onClickLADob"
+                            android:padding="10dp"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="40dp"
+                        android:weightSum="4">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Age:" />
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_AgeOfLA"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:enabled="false" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="0.5"
+                            android:text="Gender" />
+
+                        <Spinner
+                            android:id="@+id/selGender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <TableRow
+                        android:minHeight="@dimen/def_min_height"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="State" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_State"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_weight="1" />
+                    </TableRow>
+
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Smoking Satus" />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <ImageView
+                                    android:id="@+id/imageview_EShieldnext_Smoker"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:onClick="onSmoker"
+                                    android:src="@drawable/smoker_nonselected" />
+
+
+                                <ImageView
+                                    android:id="@+id/imageview_EShieldnext_NonSmoker"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:onClick="onNonSmoker"
+                                    android:src="@drawable/nonsmoker_nonselected" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center_horizontal"
+                                    android:text="Smoker"
+                                    android:textColor="@color/Black" />
+
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="Non Smoker"
+                                    android:textColor="@color/Black" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </TableRow>
+
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mobile Number " />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="*"
+                                android:textColor="@color/Red"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <EditText
+                                android:id="@+id/edt_mob"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_weight=".3"
+                                android:maxLength="30"
+                                android:text="+91" />
+
+                            <EditText
+                                android:id="@+id/edt_eshieldnext_contact_no"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_weight=".7"
+                                android:inputType="number"
+                                android:maxLength="10" />
+                        </LinearLayout>
+
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".5"
+                            android:text="Email Id " />
+
+                        <EditText
+                            android:id="@+id/edt_eshieldnext_Email_id"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="50" />
+                    </TableRow>
+
+
+                    <TableRow
+                        style="@style/tr_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:text="Confirm Email Id" />
+
+                        <EditText
+                            android:id="@+id/edt_eshieldnext_ConfirmEmail_id"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="50" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="0.5"
+                            android:text="Better Half Benefits" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_BetterHalfBenefits"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/llSpouseDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/White"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:overScrollMode="always">
+
+                        <TableRow
+                            android:id="@+id/tr_spouse_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_height="wrap_content"
+                                android:text="Spouse Name" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    style="@style/tv_default"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spouse Name" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="*"
+                                    android:textColor="@color/Red"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <Spinner
+                                android:id="@+id/spnr_bi_eShield_next_spouse_title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/textboxbg"
+                                android:padding="7dp"
+                                android:popupBackground="@drawable/myspinner_border"
+                                android:spinnerMode="dropdown"
+                                android:textColor="#484848" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    style="@style/tv_default"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spouse First Name" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="*"
+                                    android:textColor="@color/Red"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/edt_bi_eShield_next_first_spouse_name"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                                android:hint="First Name*"
+                                android:inputType="textPersonName"
+                                android:maxLength="25" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.5"
+                                android:text="Spouse Middle Name" />
+
+                            <EditText
+                                android:id="@+id/edt_bi_eShield_next_spouse_middle_name"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
+                                android:hint="Middle Name"
+                                android:inputType="textPersonName"
+                                android:maxLength="25" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".5"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    style="@style/tv_default"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spouse Last Name" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="*"
+                                    android:textColor="@color/Red"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <EditText
+                                android:id="@+id/edt_bi_eShield_next_spouse_last_name"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_weight=".5"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                                android:hint="Last Name*"
+                                android:inputType="textPersonName"
+                                android:maxLength="25" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="0.5"
+                                android:text="Spouse Gender" />
+
+                            <Spinner
+                                android:id="@+id/spinnerSpouseGender"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/textboxbg"
+                                android:padding="7dp"
+                                android:popupBackground="@drawable/myspinner_border"
+                                android:spinnerMode="dropdown"
+                                android:textColor="#484848" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="40dp"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    style="@style/tv_default"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Spouse Date of Birth" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:text="*"
+                                    android:textColor="@color/Red"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:id="@+id/btn_bi_eShield_next_spouse_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_weight="2"
+                                android:background="@drawable/my_bordernew1"
+                                android:drawableRight="@drawable/dt"
+                                android:onClick="onClickSpouseDob"
+                                android:padding="10dp"
+                                android:textColor="#484848" />
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/tr_default"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="40dp"
+                            android:weightSum="4">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:text="Age:" />
+
+                            <EditText
+                                android:id="@+id/edittext_EShieldnext_AgeOfSpouse"
+                                style="@style/et_default"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:enabled="false" />
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/tr_default"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Spouse Smoking Status" />
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/tr_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_marginLeft="3dp"
+                                android:layout_marginRight="3dp"
+                                android:layout_weight="2"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <ImageView
+                                        android:id="@+id/imageview_EShieldnext_Smoker_spouse"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:onClick="onSmoker_Spouse"
+                                        android:src="@drawable/smoker_nonselected" />
+
+
+                                    <ImageView
+                                        android:id="@+id/imageview_EShieldnext_NonSmoker_spouse"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:onClick="onNonSmoker_Spouse"
+                                        android:src="@drawable/nonsmoker_nonselected" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"
+                                        android:text="Smoker"
+                                        android:textColor="@color/Black" />
+
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="Non Smoker"
+                                        android:textColor="@color/Black" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.5"
+                                android:text="Spouse Qualification" />
+
+                            <Spinner
+                                android:id="@+id/spinner_qualification"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/textboxbg"
+                                android:padding="7dp"
+                                android:popupBackground="@drawable/myspinner_border"
+                                android:spinnerMode="dropdown"
+                                android:textColor="#484848" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:minHeight="40dp"
+                            android:weightSum="1">
+
+                            <TextView
+                                style="@style/tv_default"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="0.5"
+                                android:text="Spouse Age Proof" />
+
+                            <Spinner
+                                android:id="@+id/spinner_age_proof"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="3dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/textboxbg"
+                                android:padding="7dp"
+                                android:popupBackground="@drawable/myspinner_border"
+                                android:spinnerMode="dropdown"
+                                android:textColor="#484848" />
+                        </TableRow>
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Plan" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_Plan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848"/>
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Whole life / Other than whole life" />
+
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_WholeLifeOrOther"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Premium Payment Option" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_PremiumPaymentOption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_premium_frequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Premium Frequency" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_PremiumFrequency"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848"  />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Policy Term" />
+
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_PolicyTerm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848"  />
+
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tr_ppt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Premium Payment Term" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_PremiumPaymentTerm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Sum Assured" />
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_SumAssured"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:hint="Sum Assured"
+                            android:inputType="number"
+                            android:maxLength="50" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Death Benefits Payment Mode" />
+
+                        <Spinner
+                            android:id="@+id/spinner_EShieldnext_DeathBenefitsPaymentOption"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Rider" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_EShieldnext_AccidentalDeathBenefitRider"
+                            style="@style/cb_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="SBI Life - Accidental Death Benefit Rider"
+                            android:visibility="visible" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_adb_term"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Term for ADB Rider" />
+                        <Spinner
+                            android:id="@+id/spnr_EShieldnext_TermForADBRider"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tr_adb_SA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="ADB Rider Sum Assured" />
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_ADBRiderSumAssured"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:hint="Sum Assured"
+                            android:inputType="number"
+                            android:maxLength="50"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible">
+
+                        <CheckBox
+                            android:id="@+id/checkbox_EShieldnext_PermanantDisabilityBenefitRider"
+                            style="@style/cb_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:text="SBI Life-Accidental Total and Permanent Disability Benefit Rider"
+                            android:visibility="visible" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tr_atpdb_term"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="Term for ATPDB Rider" />
+
+
+                        <Spinner
+                            android:id="@+id/spnr_EShieldnext_TermForATPDBRider"
+                            style="@style/spnr_default"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="3dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/textboxbg"
+                            android:padding="7dp"
+                            android:popupBackground="@drawable/myspinner_border"
+                            android:spinnerMode="dropdown"
+                            android:textColor="#484848" />
+
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tr_atpdb_SA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:minHeight="40dp"
+                        android:visibility="gone"
+                        android:weightSum="1">
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="0.5"
+                            android:text="ATPDB Rider Sum Assured" />
+
+                        <EditText
+                            android:id="@+id/edittext_EShieldnext_ATPDBRiderSumAssured"
+                            style="@style/et_default"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:hint="Sum Assured"
+                            android:inputType="number"
+                            android:maxLength="50"/>
+                    </TableRow>
+
+
+                    <TableRow
+                        android:id="@+id/tableRow_proceed_shubhNivesh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/back"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.48"
+                            android:background="@color/Common_blue"
+                            android:padding="5dp"
+                            android:text="Back"
+                            android:textColor="#ffffff" />
+
+                        <TextView
+                            style="@style/tv_default"
+                            android:layout_width="0dp"
+                            android:layout_height="66dp"
+                            android:layout_weight="0.04" />
+
+                        <Button
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.48"
+                            android:background="@color/Common_blue"
+                            android:padding="5dp"
+                            android:text="Proceed"
+                            android:textColor="#ffffff" />
+                    </TableRow>
+                </TableLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

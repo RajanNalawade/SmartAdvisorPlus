@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical" >
+
+        <!--
+         <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Renewal Premium Details"
+        android:textColor="#ffffff"
+        android:textSize="15sp"
+        android:layout_marginLeft="8dp"
+    	android:layout_marginRight="8dp"
+        android:textStyle="bold"
+        android:background="@drawable/header"/>
+        -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/policy_no_without_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_policy_no"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/account_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_accnt_no"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="0123456789"
+            android:hint="@string/hint_account_no"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/tv_edit_rene_micr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/micr_code_without_asterisk"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_micr_code"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_edit_rene_bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/bank_name_without_asterisk"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_bank_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_edit_rene_branch_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/branch_name_without_asterisk"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_branch_name"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_cheque_no"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="0123456789"
+            android:hint="@string/hint_cheque_no"
+            android:inputType="number"
+            android:maxLength="30" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_date"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_cheque_date"
+            android:layout_width="fill_parent"
+             android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:clickable="true"
+            android:hint="@string/hint_cheque_date"
+            android:inputType="date" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_amount_wihout_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_cheque_amt"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/pay_mode_without_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_pay_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/pay_type_without_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_pay_type"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/payment_type_without_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_rene_payment_type"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:editable="false"
+            android:paddingLeft="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/alt_mob_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_edit_altr_mob_no"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:digits="0123456789"
+            android:hint="@string/hint_altr_mobile_no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:paddingLeft="4dp" />
+
+        <!--
+    <TableLayout 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"    
+		android:stretchColumns="1">
+	    
+	    <View
+			android:layout_height="1dp"
+			android:background="#d3d3d3"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"/>
+	    
+	    <TableRow >
+	        <Button 
+			    android:id="@+id/btn_rene_premium_camera"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/camera"
+			    android:onClick="rp_nb_camera"
+			    android:drawableLeft="@drawable/ic_camera"
+			    android:background="@drawable/btn_image_indicator"
+			    android:nextFocusDown="@+id/btn_rene_premium_gallery"
+			    android:layout_gravity="left"/>     
+			        
+			<Button 
+			    android:id="@+id/btn_rene_premium_gallery"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:drawableLeft="@drawable/ic_gallery"
+			    android:text="@string/gallery"
+			    android:onClick="rp_nb_gallery"
+			    android:background="@drawable/btn_image_indicator"
+			    android:nextFocusDown="@+id/btn_rene_premium_view"
+			    android:layout_gravity="center_horizontal"/>
+			        
+			<Button 
+			    android:id="@+id/btn_rene_premium_view"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/view"
+			    android:onClick="rp_nb_view"
+			    android:background="@drawable/btn_image_indicator"
+			    android:drawableLeft="@drawable/ic_view"
+			    android:nextFocusDown="@+id/btn_rene_premium_upload"
+			    android:layout_gravity="right"/>			
+	    </TableRow>
+	    <View
+		 	 android:layout_height="1dp"
+		   	 android:background="#d3d3d3"
+			 android:layout_marginTop="8dp"
+		 	 android:layout_marginBottom="8dp"/>
+	</TableLayout>
+        -->
+
+        <Button
+            android:id="@+id/btn_rene_premium_upload"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="6dp"
+            android:background="@color/Common_blue"
+            android:onClick="submit"
+            android:text="@string/submit"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical" >
+
+    <TableRow
+        android:id="@+id/tr_header1"
+        style="@style/tr_default"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:weightSum="3" >
+
+        <Button
+            style="@style/btnStyleGenoa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Update Issued Policy >>" >
+        </Button>
+
+        <TextView
+            style="@style/tv_heading"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+        <EditText
+            android:id="@+id/edt_bi_saral_pension_term_for_preffered_term_rider_ptr_sum_assured"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_style"
+            android:drawableLeft="@drawable/search"
+            android:hint="Search"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+    </TableRow>
+
+  <!--   <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_color" >
+ -->
+      
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+        android:background="@drawable/bg_color" >
+
+                <TableRow
+                    android:id="@+id/tr_header2"
+                    style="@style/tr_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tr_header1"
+                    android:background="@drawable/header"
+                    android:gravity="center"
+                    android:weightSum="4" >
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="0.8"
+                        android:gravity="center"
+                        android:text="Proof Of" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.1"
+                        android:gravity="center"
+                        android:text="Requirement" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.05"
+                        android:gravity="center"
+                        android:text="File Name" />
+
+                    <TextView
+                        style="@style/tv_heading"
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.05"
+                        android:gravity="center"
+                        android:text="Sync Date" />
+                </TableRow>
+
+                <GridView
+                    android:id="@+id/gv_userdocumentinfo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1500dp"
+                    android:layout_below="@+id/tr_header2"
+                    android:listSelector="@drawable/list_selector" >
+                </GridView>
+            </LinearLayout>
+      
+  
+
+</LinearLayout>
+</ScrollView>
+</LinearLayout>

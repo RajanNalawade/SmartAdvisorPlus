@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/shape2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_name"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_customer_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:hint="@string/hint_customer_name"
+            
+            android:nextFocusDown="@+id/et_nb_fp_proposal_no" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/proposal_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_proposal_no"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:digits="1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:hint="@string/hint_proposal_no"
+            android:inputType="textCapCharacters|textNoSuggestions"
+             android:paddingLeft="4dp"
+            android:maxLength="10"
+             android:background="@drawable/my_bordernew1"
+            android:nextFocusDown="@+id/et_nb_fp_micr_code" />
+
+        <!-- *********************** MICR Code ******************************** -->
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#d3d3d3" />
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow android:gravity="center_vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/micr_code"
+                    android:textColor="#000000" />
+
+                <RadioGroup
+                    android:id="@+id/rg_nb_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rb_nb_add_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        android:textColor="#000000" />
+
+                    <RadioButton
+                        android:id="@+id/rb_nb_add_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="@string/no"
+                        android:textColor="#000000" />
+                </RadioGroup>
+            </TableRow>
+        </TableLayout>
+
+        <EditText
+            android:id="@+id/et_nb_fp_micr_code"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:digits="1234567890"
+            android:hint="@string/hint_micr_code"
+             android:paddingLeft="4dp"
+            android:inputType="number"
+            android:maxLength="9"
+            android:nextFocusDown="@+id/et_nb_fp_mobile_num"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_nb_fp_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/bank_name"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_bank_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+             android:paddingLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:drawableRight="@drawable/search"
+            android:hint="@string/hint_bank_name"
+            android:inputType="text"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_nb_fp_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/branch_name"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_branch_name"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+             android:paddingLeft="4dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+            android:hint="@string/hint_branch_name"
+            android:inputType="text"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#d3d3d3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/mobile_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_mobile_num"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+             android:paddingLeft="4dp"
+            android:digits="1234567890"
+            android:hint="@string/hint_mobile_no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:nextFocusDown="@+id/btn_new_business_fp_camera" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="13dp"
+            android:background="#d3d3d3" />
+
+        <!-- *************************************** Cheque Details ****************************************** -->
+
+        <TextView
+            android:id="@+id/txt_nb_fp_accnt_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="13dp"
+            android:text="@string/account_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_accnt_no"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+             android:paddingLeft="4dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:digits="0123456789"
+            android:hint="@string/hint_account_no"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/txt_nb_fp_cheque_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_no"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_cheque_no"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+             android:paddingLeft="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:digits="0123456789"
+            android:hint="@string/hint_cheque_no"
+            android:inputType="number"
+            android:maxLength="30" />
+
+        <TextView
+            android:id="@+id/txt_nb_fp_cheque_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_date"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_cheque_date"
+            android:layout_width="fill_parent"
+           	android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+             android:paddingLeft="4dp"
+            android:clickable="true"
+            android:hint="@string/hint_cheque_date"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/txt_nb_fp_cheque_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/cheque_amount"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_fp_cheque_amount"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+             android:paddingLeft="4dp"
+            android:digits="0123456789."
+            android:hint="@string/hint_cheque_amount"
+            android:inputType="numberDecimal"
+            android:maxLength="13" />
+
+        <TextView
+            android:id="@+id/txt_nb_pay_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/pay_mode"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/sp_nb_pay_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/textboxbg"
+            android:layout_marginLeft="8dp"
+             android:paddingLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:entries="@array/payModes" />
+
+        <TextView
+            android:id="@+id/txt_nb_pay_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/pay_type"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/sp_nb_pay_type"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/textboxbg"
+            android:layout_marginLeft="8dp"
+             android:paddingLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:entries="@array/payTypes" />
+
+        <TextView
+            android:id="@+id/txt_nb_payment_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/payment_type_without_asterisk"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/et_nb_payment_type"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/my_bordernew1"
+            android:paddingLeft="4dp"
+            android:layout_marginLeft="8dp"
+            
+            android:layout_marginRight="8dp"
+            android:editable="false"
+            android:text="@string/initial" />
+
+
+        <Button
+            android:id="@+id/btn_new_business_fp_submit"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/Common_blue"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/submit"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</ScrollView>

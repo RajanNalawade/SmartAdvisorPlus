@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+       android:background="@drawable/header">
+
+        <TextView 
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SBI LIFE - SMART MONEYBACK INSURANCE"
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white" />
+        <TextView  
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="(UIN:111N082V01)"
+            android:textAppearance="?android:attr/textAppearanceSmall" 
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    
+    <ScrollView
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+   <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:paddingTop="6dp"
+         android:paddingBottom="6dp">
+        
+        <TableRow
+            android:id="@+id/tableRow0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            
+         >
+    <TextView  
+        android:id="@+id/outputdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Based on User Input, Premium Details are as follows:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginBottom="15dp"
+        android:textColor="#4C4C4C"
+        />
+    
+
+    </TableRow>
+         <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    
+    <TextView  style="@style/app_TextColor"
+        android:id="@+id/output1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+    android:id="@+id/output"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Large Text"
+    android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+<TextView  style="@style/app_TextColor"
+        android:id="@+id/output10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</TableRow>
+<TableRow
+            android:id="@+id/tableRow12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="Back" 
+        style="@style/button_style"
+         android:layout_margin="2dp"/>
+    
+    <Button
+         android:id="@+id/gohome"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+         android:text="Go To Premium Calculator"
+         style="@style/button_style"
+         android:layout_margin="2dp" />
+ </TableRow>
+ 
+<TableRow
+            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            
+         >
+ <Button
+         android:id="@+id/sendemail"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_indicator"
+         android:text="Send Email" />
+  
+  <Button
+         android:id="@+id/sendmesssage"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:textColor="#ffffff"
+        android:background="@drawable/btn_indicator"
+         android:text="Send Message" />
+ </TableRow>
+ 
+</TableLayout>
+</ScrollView>
+</LinearLayout>
+</LinearLayout>

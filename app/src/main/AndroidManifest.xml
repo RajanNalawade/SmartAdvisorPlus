@@ -1,0 +1,1982 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="sbilife.com.pointofsale_bancaagency">
+
+    <application
+        android:name=".EnableMultiDex"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/tileprofessional"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/app_themetitle"
+        tools:replace="android:icon, android:theme">
+        <activity
+            android:name=".new_bussiness.NB_YoNoBranchPortalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".futureplanner.RetirementPlannerWebViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".futureplanner.RetirementPlannerListviewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".utility.AdditionalUtilityActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".utility.DocumentsUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".utility.ParivartanDocumentsUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ekyc.offline_ekyc.OfflineKYCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".utility.ViewDocumentStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utility.SelfAttestedDocumentActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utility.DocUploadNonMedicalPendingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProposerCaptureSignature"
+            android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".CaptureSignature"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".new_bussiness.NeedAnalysisDashboardActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".needanalysis.NeedAnalysisActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".needanalysis.OthersProductListActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SettingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartmoneyplanner.BI_SmartMoneyPlannerActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".shubhnivesh.BI_ShubhNiveshActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".shubhnivesh.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".saralshield.BI_SaralShieldActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".saralshield.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smartshield.BI_SmartShieldActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartshield.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".flexismart.FlexiSmartActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".flexismart.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smartincomeprotect.BI_SmartIncomeProtectActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartincomeprotect.Success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".saralmahaanand.BI_SaralMahaAnandActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartelite.BI_SmartEliteActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartwealthassure.BI_SmartWealthAssureActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartscholar.BI_SmartScholarActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".annuityplus.BI_AnnuityPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.CarouselHomeActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CarouselProductActivity"
+            android:configChanges="keyboardHidden"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".CarouselLinksActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".CarouselHelpActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".CarouselCalendarView"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ChildPlannerListviewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".new_bussiness.CarouselProduct"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PolicyDetailActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerDetailActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewRecordActivityAR"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.ViewEmail"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ViewCalendarEventActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ShowAllEventActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".SurrenderDefinitationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartpower.BI_SmartPowerInsuranceActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".common.Success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".flexismartplus.BI_FlexiSmartPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartbachat.BI_SmartBachatActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartprivilege.BI_SmartPrivilegeActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".sampoorncancersuraksha.BI_SampoornCancerSurakshaActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".sampoorncancersuraksha.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smartbachat.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartwealthbuilder.BI_SmartWealthBuilderActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".annuityplus.AnnuityPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".annuityplus.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.BancaBDMTracker"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".BancaCalendarView"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".BancaProductActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BancaLinksActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".poornsuraksha.BI_PoornSurakshaActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".BancaHelpActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".CarouselWebViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle" />
+        <activity
+            android:name=".smartmoneybackgold.BI_SmartMoneyBackGoldActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartwomenadvantage.BI_SmartWomenAdvantageActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".saralpension.BI_SaralPensionActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".retiresmart.BI_RetireSmartActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartmoneybackgold.Success"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".rinnraksha.RinnRakshaActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".rinnraksha.RinnRakshaSingleActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".rinnraksha.RinnRakshaSuccess"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerDOBActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ProductDesc_webview"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.Lead_MgtHO"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.Lead_MgtHOList"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartguaranteedsavings.BI_SmartGuaranteedSavingsPlanActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartguaranteedsavings.Success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smartchamp.BI_SmartChampActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartchamp.SmartChampSuccess"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smarthumsafar.BI_SmartHumsafarActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smarthumsafar.Success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".smartswadhanplus.BI_SmartSwadhanPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".saralswadhan.BI_SaralSwadhanPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".saralswadhan.SaralSwadhanPlusSuccess"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".smartswadhanplus.success"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.smart_samriddhi.BI_SmartSamriddhiActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.saralinsurewealthplus.BI_SaralInsureWealthPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.smartinsurewealthplus.BI_SmartInsureWealthPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.smartplatinaassure.BI_SmartPlatinaAssureActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.smartfuturechoice.BI_SmartFutureChoicesActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.saraljeevanbima.BI_SaralJeevanBimaActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.new_smart_samriddhi.BI_NewSmartSamriddhiActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.saralpensionnew.BI_SaralPensionNewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".products.eshieldNext.BI_EShieldNext"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+         <activity
+            android:name=".products.smartplatinaplus.BI_SmartPlatinaPlusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RenewalPremium"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:icon="@drawable/professionallogo"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".new_bussiness.NewBusinessFirstPremium"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:icon="@drawable/professionallogo"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".RenewalPremiumNBEdit"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".new_bussiness.NewBusinessFPEdit"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".authorization.ForgetLoginPINActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".authorization.RegisterUserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".authorization.LoginUserActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".reports.BancaReportsPolicyListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsRenewalActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsSurrenderActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsRevivalActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsPolicyDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsProposalTracker"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.BancaReportsPIWCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsMandateRegistrationStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsCIFListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsAdvisorProposalsStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.ViewMedicalStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.underwriting.ViewMedicalStatusTeleMERActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.ReportsUnderwritingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsPPCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.DownloadPPCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.ReportsPolicyServicingListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsNewBusinessActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsEFTFormNotReceivedActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsClaimsListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsAdvisorProposalsStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsClaimsListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsCommissionActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPolicyListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsSurrenderActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPolicyDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPerformanceReportActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsProposalTracker"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsMandateRegistrationStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsMaturityActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPolicyServicingListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsNewBusinessActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPersistency"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsPendingRequirementsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsPerformanceReportsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsMaturityActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.usersreports.BancaReportsBDMUMListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.usersreports.ReportsAMBSMListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.usersreports.ReportsSAMDSMListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.usersreports.ReportsASMListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".futureplanner.ChildPlannerListviewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/app_themetitle"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".futureplanner.FuturePlannerActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/title_activity_future_planner"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".futureplanner.HLVCalculatorWebViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".futureplanner.HLVCalculatorListViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.BancaReportsSBDueListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.agency.AgencyReportsSBDueListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.AutoMandateRegistrationStatusListReportsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.AutoMandatePenetrationDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.SendMandateLinkActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.PolicyServicingExplainerVidActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.UnclaimedDataActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.UnclaimedDataPolicyDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.UnrealizedDataActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.UnrealisedDataDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.RevivalCampaignDashboardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.CommonReportsPersistencyDueDataActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.CommonReportsProposalListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.BranchWisePersistencyActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.IAChannelPersistencyActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.policyservicing.IAChannelPersistencyDueDataActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.AlternetModeCollectionStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.MedicalPendingRequirementActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.PiwcRinnStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.ProposalRinnStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.RevivalCampaignReportList"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.RevivalQuotationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.PremiumPaymentReceiptActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".new_bussiness.NewBusinessHomeGroupingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.ServicingHomeGroupingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_servicing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.agency.AgentServicingHomeGroupingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_bussiness.NewBusinessFPAddActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_bussiness.NewBusinessFPViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RenewalPremiumAddActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RenewalPremiumViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".branchlocator.BranchLocatorMapFragmentActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.dashboard.NewDashboardAgent"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.dashboard.NewDashboardCIF"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".branchlocator.BranchLocatorMainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" /> <!-- CIFEnrollment activities -->
+        <activity
+            android:name=".cifenrollment.phase1.CIFEnrollmentPFActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.phase1.CIFEnrollmentDashboardActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".cifenrollment.phase1.CIFEnrollmentMainActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.ReportsClaimsListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".eftnotification.EFTPendingFormListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.ScoreCardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--
+        <receiver
+            android:name=".authorization.IncomingSms"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        -->
+        <activity
+            android:name=".reports.BancaReportsGroupingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.UnderwrittingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupTermInsuQuoteSearchActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupSearchPolicyNo"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupSearchMemberView"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupSearchClaimView"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFundContributionReceivedActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFundSearchPolicyNo"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFundSearchMemberView"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFeedbackActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.RequireUploadNewBussinessActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.RequireUploadPolicyNoActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupTermInsuranceActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupRequirementUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFundBusinessActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupInsuNewBussinessListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupTermRenewalActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupTermLapseActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupTermCDStatementActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupMiniFundActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.GroupFundCliamActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utility.RinrakshaParivartanDocumentsUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".needanalysis.NABrochureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ekyc.EkycPSClaimsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ekyc.eKYCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ecs.rdlibrary.ECSBioCaptureActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ekyc.EkycDashboardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utility.AllDocumentsUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.RenewalCallingRemarksActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_bussiness.NewBusinessEkycActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.Activity_AOB_Authentication"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBPersonalInfo"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBOccupation"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBNomination"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBBankDetails"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBForm1A"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBExamTraining"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBInterviewBSM"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBTermsConditionsDeclaration"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBDashboard"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBPANPendingAgentList"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBUMListUnderBSM"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.CIF_TCC_UploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.TCC_ExamDetails_Activity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.CIF_ScoreCard_UploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.CIF_TCC_DashboardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.CIFEnrollCorDownload"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.ScoreCardEducationalActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.ScoreCardQuationariesActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.ScoreCardDeclarationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityProductExplainer"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.commonreports.RevivalCampaignPoliciesListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".new_bussiness.pivc.NewBussinessInstaPIVCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.commonreports.BranchwiseRenewalListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.PolicyDispatchStatusActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.PIWCAudioCallingPendingListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.InstaImageFailureCasesActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.SendSMSAlternateProcessActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.SendMHRLinkAOLActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.newbusiness.NRIPaymentLinkActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.underwriting.SendLinkActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.underwriting.SendLinkRinnrakshaActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.lmcorner.LMClubMembershipReportActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.ActivitySPList"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.LMCorner"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.COTTOTTentativeReportActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.DOGHCovidActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.CovidDoghNextActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.CovidSelfDeclarationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.ViewCovidSelfDeclarationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.CovidSelfDeclarationDashboardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.MonthlyGraduationAllowanceReportActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.IAClubDetailActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.ContestsLMActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.ActivityAOBDocumentUpload"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.dashboard.ActivityAOBAgentReqDoc"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.dashboard.ActivityAOBAgentDetails"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".agent_on_boarding.dashboard.ActivityAOBReqDetailDashboard"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.lmsurvey.LMSurveyActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".reports.commonreports.RenewalPolicyListGeoLocationActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.commonreports.PolicyHolderLocatorMapFragmentActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.RinnRakshaDashboardActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.npsscore.NPSScoreActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.mhr.DigitalMHRActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.mhr.DigitalMHRWebViewActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.dgh.DGHActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".cifenrollment.CIFDocUploadActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.mhr.MHRActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.e_mhr_format.ActivityE_MHR"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.mhr.MHRProposalListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.lmcorner.JOTCActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.covid19.Covid19QuestionnaireActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".common.BillDeskPayment"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".home.rinnrakshareports.RinnRakshaReportsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.rinnrakshareports.rinnrakshanb.RinnRakshaNewBusinessListActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.rinnrakshareports.rinnrakshanb.RinnRakshaOutstandingActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.rinnrakshareports.rinnrakshanb.RinnRakshaProposalSearchActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".home.rinnrakshareports.rinnrakshanb.RinnRakshaOutstandingDetailsActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".reports.policyservicing.servicingreqmodule.ServicingRequestModuleActivity"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".posp_ra.dashboard.Activity_POSP_RA_AgentDetails"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.dashboard.Activity_POSP_RA_AgentReqDoc"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.dashboard.Activity_POSP_RA_ReqDetailDashboard"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_Authentication"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_Rejection_Remarks"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_BankDetails"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_Dashboard"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_DocumentUpload"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_ExamTraining"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_InterviewBSM"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_Nomination"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_Occupation"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_PANPendingAgentList"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_PersonalInfo"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_TermsConditionsDeclaration"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".posp_ra.Activity_POSP_RA_UMListUnderBSM"
+            android:configChanges="keyboardHidden"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="28.0.0"
+            tools:replace="android:value" /> <!-- for ocr -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBqm5YJ3i3fAFNbM5KDxSeS3XmHQIhHeHM" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="@string/file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_path" />
+        </provider>
+
+        <receiver
+            android:name=".common.PersistencyBrodcastReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".common.MHRNotificationDailyBroadcastReceiver"
+            android:exported="false" /> <!-- nought changes -->
+        <service
+            android:name=".service.ScheduleService"
+            android:exported="false" />
+        <service
+            android:name=".service.NotifyService"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Default Phone handler and Default Assistant handler -->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS" /> -->
+    <!-- Default SMS handler and Default Assistant handler -->
+    <!--
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+     <uses-permission android:name="android.permission.CALL_PHONE" />
+    -->
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+</manifest>

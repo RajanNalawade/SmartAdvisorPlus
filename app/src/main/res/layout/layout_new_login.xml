@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/smart_advisor_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/login" />
+                </LinearLayout>
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textViewSelectLoginUserType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text=" * Select User Type"
+                android:textColor="@color/textColorHint"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerSelectLoginUserType"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textboxbg"
+                android:paddingLeft="5dp"
+                android:textColor="#484848"></Spinner>
+
+            <TextView
+                android:id="@+id/textViewSpinnerloginMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:text=" * User Id "
+                android:textColor="@color/textColorHint"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerloginMode"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/textboxbg"
+                android:paddingLeft="5dp"
+                android:textColor="#484848"></Spinner>
+
+            <CheckBox
+                android:id="@+id/checkBoxLoginAsBDMOrCIF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="5dp"
+                android:text="Login behalf of CIF"
+                android:textColor="@color/textColorHint"
+                android:textSize="15sp" />
+
+            <TableRow
+                android:id="@+id/tableRowLoginBDMUM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <!-- <android.support.design.widget.TextInputLayout
+                     android:id="@+id/textInputLayout"
+                     android:layout_width="match_parent"
+                     android:layout_weight="1"
+                     android:layout_height="wrap_content">-->
+
+                <EditText
+                    android:id="@+id/edittextBDMUMCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:ems="10"
+                    android:hint=" * Enter BDM Code"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988"
+                    android:textSize="15sp"></EditText>
+                <!-- </android.support.design.widget.TextInputLayout>-->
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowLoginCIF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/editTextCIFAgentCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:ems="10"
+                    android:hint=" * Enter CIF Code"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowLoginEmailId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/editTextLoginEmailId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:ems="10"
+                    android:hint=" * Enter Email Id"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="5dp"
+                    android:textColor="#484848"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="15sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowLoginMobileNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/editTextMobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Mobile No."
+                    android:inputType="phone"
+                    android:paddingLeft="5dp"
+                    android:textColor="#484848"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="15sp"></EditText>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/linearlayoutLoginAuthenticationType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewSpinnerloginAuthenticationType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text=" * Authentication Mode"
+                    android:textColor="@color/textColorHint"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerloginAuthenticationType"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/textboxbg"
+                    android:paddingLeft="5dp"
+                    android:textColor="#484848"></Spinner>
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/tableRowLoginPIN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/editTextLoginPIN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:hint=" * Enter Pin"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberPassword"
+                    android:maxLength="6"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="#484848"
+                    android:textColorHint="@color/textColorHint"
+                    android:textSize="15sp"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRowLoginOTP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edittextLoginOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/my_bordernew1"
+                    android:ems="10"
+                    android:hint=" * Enter OTP"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:singleLine="true"
+                    android:textColor="#484848"
+                    android:textColorHint="#2b5988"
+                    android:textSize="15sp">
+
+                    <requestFocus />
+                </EditText>
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/llCaptcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tvCaptchaCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/captcha_background"
+                        android:gravity="center_vertical|center"
+                        android:text="1 2 1 2 1 2 1"
+                        android:textColor="@color/Black"
+                        android:textSize="35sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/edittextCaptcha"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.9"
+                        android:background="@drawable/my_bordernew1"
+                        android:ems="10"
+                        android:hint="*Enter Captcha"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:paddingLeft="5dp"
+                        android:singleLine="true"
+                        android:textColor="#484848"
+                        android:textColorHint="#2b5988"
+                        android:textSize="15sp">
+
+                        <requestFocus />
+                    </EditText>
+
+                    <ImageView
+                        android:id="@+id/imageCaptchaRefresh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.1"
+                        android:contentDescription="captchaRefresh"
+                        android:src="@drawable/captcha_refresh" />
+
+                </TableRow>
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonLogin"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:text="Log In"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"></Button>
+
+                <!-- <Button
+                    android:id="@+id/buttonGenrateOtp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@color/Common_blue"
+                    android:text="Generate OTP"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" /> -->
+
+                <Button
+                    android:id="@+id/buttonVerifyOTP"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@color/Common_blue"
+                    android:gravity="center"
+                    android:text="Verify &amp; Login"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </TableRow>
+
+            <TextView
+                android:id="@+id/textViewLoginNewUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="New User?"
+                android:textColor="#00a1e3"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textViewForgetPasswordLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Forgot PIN?"
+                android:textColor="#00a1e3"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textViewUserManualLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="User Manual"
+                android:textColor="#00a1e3"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>

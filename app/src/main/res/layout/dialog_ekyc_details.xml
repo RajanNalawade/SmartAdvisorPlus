@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_margin="5dp">
+
+    <ImageView android:id="@+id/iv_ekyc_pic"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout android:id="@+id/ll_ekyc_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="Name: "/>
+
+        <TextView android:id="@+id/txt_ekyc_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasdsadasdasdasdasda"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_ekyc_dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="DOB: "/>
+
+        <TextView android:id="@+id/txt_ekyc_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasd"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_ekyc_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="Gender: "/>
+
+        <TextView android:id="@+id/txt_ekyc_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasd"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_ekyc_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="Mobile: "/>
+
+        <TextView android:id="@+id/txt_ekyc_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasd"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_ekyc_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="Email: "/>
+
+        <TextView android:id="@+id/txt_ekyc_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasd"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ll_ekyc_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_weight="2"
+            android:layout_gravity="center"
+            android:textColor="#2b5988"
+            android:textSize="17sp"
+            android:textStyle="bold|italic"
+            android:text="Address: "/>
+
+        <TextView android:id="@+id/txt_ekyc_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/headernew1"
+            android:padding="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:textColor="#2b5988"
+            android:textSize="15sp"
+            android:text="sadasd"
+            android:textStyle="bold|italic"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Button android:id="@+id/btn_save_ekyc_details"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttonbg"
+            android:text="Save"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>

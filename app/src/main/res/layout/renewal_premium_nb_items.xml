@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    
+    <TableLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        
+        <TableRow >
+            
+            <TextView
+                android:id="@+id/tv_policyProposalNo"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textColor="#000000"
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_policyProposalNo_val"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textColor="#000000"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Customer Name : "
+		        android:textColor="#000000"
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_cus_name"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:textColor="#000000"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Account No : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_acc_no"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Cheque No : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_cheque_no"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Cheque Date : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_cheque_date"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Cheque Amount : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_cheque_amt"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Pay Mode : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_pay_mode"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+        <TableRow >
+            <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:text="Pay Type : "
+		        android:textStyle="bold"/>
+            
+            <TextView 
+		        android:id="@+id/tv_rp_nb_pay_type"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"/>
+            
+        </TableRow>
+        
+    </TableLayout>
+
+</LinearLayout>

@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:overScrollMode="always">
+
+    <!--    <ScrollView-->
+    <!--        android:id="@+id/ScrollView01"-->
+    <!--        android:layout_width="fill_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--        <TableLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="5dp"-->
+    <!--            android:layout_marginRight="5dp"-->
+    <!--            android:paddingBottom="6dp"-->
+    <!--            android:paddingTop="6dp">-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow1"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/staff"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Staff/Non-Staff:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/isForStaff"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow4"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:visibility="gone">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView4"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="J and K Resident:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/isJKResident"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_sourced_by"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_sourced_by"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Sourced By:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/spin_sourced_by"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_source_branch_code"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_source_branch_code"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Sourcing Branch Code:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_source_branch_code"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_pf_no_sourcing_cif"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:visibility="gone">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_pf_no_sourcing_cif"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="PF No. of Sourcing Staff/CIF:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_pf_no_sourcing_cif"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_pf_no_hlst_mpst_head"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:visibility="gone">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_pf_no_hlst_mpst_head"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="PF No. of HLST / MPST Head:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_pf_no_hlst_mpst_head"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_tittle"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_tittle"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Life Assured Tittle:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/spin_life_assured_tittle"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_first_name"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_first_name"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="First Name:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_first_name"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="textPersonName"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_middle_name"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_middle_name"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Middle Name:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_middle_name"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="textPersonName"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_last_name"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_last_name"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Last Name:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_last_name"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="textPersonName"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_dob"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_dob"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Date of Birth:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/txt_life_assured_dob"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:text="Select Date"-->
+    <!--                    android:textColor="#000000"-->
+    <!--                    android:textSize="17sp" />-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_gender"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_gender"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Gender:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/spin_life_assured_gender"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_mobile"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_mobile"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Mobile:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_mobile"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="phone"-->
+    <!--                    android:maxLength="10"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_mail_id"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_mail_id"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Mail ID:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_mail_id"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="textWebEmailAddress"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tr_life_assured_confirm_mail"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_life_assured_confirm_mail"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Confirm Mail ID:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/edt_life_assured_confirm_mail"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="textWebEmailAddress"></EditText>-->
+
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/LoanCategory"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView3"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Loan Type:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/selplan"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/LoanSubCategory"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:visibility="gone">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView9"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Loan Sub-Category:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/loanSubCategory"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow3"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/txt_date"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Membership Form Date:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/membershipDate"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="35dp"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:text="Select Date"-->
+    <!--                    android:textColor="#000000"-->
+    <!--                    android:textSize="17sp" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow5"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/loan_amt"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Loan Amount (Rs.)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/loanAmt"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow6"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/loan_term"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Loan Term (IN Months)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/loanTerm"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow7"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/interest"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Interest Rate Range:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/interestRateRange"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableisCIR"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Cover Interest Rate"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/CIR"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:editable="false"-->
+    <!--                    android:enabled="false"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableisMorato"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Moratorium:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/isMoratoChecked"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow14"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView10"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Moratorium Period(IN Months)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/moratoPeriod"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow15"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView15"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Interest Payment:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/isIntPayDuringMorato"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableiscoBorrower"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Co Borrower Option:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/isCoBorrower"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow11"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textview11"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Primary Borrowers DOB:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/DOB_Borrower1"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="35dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:text="Select Date"-->
+    <!--                    android:textColor="#000000"-->
+    <!--                    android:textSize="17sp" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrowSecondBorrower"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textview17"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Secondary Borrowers DOB:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/DOB_Borrower2"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="35dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:text="Select Date"-->
+    <!--                    android:textColor="#000000"-->
+    <!--                    android:textSize="17sp" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrowThirdBorrower"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textview18"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="55dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Third Borrowers DOB:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/DOB_Borrower3"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="35dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:text="Select Date"-->
+    <!--                    android:textColor="#000000"-->
+    <!--                    android:textSize="17sp" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrw_option"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+
+    <!--                <LinearLayout-->
+    <!--                    android:id="@+id/linerarlayout8"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:orientation="vertical">-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/prem_amt"-->
+    <!--                        style="@style/app_TextColor"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Option"-->
+    <!--                        android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/txt_option"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:text="Each borrower covered for the entire loan amount"-->
+    <!--                        android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <!--                        android:textColor="#4C4C4C" />-->
+    <!--                </LinearLayout>-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/option"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrw_loanshare1"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="1st Borrower Loan Share(in %)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/loanshare1"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrw_loanshare2"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="2nd Borrower Loan Share(in %)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/loanshare2"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tbrw_loanshare3"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="3rd Borrower Loan Share(in %)"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/loanshare3"-->
+    <!--                    style="@style/editetxt_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number"></EditText>-->
+    <!--            </TableRow>-->
+
+
+    <!--            <TableRow-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView11"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="45dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Premium Paid By:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/premPaidBy"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/premTerm"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/textView12"-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="60dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Premium Paying Term:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <EditText-->
+    <!--                    android:id="@+id/premPayingTerm"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:inputType="number" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow12"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <TextView-->
+    <!--                    style="@style/app_TextColor"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="60dp"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:gravity="center_vertical"-->
+    <!--                    android:text="Premium Frequeny Mode:"-->
+    <!--                    android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+    <!--                <Spinner-->
+    <!--                    android:id="@+id/premFreq"-->
+    <!--                    style="@style/spinner_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:background="@drawable/bgspinner"-->
+    <!--                    android:popupBackground="@drawable/myspinner_border"-->
+    <!--                    android:spinnerMode="dropdown" />-->
+    <!--            </TableRow>-->
+
+    <!--            <TableRow-->
+    <!--                android:id="@+id/tableRow13"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <Button-->
+    <!--                    android:id="@+id/btnSubmit"-->
+    <!--                    style="@style/button_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_margin="2dp"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:text="Calculate" />-->
+
+    <!--                <Button-->
+    <!--                    android:id="@+id/back"-->
+    <!--                    style="@style/button_style"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_margin="2dp"-->
+    <!--                    android:layout_weight="0.5"-->
+    <!--                    android:text="Cancel" />-->
+    <!--            </TableRow>-->
+    <!--        </TableLayout>-->
+    <!--    </ScrollView>-->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/LinearLayout1"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/header"-->
+    <!--        android:orientation="vertical" >-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/txt_input_activityheader"-->
+    <!--            style="@style/app_TextColor"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            android:text="SBI LIFE - RINNRAKSHA"-->
+    <!--            android:textAppearance="?android:attr/textAppearanceSmall"-->
+    <!--            android:textColor="@android:color/white" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/txt_input_activityheader1"-->
+    <!--            style="@style/app_TextColor"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            android:text="(UIN:111N078V02)"-->
+    <!--            android:textAppearance="?android:attr/textAppearanceSmall"-->
+    <!--            android:textColor="@android:color/white" />-->
+    <!--        -->
+    <!--        <Button android:background="@drawable/btn_indicator"-->
+    <!--             android:layout_width="wrap_content" -->
+    <!--             android:layout_height="wrap_content"-->
+    <!--              android:onClick="OnProductDtls" -->
+    <!--              android:text="Product Detail" -->
+    <!--              android:textColor="#ffffff" -->
+    <!--              android:textSize="12sp"-->
+    <!--              android:textStyle="bold"-->
+    <!--               android:layout_gravity="right" /> -->
+    <!--        -->
+    <!--    </LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Calc_header"
+        android:padding="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_input_activityheader"
+            style="@style/app_TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="SBI LIFE - RINNRAKSHA"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txt_input_activityheader1"
+            style="@style/app_TextColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="(UIN:111N078V03)"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/staff"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Staff/Non-Staff:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/isForStaff"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/LoanCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Loan Type:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/selplan"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tr_bank_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/txt_bankOption"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Bank"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/spnr_bankOption"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/LoanSubCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:text="Loan Sub-Category:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/loanSubCategory"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Membership Form Date:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/membershipDate"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:text="Select Date"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/disburse_date_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_disbursement"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Date of First Disbursement:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/disbursementDate"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Select Date"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="J and K Resident:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/isJKResident"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/loan_amt"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Loan Amount (Rs.)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/loanAmt"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/loan_term"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Loan Term (IN Months)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/loanTerm"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/interest"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="0.5"
+                    android:text="Interest Rate Range:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/interestRateRange"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableisCIR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Cover Interest Rate"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/CIR"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:editable="false"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableisMorato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Moratorium:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/isMoratoChecked"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Moratorium Period(IN Months)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/moratoPeriod"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Interest Payment:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/isIntPayDuringMorato"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableiscoBorrower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Co Borrower Option:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/isCoBorrower"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview11"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Primary Borrowers DOB:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/DOB_Borrower1"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Select Date"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrowSecondBorrower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview17"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Secondary Borrowers DOB:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/DOB_Borrower2"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Select Date"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrowThirdBorrower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textview18"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="Third Borrowers DOB:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/DOB_Borrower3"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.5"
+                    android:clickable="true"
+                    android:text="Select Date"
+                    android:textColor="#000000"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrw_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/linerarlayout8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/prem_amt"
+                        style="@style/app_TextColor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Option"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                    <TextView
+                        android:id="@+id/txt_option"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Each borrower covered for the entire loan amount"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="#4C4C4C" />
+                </LinearLayout>
+
+                <Spinner
+                    android:id="@+id/option"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrw_loanshare1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="1st Borrower Loan Share(in %)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/loanshare1"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrw_loanshare2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="2nd Borrower Loan Share(in %)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/loanshare2"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tbrw_loanshare3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="0.5"
+                    android:text="3rd Borrower Loan Share(in %)"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/loanshare3"
+                    style="@style/editetxt_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black"></EditText>
+            </TableRow>
+
+
+            <TableRow
+                android:id="@+id/tableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtpremPaidBy"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="0.5"
+                    android:text="Premium Paid By:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/premPaidBy"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/premTerm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:text="Premium Paying Term:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/premPayingTerm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:inputType="number"
+                    android:textColor="@color/Black" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    style="@style/app_TextColor"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:text="Premium Frequeny Mode:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Spinner
+                    android:id="@+id/premFreq"
+                    style="@style/spinner_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    style="@style/button_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="0.5"
+                    android:text="Calculate" />
+
+                <Button
+                    android:id="@+id/back"
+                    style="@style/button_style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="0.5"
+                    android:text="Cancel" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>
+</LinearLayout>

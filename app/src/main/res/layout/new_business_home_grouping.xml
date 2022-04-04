@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f8f8"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:paddingLeft="2dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:id="@+id/ll_newBusinessGroupingPremiumCalculator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imgBtnnewBusinessGroupingPremiumCalculator"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/premiumcalculator1" />
+
+                    <TextView
+                        android:id="@+id/textViewnewBusinessGroupingPremiumCalculator"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Premium Calculator"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_newBusinessGroupingNewBusiness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imgBtnnewBusinessGroupingNewBusiness"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/payment1" />
+
+                    <TextView
+                        android:id="@+id/textViewNewBusinessGroupingNewBusiness"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="New Business Cashiering"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="4dp"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:id="@+id/ll_NewBusinessGroupingNeedAnalysis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imgbtnNewBusinessGroupingNeedAnalysis"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/needanalysis1" />
+
+                    <TextView
+                        android:id="@+id/textViewNewBusinessGroupingNeedAnalysis"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Need Analysis"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_NewBusinessGroupingNeedAnalysisDashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal|center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imgbtnNewBusinessGroupingNeedAnalysisDashboard"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/needanalysisdashboard1" />
+
+                    <TextView
+                        android:id="@+id/textViewNewBusinessGroupingNeedAnalysisDashboard"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Need Analysis Dashboard"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="4dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_ServicingNeedAnalysisVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonServicingNeedAnalysisVideo"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/agencychannel" />
+
+                    <TextView
+                        android:id="@+id/textViewServicingTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Need Analysis Video"
+                        android:textColor="#585858"
+                        android:textSize="10.7sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/ll_NB_insta_pivc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal|center"
+                    android:orientation="vertical" >
+
+                    <ImageButton android:id="@+id/imageButtonNBInstaPivc"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/link1" />
+
+                    <TextView android:id="@+id/tvNBInstaPivc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Insta PIWC"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_ServicingLinks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal|center"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/imageButtonServicingLinks"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/link1" />
+
+                    <TextView
+                        android:id="@+id/tv_bdmtracker"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Links"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="4dp"
+                android:weightSum="2" >
+
+                <LinearLayout
+                    android:id="@+id/ll_NewBusinessGroupingYonoBranch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:id="@+id/imgbtnNewBusinessGroupingYonoBranch"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/needanalysis1" />
+
+                    <TextView
+                        android:id="@+id/textViewNewBusinessGroupingYonoBranch"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="YoNo Branch Portal"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:background="@drawable/reportgridbg"
+                    android:gravity="center_horizontal|center"
+                    android:orientation="vertical" >
+
+                    <ImageButton
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#f0f0f0"
+                        android:contentDescription="@string/contentDescDOB"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/needanalysisdashboard1" />
+
+                    <TextView
+
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="Need Analysis Dashboard"
+                        android:textColor="#585858"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </TableLayout>
+
+    </ScrollView>
+</LinearLayout>

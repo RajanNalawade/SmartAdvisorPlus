@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/window_title"
+        android:layout_alignParentTop="true"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvFromDateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:text="From Date"
+            android:textColor="#808080"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textViewFromDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/my_bordernew1"
+            android:drawableRight="@drawable/dt"
+            android:padding="10dp"
+            android:textColor="#484848" />
+
+        <TextView
+            android:id="@+id/tvToDateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="2dp"
+            android:text="To Date"
+            android:textColor="#808080"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textViewToDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/my_bordernew1"
+            android:drawableRight="@drawable/dt"
+            android:padding="10dp"
+            android:textColor="#484848" />
+
+        <Button
+            android:id="@+id/buttonOk"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="12dp"
+            android:background="@color/Common_blue"
+            android:text="@android:string/ok"
+            android:textColor="#ffffff" />
+
+        <EditText
+            android:id="@+id/edittextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/my_bordernew1"
+            android:hint="Search"
+            android:padding="7dp"
+            android:textColor="#484848"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textviewRecordCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Total count :- 0"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/llHeader"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/include"
+                    layout="@layout/header_layout_unclaimed_ps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/include" />
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

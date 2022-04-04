@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/txt_remark_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Renewal Remark"
+        android:textColor="@color/Black"
+        android:gravity="center"
+        android:padding="8dp"
+        android:textSize="18sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/LightGrey"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/remark_list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>
