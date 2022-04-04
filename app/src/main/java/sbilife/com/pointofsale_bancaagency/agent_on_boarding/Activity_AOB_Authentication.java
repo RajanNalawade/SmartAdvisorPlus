@@ -89,6 +89,7 @@ import sbilife.com.pointofsale_bancaagency.DatabaseHelper;
 import sbilife.com.pointofsale_bancaagency.ParseXML;
 import sbilife.com.pointofsale_bancaagency.R;
 import sbilife.com.pointofsale_bancaagency.ServiceURL;
+import sbilife.com.pointofsale_bancaagency.ckyc.AsyncGetcKYCSearchDetail;
 import sbilife.com.pointofsale_bancaagency.ckyc.InterfaceCKYCProcessCompletion;
 import sbilife.com.pointofsale_bancaagency.common.AsyncUploadFile_Common;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;

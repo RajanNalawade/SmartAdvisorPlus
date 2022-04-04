@@ -1,6 +1,5 @@
 package sbilife.com.pointofsale_bancaagency.home;
 
-import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -17,7 +16,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Html;
@@ -32,7 +30,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -58,7 +55,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -69,8 +65,7 @@ import sbilife.com.pointofsale_bancaagency.ParseXML;
 import sbilife.com.pointofsale_bancaagency.R;
 import sbilife.com.pointofsale_bancaagency.ServiceURL;
 import sbilife.com.pointofsale_bancaagency.agent_on_boarding.ActivityAOBUMListUnderBSM;
-import sbilife.com.pointofsale_bancaagency.agent_on_boarding.Activity_AOB_Authentication;
-import sbilife.com.pointofsale_bancaagency.agent_on_boarding.dashboard.ActivityAOBAgentDetails;
+import sbilife.com.pointofsale_bancaagency.agent_on_boarding.ActivityAOB_Menu;
 import sbilife.com.pointofsale_bancaagency.branchlocator.BranchLocatorMainActivity;
 import sbilife.com.pointofsale_bancaagency.common.AppSharedPreferences;
 import sbilife.com.pointofsale_bancaagency.common.CommonMethods;
@@ -82,18 +77,17 @@ import sbilife.com.pointofsale_bancaagency.home.dashboard.NewDashboardAgent;
 import sbilife.com.pointofsale_bancaagency.home.dashboard.NewDashboardCIF;
 import sbilife.com.pointofsale_bancaagency.home.dgh.DGHActivity;
 import sbilife.com.pointofsale_bancaagency.home.e_mhr_format.ActivityE_MHR;
+import sbilife.com.pointofsale_bancaagency.home.home_menu_adapter.HomeMenu;
+import sbilife.com.pointofsale_bancaagency.home.home_menu_adapter.HomeMenuAdapter;
 import sbilife.com.pointofsale_bancaagency.home.lmcorner.ContestsLMActivity;
 import sbilife.com.pointofsale_bancaagency.home.lmcorner.CovidSelfDeclarationActivity;
 import sbilife.com.pointofsale_bancaagency.home.lmcorner.LMCorner;
 import sbilife.com.pointofsale_bancaagency.home.mhr.DigitalMHRActivity;
 import sbilife.com.pointofsale_bancaagency.home.mhr.MHRActivity;
-import sbilife.com.pointofsale_bancaagency.home.mhr.MHRProposalListActivity;
 import sbilife.com.pointofsale_bancaagency.home.npsscore.NPSScoreActivity;
 import sbilife.com.pointofsale_bancaagency.home.rinnrakshareports.RinnRakshaReportsActivity;
 import sbilife.com.pointofsale_bancaagency.new_bussiness.NewBusinessHomeGroupingActivity;
-import sbilife.com.pointofsale_bancaagency.posp_ra.Activity_POSP_RA_Authentication;
 import sbilife.com.pointofsale_bancaagency.posp_ra.Activity_POSP_RA_UMListUnderBSM;
-import sbilife.com.pointofsale_bancaagency.posp_ra.dashboard.Activity_POSP_RA_AgentDetails;
 import sbilife.com.pointofsale_bancaagency.reports.BancaReportsCIFListActivity;
 import sbilife.com.pointofsale_bancaagency.reports.BancaReportsMaturityActivity;
 import sbilife.com.pointofsale_bancaagency.reports.BancaReportsRenewalActivity;
@@ -130,15 +124,28 @@ public class CarouselHomeActivity extends AppCompatActivity {
     private CommonMethods mCommonMethods;
     private ViewPager slider_pager;
     private LinearLayout layoutDots;
-    private Timer mTimer;
+    private final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
 
+        @Override
+        public void onPageSelected(int position) {
+            addBottomDots(position);
+        }
+
+        @Override
+        public void onPageScrolled(int arg0, float arg1, int arg2) {
+        }
+
+        @Override
+        public void onPageScrollStateChanged(int arg0) {
+
+        }
+    };
+    private Timer mTimer;
     private String strCIFBDMUserId = "", strCIFBDMEmailId = "", strCIFBDMPassword = "", strCIFBDMMObileNo = "", strUserType = "";
     private SharedPreferences mPreferences;
     private ProgressDialog mProgressDialog;
-
     private String strRevivalListErrorCOde1 = "";
     private long lstRevivalListCount1 = 0;
-
     private DownloadFileAsyncTaskEFTPendingForm taskEFTPendingForm;
     private DownloadFileAsyncRenewal_update taskRenewal_update;
     private DownloadFileAsyncNonMedicalRequirement downloadFileAsyncNonMedicalRequirement;
@@ -156,7 +163,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
     private TextView tvLastLoginTime;
     private UMIncentiveNotificationAsyncTask umIncentiveNotificationAsyncTask;
     private NBIncentiveUMNotificationAsyncTask nbIncentiveUMNotificationAsyncTask;
-
     private JOTCMessageAsyncTask jotcMessageAsyncTask;
     private CruiseMessageAsyncTask cruiseMessageAsyncTask;
 
@@ -317,7 +323,8 @@ public class CarouselHomeActivity extends AppCompatActivity {
         rbCarouselHome.setLayoutManager(new GridLayoutManager(CarouselHomeActivity.this, 2));
 
         // call the constructor of CustomAdapter to send the reference and data to Adapter
-        HomeMenuAdapter mHomeMenuAdapter = new HomeMenuAdapter(listMenuItem);
+        HomeMenuAdapter mHomeMenuAdapter = new HomeMenuAdapter(mContext, new HomeMenuAdapter.AdapterDiffUtil());
+        mHomeMenuAdapter.submitList(listMenuItem);
         rbCarouselHome.setAdapter(mHomeMenuAdapter);
         rbCarouselHome.setItemAnimator(new DefaultItemAnimator());
 
@@ -359,10 +366,10 @@ public class CarouselHomeActivity extends AppCompatActivity {
         } else if (strUserType.equalsIgnoreCase("UM")) {
 
             String appMsgStatus = "Dear Colleague,\n" +
-                    "\n" +"Are you ready for CRUISE TO GLORY JAFFNA – SRI LANKA CAMPAIGN??" +
+                    "\n" + "Are you ready for CRUISE TO GLORY JAFFNA – SRI LANKA CAMPAIGN??" +
                     " Leverage this opportunity to qualify for a cruise to Jaffna, Sri Lanka " +
                     "along with your life Mitra’s. T&C applicable.\n" +
-                    "\n" +"Looking forward to overwhelming participation from you and your " +
+                    "\n" + "Looking forward to overwhelming participation from you and your " +
                     "Life Mitras. Wishing you and your team the very best. – Retail Agency";
 
             final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
@@ -448,7 +455,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 
     @Override
     public void onConfigurationChanged(final Configuration newConfig) {
@@ -708,74 +714,74 @@ public class CarouselHomeActivity extends AppCompatActivity {
                 || strUserType.contentEquals("BSM") || strUserType.contentEquals("DSM")
                 || strUserType.equalsIgnoreCase("ASM") || strUserType.equalsIgnoreCase("RSM")) {
             listMenuItem.add(new HomeMenu(R.drawable.dashboard1, "Dashboard",
-                    NewDashboardAgent.class, false, false, ""));
+                    NewDashboardAgent.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.products1, "Products",
-                    CarouselProductActivity.class, false, false, ""));
+                    CarouselProductActivity.class, false, false, "", null));
 
             //Common
             listMenuItem.add(new HomeMenu(R.drawable.newbusinesses1, "New Business",
-                    NewBusinessHomeGroupingActivity.class, false, false, ""));
+                    NewBusinessHomeGroupingActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.uploaddocument1, "Requirement Upload",
-                    DocumentsUploadActivity.class, false, false, ""));
+                    DocumentsUploadActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.childeducationplanner1, "Future Planner",
-                    FuturePlannerActivity.class, false, false, ""));
+                    FuturePlannerActivity.class, false, false, "", null));
             //Common end
 
             listMenuItem.add(new HomeMenu(R.drawable.servicingnew, "Servicing", AgentServicingHomeGroupingActivity.class
-                    , false, false, ""));
+                    , false, false, "", null));
 
             //Common
             listMenuItem.add(new HomeMenu(R.drawable.branch_locator, "Branch Locator",
-                    BranchLocatorMainActivity.class, false, false, ""));
+                    BranchLocatorMainActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.sales_kit, "Sales kit", null, false,
-                    true, "https://drive.google.com/open?id=1xc9KJJIAmee6FXIladPhVsFJ1aDzTFaX"));
+                    true, "https://drive.google.com/open?id=1xc9KJJIAmee6FXIladPhVsFJ1aDzTFaX", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_nps, "NPS", NPSScoreActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_mhr, "Digital MHR", DigitalMHRActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.ic_dgh, "DGH", DGHActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_covid_icon, "Covid-19 Questionnaire", Covid19QuestionnaireActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
             //Common End
 
         } else {
             listMenuItem.add(new HomeMenu(R.drawable.dashboard1, "Dashboard",
-                    NewDashboardCIF.class, false, false, ""));
+                    NewDashboardCIF.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.products1, "Products",
-                    BancaProductActivity.class, false, false, ""));
+                    BancaProductActivity.class, false, false, "", null));
 
             //Common
             listMenuItem.add(new HomeMenu(R.drawable.newbusinesses1, "New Business",
-                    NewBusinessHomeGroupingActivity.class, false, false, ""));
+                    NewBusinessHomeGroupingActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.uploaddocument1, "Requirement Upload",
-                    DocumentsUploadActivity.class, false, false, ""));
+                    DocumentsUploadActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.childeducationplanner1, "Future Planner",
-                    FuturePlannerActivity.class, false, false, ""));
+                    FuturePlannerActivity.class, false, false, "", null));
             //Common end
 
             listMenuItem.add(new HomeMenu(R.drawable.servicingnew, "Servicing", ServicingHomeGroupingActivity.class
-                    , false, false, ""));
+                    , false, false, "", null));
 
             //Common
             listMenuItem.add(new HomeMenu(R.drawable.branch_locator, "Branch Locator",
-                    BranchLocatorMainActivity.class, false, false, ""));
+                    BranchLocatorMainActivity.class, false, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.sales_kit, "Sales kit", null, false,
-                    true, "https://drive.google.com/open?id=1xc9KJJIAmee6FXIladPhVsFJ1aDzTFaX"));
+                    true, "https://drive.google.com/open?id=1xc9KJJIAmee6FXIladPhVsFJ1aDzTFaX", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_nps, "NPS", NPSScoreActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_mhr, "Digital MHR", DigitalMHRActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
             listMenuItem.add(new HomeMenu(R.drawable.ic_dgh, "DGH", DGHActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
 
             listMenuItem.add(new HomeMenu(R.drawable.ic_covid_icon, "Covid-19 Questionnaire", Covid19QuestionnaireActivity.class,
-                    true, false, ""));
+                    true, false, "", null));
             //Common End
         }
 
@@ -783,48 +789,48 @@ public class CarouselHomeActivity extends AppCompatActivity {
         switch (strUserType) {
             case "BDM":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_e_mhr, "e mhr format", ActivityE_MHR.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.icon_operations_quality_score_card,
                         "Operation quality score card", ScoreCardActivity.class,
-                        false, false, ""));
+                        false, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_icon_club_memebership_report, "Rin raksha Dashboard",
-                        RinnRakshaDashboardActivity.class, true, false, ""));
+                        RinnRakshaDashboardActivity.class, true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.bdmtrackernew, "BDM Tracker",
-                        BancaBDMTracker.class, false, false, ""));
+                        BancaBDMTracker.class, false, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_shortmhr, "Short MHR", MHRActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
 
                 listMenuItem.add(new HomeMenu(R.drawable.rinn_raksha_reports_not, "Rinn Raksha - Reports & Notification",
                         RinnRakshaReportsActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 break;
 
             case "AM":
             case "SAM":
             case "ZAM":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_e_mhr, "e mhr format", ActivityE_MHR.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.icon_operations_quality_score_card,
                         "Operation quality score card", ScoreCardActivity.class,
-                        false, false, ""));
+                        false, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_icon_club_memebership_report,
-                        "Rin raksha Dashboard", RinnRakshaDashboardActivity.class, true, false, ""));
+                        "Rin raksha Dashboard", RinnRakshaDashboardActivity.class, true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_shortmhr, "Short MHR", MHRActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 break;
 
             case "AGENT":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_product_explainer, "Product Explainer",
-                        ActivityProductExplainer.class, false, false, ""));
+                        ActivityProductExplainer.class, false, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_icon_lm_corner, "LM Corner",
-                        LMCorner.class, true, false, ""));
+                        LMCorner.class, true, false, "", null));
                 break;
 
             case "UM":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_e_mhr, "e mhr format", ActivityE_MHR.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.icon_operations_quality_score_card, "Operation quality score card",
-                        ScoreCardActivity.class, false, false, ""));
+                        ScoreCardActivity.class, false, false, "", null));
 
                 /*String URLPresentationUM = "https://drive.google.com/open?id=0B5LinkXikg9Qd1plRFRfb2Y4dVlWVzZyanV5NmNsZHZfVC1J";
                 listMenuItem.add(new HomeMenu(R.drawable.icon_protection_presentation_for_distributors, "Protection Presentation For Distributors",
@@ -833,61 +839,176 @@ public class CarouselHomeActivity extends AppCompatActivity {
                 listMenuItem.add(new HomeMenu(R.drawable.icon_reference_slides, "Reference Slides",
                         null, false, true, URLUM));*/
 
-                listMenuItem.add(new HomeMenu(R.drawable.icon_aob_agent_details, "Agent Dashboard",
-                        ActivityAOBAgentDetails.class, false, false, ""));
+                /*listMenuItem.add(new HomeMenu(R.drawable.icon_aob_agent_details, "Agent Dashboard",
+                        ActivityAOBAgentDetails.class, false, false, ""));*/
+
+                Bundle mbundle = new Bundle();
+                mbundle.putString("STRING_DATA", "New");
 
                 listMenuItem.add(new HomeMenu(R.drawable.icon_aob, "Agent On Boarding",
-                        Activity_AOB_Authentication.class, false, false, ""));
+                        ActivityAOB_Menu.class, false, false, "", mbundle));
 
-                listMenuItem.add(new HomeMenu(R.drawable.icon_posp_dashboard, "POSP-RA Dashboard",
-                        Activity_POSP_RA_AgentDetails.class, false, false, ""));
+                /*listMenuItem.add(new HomeMenu(R.drawable.icon_posp_dashboard, "POSP-RA Dashboard",
+                        Activity_POSP_RA_AgentDetails.class, false, false, ""));*/
 
+                Bundle mbundle1 = new Bundle();
+                mbundle1.putString("STRING_DATA", mCommonMethods.str_posp_ra_customer_type);
                 listMenuItem.add(new HomeMenu(R.drawable.icon_posp_ra, "POSP-RA",
-                        Activity_POSP_RA_Authentication.class, false, false, ""));
+                        ActivityAOB_Menu.class, false, false, "", mbundle1));
 
                 /*listMenuItem.add(new HomeMenu(R.drawable.ic_mhr, "MHR",
                         MHRProposalListActivity.class,false,false,""));*/
                 listMenuItem.add(new HomeMenu(R.drawable.ic_icon_lm_corner, "LM Corner",
-                        BancaReportsCIFListActivity.class, true, false, ""));
+                        BancaReportsCIFListActivity.class, true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_shortmhr, "Short MHR", MHRActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_covid_self_declaration, "Covid Self Declaration", CovidSelfDeclarationActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_icon_lm_corner, "Contest",
-                        ContestsLMActivity.class, true, false, ""));
+                        ContestsLMActivity.class, true, false, "", null));
                 break;
 
 
             case "BSM":
             case "DSM":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_e_mhr, "e mhr format", ActivityE_MHR.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.icon_operations_quality_score_card, "Operation quality score card",
-                        ScoreCardActivity.class, false, false, ""));
+                        ScoreCardActivity.class, false, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.icon_aob_agent_details, "AOB Dashboard",
-                        ActivityAOBUMListUnderBSM.class, true, false, ""));
+                        ActivityAOBUMListUnderBSM.class, true, false, "", null));
+
                 listMenuItem.add(new HomeMenu(R.drawable.icon_aob_intrview_que, "AOB Interview Questions",
-                        ActivityAOBUMListUnderBSM.class, false, false, ""));
+                        ActivityAOBUMListUnderBSM.class, false, false, "", null));
+
                 listMenuItem.add(new HomeMenu(R.drawable.icon_posp_dashboard, "POSP-RA Dashboard",
-                        Activity_POSP_RA_UMListUnderBSM.class, true, false, ""));
+                        Activity_POSP_RA_UMListUnderBSM.class, true, false, "", null));
+
                 listMenuItem.add(new HomeMenu(R.drawable.icon_posp_interview_questions, "POSP-RA Interview Questions",
-                        Activity_POSP_RA_UMListUnderBSM.class, false, false, ""));
+                        Activity_POSP_RA_UMListUnderBSM.class, false, false, "", null));
+
                 listMenuItem.add(new HomeMenu(R.drawable.ic_shortmhr, "Short MHR", MHRActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_covid_self_declaration, "Covid Self Declaration", CovidSelfDeclarationActivity.class,
-                        true, false, ""));
+                        true, false, "", null));
                 listMenuItem.add(new HomeMenu(R.drawable.ic_sales_comments, "Contest",
-                        ContestsLMActivity.class, true, false, ""));
+                        ContestsLMActivity.class, true, false, "", null));
                 break;
 
             case "CAG":
                 listMenuItem.add(new HomeMenu(R.drawable.icon_operations_quality_score_card, "Operation quality score card",
-                        ScoreCardActivity.class, false, false, ""));
+                        ScoreCardActivity.class, false, false, "", null));
                 break;
 
             default:
                 break;
         }
+    }
+
+    private void addBottomDots(int currentPage) {
+        TextView[] dots = new TextView[bannerImages.length];
+
+        layoutDots.removeAllViews();
+        for (int i = 0; i < dots.length; i++) {
+            dots[i] = new TextView(mContext);
+
+            if (dots[i] != null) {
+                dots[i].setText(Html.fromHtml("&#8226;"));
+                dots[i].setTextSize(35);
+                dots[i].setTextColor(getResources().getColor(R.color.grey05));
+                layoutDots.addView(dots[i]);
+            }
+        }
+
+        if (dots.length > 0)
+            dots[currentPage].setTextColor(getResources().getColor(R.color.white));
+    }
+
+    private void whatsAppDialog() {
+        String appMsgStatus = " We are now on WhatsApp. Policy holder can give a missed call on +919029006575 to " +
+                "connect with us & explore our services.";
+
+        Log.d("msg = ", appMsgStatus);
+        final SpannableString spannableString = new SpannableString(appMsgStatus); // msg should have url to enable clicking
+        Linkify.addLinks(spannableString, Linkify.PHONE_NUMBERS);
+
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
+        builder1.setView(dialogView);
+        TextView text = dialogView.findViewById(R.id.tv_title);
+        text.setText(spannableString);
+        text.setMovementMethod(LinkMovementMethod.getInstance());
+        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
+        dialogButton.setText("Ok");
+        final AlertDialog dialog = builder1.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //dialog.setContentView(R.layout.dialog_with_ok_button);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+    }
+
+    private void displayAgentMessages() {
+        String appMsgStatus = "Dear Life Mitra,\n" +
+                "\n" + "THE FINAL OPPORTUNITY to leverage JOTC BOOSTER. You are eligible for " +
+                "150% Credit on every Rated NBP across all Products including Protection Business " +
+                "subject to Cashiering of Minimum Rated Business of 2 lakhs in the month of October" +
+                " 2021 & Issuance up to 15th November 2021.  \n" +
+                "Wishing you the very best – Retail Agency";
+
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
+        builder1.setView(dialogView);
+        TextView text = dialogView.findViewById(R.id.tv_title);
+        text.setText(appMsgStatus);
+        //text.setMovementMethod(LinkMovementMethod.getInstance());
+        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
+        dialogButton.setText("Ok");
+        final AlertDialog dialog = builder1.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //dialog.setContentView(R.layout.dialog_with_ok_button);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dialog.dismiss();
+                monthlyGradAllowAsyncTask = new MonthlyGradAllowAsyncTask();
+                monthlyGradAllowAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            }
+        });
+        dialog.show();
+    }
+
+    private void displayCruiseMsg() {
+        String appMsgStatus = "Dear Life Mitra,\n" +
+                "\n" + "Are you ready for CRUISE TO GLORY JAFFNA – SRI LANKA CAMPAIGN?? " +
+                "Leverage this opportunity to qualify for a cruise to Jaffna, Sri Lanka. T&C applicable.\n" +
+                "\n" + "Looking forward to your overwhelming participation. Wishing you " +
+                "the very best. – Retail Agency";
+
+        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
+        builder1.setView(dialogView);
+        TextView text = dialogView.findViewById(R.id.tv_title);
+        text.setText(appMsgStatus);
+        //text.setMovementMethod(LinkMovementMethod.getInstance());
+        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
+        dialogButton.setText("Ok");
+        final AlertDialog dialog = builder1.create();
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //dialog.setContentView(R.layout.dialog_with_ok_button);
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dialog.dismiss();
+                jotcMessageAsyncTask = new JOTCMessageAsyncTask();
+                jotcMessageAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+            }
+        });
+        dialog.show();
     }
 
     class MyViewPagerAdapter extends PagerAdapter {
@@ -966,188 +1087,12 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-    private final ViewPager.OnPageChangeListener viewPagerPageChangeListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageSelected(int position) {
-            addBottomDots(position);
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-        }
-
-        @Override
-        public void onPageScrollStateChanged(int arg0) {
-
-        }
-    };
-
-    private void addBottomDots(int currentPage) {
-        TextView[] dots = new TextView[bannerImages.length];
-
-        layoutDots.removeAllViews();
-        for (int i = 0; i < dots.length; i++) {
-            dots[i] = new TextView(mContext);
-
-            if (dots[i] != null) {
-                dots[i].setText(Html.fromHtml("&#8226;"));
-                dots[i].setTextSize(35);
-                dots[i].setTextColor(getResources().getColor(R.color.grey05));
-                layoutDots.addView(dots[i]);
-            }
-        }
-
-        if (dots.length > 0)
-            dots[currentPage].setTextColor(getResources().getColor(R.color.white));
-    }
-
-    public class HomeMenuAdapter extends RecyclerView.Adapter<HomeMenuAdapter.ViewHolderAdapter> {
-
-        private final ArrayList<HomeMenu> lstAdapterList;
-
-        HomeMenuAdapter(ArrayList<HomeMenu> lstAdapterList) {
-            this.lstAdapterList = lstAdapterList;
-        }
-
-        @Override
-        public int getItemCount() {
-            return lstAdapterList.size();
-        }
-
-        @Override
-        public ViewHolderAdapter onCreateViewHolder(ViewGroup parent, int viewType) {
-            View mView = LayoutInflater.from(parent.getContext()).inflate(
-                    R.layout.row_aob_req_dtls_dashboard, parent, false);
-
-            return new ViewHolderAdapter(mView);
-        }
-
-        @Override
-        public void onBindViewHolder(final ViewHolderAdapter holder, final int position) {
-            holder.imageButtonAgentIcon.setImageDrawable(mContext.getResources().getDrawable(lstAdapterList.get(position).getIconDrawable()));
-            holder.textviewAgentTitle.setText(lstAdapterList.get(position).getStrMenuTitle());
-
-            holder.constraintAOBReqDtls.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Class aClass = lstAdapterList.get(position).getaClass();
-                    if (aClass != null) {
-                        boolean isHomeTag = lstAdapterList.get(position).isHomeTag();
-                        if (isHomeTag) {
-                            mCommonMethods.callActivityWithHomeTagYes(mContext, aClass);
-                        } else {
-                            if (lstAdapterList.get(position).getStrMenuTitle().equalsIgnoreCase("Short MHR")) {
-                                Intent i = new Intent(mContext, MHRProposalListActivity.class);
-                                i.putExtra("fromHome", "MHR");
-                                mContext.startActivity(i);
-                            } else {
-                                mCommonMethods.callActivity(mContext, aClass);
-                            }
-                            //mCommonMethods.callActivity(mContext, aClass);
-                        }
-                    } else {
-                        boolean isDriveLink = lstAdapterList.get(position).isDriveLink();
-                        if (isDriveLink) {
-                            mCommonMethods.loadDriveURL(lstAdapterList.get(position).getLink(), mContext);
-                        }
-                    }
-
-
-                }
-            });
-        }
-
-        @Override
-        public void onViewRecycled(ViewHolderAdapter holder) {
-            holder.itemView.setOnLongClickListener(null);
-            super.onViewRecycled(holder);
-        }
-
-        public class ViewHolderAdapter extends RecyclerView.ViewHolder {
-
-            private final ImageButton imageButtonAgentIcon;
-            private final TextView textviewAgentTitle;
-            private final LinearLayout constraintAOBReqDtls;
-
-            ViewHolderAdapter(View v) {
-                super(v);
-                constraintAOBReqDtls = v.findViewById(R.id.constraintAOBReqDtls);
-                imageButtonAgentIcon = v.findViewById(R.id.imageButtonAgentIcon);
-                textviewAgentTitle = v.findViewById(R.id.textviewAgentTitle);
-            }
-        }
-    }
-
-    class HomeMenu {
-        private final int iconDrawable;
-        private final String strMenuTitle;
-        private final Class aClass;
-        private final boolean homeTag;
-        private final boolean driveLink;
-        private final String link;
-
-        HomeMenu(int iconDrawable, String strMenuTitle, Class aClass, boolean homeTag,
-                 boolean driveLink, String link) {
-            this.strMenuTitle = strMenuTitle;
-            this.iconDrawable = iconDrawable;
-            this.aClass = aClass;
-            this.homeTag = homeTag;
-            this.driveLink = driveLink;
-            this.link = link;
-        }
-
-        Class getaClass() {
-            return aClass;
-        }
-
-        boolean isHomeTag() {
-            return homeTag;
-        }
-
-        boolean isDriveLink() {
-            return driveLink;
-        }
-
-        String getLink() {
-            return link;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            HomeMenu homeMenu = (HomeMenu) o;
-            return iconDrawable == homeMenu.iconDrawable &&
-                    strMenuTitle.equals(homeMenu.strMenuTitle);
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @Override
-        public int hashCode() {
-            return Objects.hash(iconDrawable, strMenuTitle);
-        }
-
-        int getIconDrawable() {
-            return iconDrawable;
-        }
-
-
-        String getStrMenuTitle() {
-            return strMenuTitle;
-        }
-
-    }
-
     class DownloadFileAsyncTaskEFTPendingForm extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
+        int flag = 0;
         /*private  final String SOAP_ACTION_EFT_NOT_RECEIVED_FORMS = "http://tempuri.org/getBAOnlineURN_SMRT";
         private  final String METHOD_NAME_EFT_NOT_RECEIVED_FORMS = "getBAOnlineURN_SMRT";*/
-
-        int flag = 0;
-
         List<ParseXML.EFTPendingForm> nodeData = new ArrayList<>();
-
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -1240,10 +1185,8 @@ public class CarouselHomeActivity extends AppCompatActivity {
     }
 
     class DownloadFileAsyncTaskLoggedProposalCount extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
-
         int totalCount = 0;
-
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -1362,9 +1305,8 @@ public class CarouselHomeActivity extends AppCompatActivity {
     }
 
     class DownloadFileAsyncTaskMedicalRequirement extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
-
         int totalCount = 0;
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -1485,9 +1427,8 @@ public class CarouselHomeActivity extends AppCompatActivity {
     }
 
     class DownloadFileAsyncTaskMaturityListCount extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
-
         int totalCount = 0;
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -1616,9 +1557,8 @@ public class CarouselHomeActivity extends AppCompatActivity {
     }
 
     class DownloadFileAsyncTaskSBDueListCount extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
-
         int totalCount = 0;
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -1742,12 +1682,16 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
+   /* private void playProductExplainerVideo() {
+
+        mCommonMethods.callActivity(mContext, ActivityProductExplainer.class);
+
+    }*/
+
     class DownloadFileAsyncTaskClaimRequirementInfo extends AsyncTask<String, String, String> {
-        private volatile boolean running = true;
-
         int flag = 0;
-
         List<ParseXML.ClaimRequirementInfoValuesModel> nodeData = new ArrayList<>();
+        private volatile boolean running = true;
 
         @Override
         protected void onPreExecute() {
@@ -2120,12 +2064,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-   /* private void playProductExplainerVideo() {
-
-        mCommonMethods.callActivity(mContext, ActivityProductExplainer.class);
-
-    }*/
-
     class RevivalNotifiationAsyncTask extends AsyncTask<String, String, String> {
 
         private volatile boolean running = true;
@@ -2247,7 +2185,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-
     class KYCMissingNotifiationAsyncTask extends AsyncTask<String, String, String> {
 
         private volatile boolean running = true;
@@ -2326,7 +2263,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
             promotionalAppMessageAsyncTask.execute();
         }
     }
-
 
     class PromotionalAppMessageAsyncTask extends AsyncTask<String, String, String> {
 
@@ -2466,7 +2402,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-
     class LastLoginTimeAsyncTask extends AsyncTask<String, String, String> {
 
         private volatile boolean running = true;
@@ -2538,7 +2473,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
             }
         }
     }
-
 
     class AgentNotificationAsyncTask extends AsyncTask<String, String, String> {
 
@@ -3080,35 +3014,6 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-    private void whatsAppDialog() {
-        String appMsgStatus = " We are now on WhatsApp. Policy holder can give a missed call on +919029006575 to " +
-                "connect with us & explore our services.";
-
-        Log.d("msg = ", appMsgStatus);
-        final SpannableString spannableString = new SpannableString(appMsgStatus); // msg should have url to enable clicking
-        Linkify.addLinks(spannableString, Linkify.PHONE_NUMBERS);
-
-        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
-        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
-        builder1.setView(dialogView);
-        TextView text = dialogView.findViewById(R.id.tv_title);
-        text.setText(spannableString);
-        text.setMovementMethod(LinkMovementMethod.getInstance());
-        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
-        dialogButton.setText("Ok");
-        final AlertDialog dialog = builder1.create();
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //dialog.setContentView(R.layout.dialog_with_ok_button);
-        dialogButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-        dialog.show();
-    }
-
-
     class JOTCMessageAsyncTask extends AsyncTask<String, String, String> {
 
         private volatile boolean running = true;
@@ -3233,26 +3138,26 @@ public class CarouselHomeActivity extends AppCompatActivity {
                                     "All the very best!!! T&C Apply";
                         }*/
 
-                            final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
-                            LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
-                            View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
-                            builder1.setView(dialogView);
-                            TextView text = dialogView.findViewById(R.id.tv_title);
-                            text.setText(msg);
-                            //text.setMovementMethod(LinkMovementMethod.getInstance());
-                            Button dialogButton = dialogView.findViewById(R.id.bt_ok);
-                            dialogButton.setText("Ok");
-                            final AlertDialog dialog = builder1.create();
-                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                            //dialog.setContentView(R.layout.dialog_with_ok_button);
-                            dialogButton.setOnClickListener(new View.OnClickListener() {
-                                public void onClick(View v) {
-                                    dialog.dismiss();
-                                    monthlyGradAllowAsyncTask = new MonthlyGradAllowAsyncTask();
-                                    monthlyGradAllowAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-                                }
-                            });
-                            dialog.show();
+                    final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
+                    LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
+                    View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
+                    builder1.setView(dialogView);
+                    TextView text = dialogView.findViewById(R.id.tv_title);
+                    text.setText(msg);
+                    //text.setMovementMethod(LinkMovementMethod.getInstance());
+                    Button dialogButton = dialogView.findViewById(R.id.bt_ok);
+                    dialogButton.setText("Ok");
+                    final AlertDialog dialog = builder1.create();
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    //dialog.setContentView(R.layout.dialog_with_ok_button);
+                    dialogButton.setOnClickListener(new View.OnClickListener() {
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                            monthlyGradAllowAsyncTask = new MonthlyGradAllowAsyncTask();
+                            monthlyGradAllowAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                        }
+                    });
+                    dialog.show();
 
 
                 } else {
@@ -3266,41 +3171,11 @@ public class CarouselHomeActivity extends AppCompatActivity {
         }
     }
 
-    private void displayAgentMessages() {
-        String appMsgStatus = "Dear Life Mitra,\n" +
-                "\n" + "THE FINAL OPPORTUNITY to leverage JOTC BOOSTER. You are eligible for " +
-                "150% Credit on every Rated NBP across all Products including Protection Business " +
-                "subject to Cashiering of Minimum Rated Business of 2 lakhs in the month of October" +
-                " 2021 & Issuance up to 15th November 2021.  \n" +
-                "Wishing you the very best – Retail Agency";
-
-        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
-        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
-        builder1.setView(dialogView);
-        TextView text = dialogView.findViewById(R.id.tv_title);
-        text.setText(appMsgStatus);
-        //text.setMovementMethod(LinkMovementMethod.getInstance());
-        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
-        dialogButton.setText("Ok");
-        final AlertDialog dialog = builder1.create();
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //dialog.setContentView(R.layout.dialog_with_ok_button);
-        dialogButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dialog.dismiss();
-                monthlyGradAllowAsyncTask = new MonthlyGradAllowAsyncTask();
-                monthlyGradAllowAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-            }
-        });
-        dialog.show();
-    }
-
     class CruiseMessageAsyncTask extends AsyncTask<String, String, String> {
 
         private volatile boolean running = true;
         private int flag;
-        private String IA_CODE,CASHIERING,FINAL_WEIGHTED_PREMIUM,FINAL_SLAB,SHORT_FALL;
+        private String IA_CODE, CASHIERING, FINAL_WEIGHTED_PREMIUM, FINAL_SLAB, SHORT_FALL;
 
         @Override
         protected void onPreExecute() {
@@ -3419,39 +3294,11 @@ public class CarouselHomeActivity extends AppCompatActivity {
 
                 } else {
                     displayCruiseMsg();
-}
+                }
             } else {
                 displayCruiseMsg();
             }
         }
-    }
-
-    private void displayCruiseMsg(){
-        String appMsgStatus = "Dear Life Mitra,\n" +
-                "\n" +"Are you ready for CRUISE TO GLORY JAFFNA – SRI LANKA CAMPAIGN?? " +
-                "Leverage this opportunity to qualify for a cruise to Jaffna, Sri Lanka. T&C applicable.\n" +
-                "\n" +"Looking forward to your overwhelming participation. Wishing you " +
-                "the very best. – Retail Agency";
-
-        final AlertDialog.Builder builder1 = new AlertDialog.Builder(mContext);
-        LayoutInflater inflater = ((AppCompatActivity) mContext).getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.dialog_with_ok_button, null);
-        builder1.setView(dialogView);
-        TextView text = dialogView.findViewById(R.id.tv_title);
-        text.setText(appMsgStatus);
-        //text.setMovementMethod(LinkMovementMethod.getInstance());
-        Button dialogButton = dialogView.findViewById(R.id.bt_ok);
-        dialogButton.setText("Ok");
-        final AlertDialog dialog = builder1.create();
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //dialog.setContentView(R.layout.dialog_with_ok_button);
-        dialogButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                dialog.dismiss();
-                jotcMessageAsyncTask = new JOTCMessageAsyncTask();
-                jotcMessageAsyncTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);}
-        });
-        dialog.show();
     }
 
 
