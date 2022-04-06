@@ -2389,6 +2389,9 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
         } else {
 
             if (str_doc.equals(METHOD_NAME_CHECK_PAN_EXISTS)) {
+
+                str_doc = PAN_DOC;
+
                 Random r = new Random(System.currentTimeMillis());
 
                 //call PAN service to get Name of PAN card holder
@@ -3005,6 +3008,7 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
 
 
                                 if (mPanFile != null) {
+                                    str_doc = PAN_DOC;
 
                                     createSoapRequestToUploadDoc(mPanFile);
 
