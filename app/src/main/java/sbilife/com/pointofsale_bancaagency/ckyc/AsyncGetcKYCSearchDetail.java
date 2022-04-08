@@ -980,39 +980,6 @@ public class AsyncGetcKYCSearchDetail extends AsyncTask<String, Void, String> {
                     }
                 }
 
-                /*Single.fromCallable(() -> CreateCKYCPDF())
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Consumer<Boolean>() {
-                            @Override
-                            public void accept(@NonNull Boolean aBoolean) throws Exception {
-                                if (!IMAGE_CODE1.equalsIgnoreCase("")) {
-
-                                    mStorageUtils.saveBase64ToFile(mContext, StorageUtils.DIRECT_DIRECTORY, IMAGE_CODE1,
-                                            str_CKYC_PAN_no + "_CKYC_" + IMAGE_CODE1 + "." + IMAGE_TYPE1);
-
-                                }
-
-                                if (!IMAGE_CODE2.equalsIgnoreCase("")) {
-
-                                    mStorageUtils.saveBase64ToFile(mContext, StorageUtils.DIRECT_DIRECTORY, IMAGE_CODE2,
-                                            str_CKYC_PAN_no + "_CKYC_" + IMAGE_CODE2 + "." + IMAGE_TYPE2);
-                                }
-                                if (!IMAGE_CODE3.equalsIgnoreCase("")) {
-
-                                    mStorageUtils.saveBase64ToFile(mContext, StorageUtils.DIRECT_DIRECTORY, IMAGE_CODE3,
-                                            str_CKYC_PAN_no + "_CKYC_" + IMAGE_CODE3 + "." + IMAGE_TYPE3);
-                                }
-                                if (!IMAGE_CODE4.equalsIgnoreCase("")) {
-
-                                    mStorageUtils.saveBase64ToFile(mContext, StorageUtils.DIRECT_DIRECTORY, IMAGE_CODE4,
-                                            str_CKYC_PAN_no + "_CKYC_" + IMAGE_CODE4 + "." + IMAGE_TYPE4);
-                                }
-                            }
-                        }, throwable -> {
-                            mCommonMethods.showToast(mContext, "File Not Found");
-                        });*/
-
                 if (!IMAGE_CODE1.equalsIgnoreCase("")) {
                     mStorageUtils.saveBase64ToFile(mContext, StorageUtils.DIRECT_DIRECTORY, IMAGE_CODE1,
                             str_CKYC_PAN_no + "_CKYC_" + IMAGE_CODE1 + "." + IMAGE_TYPE1);

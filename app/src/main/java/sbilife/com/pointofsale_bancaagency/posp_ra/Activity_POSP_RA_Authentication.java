@@ -20,6 +20,7 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -944,7 +945,6 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
             case R.id.imgbtn_aob_auth_pan_camera:
 
                 if (validate_pan_card) {
-                    str_doc = PAN_DOC;
                     capture_document();
                     //capture_docs(PAN_DOC, "CAMERA");
                 } else {
@@ -956,7 +956,6 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
             case R.id.imgbtn_aob_auth_pan_browse:
 
                 if (validate_pan_card) {
-                    str_doc = PAN_DOC;
                     browse_docs();
                     //capture_docs(PAN_DOC, "BROWSE");
                 } else {
@@ -2155,6 +2154,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
                                         dialog.setCancelable(false);
                                         TextView tv_dialog_msg = dialog.findViewById(R.id.tv_dialog_msg);
                                         tv_dialog_msg.setText(Html.fromHtml(mAsyncGetcKYCSearchDetail.createFormatedCKYCDetails()));
+                                        tv_dialog_msg.setMovementMethod(new ScrollingMovementMethod());
                                         Button bt_dialog_ok = dialog.findViewById(R.id.bt_dialog_ok);
                                         bt_dialog_ok.setOnClickListener(new View.OnClickListener() {
                                             public void onClick(View v) {
@@ -2321,6 +2321,8 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
         } else {
 
             if (str_doc.equals(METHOD_NAME_CHECK_PAN_EXISTS)) {
+                str_doc = PAN_DOC;
+
                 Random r = new Random(System.currentTimeMillis());
 
                 //call PAN service to get Name of PAN card holder
@@ -2859,6 +2861,7 @@ public class Activity_POSP_RA_Authentication extends AppCompatActivity implement
 
 
                                 if (mPanFile != null) {
+                                    str_doc = PAN_DOC;
 
                                     createSoapRequestToUploadDoc(mPanFile);
 

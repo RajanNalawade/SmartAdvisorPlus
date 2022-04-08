@@ -3,12 +3,12 @@ package sbilife.com.pointofsale_bancaagency.utility;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 
-/** Machindra Yewale
+/**
+ * Machindra Yewale
  * Enables TLS v1.2 when creating SSLSockets.
  */
 public class Tls12SocketFactory extends SSLSocketFactory {

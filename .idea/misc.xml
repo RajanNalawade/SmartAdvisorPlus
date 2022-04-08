@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/drawable/btn_selector.xml" value="0.1575" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_aunthentication.xml" value="0.196875" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_bank_details.xml" value="0.196875" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/activity_aob_basic_details.xml" value="0.196875" />
@@ -27,6 +28,7 @@
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/layout_aob_pan_pending_agent_list.xml" value="0.196875" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/layout_posp_ra_pan_pending_agent_list.xml" value="0.196875" />
         <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/row_aob_req_dtls_dashboard.xml" value="0.196875" />
+        <entry key="..\:/Back_up_27_02_2020/SmartAdvisorPlus/v324/SmartAdvisorPlus/app/src/main/res/layout/window_pop_up_message_with_single_options.xml" value="0.196875" />
       </map>
     </option>
   </component>

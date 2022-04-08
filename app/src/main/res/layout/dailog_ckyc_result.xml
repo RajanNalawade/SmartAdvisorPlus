@@ -2,52 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/headernew2">
-
-    <TextView
-        android:id="@+id/tv_dialog_msg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:gravity="start|center_horizontal"
-        android:scrollbars="vertical"
-        android:text="TextView asdasdsad dsadadsa asdasda dasd ad das dsadasd asdasd adsd ad das dsa "
-        android:textColor="#2b5988"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@id/bt_dialog_reject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/bt_dialog_ok"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/buttonbg"
+        android:background="@drawable/btn_selector"
         android:padding="10dp"
         android:text="Accept"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/bt_dialog_reject"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toStartOf="@+id/bt_dialog_reject"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/bt_dialog_reject"
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/buttonbg"
+        android:background="@drawable/btn_selector"
         android:padding="10dp"
         android:text="Reject"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt_dialog_ok"/>
+        app:layout_constraintStart_toEndOf="@+id/bt_dialog_ok" />
+
+    <TextView
+        android:id="@+id/tv_dialog_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="start|center_horizontal"
+        android:scrollbars="vertical"
+        android:text="TextView asdasdsad dsadadsa asdasda dasd ad das dsadasd asdasd adsd ad das dsa "
+        android:textColor="#2b5988"
+        app:layout_constraintBottom_toTopOf="@id/bt_dialog_reject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -1060,7 +1061,6 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
 
                 if (validate_pan_card) {
                     //capture_docs(PAN_DOC, "CAMERA");
-                    str_doc = PAN_DOC;
                     capture_document();
                 } else {
                     mCommonMethods.showMessageDialog(mContext, "Please Enter PAN Number Proper");
@@ -1072,7 +1072,6 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
 
                 if (validate_pan_card) {
                     //capture_docs(PAN_DOC, "BROWSE");
-                    str_doc = PAN_DOC;
                     browse_docs();
                 } else {
                     mCommonMethods.showMessageDialog(mContext, "Please Enter PAN Number Proper");
@@ -2448,6 +2447,7 @@ public class Activity_AOB_Authentication extends AppCompatActivity implements Vi
                                         dialog.setCancelable(false);
                                         TextView tv_dialog_msg = dialog.findViewById(R.id.tv_dialog_msg);
                                         tv_dialog_msg.setText(Html.fromHtml(mAsyncGetcKYCSearchDetail.createFormatedCKYCDetails()));
+                                        tv_dialog_msg.setMovementMethod(new ScrollingMovementMethod());
                                         Button bt_dialog_ok = dialog.findViewById(R.id.bt_dialog_ok);
                                         bt_dialog_ok.setOnClickListener(new View.OnClickListener() {
                                             public void onClick(View v) {
